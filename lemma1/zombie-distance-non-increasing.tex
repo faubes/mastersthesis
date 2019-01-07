@@ -1,0 +1,157 @@
+% Math and Comp Sci Student
+% Homework template by Joel Faubert
+% Ottawa University
+% Winter 2018
+%
+% This template uses packages fancyhdr, multicol, esvect and amsmath
+% http://ctan.cms.math.ca/tex-archive/macros/latex/contrib/esvect/esvect.pdf
+% http://www.ams.org/publications/authors/tex/amslatex
+%
+% These packages are freely distribxted for use but not
+% modification under the LaTeX Project Public License
+% http://www.latex-project.org/lppl.txt
+
+\documentclass[letterpaper, 10pt]{article}
+% \usepackage[text={8in,10in},centering, margin=1in,headheight=28pt]{geometry}
+\usepackage[margin=1in, centering, headheight=28pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{esvect}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{bm}
+\usepackage{minted}
+
+%\usepackage{sxbfigxre}
+
+% Configure margins
+\pagestyle{fancy}
+% \hoffset -0.75pt
+% \voffset -0.8pt
+% \oddsidemargin 0pt
+% \topmargin 0pt
+% \headheight 25pt
+% \headsep 20pt
+% \textheight 8.25in
+% \textwidth 6.25 in
+% \marginparsep 5pt
+% \marginparwidth 0.5in
+% \footskip 10pt
+% \marginparpush 0pt
+\paperwidth 8.5in
+\paperheight 11in
+
+% Configxre headers and footers
+
+\lhead{Prof. Jean-Lou De Carufel }
+\rhead{Jo\"el Faubert \\ Student \# 2560106}
+\chead{Zombies \& Survivors Working Document \\ 2-5-2018}
+\rfoot{\today}
+\fancyhfoffset[l]{40pt}
+\fancyhfoffset[r]{40pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\parskip}{10pt}
+\setlist[enumerate]{parsep=10pt, itemsep=10pt}
+
+% Define shortcuts
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+%norm shortcut
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+\DeclareMathOperator{\proj}{Proj}
+\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+\def\D{\mathrm{d}}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% probability
+\newcommand{\Expected}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Entropy}{\mathrm{H}}
+\newcommand{\KL}{\mathrm{KL}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlist[enumerate]{itemsep=10pt, partopsep=5pt, parsep=10pt}
+\setlist[itemize]{itemsep=5pt, partopsep=5pt, parsep=10pt}
+
+\begin{document}
+The sequence $d_i = d(z_i, s_i)$ of distances between a zombie and a survivor on round $i$ is non increasing.
+
+\begin{proof}
+We assume Z \& S is played on a connected graph $G = (V,E)$.
+
+By induction on the round number $i$.
+
+On round 1, the zombie starts on $z_1 \in V$. The survivor responds with $s_1 \in V$.
+
+If $z_1 = s_1$, then $d(z_1, s_1) = 0$ and the game is over, so the sequence $d_i$ is finite and non increasing.
+
+Else, $z_1 \not= s_1$ and $G$ connected guarantees the existence of a shortest $z_1s_1$-path. Say
+
+\[ P : z_1 = u_1, u_2, \dots, u_k = s_1 \]
+
+so that $d(z_1, s_1) = k$.
+
+On turn 1, the zombie must move to $z_2 \in N(z_1)$ such that $d(z_2, s_1) = d(z_1, s_1) - 1$. We can suppose
+that $z_2 = u_2$ is the next vertex along $P$.
+
+In response, the survivor moves to $s_2 \in N(s_1)$. Now since
+
+\[ P' : z_2 = u_2, u_3, \dots, u_k = s_1, u_{k+1} = s_2 \]
+
+is a $z_2s_2$-path of length $k$, we have that the shortest path between $z_2$ and $s_2$ must be smaller than
+
+\[ d(z_2, s_2) \leq d(z_2, s_1) + d(s_1, s_2) = (d(z_1, s_1) -1) + 1 = d(z_1, s_1) \]
+
+The proof for the induction step is entirely analogous.
+
+
+\end{proof}
+
+\end{document}

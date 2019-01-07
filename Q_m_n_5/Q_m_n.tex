@@ -1,0 +1,186 @@
+
+% Math and Comp Sci Student
+% Homework template by Joel Faubert
+% Ottawa University
+% Winter 2018
+%
+% This template uses packages fancyhdr, multicol, esvect and amsmath
+% http://ctan.cms.math.ca/tex-archive/macros/latex/contrib/esvect/esvect.pdf
+% http://www.ams.org/publications/authors/tex/amslatex
+%
+% These packages are freely distribxted for use but not
+% modification under the LaTeX Project Public License
+% http://www.latex-project.org/lppl.txt
+
+\documentclass[letterpaper, 10pt]{article}
+% \usepackage[text={8in,10in},centering, margin=1in,headheight=28pt]{geometry}
+\usepackage[margin=1in, centering, headheight=28pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{esvect}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{bm}
+%\usepackage{minted}
+
+%\usepackage{sxbfigxre}
+
+% Configure margins
+\pagestyle{fancy}
+% \hoffset -0.75pt
+% \voffset -0.8pt
+% \oddsidemargin 0pt
+% \topmargin 0pt
+% \headheight 25pt
+% \headsep 20pt
+% \textheight 8.25in
+% \textwidth 6.25 in
+% \marginparsep 5pt
+% \marginparwidth 0.5in
+% \footskip 10pt
+% \marginparpush 0pt
+\paperwidth 8.5in
+\paperheight 11in
+
+% Configxre headers and footers
+
+\lhead{Prof. Jean-Lou De Carufel }
+\rhead{Jo\"el Faubert \\ Student \# 2560106}
+\chead{Zombies \& Survivors Working Document \\ 10-7-2018}
+\rfoot{\today}
+\fancyhfoffset[l]{40pt}
+\fancyhfoffset[r]{40pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\parskip}{10pt}
+\setlist[enumerate]{parsep=5pt, itemsep=0pt}
+
+% Define shortcuts
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+%norm shortcut
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+\DeclareMathOperator{\proj}{Proj}
+\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+\def\D{\mathrm{d}}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% probability
+\newcommand{\Expected}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Entropy}{\mathrm{H}}
+\newcommand{\KL}{\mathrm{KL}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlist[enumerate]{itemsep=0pt, partopsep=5pt, parsep=0pt}
+\setlist[itemize]{itemsep=0pt, partopsep=5pt, parsep=0pt}
+
+\begin{document}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proofpart}{Part}
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
+
+\begin{definition}
+ We define a family of graphs we call \emph{bifurcated cycles} and denote as $Q_{m,n}$.
+ As the name suggests, bifurcated cycles are cycles of length $m+n$ with a single chord
+ which divides the cycle into paths $P_1$ and $P_2$ of lengths $m$ and $n$.
+\end{definition}
+
+\begin{center}
+ \includegraphics[scale=0.20]{Q_m_n_basic}
+\end{center}
+
+\begin{theorem}
+The Bifurcated cycle $Q_{m,n}$ is 2-zombie win.
+\end{theorem}
+
+\begin{proof}
+First, we show that a certain game state is a losing position for the survivor.
+Second, we show how to position the zombies at the start of the game so that --
+no matter where the survivor starts -- a losing position is inevitably reached.
+
+\begin{proofpart} Cornering the Survivor on a Cycle
+
+Suppose that the game has reached the following state: the survivor is $P_1$,
+the first zombie is on $v$, and the second
+zombie is at a distance of $\Delta$ from $u$. Denote the length of the clockwise
+path from $v$ to $s$ as $\ell$. Note that we must have $2 \leq \ell \leq m-1$,
+else the survivor is caught.
+
+\begin{center}
+ \includegraphics[scale=0.20]{diagram1}
+\end{center}
+
+\newpage
+
+There are four posible $z_2s$-paths. We wish to guarantee that $z_2$ will follow
+the $\Delta$-path towards $u$, which translates into the following inequalities:
+
+\[  \Delta + (m - \ell) \leq n - \Delta + 1 + m - \ell \]
+\begin{center}and\end{center}
+\[ \Delta + (m - \ell) \leq n - \Delta + \ell \]
+
+or
+
+\[ \Delta + 1 + \ell \leq n - \Delta + 1 + m - \ell \]
+\begin{center}and\end{center}
+\[ \Delta + 1 + \ell \leq n - \Delta + \ell \]
+
+\end{proofpart}
+
+\end{proof}
+\end{document}

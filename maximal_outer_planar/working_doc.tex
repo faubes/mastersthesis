@@ -1,0 +1,304 @@
+% Math and Comp Sci Student
+% Homework template by Joel Faubert
+% Ottawa University
+% Winter 2018
+%
+% This template uses packages fancyhdr, multicol, esvect and amsmath
+% http://ctan.cms.math.ca/tex-archive/macros/latex/contrib/esvect/esvect.pdf
+% http://www.ams.org/publications/authors/tex/amslatex
+%
+% These packages are freely distribxted for use but not
+% modification under the LaTeX Project Public License
+% http://www.latex-project.org/lppl.txt
+
+\documentclass[letterpaper, 10pt]{article}
+% \usepackage[text={8in,10in},centering, margin=1in,headheight=28pt]{geometry}
+\usepackage[margin=1in, centering, headheight=28pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{esvect}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{bm}
+\usepackage{minted}
+
+%\usepackage{sxbfigxre}
+
+% Configure margins
+\pagestyle{fancy}
+% \hoffset -0.75pt
+% \voffset -0.8pt
+% \oddsidemargin 0pt
+% \topmargin 0pt
+% \headheight 25pt
+% \headsep 20pt
+% \textheight 8.25in
+% \textwidth 6.25 in
+% \marginparsep 5pt
+% \marginparwidth 0.5in
+% \footskip 10pt
+% \marginparpush 0pt
+\paperwidth 8.5in
+\paperheight 11in
+
+% Configxre headers and footers
+
+\lhead{Prof. Jean-Lou De Carufel }
+\rhead{Jo\"el Faubert \\ Student \# 2560106}
+\chead{Zombies \& Survivors Working Document \\ 2-5-2018}
+\rfoot{\today}
+\fancyhfoffset[l]{40pt}
+\fancyhfoffset[r]{40pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\parskip}{10pt}
+\setlist[enumerate]{parsep=10pt, itemsep=10pt}
+
+% Define shortcuts
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+%norm shortcut
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+\DeclareMathOperator{\proj}{Proj}
+\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+\def\D{\mathrm{d}}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% probability
+\newcommand{\Expected}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Entropy}{\mathrm{H}}
+\newcommand{\KL}{\mathrm{KL}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlist[enumerate]{itemsep=10pt, partopsep=5pt, parsep=10pt}
+\setlist[itemize]{itemsep=5pt, partopsep=5pt, parsep=10pt}
+
+\begin{document}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\begin{definition}
+A graph $G$ is \emph{planar} if it can be embedded in the plane such that its edges
+intersect only at vertices \cite{bondy2008graph}.
+\end{definition}
+
+\begin{definition}
+A graph $G$ is said to be \emph{outer-planar} if it is planar and has and embedding
+in which all of the vertices of $G$ lie on the outer face \cite{campos2013dominating}.
+\end{definition}
+
+\begin{definition}
+A graph $G$ is \emph{maximally outer planar} if the addition of any edge violates
+ outer-planarity.
+\end{definition}
+
+Given an outer planar graph $G$ and an embedding, we define:
+
+\begin{definition}
+The \emph{outer face} is the Hamilton cycle formed by the vertice and the edges
+connecting them on the outer face.
+\end{definition}
+
+\begin{definition}
+A \emph{chord} is an edge which is not on the outer face.
+\end{definition}
+
+\begin{definition}
+An \emph{ear} is vertex of degree 2. A maximally outer-planar graph has at least 2 ears.
+\end{definition}
+
+A maximally outer-planar graph is composed of triangles. In \cite{campos2013dominating},
+they distinguish two types of triangles:
+
+\begin{definition}
+A \emph{marginal} triangle shares at least one edge with the outer face while
+ an \emph{internal} triangle has no edges on the outer face.
+\end{definition}
+
+There is an interesting relationship between internal triangles and the number
+of ears \cite{campos2013dominating}. If $k$ is the number of internal triangles, then there are $k+2$ ears.
+This is because it takes 3 marginal triangles to create an internal triangle, and
+adding another ear (without violating outer-planarity) creates a new internal triangle.
+
+\begin{definition}
+Finally, a maximally outer-planar graph is called \emph{striped} if it does not
+contain any internal triangles.
+\end{definition}
+
+\begin{definition}
+A \emph{round} of the game consists of two turns: the zombie's turn followed by the survivor's turn.
+\end{definition}
+
+With these definitions in mind, we seek to prove the following:
+
+\begin{theorem}
+Maximally outer-planar graphs are zombie-win, regardless of the zombie's initial position.
+That is to say, a single zombie
+playing on a maximally outer-planar graph will always catch the survivor by following
+the greedy strategy.
+\end{theorem}
+
+\begin{proof}
+Our approach is to show that the \emph{survivor zone}, the set of vertices $S \subseteq V$
+which the survivor can occupy without losing on the next round shrinks at every round of the game.
+
+Observe that $K_3$ is zombie-win, so we can assume that $|V| = n > 3$.
+
+The zombie and survivor choose initial positions $z^{(1)}, s^{(1)} \in V$,
+the zombie player going first.
+
+First assume that $z^{(1)}$ is an ear. If $s^{(1)} \in N(z^{(1)})$, then the game is won by the zombie
+in round 1.
+Otherwise, $z^{(2)} \in N(z^{(1)})$ is not an ear (since $n > 3$) and so has
+degree at least 3. The survivor either passes or moves to some $s^{(2)}$ and, by the end of this
+round, the zombie is not on an ear.
+
+If the survivor is on an ear adjacent to the zombie, then the zombie captures the survivor on its turn.
+Otherwise, we claim that the zombie does not move to an ear. Indeed, if the zombie is on a vertex
+without any adjacent ears, then the claim is clear.
+Assume then, that the zombie is on a vertex adjacent to an ear.
+The survivor is not on this ear vertex by assumption.
+Now supposing that the shortest path includes this ear leads to a contradiction by the triangle
+inequality.
+
+So the zombie always moves to non-ear vertices unless it is to capture the survivor,
+ and thus we can now assume that $z^{(r)}$ (for $r>1$) is a vertex of degree at least 3.
+
+Given an embedding of the graph, label the vertices $v_0, v_1, \dots, v_{n-1}$ clockwise such that
+\[H_G = v_0v_1, v_1v_2 \dots, v_{n-2}v_{n-1}, v_{n-1}v_0\] is the Hamilton cycle formed by
+the outer face (subscripts modulo $n$).
+
+Now say that $z^{(r)} = v_i$ for some $1 \leq i \leq n$. The vertices $v_{i-1}$
+and $v_{i+1}$ are the predecessor and successor of $v_i$ on the outer face.
+
+Since $v_i$ is not an ear and $n>3$, we also have that the set of vertices attached to $v_i$ by a chord:
+\[ U = \{ u \in V\setminus \{v_{i-1}, v_{i+1}\} \vert \, v_i u \in E \} = \{v_{k_1}, v_{k_2}, \dots, v_{k_\ell} \}\]
+is not empty.
+
+%Let $v_k$ be an arbitrary vertex in $U$.
+%Its neighbours on the outer face are $v_{k-1}$ and $v_{k+1}$.
+
+  \begin{center}
+  \includegraphics[scale=0.25]{survivor_zone_round_r+1_case_1}
+  \end{center}
+
+Notice that because the graph is a triangulation and $v_iv_{k_1}$ is assumed to be the first clockwise
+chord from $v_i$, there must also be an edge $v_{i+1}v_{k_1}$.
+
+
+If the survivor is adjacent to $v_i$ then the zombie captures the survivor.
+Otherwise, observe that $s^{(r)}$ is in $\{v_{i+1}, \dots, v_{k_\ell}\}$ or
+$\{v_{k_1}, \dots, v_{i-1}\}$ (or both). Assume without loss of generality that
+$s^{(r)}$ is in $\{v_{i+1}, \dots, v_{k_\ell}\}$. Therefore, the survivor zone
+at round $r$ is $S^{(r)} = \{v_{i+1}, \dots, v_{k_\ell}\} \setminus \left( \{v_{i+1}\} \cup \{v_{k_1}, \dots, v_{k_\ell} \} \right)$.
+
+Now, the shortest $zs$-path either starts with (1) a hull edge or (2) a chord edge.
+\begin{enumerate}
+  \item If the shortest $zs$-path starts with a hull edge then it is $v_iv_{i+1}$.
+  In this case, the survivor must be in $\{v_{i+2}, \dots, v_{k_1 -1 }\}$, else
+  we obtain a contradiction using the triangle inequality.
+  Since the graph is outer-planar, the survivor cannot leave this set without passing through
+  either $v_{i+1}$ or $v_{k_1}$.
+
+
+  Therefore, the survivor zone at round $r+1$ is
+  $S^{(r+1)} \subseteq \{v_{i+2}, \dots, v_{k_1 -1 }\} \setminus \{v_{i+2}\} \subsetneq S^{(r)}$.
+  This shows that the survivor zone shrank by at least one vertex.
+
+  \item Assume that the shortest $zs$-path starts with a chord edge. We consider two subcases:
+    (a) $s^{(r)} \in \{v_{i+2}, \dots, v_{k_1 -1} \}$, or
+    (b) $s^{(r)} \in \{v_{k_1}, v_{k_1 +1}, \dots, v_{k_\ell -1}, v_{k_\ell}\}$
+
+    \begin{enumerate}
+      \item Subcase $s^{(r)} \in \{v_{i+2}, \dots, v_{k_1 -1} \}$. In this case, the
+      chord edge of the shortest $zs$-path must $v_i v_{k_1}$, since it is the first in clockwise order.
+      As in case 1, the survivor cannot escape $\{v_{i+2}, \dots, v_{k_1 -1} \}$ without passing through
+      either $v_{i+1}$ or $v_{k_1}$.
+
+      So we see that $S^{(r+1)} \subseteq \{v_{i+2}, \dots, v_{k_1 -1 }\} \setminus \{v_{k_1-1}\} \subsetneq S^{(r)}$
+       has again shrunk by at least one vertex.
+
+      \item Subcase $s^{(r)} \in \{v_{k_1}, v_{k_1 +1}, \dots, v_{k_\ell -1}, v_{k_\ell}\}$.
+      In this case, there exists $v_{k_j} \in U$ such that
+      the survivor is somewhere in the arc defined by $v_{k_j}$ and $v_{k_{j +1}}$.
+      That is, the survivor is in $v_{k_j +1}, v_{k_j + 2}, \dots, v_{k_{j+1} -1}, v_{k_{j+1}}$ the vertices of
+      the outer face within the span of said arc.
+      Observe that the first edge on the shortest $zs$-path must be $v_iv_{k_j}$ or $v_iv_{k_{j +1}}$.
+
+      \begin{center}
+      \includegraphics[scale=0.25]{survivor_zone_round_r+1_case_2b}
+      \end{center}
+
+      As before, the survivor now cannot escape $\{v_{k_j}, v_{k_j +1}, \dots, v_{k_{j+1}} \}$ without passing through
+      either $v_{k_j}$ or $v_{k_{j+1}}$.
+      Since $v_iv_{k_j}$ and $v_iv_{k_{j+1}}$ are two consecutive clockwise chords attached to $v_i$ and the
+      graph is maximally outer planar, we must have edge $v_{k_j}v_{k_{j+1}}$.
+      Therefore, $S^{(r+1)} \subseteq \{v_{k_j}, v_{k_j +1}, \dots, v_{k_{j+1}} \}
+      \setminus \{ v_{k_j}, v_{k_j +1}\} \subsetneq S^{(r)}$.
+
+
+    \end{enumerate}
+
+\end{enumerate}
+
+In these three exhaustive cases, we have shown that the survivor zone shrinks by at least one vertex.
+Since the graph is finite, the survivor is inevitably restricted to a single vertex adjacent
+to the zombie and the survivor is caught on the next round.
+
+\end{proof}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

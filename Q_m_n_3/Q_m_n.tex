@@ -1,0 +1,572 @@
+
+% Math and Comp Sci Student
+% Homework template by Joel Faubert
+% Ottawa University
+% Winter 2018
+%
+% This template uses packages fancyhdr, multicol, esvect and amsmath
+% http://ctan.cms.math.ca/tex-archive/macros/latex/contrib/esvect/esvect.pdf
+% http://www.ams.org/publications/authors/tex/amslatex
+%
+% These packages are freely distribxted for use but not
+% modification under the LaTeX Project Public License
+% http://www.latex-project.org/lppl.txt
+
+\documentclass[letterpaper, 10pt]{article}
+% \usepackage[text={8in,10in},centering, margin=1in,headheight=28pt]{geometry}
+\usepackage[margin=1in, centering, headheight=28pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{esvect}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{bm}
+\usepackage{minted}
+
+%\usepackage{sxbfigxre}
+
+% Configure margins
+\pagestyle{fancy}
+% \hoffset -0.75pt
+% \voffset -0.8pt
+% \oddsidemargin 0pt
+% \topmargin 0pt
+% \headheight 25pt
+% \headsep 20pt
+% \textheight 8.25in
+% \textwidth 6.25 in
+% \marginparsep 5pt
+% \marginparwidth 0.5in
+% \footskip 10pt
+% \marginparpush 0pt
+\paperwidth 8.5in
+\paperheight 11in
+
+% Configxre headers and footers
+
+\lhead{Prof. Jean-Lou De Carufel }
+\rhead{Jo\"el Faubert \\ Student \# 2560106}
+\chead{Zombies \& Survivors Working Document \\ 10-7-2018}
+\rfoot{\today}
+\fancyhfoffset[l]{40pt}
+\fancyhfoffset[r]{40pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\parskip}{10pt}
+\setlist[enumerate]{parsep=5pt, itemsep=0pt}
+
+% Define shortcuts
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+%norm shortcut
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+\DeclareMathOperator{\proj}{Proj}
+\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+\def\D{\mathrm{d}}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% probability
+\newcommand{\Expected}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Entropy}{\mathrm{H}}
+\newcommand{\KL}{\mathrm{KL}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlist[enumerate]{itemsep=0pt, partopsep=5pt, parsep=0pt}
+\setlist[itemize]{itemsep=0pt, partopsep=5pt, parsep=0pt}
+
+\begin{document}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proofpart}{Part}
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
+
+\begin{definition}
+ We define a family of graphs we call \emph{bifurcated cycles} and denote as $Q_{m,n}$.
+ As the name suggests, bifurcated cycles are cycles of length $m+n$ with a single chord
+ which divides the cycle into paths $P_1$ and $P_2$ of lengths $m$ and $n$.
+\end{definition}
+
+\begin{center}
+ \includegraphics[scale=0.20]{Q_m_n}
+
+ $Q_{m,n}$
+\end{center}
+
+\begin{theorem}
+The Bifurcated cycle $Q_{m,n}$ is 2-zombie win if $m, n$ are even.
+\end{theorem}
+
+\begin{proof}
+We place the two zombies on the longest half of the bifurcated cycle with $z_1$ at a distance of $k$
+from a chorded vertex and $z_2$ at a further distance of $k + \frac{n}{2}$.
+
+Given this start configuration, we describe all winning strategies for $s$ in terms of
+$m$, $n$, and $k$.
+
+From that, we will show that for all $m$ and $n$, there exists at least one value of $k$ such that
+none of these winning strategies are viable and thus that the survivor will be captured.
+
+\begin{proofpart} Notation
+
+Formally, let $u,v \in V(Q_{m,n})$ denote the endpoints of the
+chord and $P_1$, $P_2$ denote the paths on either side of the chord.
+
+By construction we have $\lvert P_1 \rvert = m$ and $\lvert P_2 \rvert = n$ and we
+can assume, without loss of generality, that $m \leq n$. We also assume $m,n \geq 2$, since
+otherwise the construction adds parallel edges or degenerates to $K_2$.
+
+Let $C_1$ and $C_2$ be the subcycles of length $m+1$ and $n+1$ induced by
+$P_1$ and $P_2$ respectively.
+
+Each round of the game is composed of two turns: first the zombies' turn, followed by the
+survivor's turn. We denote as $z_i^{(t)} \in V(Q_{m,n})$ the position of zombie $i$
+(and $s^{(t)}$ the position of the survivor) at round $t$.
+
+\end{proofpart}
+
+\begin{proofpart} The Zombie Start Positions
+
+Now, as mentioned above, we place the two zombies on vertices $z_1^{(0)}$ and $z_2^{(0)}$ on $P_2$ such that
+
+\begin{enumerate}
+\item The distance between the two zombies is $d(z_1^{(0)}, z_2^{(0)}) = n/2$,  and
+\item There is a path $P_5 = v, v_1, v_2, \dots, v_k = z_1^{(0)}$ of length $k$ between $z_1^{(0)}$ and
+    the chorded vertex $v$.
+    If $k=0$, then $P_5$ is the trivial path $v$, and $z_1^{(0)} = v$.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram1.png}
+\end{center}
+
+Without loss of generality, we can assume that $0 \leq k \leq n/4$,
+else we reflect the graph and rename the vertices.
+
+These zombie positions divide $P_2$ into sub-paths $P_3 = u \dots z_2^{(0)}$,
+$P_4 = z_2^{(0)} \dots z_1^{(0)}$, and
+$P_5 = v \dots z_1^{(0)}$.
+\end{proofpart}
+
+\begin{proofpart} The First $k$ Moves of the Game
+
+Let us first assume that $k>0$. We consider the case when $k=0$ in the following part.
+Notice that if the survivor chooses to start on $P_4$, then the zombies are guaranteed to win
+since
+
+\[ 2 \leq d(z_i^{(0)}, s^{(0)}) \leq n/2 - 2 \qquad \text{for $i = 1,2$} \]
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram3}
+\end{center}
+
+Play is effectively restricted to $P_4$. The zombies
+move in opposite directions towards the survivor and inevitably corner it.
+
+So we can assume that the survivor does not start on $P_4$. The survivor must
+then be on $P_1$, $P_3$ or $P_5$ and, in all of these cases, the zombies' first $k$
+moves are clear: the zombies move towards the corded vertices $u$ and $v$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram4}
+\end{center}
+
+To see this, suppose first that the survivor is on $P_3$ or $P_5$. Then the zombies move in opposite directions
+because the survivor must be at distance at least two and so we have
+
+\[ 2 \leq d(z_i^{(0)}, s^{(0)}) \leq |P_3| + |P_5| +1 -2 = n/2 - 1 \qquad \text{for $i = 1,2$} \]
+
+so neither zombie can choose to follow $P_4$.
+
+If the survivor is on $P_1$, then all shortest paths to the survivor must
+include $u$ or $v$ (since these are cut vertices)
+and the shortest paths to these vertices from $z_1^{(0)}$
+and $z_2^{(0)}$ cannot include $P_4$ because
+
+\[ d(z_1^{(0)}, v) = |P_5| = k \leq \frac{n}{4} < \frac{n}{2} = |P_4| \qquad \forall n > 0\]
+\[ d(z_1^{(0)}, u) \leq |P_5| + 1 = k + 1 \leq \frac{n}{4} +1 \leq \frac{n}{4} + \frac{n}{2} = \frac{3n}{4} < n -k = |P_4| + |P_3| \qquad \forall n > 0, 0 \leq k \leq \frac{n}{4}, k \in \Z\]
+\[ d(z_2^{(0)}, u) = |P_3| = \frac{n}{2} - k < \frac{n}{2} = |P_4| \qquad \forall n > 0\]
+\[ d(z_2^{(0)}, v) \leq |P_3| + 1 = \frac{n}{2} - k + 1 < \frac{n}{2} + k = |P_4| + |P_5| \qquad \forall n > 0, 0 < k \leq \frac{n}{4}, k \in \Z\]
+
+We inevitably reach the following scenario: $z_1^{(k)}$ is on the chorded vertex $v$
+and $z_2^{(k)}$ is approaching $u$ at a distance of $n/2 -2k$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram5}
+\end{center}
+
+\end{proofpart}
+
+\begin{proofpart} Once $z_1$ Reaches the Chord
+
+If the survivor lies on the path between $u$ and $z_2^{(k)}$, then
+$z_1^{(k)}$ follows the chord across the cycle and the survivor is encircled.
+So we can assume now that, if the game is to continue, the survivor must be
+somewhere on $P_1$.
+
+Note that if $k=0$ and this is in fact the first turn of the game, then
+the survivor loses by starting anywhere on $P_2$. So we can still assume
+that the survivor is somewhere on $P_1$ at a distance $2 \leq \ell \leq m-1$ from $v$.
+
+Since $s$ must be on $P_1$, we can consider all possible zombie decisions and their outcomes.
+First, $z_2$ can go clockwise or counterclockwise.
+Second, $z_1$ can go clockwise or take the chord to go counterclockwise.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram6}
+\end{center}
+
+Each zombie has two possible decisions (which depend on the position of the survivor)
+for a total of four possibilities. We systematically analyze each of these possibilities
+in the following way:
+
+\begin{itemize}
+  \item Case I $z_2$ goes clockwise.
+  \begin{itemize}
+    \item Case I (A) $z_1$ goes clockwise.
+    \item Case I (B) $z_1$ goes counterclockwise.
+  \end{itemize}
+  \item Case II $z_2$ goes counterclockwise.
+  \begin{itemize}
+    \item Case I (A) $z_1$ goes clockwise.
+    \item Case I (B) $z_1$ goes counterclockwise.
+  \end{itemize}
+\end{itemize}
+
+\emph{Case I}: $z_2$ goes clockwise.
+
+Let us first consider the possibility that
+$z_2$ goes clockwise as it is a little different: it is only possible if $k=0$ since
+comparing lengths of available $z_2v$-paths shows
+
+\[\frac{n}{2} +2k \leq \frac{n}{2} -2k + 1\iff k=0 \]
+
+So this outcome is possible only in the following situation: $z_2$ is exactly at the midpoint of $P_2$,
+with paths of length $n/2$ on either side.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram7}
+\end{center}
+
+\emph{Case I(A)}: $z_1$ goes clockwise.
+
+Since we assume here that $z_2$ moves clockwise, we must have $k=0$ and $\ell \leq m/2$.
+This eliminates the possibility of \emph{Case I(B)}: if $z_2$ goes clockwise,
+$z_1$ cannot go counterclockwise.
+
+Note that if $\ell = m/2$ then $z_2$ may go either way and we must include this
+possibility in both cases.
+
+Since $\ell \leq m/2$, $z_1$ is forced to follow $s$ clockwise around $C_1$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagram8}
+\end{center}
+
+The survivor wishes to maintain distance at least 2 and so is forced to move around $C_1$. We can assume
+the initial distance $\ell$ is preserved since the survivor passing (or even reversing) on its turn
+is equivalent to choosing smaller initial distance of $\ell$.
+
+We fast-forward the game and look at the next event: when the one of the players next attain the chord.
+Note that if $s$ and $z_2$ reach $u$ and $v$ on the same round, then $z_2$ captures
+the survivor on the next turn.
+
+So either
+\begin{enumerate}
+\item $z_2$ reaches $v$ before $s$ reaches $u$; or
+\item $s$ reaches $u$ before $z_2$ reaches $v$.
+\end{enumerate}
+
+\emph{Subcase I(A)1}: $z_2$ reaches $v$ before $s$ reaches $u$.
+
+Since $z_2$ was at a distance of $n/2$, this event must occur $n/2$ rounds later and $z_1$ will
+have pursued the survivor that length around $P_1$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIA1_1}
+\end{center}
+
+We have supposed here that $s$ hasn't yet reached the chord, so there exists a path of length
+\[m - \ell -n/2 \geq 1 \]
+between $s$ and $u$.
+
+On the following round, $z_2$ can either follow $z_1$ clockwise along a hull edge or go
+counterclockwise using the chord edge. But since
+
+\[ m - \ell - \frac{n}{2} +1 \leq m - 2 -\frac{n}{2}  +1 \leq n - 2 - \frac{n}{2} +1 = \frac{n}{2} -1 < \frac{n}{2} + \ell\]
+
+We see that the shortest $z_2s$-path cannot follow the hull edge.
+So $z_2$ takes the chord and moves counterclockwise.
+After this zombie turn, we have
+\[d(z_1, z_2) = \ell - 1 + m - \ell - \frac{n}{2} \leq \frac{m-1}{2}\]
+
+So that the survivor is caught between two zombies on less than half the diameter of $C_1$.
+This allows us to conlude that if the zombies start with $k=0$ and
+\[ m - \ell -\frac{n}{2}  \geq 0 \]
+then the survivor will lose.
+
+To avoid this scenario, the survivor must choose $\ell > m - \frac{n}{2}$
+(i.e. $\ell \geq m - \frac{n}{2} +1$)
+while still respecting the restriction that $\ell \leq \frac{m}{2}$.
+
+In order to choose such $\ell$ we must have
+\[ m - \frac{n}{2} +1 \leq \ell \leq \frac{m}{2} \]
+or, simply,
+\[ m + 2 \leq n \]
+
+Such choice for $\ell$ is impossible for the survivor whenever
+$m+2 > n$, so we have a simple winning zombie-strategy for these configurations:
+choose $k=0$.
+%($m+2 > n$  and $m$,$n$ even implies $m=n$).
+
+\emph{Subcase I(A)2}: $s$ reaches $v$ before $z_2$ reaches $u$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIA2_1}
+\end{center}
+
+It takes $m-\ell$ rounds for $s$ to complete its circuit around $C_1$ and reach $u$. So
+we must have $z_2$ at distance now $n/2 - (m-\ell)$ from $v$. This means we require
+
+\[ \frac{n}{2} - (m-\ell) \geq 1 \]
+
+This inequality allows us to bound $\ell$
+\[ m - \frac{n}{2} +1 \leq \ell \leq \frac{m}{2}\]
+which simplifies to
+\[ n \geq m+2 \]
+
+Notice that the survivor has won in this scenario since
+\[ d(s,z_1) = \ell \leq \frac{m}{2} \leq \frac{n}{2} \]
+and
+\[ d(s,z_2) = \frac{n}{2} - (m - \ell) + 1 \leq \frac{n}{2} - m + \left(\frac{m}{2} -1\right) +1 = \frac{n}{2} - \frac{m}{2} < \frac{n}{2} \]
+
+That is to say, the two zombies are now on the same side of $C_1$ at distance at most $\frac{n}{2}$
+from the survivor, so the survivor can win by circling clockwise around $C_2$.
+
+\emph{Case II}: $z_2$ goes counterclockwise.
+
+Now, either
+\begin{enumerate}
+\item[(A)] $\ell \leq \frac{m}{2}$
+    which forces $z_1$ to follow a hull edge onto $P_1$, or
+\item[(B)] $\ell \geq \frac{m}{2} + 1$,
+    which forces $z_1$ take the chord edge to $u$.
+\end{enumerate}
+
+\emph{Subcase II(A)}: We have $\ell \leq \frac{m}{2}$, so that $z_1$ follows a hull edge towards $s$.
+
+\emph{Subcase II(A)1}: $z_2$ reaches the chord before the survivor.
+
+We have assumed that $z_1$ is following $s$ in a clockwise direction. We must consider the distances at
+round $n/2 - k$, when $z_2$ attains the chord.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIIA1_2}
+\end{center}
+
+Here $z_1$ must continue in the same direction. In order for the survivor to win, we must have
+$z_2$ forced to take the chord on the next move and follow in clockwise direction. This implies that
+
+\begin{align*}
+1 + n/2-2k + \ell & < m - \ell - (n/2-2k)   \\
+2\ell             & < m -n +4k -1           \\
+2\ell             & \leq m - n +4k -2       \\
+\ell              & \leq \frac{m-n+4k-2}{2}
+\end{align*}
+
+Since we know $\ell \geq 2$, this allows us to bound $\ell$:
+
+\[ 2 \leq \ell \leq \frac{m-n+4k-2}{2} \]
+
+In order to be able to choose $\ell$, we must then have
+\[ 2 \leq \frac{m -n + 4k -2}{2} \]
+or
+\[ k \geq \frac{n-m+6}{4} \]
+
+\emph{Subcase II(A)2}: The survivor is able to reach the chord before $z_2$ closes in.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIIA2_1}
+\end{center}
+
+In order for the survivor to win in this scenario, we must have $s$ able to
+reach the chord before $z_2$ gets to $u$'s neighbour on $P_2$. This implies that
+
+\begin{align*}
+\frac{n}{2} - 2k - (m-\ell) & \geq 2                        \\
+  \ell                        & \geq m + 2k - \frac{n}{2} + 2
+\end{align*}
+
+Now since $\ell \leq \frac{m}{2}$ we have
+
+\[ m+2k-\frac{n}{2} +2 \leq \ell \leq \frac{m}{2} \]
+
+So to be able to choose $\ell$ to make this strategy viable we require
+
+\[ m+2k-\frac{n}{2} +2 \leq \frac{m}{2} \]
+
+And solving for $k$ gives
+
+\[ k \leq \frac{n-m-4}{4} \]
+
+\emph{Subcase II(B)}: We have $\ell \geq \frac{m}{2}+1$, so that $z_1$ follows the chord edge towards $s$.
+
+\emph{Subcase II(B)1}: $z_2$ reaches the chord before $s$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIIB1_2}
+\end{center}
+
+We again assume that the survivor preserves its distances of $m-\ell+1$ from $z_1$,
+since moving back or staying still is equivalent to choosing a larger initial value of $\ell$.
+In order for the survivor to win, we must have $z_2$ forced to follow in the same direction.
+This implies that
+
+\begin{align*}
+\frac{n}{2} -2k -1 + (m-\ell+1) & < 1 + 2k + \ell - \frac{n}{2} \\
+n+m                          & < 1 + 4k + 2\ell              \\
+2\ell                           & > n+m - 4k -1              \\
+2\ell                           & \geq n+m -4k               \\
+\ell                            & \geq \frac{n+m-4k}{2}
+\end{align*}
+
+Since $\ell \leq m -1$, we see that
+\[ \frac{n+m-4k}{2} \leq \ell \leq m-1 \]
+
+So in order to choose $\ell$ to enact this strategy we need
+
+\[ \frac{n+m-4k}{2} \leq m-1 \]
+
+Which allows us to conclude that
+\[ k \geq \frac{n-m+2}{4} \]
+
+\emph{Subcase II(B)2}: $z_1$ follows the chord edge and $s$ reaches the chord before $z_2$
+
+We start with the same scenario as in (B)1; $z_1$ is forced to take the chord edge since
+$\ell \geq \frac{m}{2} +1$.
+
+\begin{center}
+\includegraphics[scale=0.15]{diagramCaseIIB2_2}
+\end{center}
+
+$z_2$ was at a distance of $n/2-2k$ from the chorded vertex $u$ and $s$ requires
+$\ell$ turns in order to reach $v$. Thus, in order for the survivor to escape
+we must have
+
+\[ \frac{n}{2} -2k - \ell \geq 1 \]
+
+Solving for $\ell$ gives
+\[ \ell \leq \frac{n}{2} -2k -1 \]
+
+Combined with our lower bound for $\ell$ this gives
+
+\[ \frac{m+2}{2} \leq \ell \leq \frac{n}{2} -2k -1 \]
+
+So to be able to choose $\ell$ to make this strategy viable we need
+
+\[ \frac{m+2}{2} \leq \frac{n}{2} -2k -1 \]
+
+Solving for $k$ gives
+
+\[ k \leq \frac{n-m-4}{4} \]
+
+\end{proofpart}
+
+\begin{proofpart} Conclusion
+
+
+All together now, we have the following constraints for the different survivor-win scenarios:
+
+\begin{itemize}
+\item[II(A)1.] $k \geq \frac{n-m+6}{4}$
+\item[II(A)2.] $k \leq \frac{n-m-4}{4}$
+\item[II(B)1.] $k \geq \frac{n-m+2}{4}$
+\item[II(B)2.] $k \leq \frac{n-m-4}{4}$
+
+\end{itemize}
+
+If any of these conditions on $k$ are true, then the surivor has a winning strategy.
+So, to guarantee that none of these strategies will work, we must choose $k$ such that
+
+\begin{itemize}
+\item[II(A)1.] $k < \frac{n-m+6}{4}$
+\item[II(A)2.] $k > \frac{n-m-4}{4}$
+\item[II(B)1.] $k < \frac{n-m+2}{4}$
+\item[II(B)2.] $k > \frac{n-m-4}{4}$
+\end{itemize}
+
+Are all satisfied. Or, equivalently,
+
+\begin{itemize}
+\item[II(A)1.] $k \leq \frac{n-m+5}{4}$
+\item[II(A)2.] $k \geq \frac{n-m-3}{4}$
+\item[II(B)1.] $k \leq \frac{n-m+1}{4}$
+\item[II(B)2.] $k \geq \frac{n-m-3}{4}$
+\end{itemize}
+
+Now because
+
+\[ \frac{n-m-3}{4} < \frac{n-m+1}{4} < \frac{n-m+5}{4} \]
+
+We must choose $k \in [\frac{n-m-3}{4}, \frac{n-m+1}{4}]$. We know there exists
+such an integer $k$ since:
+
+\[ \frac{n-m+1}{4} - \frac{n-m-3}{4} = 1 \]
+
+\end{proofpart}
+
+\end{proof}
+\end{document}

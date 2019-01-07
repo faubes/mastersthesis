@@ -1,0 +1,358 @@
+% Math and Comp Sci Student
+% Homework template by Joel Faubert
+% Ottawa University
+% Winter 2018
+%
+% This template uses packages fancyhdr, multicol, esvect and amsmath
+% http://ctan.cms.math.ca/tex-archive/macros/latex/contrib/esvect/esvect.pdf
+% http://www.ams.org/publications/authors/tex/amslatex
+%
+% These packages are freely distribxted for use but not
+% modification under the LaTeX Project Public License
+% http://www.latex-project.org/lppl.txt
+
+\documentclass[letterpaper, 10pt]{article}
+% \usepackage[text={8in,10in},centering, margin=1in,headheight=28pt]{geometry}
+\usepackage[margin=1in, centering, headheight=28pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{esvect}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+%\usepackage{bm}
+%\usepackage{minted}
+\usepackage{algorithmic}
+
+%\usepackage{sxbfigxre}
+
+% Configure margins
+\pagestyle{fancy}
+% \hoffset -0.75pt
+% \voffset -0.8pt
+% \oddsidemargin 0pt
+% \topmargin 0pt
+% \headheight 25pt
+% \headsep 20pt
+% \textheight 8.25in
+% \textwidth 6.25 in
+% \marginparsep 5pt
+% \marginparwidth 0.5in
+% \footskip 10pt
+% \marginparpush 0pt
+\paperwidth 8.5in
+\paperheight 11in
+
+% Configxre headers and footers
+
+\lhead{Prof. Jean-Lou De Carufel }
+\rhead{Jo\"el Faubert \\ Student \# 2560106}
+\chead{Zombies \& Survivors Working Document \\ 16-5-2018}
+\rfoot{\today}
+\fancyhfoffset[l]{40pt}
+\fancyhfoffset[r]{40pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\parskip}{10pt}
+\setlist[enumerate]{parsep=10pt, itemsep=10pt}
+
+% Define shortcuts
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+%norm shortcut
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+\DeclareMathOperator{\proj}{Proj}
+\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+\def\D{\mathrm{d}}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% probability
+\newcommand{\Expected}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Entropy}{\mathrm{H}}
+\newcommand{\KL}{\mathrm{KL}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlist[enumerate]{itemsep=10pt, partopsep=5pt, parsep=10pt}
+\setlist[itemize]{itemsep=5pt, partopsep=5pt, parsep=10pt}
+
+\begin{document}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+In order to conclude that a graph is $k$-zombie win (or not) we must consider
+every possible zombie start and every possible survivor response.
+
+Moreover, in the game described by Fitzpatrick et al., the zombies
+are somehow omniscient: whenever presented with a choice of shortest paths,
+they can choose the one which works to their advantage.
+
+There's no way to know, a priori, which decision will lead to a zombie win
+and which will not. So in order to determine -- programmatically -- whether
+a graph is zombie win or not, we must not only explore all possible start configurations
+but also all possible zombie decisions (if any) encountered during the game.
+
+Obviously we must also consider all possible survivor decisions, since it is possible
+that the survivor has not played optimally.
+
+There do not seem to be any shortcuts or theoretical gadgets which could help us
+analyze complex graphs and so we are forced to examine all of these possibilities by
+brute force.
+
+We present an algorithm which uses the minimax priniciple and implicit construction of graphs
+(cite Brassart \& Bratley c.9) to explore all possible outcomes in a game. However,
+we must first discuss how to determine that a game is over.
+
+\section{Win Conditions}
+
+Obviously, if at any point a zombie occupies the same vertex as the survivor, then
+the survivor has lost. You could also stop one step earlier on the survivor's turn
+when the survivor is threatened and there is no escape.
+
+But how do we know when the survivor has won? When playing the game on pen and
+paper, it becomes immediately clear when the survivor has won.
+Experienced players will even see it coming a few moves ahead. How to describe
+a survivor-win programmatically is less obvious.
+
+\begin{lemma}
+  If the game returns to a previously visited state and there were no opportunities
+  for the zombies to play differently then the survivor has won.
+\end{lemma}
+\begin{proof}
+  The survivor has found a sequence of moves which can be repeated infinitely and
+  so has won by the rules of the game.
+\end{proof}
+
+However, revisiting a previous state is not sufficient to conclude that the survivor
+has won. It is quite possible that the zombies could have made different choices
+along the way and obtained a more favourable outcome. Consider the following
+simple graph and player positions:
+
+\begin{center}
+ \includegraphics[scale=0.40]{diagram1}
+\end{center}
+
+Both zombies have two choices available to them: move down or across.
+If the zombies are dumb, then they will both move across and the survivor has
+``won'' so long as they continue to choose to move together.
+
+Suppose now that both zombies move down and the survivor moves up.
+
+\begin{center}
+ \includegraphics[scale=0.40]{diagram2}
+\end{center}
+
+On the next turn, the players could return to their previous positions.
+If the zombies keep making the same play, then they oscillate back and forth and
+again the survivor has ``won''.
+However, if the zombies play with any strategy then this game is zombie-win:
+one zombie moves down, and the other across, then the survivor is quickly encircled.
+
+\begin{center}
+ \includegraphics[scale=0.40]{diagram3}
+ \includegraphics[scale=0.40]{diagram4}
+ \includegraphics[scale=0.40]{diagram5}
+\end{center}
+
+However, again we see that the zombies need to make the correct choice of
+shortest path.
+
+So in order to conclude that a survivor has won, we need something stronger:
+
+\begin{lemma}
+  If there is a sequence of turns such that for any possible zombie-play
+  we return to a previously visited state and the survivor is not captured,
+  then the survivor has won.
+\end{lemma}
+\begin{proof}
+  No matter what the zombies do, the survivor can repeat a sequence of moves
+  without being captured and thus has won.
+\end{proof}
+
+We use this characterization of zombie-win and survivor-win in order to
+write a brute force algorithm for determining if a graph is $k$-zombie win.
+
+\section{Zombie-win brute force algorithm}
+
+Given a game graph $G = (V,E)$, we implicitly explore a directed graph $D=(V', A)$ which codifies
+the decisions made by each player and their outcomes. We assume that a Floyd-Warshall
+matrix of distances is available in global read-only memory.
+
+A node of the digraph is a pair $(Z, s)$ where $Z = \{ \text{the zombies' positions} \}$
+is an ordered multiset and
+$s$ is the position of the survivor. We use a set rather than a vector because the zombies
+are all the same so the ordering does not matter.
+
+Recall that we must consider all possible zombie-starts before concluding that a
+graph is survivor-win. For now, we fix a zombie start $Z \subset G$.
+
+The root of the digraph is a zombie-start with $s$ unspecified.
+We draw an arc from the root to new nodes $(Z,s)$ for each $s \in V(G) \setminus N_G[Z]$.
+That is, for every safe survivor start. If there are no such arcs then the zombies
+dominate the graph and obviously have won.
+
+Now we use minimax to test the outcome of each sequence
+of player decisions.
+
+On the zombies' turn, we check if the survivor is caught ($s \in Z$) and, if so, return
+$-1$.
+Otherwise, we create nodes $(Z', s)$ for each possible combination
+of zombie moves from $Z$. These combinations are computed using the Floyd-Warshall
+matrix:
+
+For each zombie $z_i$, probe $d(z_i, s)$ (constant time).
+Check the row $z_i$ of the matrix for each neighbour $v$ (which has distance 1) of $z_i$ (linear time).
+Test if $d(v, s) = d(z_i, s) -1$. If so, then $v$ is a valid zombie move.
+Add $v$ to some set $Z_i$ of possible moves for $z_i$.
+
+We obtain all possible combinations using the cartesian product of the $Z_i$
+and return the minimum of all possible recursive calls to the survivor's move function
+with each $Z'$.
+
+On the survivors' turn, we check to see if there is an ancestor with
+the same game state, or $(Z', s') = (Z, s)$. If so, then we know that
+this game state has already been visited and return 1.
+
+Otherwise, we compute all possible survivor moves $S' = N_G[s] \setminus N_G[Z]$
+and return the maximum of all recursive calls to the zombies' move function with each
+$s'$.
+
+If the final return value is $-1$, then the zombies have won since there is a
+zombie start such that for any survivor start, the survivor is captured.
+
+If the return value is $1$, then the survivor has won since there exists a winning survivor strategy
+for every zombie start.
+
+\section{The Algorithm}
+
+Procedure zombieStart(G, k):
+
+\begin{algorithmic}
+\REQUIRE Connected graph $G=(V,E)$ and $k \geq 1$
+\STATE $M \leftarrow \text{Floyd-Warhsall distance matrix}$
+\COMMENT{Assume that $M$ is placed in global memory}
+\STATE $\text{result} \leftarrow 0$
+\FORALL{$Z = \{Z \subset V(G) \mid |Z| = k \land z_i \neq z_j \forall i \neq j \}$ }
+\STATE{$\text{tmp} \leftarrow \text{survivorStart($Z$)}$}
+\IF{$\text{result} = 0$}
+  \STATE{$\text{result} \leftarrow \text{tmp}$}
+  \ELSIF{$\text{tmp} < \text{result}$}
+  \STATE{$\text{result} \leftarrow \text{tmp}$}
+  \ENDIF
+\ENDFOR
+\RETURN{$\text{result}$}
+\end{algorithmic}
+
+Procedure survivorStart(Z):
+
+\begin{algorithmic}
+  \STATE{$S \leftarrow V(G) \setminus N_G[Z]$}
+  \IF{$S = \emptyset$} \RETURN{-1} \ENDIF
+  \STATE{$\text{result} \leftarrow 0$}
+  \FORALL{$s \in S$}
+  \STATE{$\text{tmp} \leftarrow \text{zombieMove($Z$, $s$)}$}
+  \IF{$\text{result} = 0$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ELSIF{$\text{tmp} > \text{result}$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ENDIF
+  \ENDFOR
+  \RETURN{$\text{result}$}
+\end{algorithmic}
+
+Procedure zombieMove(Z, s):
+\begin{algorithmic}
+  \FOR{$i=1$ \TO $k$}
+  \STATE{$Z_i' \leftarrow \emptyset$}
+  \STATE{$d \leftarrow M[z_i, s]$}
+    \FOR{$j=1$ \TO $n$}
+    \IF{$M[z_i, j] = 1 \land M[s, j] = d - 1$}
+    \IF{$j = s$} \RETURN{-1} \ENDIF \COMMENT{Zombie can capture survivor}
+    \STATE{$Z_i' \leftarrow Z_i' \cup \{j\}$}
+    \ENDIF
+    \ENDFOR
+  \ENDFOR
+  \STATE{$\text{result} \leftarrow 0$}
+  \FORALL{Possible combinations $Z'$ from $\bigtimes_{i=1}^k Z_i'$}
+  \STATE{$\text{tmp} \leftarrow \text{survivorMove($Z'$, $s$)}$}
+  \IF{$\text{result} = 0$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ELSIF{$\text{tmp} < \text{result}$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ENDIF
+  \ENDFOR
+  \RETURN{$\text{result}$}
+\end{algorithmic}
+
+Procedure survivorMove(Z, s):
+\begin{algorithmic}
+  \IF{$Z, s$ is a previously visited state} \RETURN{1} \ENDIF
+  \COMMENT{Implementing this line may be tricky and expensive.
+  Will need to pass a list of previously visited states}
+  \STATE{$S' \leftarrow N_G[s] \setminus N_G[Z]$}
+  \IF{$S' = \emptyset$} \RETURN{-1} \ENDIF
+  \STATE{$\text{result} \leftarrow 0$}
+  \FORALL{$s'\in S'$}
+  \STATE{$\text{tmp} \leftarrow \text{zombieMove($Z$, $s'$)}$}
+  \IF{$\text{result} = 0$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ELSIF{$\text{tmp} > \text{result}$}
+    \STATE{$\text{result} \leftarrow \text{tmp}$}
+    \ENDIF
+  \ENDFOR
+  \RETURN{$\text{result}$}
+\end{algorithmic}
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{references}
+
+\end{document}
