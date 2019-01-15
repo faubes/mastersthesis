@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1540839699 "Q_m_n.tex" "/home/joel/masters/Q_m_n_5/Q_m_n.pdf" "Q_m_n" 1540839700
+["pdflatex"] 1547129311 "Q_m_n.tex" "/home/joel/masters/Q_m_n_5/Q_m_n.pdf" "Q_m_n" 1547129312
   "/etc/texmf/web2c/texmf.cnf" 1537572079 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/joel/masters/Q_m_n_5/Q_m_n.aux" 1540839700 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "/home/joel/masters/Q_m_n_5/Q_m_n.aux" 1547129312 662 b2b94621371df8d9296b8bf5bec1b851 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -94,15 +94,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1537572342 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1539351889 4133843 b14a9f7411aeb877606a7e143b38ad31 ""
-  "Q_m_n.aux" 1540839700 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "Q_m_n.out" 1540839700 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Q_m_n.tex" 1540839699 5216 e5f119e628a5bfcd9c1a2f7be2ec433b ""
+  "Q_m_n.aux" 1547129312 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "Q_m_n.out" 1547129311 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Q_m_n.tex" 1547129311 6250 b3c215cf3ee8053a0edaece7ec960a91 ""
   "Q_m_n_basic.png" 1539649195 45958 0472f80f3afc591f15bfbed3f2a1303e ""
   "diagram1.png" 1539648605 35769 91d5d2e3736308789c97fac532468b21 ""
+  "diagram2.png" 1547127628 29556 2aced1f9fa2695c76b2ae81e1d5dfc43 ""
+  "diagram3.png" 1547128477 29356 50ffe00dbd862438f249310f2b55886a ""
   (generated)
-  "Q_m_n.out"
-  "/home/joel/masters/Q_m_n_5/Q_m_n.pdf"
   "Q_m_n.aux"
   "/home/joel/masters/Q_m_n_5/Q_m_n.log"
+  "/home/joel/masters/Q_m_n_5/Q_m_n.pdf"
+  "Q_m_n.out"
   "Q_m_n.log"
   "Q_m_n.pdf"

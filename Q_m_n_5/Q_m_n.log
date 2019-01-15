@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  29 OCT 2018 15:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  10 JAN 2019 09:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -522,30 +522,40 @@ Package pdftex.def Info: diagram1.png  used on input line 165.
 (pdftex.def)             Requested size: 337.45477pt x 163.20685pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </home/joel/masters/Q_m_n_5/Q_m_n_basic.png> </home/joel/masters/Q_m_n_5/diagram1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
- [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+ </home/joel/masters/Q_m_n_5/Q_m_n_basic.png> </home/joel/masters/Q_m_n_5/diagram1.png>] [2]
+<diagram2.png, id=25, 1690.315pt x 615.29875pt>
+File: diagram2.png Graphic file (type png)
+<use diagram2.png>
+Package pdftex.def Info: diagram2.png  used on input line 216.
+(pdftex.def)             Requested size: 338.057pt x 123.05756pt.
+<diagram3.png, id=26, 1668.2325pt x 604.2575pt>
+File: diagram3.png Graphic file (type png)
+<use diagram3.png>
+Package pdftex.def Info: diagram3.png  used on input line 220.
+(pdftex.def)             Requested size: 333.6406pt x 120.84935pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
+ [3 </home/joel/masters/Q_m_n_5/diagram2.png> </home/joel/masters/Q_m_n_5/diagram3.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
  (/home/joel/masters/Q_m_n_5/Q_m_n.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
 Package rerunfilecheck Info: File `Q_m_n.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
- 8399 strings out of 492982
- 123273 string characters out of 6134895
- 225089 words of memory out of 5000000
- 11826 multiletter control sequences out of 15000+600000
+ 8410 strings out of 492982
+ 123437 string characters out of 6134895
+ 226089 words of memory out of 5000000
+ 11834 multiletter control sequences out of 15000+600000
  9192 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,11n,43p,319b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,12n,43p,319b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/joel/masters/Q_m_n_5/Q_m_n.pdf (2 pages, 147045 bytes).
+Output written on /home/joel/masters/Q_m_n_5/Q_m_n.pdf (3 pages, 199723 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
