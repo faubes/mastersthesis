@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180904161911" modified="D:20181015200942"/>
+<info created="D:20180904161911" modified="D:20190115103503"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -294,7 +294,6 @@ h
 <text transformations="translations" pos="403.969 404.114" stroke="black" type="label" width="0" height="0" depth="0" valign="baseline"></text>
 <use name="mark/disk(sx)" pos="135.334 477.749" size="normal" stroke="black"/>
 <text transformations="translations" pos="142.357 472.666" stroke="black" type="label" width="4.67" height="4.289" depth="0" valign="baseline" style="math">s</text>
-<text matrix="1 0 0 1 -1.32938 -7.44451" transformations="translations" pos="186.493 454.055" stroke="black" type="label" width="14.688" height="6.812" depth="1.49" valign="baseline" style="math">C_m</text>
 <text transformations="translations" pos="256 528" stroke="black" type="label" width="5.703" height="4.289" depth="0" valign="baseline" style="math">u</text>
 <path stroke="blue" arrow="normal/normal">
 253.105 370.973 m
@@ -305,7 +304,7 @@ h
 113.294 441.21
 121.908 469.039 c
 </path>
-<text transformations="translations" pos="157.689 364.347" stroke="blue" type="label" width="4.151" height="6.918" depth="0" valign="baseline">$\ell$</text>
+<text transformations="translations" pos="157.689 364.347" stroke="blue" type="label" width="4.151" height="6.918" depth="0" valign="baseline" style="math">\ell</text>
 <text transformations="translations" pos="179.555 312.001" stroke="blue" type="label" width="0" height="0" depth="0" valign="baseline"></text>
 </page>
 </ipe>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180904161911" modified="D:20190110084020"/>
+<info created="D:20180904161911" modified="D:20190116181147"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -257,6 +257,7 @@ h
 <view layers="alpha beta" active="alpha"/>
 <use layer="alpha" name="mark/disk(sx)" pos="256 512" size="normal" stroke="black"/>
 <use name="mark/disk(sx)" pos="256 384" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -179.498 0" name="mark/disk(sx)" pos="512 512" size="normal" stroke="black"/>
 <path stroke="black">
 256 384 m
 256 512 l
@@ -289,12 +290,14 @@ h
 </path>
 <text layer="beta" transformations="translations" pos="256 368" stroke="black" type="label" width="5.187" height="4.289" depth="0" valign="baseline" style="math">v</text>
 <text transformations="translations" pos="403.969 404.114" stroke="black" type="label" width="0" height="0" depth="0" valign="baseline"></text>
-<text transformations="translations" pos="256 528" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="baseline" style="math">z_2</text>
-<use layer="alpha" matrix="1 0 0 1 4.90285 -23.974" name="mark/disk(sx)" pos="128.003 447.4" size="normal" stroke="black"/>
-<text matrix="1 0 0 1 0.198034 -3.13287" transformations="translations" pos="120.588 420.308" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="baseline" style="math">z_1</text>
-<text matrix="1 0 0 1 -12.4326 -3.24329" transformations="translations" pos="188.156 409.2" stroke="black" type="label" width="8.302" height="6.808" depth="0" valign="baseline" style="math">\Delta</text>
-<use name="mark/disk(sx)" pos="154.774 500.06" size="normal" stroke="black"/>
-<text transformations="translations" pos="149.655 510.984" stroke="black" type="label" width="4.67" height="4.289" depth="0" valign="baseline" style="math">s</text>
-<text matrix="1 0 0 1 -9.40812 -4.57693" transformations="translations" pos="193.398 524.319" stroke="black" type="label" width="45.554" height="6.919" depth="0.83" valign="baseline" style="math">m - \ell - \Delta</text>
+<text matrix="1 0 0 1 75.8433 -9.23531" transformations="translations" pos="256 528" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="baseline" style="math">z_2</text>
+<use layer="alpha" matrix="1 0 0 1 15.8187 -40.2779" name="mark/disk(sx)" pos="128.003 447.4" size="normal" stroke="black"/>
+<text matrix="1 0 0 1 7.36445 -16.0666" transformations="translations" pos="120.588 420.308" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="baseline" style="math">z_1</text>
+<text matrix="1 0 0 1 -121.55 -31.9701" transformations="translations" pos="256 528" stroke="black" type="label" width="4.67" height="4.289" depth="0" valign="baseline" style="math">s</text>
+<text matrix="1 0 0 1 -44.9435 -5.62028" transformations="translations" pos="313.055 526.464" stroke="black" type="label" width="53.302" height="7.473" depth="2.49" valign="baseline" style="math">\Delta - (m - \ell)</text>
+<text matrix="1 0 0 1 -50.0975 -59.5569" transformations="translations" pos="173.692 524.809" stroke="black" type="label" width="4.151" height="6.918" depth="0" valign="baseline" style="math">\ell</text>
+<use matrix="1 0 0 1 -36.2897 -21.8946" name="mark/disk(sx)" pos="178.905 510.646" size="normal" stroke="black"/>
+<text matrix="1 0 0 1 -38.4041 -9.53293" transformations="translations" pos="211.297 527.08" stroke="black" type="label" width="45.554" height="6.919" depth="0.83" valign="baseline">$m-\ell-\Delta$</text>
+<text matrix="1 0 0 1 -4.7612 -5.17502" transformations="translations" pos="182.699 375.915" stroke="black" type="label" width="8.302" height="6.808" depth="0" valign="baseline">$\Delta$</text>
 </page>
 </ipe>

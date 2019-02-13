@@ -31,6 +31,7 @@
 \usepackage{hyperref}
 \usepackage[pdftex]{graphicx}
 \usepackage{bm}
+\usepackage{color}
 %\usepackage{minted}
 
 %\usepackage{sxbfigxre}
@@ -133,11 +134,16 @@
 \makeatletter
 \@addtoreset{proofpart}{theorem}
 \makeatother
+EDIT:
+
+Define $u$, $v$ before using. (check)
+Define clockwise counter-clockwise distance. (ok)
+Define a zombie decision.
 
 \begin{definition}
  We define a family of graphs we call \emph{bifurcated cycles} and denote as $Q_{m,n}$.
  As the name suggests, bifurcated cycles are cycles of length $m+n$ with a single chord
- which divides the cycle into paths $P_1$ and $P_2$ of lengths $m$ and $n$.
+ which divides the cycle into paths $P_m$ and $P_n$ of lengths $m$ and $n$.
 \end{definition}
 
 \begin{center}
@@ -153,90 +159,364 @@ First, we show that a certain game state is a losing position for the survivor.
 Second, we show how to position the zombies at the start of the game so that --
 no matter where the survivor starts -- a losing position is inevitably reached.
 
-\begin{proofpart} Cornering the Survivor on a Cycle
+We use the following notation:
+Denote the paths of lengths $m$ and $n$ as $P_m$ and $P_n$ respectively.
+Let $u$ and $v$ be the endpoints of the chord.
+To simplify the discussion, we think of $Q_{m,n}$ as embed in the plane with $P_m$ -- the
+shortest side -- on the left.
+When we say (counter-)clockwise distance, we mean the length of the path
+along the outer cycle in that direction.
 
-Suppose that the game has reached the following state: the survivor is $P_1$,
+\begin{proofpart} Cornering the Survivor on the Smallest Cycle
+
+Suppose that the game has reached the following state:
 the first zombie is on $v$, and the second
-zombie is at a distance of $\Delta$ from $u$. Denote the length of the clockwise
-path from $v$ to $s$ as $\ell$. Note that we must have $2 \leq \ell \leq m-1$,
-else the survivor is caught.
+zombie is on $P_n$ at clockwise distance of $\Delta$ from $u$ and the survivor
+is somewhere on $P_m \setminus N(v)$. Denote the length of the clockwise
+path from $v$ to $s$ as $\ell$. Note that we must have $2 \leq \ell \leq m-1$ else the survivor loses on the next round.
 
 \begin{center}
  \includegraphics[scale=0.20]{diagram1}
 \end{center}
 
-A. $z_1$ goes clockwise if
+We can assume that the survivor will move away from
+$z_1$ and keep a distance of $\ell$ (or $m-\ell +1$) since any other strategy such as waiting a turn or moving backwards is
+equivalent to starting with a smaller (or larger) value of $\ell$.
 
-\[ l \leq 1 + m - \ell \]
-\[ 4 \leq 2 \ell \leq m + 1 \]
+EDIT for precision and clarity:
 
-B. $z_2$ goes counter-clockwise if
+Because $z_1$ and $s$ are on the sub-cycle $C_{m+1}$ formed by
+$P_m + \{uv\}$, $z_1$'s move on the next turn depends on the
+value of $\ell$. If $2\ell < m+1$ then $z_1$ goes clockwise
+on the subcycle. If $2\ell > m+1$ then $z_1$ takes the chord and
+goes counter-clockwise.  If we have equality, then $z_1$ may
+choose either direction since both are paths of equal lengths.
 
-\[ 1 + m - \ell \leq \ell \]
-\[ m + 1 \leq 2 \ell \leq 2m - 2 \]
+We assume that once $z_1$ picks a direction, it continues in that direction.
+Either the zombie has no choice, since there is only one shortest zombie-survivor
+path, or both directions around the cycle have the same length and so
+may continue in the same direction.
 
-Assume first that $z_1$ goes clockwise.
+We will examine all combinations of the possible decisions
+made by the zombies from this configuration:
 
-There are four posible $z_2s$-paths. We wish to guarantee that $z_2$ will follow
-the $\Delta$-path towards $u$, which translates into the following inequalities:
+\begin{itemize}
+  \item I. $z_2$ goes counter-clockwise
+  \item II. $z_2$ goes clockwise.
+  \item A. $z_1$ goes clockwise
+  \item B. $z_1$ goes counter-clockwise
+\end{itemize}
 
-\[  \Delta + (m - \ell) \leq n - \Delta + 1 + m - \ell \]
-\begin{center}and\end{center}
-\[ \Delta + (m - \ell) \leq n - \Delta + \ell \]
+For $z_2$, there are four possible shortest paths to the survivor:
 
-or
+\begin{itemize}
+  \item $P_a$ of length $\Delta + (m - \ell)$
+  \item $P_b$ of length $\Delta + 1 + \ell$
+  \item $P_c$ of length $(n-\Delta) + 1 + (m-\ell)$
+  \item $P_d$ of length $(n-\Delta) + \ell$
+\end{itemize}
 
-\[ \Delta + 1 + \ell \leq n - \Delta + 1 + m - \ell \]
-\begin{center}and\end{center}
-\[ \Delta + 1 + \ell \leq n - \Delta + \ell \]
+Comparing path lengths we see that:
 
-which can be simplified to
+\begin{itemize}
+\item[I.] $z_2$ chooses to move counter-clockwise if either $|P_a| \leq \min \{ |P_c|, |P_d| \}$ or $|P_b| \leq \min \{ |P_c|, |P_d| \}$.
 
-\[ 2 \Delta \leq n+1 \]
-\begin{center}and\end{center}
-\[ 2 \Delta \leq n - m + 2\ell \leq n+1 \]
+\item[II.] $z_2$ goes clockwise if either $|P_c| \leq \min \{ |P_a|, |P_b| \}$ or $|P_d| \leq \min \{ |P_a|, |P_d| \}$.
+\end{itemize}
 
-or
+Since $z_1$ is already on the same cycle as the survivor, it only has two options:
 
-\[ 2 \Delta \leq n+m -2 \ell \]
-\[ 2 \Delta \leq n -1 \leq n + m - 2\ell \]
+\begin{itemize}
+\item[A.] $z_1$ goes clockwise if $\ell \leq 1 + m - \ell$.
+Combined with the bounds on $\ell$, this gives $4 \leq 2 \ell \leq m + 1$
 
-Using assumption A.
+\item[B.] $z_1$ goes counter-clockwise if $1 + m - \ell \leq \ell$.
+Combined with the bounds on $\ell$, we obtain $m + 1 \leq 2 \ell \leq 2m - 2$
+\end{itemize}
 
-So we must have
-
-\[ 2 \Delta \leq n - m +2 \ell \]
-or
-\[ 2 \Delta \leq  n -1 \]
-
-i.e., for $z_2$ to behave we need:
-
-\[ 2 \Delta \leq \max \{ n - m +2\ell, n -1 \} \]
-Supposing $m \geq 5$, we then have
-
-\[ 2 \Delta \leq n-1 \]
-
-Now, after $\Delta$ turns we have either
-\begin{center}
- \includegraphics[scale=0.20]{diagram2}
-\end{center}
-or
-\begin{center}
- \includegraphics[scale=0.20]{diagram3}
-\end{center}
-
-So to guarantee that survivor is cornered, we need
+\textit{Case I.A} We have the following constraint on $\ell$ from
+assumption A.
 \begin{align*}
-  \Delta - (m- \ell) \leq 1 \\
-  \Delta \leq m - \ell + 1 \\
-  1 + \Delta + \ell \geq m - \ell - \Delta \\
-  2 \Delta \geq m - 2\ell  -1 \\
-  m - 2\ell -1 \leq 2 \Delta \leq 2m - 2\ell +2 \\
-  m - 4 - 1 \leq 2 \Delta \leq ?? \\
+  4 \leq 2 \ell \leq m + 1
+\end{align*}
+and the following constraints on $\Delta$ from assumption I.
+\begin{align*}
+  \Delta + (m - \ell) \leq & n - \Delta + 1 + m - \ell & \text{and}\\
+ \Delta + (m - \ell) \leq & n - \Delta + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+\Delta + 1 + \ell \leq &n - \Delta + 1 + m - \ell & \text{and} \\
+ \Delta + 1 + \ell \leq & n - \Delta + \ell
+\end{align*}
+These can be simplified further with a bit of algebra and  assumption A:
+\begin{align*}
+2 \Delta \leq & n+1 & \text{and} \\
+2 \Delta \leq & n - m + 2\ell \leq n+1
+\end{align*}
+or
+\begin{align*}
+2 \Delta \leq & n+m -2 \ell & \text{and} \\
+2 \Delta \leq & n -1 \leq n + m - 2\ell
 \end{align*}
 
+From which we obtain
 
+\begin{align*}
+2 \Delta \leq & n+1 & \text{or} \\
+2 \Delta \leq & n+m -2 \ell \\
+\end{align*}
 
+So for $z_2$ to follow either $P_a$ or $P_b$ we must have
+\[ 2 \Delta \leq \max \{ n - m +2\ell, n -1 \} \]
+
+Next we consider: which of $s$ or $z_2$ reaches $u$ first?
+If $\Delta = m - \ell$, then they both reach $u$ at the same time, with the survivor moving onto the $z_2$-occupied vertex (and losing).
+If we have $\Delta = m - \ell + 1$, then $s$ reaches $u$ first
+but is caught by $z_2$ on the following round.
+So, to guarantee the survivor has not escaped $P_m$ we need
+\begin{align*}
+  \Delta \leq & m- \ell + 1\\
+\end{align*}
+otherwise the survivor reaches the chord before $z_2$ can move
+to block. If the survivor reaches the chord first, then it could
+take the chord and possibly escape. (more detail??)
+
+Then, to ensure that $z_2$ continues counter-clockwise once
+it reaches $u$, we need
+\begin{align*}
+  m - \ell - \Delta \leq &1 + \Delta + \ell \\
+  2 \Delta \geq & m - 2\ell  -1 \\
+\end{align*}
+
+When we combine all the restrictions we obtain
+\begin{align*}
+m - 2\ell -1 \leq & 2 \Delta \leq \min \{ 2m - 2\ell +2, \max \{ n-1, n-m+2\ell \} \}& \text{and}\\
+4 \leq & 2 \ell \leq m + 1
+\end{align*}
+
+\textit{Case I.B}
+From assumption B and the constraint on $\ell$, we must have
+\begin{align*}
+  m + 1 \leq 2 \ell \leq 2m - 2
+\end{align*}
+and the constraints on $\Delta$ from assumption I are again:
+\begin{align*}
+  \Delta + (m - \ell) \leq & n - \Delta + 1 + m - \ell & \text{and}\\
+ \Delta + (m - \ell) \leq & n - \Delta + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+\Delta + 1 + \ell \leq &n - \Delta + 1 + m - \ell & \text{and} \\
+ \Delta + 1 + \ell \leq & n - \Delta + \ell
+\end{align*}
+
+These can be simplified using assumption B:
+\begin{align*}
+2 \Delta \leq & n+1 \leq n-m+2\ell & \text{and} \\
+2 \Delta \leq & n - m + 2\ell
+\end{align*}
+or
+\begin{align*}
+2 \Delta \leq & n+m -2 \ell \leq n-1 & \text{and} \\
+2 \Delta \leq & n -1
+\end{align*}
+
+EDIT: repeat simplified constraints (check)
+This gives
+\begin{align*}
+  2 \Delta \leq & n - m + 2 \ell & \text{or} \\
+  2 \Delta \leq & n - 1
+\end{align*}
+
+So
+\[ 2 \Delta \leq \max \{ n+1, n + m - 2\ell \} \]
+
+Again we must consider who reaches the chord first. We have assumed that $z_1$ is going counter-clockwise. If $\ell = \Delta$, then $z_2$ reaches $u$ and $s$ reaches $v$ on the same round, and therefore $s$ will be caught on the next. Therefore, to guarantee the survivor has not escaped $P_m$ in this scenario we need
+\begin{align*}
+  \Delta \leq & \ell
+\end{align*}
+otherwise the survivor reaches the chord before $z_2$ and
+could escape. d(EDIT: More details)
+
+Then, to ensure that $z_2$ takes the chord and goes clockwise once
+it reaches $u$, we need
+\begin{align*}
+  1 + \ell - \Delta \leq & \Delta -1 + m - \ell + 1 \\
+  2\ell - m + 1 \leq & 2 \Delta
+\end{align*}
+
+We now combine all the restrictions. This case is characterized by
+\begin{align*}
+  2\ell - m + 1 \leq & 2 \Delta \leq \min \{ 2\ell, \max \{ n-1, n-m+2\ell \} &\text{and}\\
+m + 1 \leq & 2 \ell \leq 2m -2
+\end{align*}
+
+\textit{Case II.A} We have the following constraint on $\ell$ from
+assumption A.
+\begin{align*}
+  4 \leq 2 \ell \leq m + 1
+\end{align*}
+and the following constraints on $\Delta$ from assumption II.
+\begin{align*}
+  n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+  n - \Delta + \ell \leq & \Delta + 1 + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+\end{align*}
+These can be simplified further with a bit of algebra and assumption A:
+\begin{align*}
+n-m +2\ell \leq & 2 \Delta & \text{and} \\
+n-1 \leq & 2\Delta
+\end{align*}
+or
+\begin{align*}
+n + 1 \leq & 2 \Delta & \text{and} \\
+n + m - 2\ell \leq & 2 \Delta
+\end{align*}
+
+These inequalites are of the form
+\begin{align*}
+  n-x \leq & 2 \Delta & \text{and} \\
+  n-1 \leq & 2\Delta
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+n + x \leq & 2 \Delta & \text{and} \\
+n + 1 \leq & 2 \Delta
+\end{align*}
+
+Where $x = m -2\ell$.
+
+Supposing $x\geq 0$, we have
+\begin{align*}
+n-x \leq & n+x \leq 2 \Delta & \text{and} \\
+n-1 \leq & n+1 \leq 2\Delta
+\end{align*}
+
+Whereas if $x <0$, then from assumption A we must have $m-2\ell = -1$, so that
+our constraints reduce to
+\begin{align*}
+  n+1 \leq & 2 \Delta & \text{and}\\
+  n-1 \leq & 2 \Delta
+\end{align*}
+Thus, in any case we must have
+\begin{align*}
+  \max\{ n-x, n-1 \} \leq & 2 \Delta \\
+  \max\{ n -m + 2\ell, n-1 \} \leq & 2 \Delta
+\end{align*}
+
+Again we must consider who reaches the chord first. We have assumed that $z_1$ is going clockwise. If $m - \ell = n - \Delta$, then $z_2$ reaches $v$ and $s$ reaches $u$ on the same round, and therefore $s$ will be caught on the next. Therefore, to guarantee the survivor has not escaped $P_m$ in this scenario we need
+\begin{align*}
+  m - \ell \leq & n - \Delta \\
+  \Delta \leq & n - m + \ell
+\end{align*}
+otherwise the survivor reaches the chord before $z_2$ and
+could escape. (EDIT: More details)
+
+Then, to ensure that $z_2$ takes the chord and goes counter-clockwise once
+it reaches $v$, we need
+\begin{align*}
+  1 + m - \ell - (n - \Delta) \leq & n - \Delta + \ell \\
+\end{align*}
+Solving for $2\Delta$ gives
+\begin{align*}
+  2 \Delta \leq & 2n + 2\ell - m - 1
+\end{align*}
+
+We now combine all the restrictions. This case is characterized by
+\begin{align*}
+  \max\{ n -m + 2\ell, n-1 \} \leq & 2 \Delta \leq \min\{2n + 2\ell - m - 1, 2n - 2m + 2\ell \} \\
+\end{align*}
+
+\textit{Case II.B}  We have the following constraint on $\ell$ from
+assumption B.
+\begin{align*}
+  m + 1 \leq 2 \ell \leq 2m - 2
+\end{align*}
+and the following constraints on $\Delta$ from assumption II.
+\begin{align*}
+  n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+  n - \Delta + \ell \leq & \Delta + 1 + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+\end{align*}
+These can be simplified further with a bit of algebra and assumption B:
+\begin{align*}
+n-m+2\ell \leq & 2 \Delta & \text{and} \\
+n-1 \leq & 2\Delta
+\end{align*}
+or
+\begin{align*}
+n+1 \leq & 2 \Delta & \text{and} \\
+n+m-2\ell  \leq & n-1 \leq 2 \Delta
+\end{align*}
+
+These inequalites are of the form
+\begin{align*}
+  n-x \leq & 2 \Delta & \text{and} \\
+  n-1 \leq & 2\Delta
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+n + x \leq & 2 \Delta & \text{and} \\
+n + 1 \leq & 2 \Delta
+\end{align*}
+
+Where $x = m -2\ell$. Now since assumption B gives $m - 2\ell \leq -1$, we
+see that
+\begin{align*}
+  n-1 \leq & n-x \leq 2 \Delta \\
+  &\text{or} \\
+  n+x \leq & n+1 \leq 2 \Delta
+\end{align*}
+
+From which we conclude that $n+1 \leq 2 \Delta$.
+
+Now we consider: which of $s$ or $z_2$ reaches $v$ first?
+If $n - \Delta = \ell$, then they both reach $u$ at the same time,
+with the survivor moving onto the $z_2$-occupied vertex (and losing).
+If we have $n - \Delta = \ell + 1$, then $s$ reaches $u$ first
+but is caught by $z_2$ on the following round.
+So, to guarantee the survivor has not escaped $P_m$ we need
+\begin{align*}
+  n - \Delta \leq & \ell + 1\\
+\end{align*}
+otherwise the survivor reaches the chord before $z_2$ can move
+to block. If the survivor reaches the chord first, then it could
+take the chord and possibly escape. (more detail??)
+
+Then, to ensure that $z_2$ takesgoes clockwise once
+it reaches $v$, we need
+\begin{align*}
+  \ell - (n - \Delta) \leq & 1 + (n - \Delta - 1) + (m - \ell + 1)
+\end{align*}
+
+Solving for $2\Delta$ gives
+\begin{align*}
+  2 \Delta \leq & 2n + m - 2\ell + 1
+\end{align*}
+
+We now combine all the restrictions. This case is characterized by
+\begin{align*}
+  n + 1 \leq & 2 \Delta \\
+  2 \Delta \leq & 2n - 2 \ell -2 \\
+  2 \Delta \leq & 2n + m - 2\ell +1
+\end{align*}
+
+So
+\begin{align*}
+  n + 1 \leq & 2 \Delta \leq 2n - 2\ell -2
+\end{align*}
+
+Now: group up all inequalities, color coding whether they represent
+which case we are in, or whether survivor could win.
 \end{proofpart}
 
 \end{proof}
