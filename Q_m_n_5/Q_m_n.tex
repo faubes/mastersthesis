@@ -136,14 +136,11 @@
 \makeatother
 EDIT:
 
-Define $u$, $v$ before using. (check)
-Define clockwise counter-clockwise distance. (ok)
-Define a zombie decision.
 
 \begin{definition}
  We define a family of graphs we call \emph{bifurcated cycles} and denote as $Q_{m,n}$.
  As the name suggests, bifurcated cycles are cycles of length $m+n$ with a single chord
- which divides the cycle into paths $P_m$ and $P_n$ of lengths $m$ and $n$.
+ which divides the cycle into paths $P_m$ and $P_n$ of lengths $m$ and $n$, $m \leq n$.
 \end{definition}
 
 \begin{center}
@@ -159,31 +156,44 @@ First, we show that a certain game state is a losing position for the survivor.
 Second, we show how to position the zombies at the start of the game so that --
 no matter where the survivor starts -- a losing position is inevitably reached.
 
-We use the following notation:
-Denote the paths of lengths $m$ and $n$ as $P_m$ and $P_n$ respectively.
-Let $u$ and $v$ be the endpoints of the chord.
-To simplify the discussion, we think of $Q_{m,n}$ as embed in the plane with $P_m$ -- the
-shortest side -- on the left.
-When we say (counter-)clockwise distance, we mean the length of the path
-along the outer cycle in that direction.
+We use the following notation.
+Denote as $P_m$ and $P_n$ the paths of lengths $m$ and $n$ respectively.
+Call the endpoints for the chord $u$ and $v$.
+We think of $Q_{m,n}$ as embbeded in the plane with $P_m$
+-- the shortest side -- on the left.
+This does not limit the generality of the following and allows us to define (counter-)clockwise distance: the length of the path
+along the outer cycle with respect to this embedding.
+
+Following the rules of the game, the zombies always move along a shortest path toward the survivor we call $zs$-paths. Let
+$Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ be the set of $i$ different $zs$-paths of length $\ell$ for zombie $k$.
+
+There is at least one such path since our graph is presumed connected,
+thus $1 \leq i \leq p$.
+
+If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
+include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
+
+If, however, there are multiple $zs$-paths which have different first moves,
+then the zombie could make multiple moves.
+
+If $P_1$ and $P_2$ as two possible $zs$-paths with distinct next moves then
+\[ |P_1| \leq |P_2| \]
+In our argument we will suppose that the zombie follows $|P_1|$ since that
+is a valid move.
 
 \begin{proofpart} Cornering the Survivor on the Smallest Cycle
 
 Suppose that the game has reached the following state:
-the first zombie is on $v$, and the second
-zombie is on $P_n$ at clockwise distance of $\Delta$ from $u$ and the survivor
-is somewhere on $P_m \setminus N(v)$. Denote the length of the clockwise
-path from $v$ to $s$ as $\ell$. Note that we must have $2 \leq \ell \leq m-1$ else the survivor loses on the next round.
-
+\begin{itemize}
+\item the first zombie is on an endpoint of the chord, say $v$
+\item the second zombie is $\Delta$ vertices away from $u$, the other endpoint (counting clockwise from $u$ to $z_2$).
+\item the survivor is somewhere on $P_m \setminus N(v)$.
+\end{itemize}
+Denote as $\ell$ the length of the clockwise
+path from $z_1 = v$ to $s$. Note that we must have $2 \leq \ell \leq m-1$ else the survivor loses on the next round.
 \begin{center}
  \includegraphics[scale=0.20]{diagram1}
 \end{center}
-
-We can assume that the survivor will move away from
-$z_1$ and keep a distance of $\ell$ (or $m-\ell +1$) since any other strategy such as waiting a turn or moving backwards is
-equivalent to starting with a smaller (or larger) value of $\ell$.
-
-EDIT for precision and clarity:
 
 Because $z_1$ and $s$ are on the sub-cycle $C_{m+1}$ formed by
 $P_m + \{uv\}$, $z_1$'s move on the next turn depends on the
@@ -192,10 +202,17 @@ on the subcycle. If $2\ell > m+1$ then $z_1$ takes the chord and
 goes counter-clockwise.  If we have equality, then $z_1$ may
 choose either direction since both are paths of equal lengths.
 
-We assume that once $z_1$ picks a direction, it continues in that direction.
-Either the zombie has no choice, since there is only one shortest zombie-survivor
-path, or both directions around the cycle have the same length and so
-may continue in the same direction.
+We assume that once $z_1$ chooses a direction on its move from $v$,
+that it will continue in that direction:
+either the zombie has no choice, having been captured in the survivor's orbit,
+or both directions around the cycle are of the same length (and so
+may continue in the same direction).
+
+We can also assume that on its turn the survivor will move away from
+$z_1$ and keep a distance of $\ell$ (or $m-\ell +1$).
+Any strategy involving waiting a turn or moving backwards is
+equivalent to a survivor strategy which always moves
+ starting with a smaller (or larger) value of $\ell$.
 
 We will examine all combinations of the possible decisions
 made by the zombies from this configuration:
@@ -205,6 +222,16 @@ made by the zombies from this configuration:
   \item II. $z_2$ goes clockwise.
   \item A. $z_1$ goes clockwise
   \item B. $z_1$ goes counter-clockwise
+\end{itemize}
+
+Since $z_1$ is already on the same cycle as the survivor, it only has two options:
+
+\begin{itemize}
+\item[A.] $z_1$ goes clockwise if $\ell \leq 1 + m - \ell$.
+Combined with the bounds on $\ell$, this gives $4 \leq 2 \ell \leq m + 1$
+
+\item[B.] $z_1$ goes counter-clockwise if $1 + m - \ell \leq \ell$.
+Combined with the bounds on $\ell$, we obtain $m + 1 \leq 2 \ell \leq 2m - 2$
 \end{itemize}
 
 For $z_2$, there are four possible shortest paths to the survivor:
@@ -219,19 +246,9 @@ For $z_2$, there are four possible shortest paths to the survivor:
 Comparing path lengths we see that:
 
 \begin{itemize}
-\item[I.] $z_2$ chooses to move counter-clockwise if either $|P_a| \leq \min \{ |P_c|, |P_d| \}$ or $|P_b| \leq \min \{ |P_c|, |P_d| \}$.
+\item[I.] $z_2$ moves counter-clockwise if either $|P_a| \leq \min \{ |P_c|, |P_d| \}$ or $|P_b| \leq \min \{ |P_c|, |P_d| \}$.
 
-\item[II.] $z_2$ goes clockwise if either $|P_c| \leq \min \{ |P_a|, |P_b| \}$ or $|P_d| \leq \min \{ |P_a|, |P_d| \}$.
-\end{itemize}
-
-Since $z_1$ is already on the same cycle as the survivor, it only has two options:
-
-\begin{itemize}
-\item[A.] $z_1$ goes clockwise if $\ell \leq 1 + m - \ell$.
-Combined with the bounds on $\ell$, this gives $4 \leq 2 \ell \leq m + 1$
-
-\item[B.] $z_1$ goes counter-clockwise if $1 + m - \ell \leq \ell$.
-Combined with the bounds on $\ell$, we obtain $m + 1 \leq 2 \ell \leq 2m - 2$
+\item[II.] $z_2$ goes clockwise if either $|P_c| \leq \min \{ |P_a|, |P_b| \}$ or $|P_d| \leq \min \{ |P_a|, |P_b| \}$.
 \end{itemize}
 
 \textit{Case I.A} We have the following constraint on $\ell$ from
@@ -259,14 +276,11 @@ or
 2 \Delta \leq & n+m -2 \ell & \text{and} \\
 2 \Delta \leq & n -1 \leq n + m - 2\ell
 \end{align*}
-
 From which we obtain
-
 \begin{align*}
-2 \Delta \leq & n+1 & \text{or} \\
-2 \Delta \leq & n+m -2 \ell \\
+2 \Delta \leq & n - m + 2\ell & \text{or} \\
+2 \Delta \leq & n - 1 \\
 \end{align*}
-
 So for $z_2$ to follow either $P_a$ or $P_b$ we must have
 \[ 2 \Delta \leq \max \{ n - m +2\ell, n -1 \} \]
 
@@ -322,11 +336,10 @@ or
 2 \Delta \leq & n -1
 \end{align*}
 
-EDIT: repeat simplified constraints (check)
 This gives
 \begin{align*}
-  2 \Delta \leq & n - m + 2 \ell & \text{or} \\
-  2 \Delta \leq & n - 1
+  2 \Delta \leq & n + 1 & \text{or} \\
+  2 \Delta \leq & n + m - 2\ell
 \end{align*}
 
 So
@@ -337,7 +350,7 @@ Again we must consider who reaches the chord first. We have assumed that $z_1$ i
   \Delta \leq & \ell
 \end{align*}
 otherwise the survivor reaches the chord before $z_2$ and
-could escape. d(EDIT: More details)
+could escape.
 
 Then, to ensure that $z_2$ takes the chord and goes clockwise once
 it reaches $u$, we need
@@ -367,7 +380,7 @@ and the following constraints on $\Delta$ from assumption II.
 n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
  n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
 \end{align*}
-These can be simplified further with a bit of algebra and assumption A:
+These can be simplified further with a bit of algebra:
 \begin{align*}
 n-m +2\ell \leq & 2 \Delta & \text{and} \\
 n-1 \leq & 2\Delta
@@ -447,7 +460,7 @@ and the following constraints on $\Delta$ from assumption II.
 n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
  n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
 \end{align*}
-These can be simplified further with a bit of algebra and assumption B:
+These can be simplified further with a bit of algebra:
 \begin{align*}
 n-m+2\ell \leq & 2 \Delta & \text{and} \\
 n-1 \leq & 2\Delta
@@ -455,7 +468,7 @@ n-1 \leq & 2\Delta
 or
 \begin{align*}
 n+1 \leq & 2 \Delta & \text{and} \\
-n+m-2\ell  \leq & n-1 \leq 2 \Delta
+n+m-2\ell  \leq & 2 \Delta
 \end{align*}
 
 These inequalites are of the form
@@ -465,8 +478,8 @@ These inequalites are of the form
 \end{align*}
 \begin{center}or\end{center}
 \begin{align*}
-n + x \leq & 2 \Delta & \text{and} \\
-n + 1 \leq & 2 \Delta
+n + 1 \leq & 2 \Delta & \text{and} \\
+n + x \leq & 2 \Delta
 \end{align*}
 
 Where $x = m -2\ell$. Now since assumption B gives $m - 2\ell \leq -1$, we
@@ -517,7 +530,11 @@ So
 
 Now: group up all inequalities, color coding whether they represent
 which case we are in, or whether survivor could win.
+
+
 \end{proofpart}
+
+
 
 \end{proof}
 \end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  14 FEB 2019 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  14 FEB 2019 14:29
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Q_m_n.tex
-(/home/joel/masters/Q_m_n_5/Q_m_n.tex
+**summary_cases_old.tex
+(/home/joel/masters/Q_m_n_5/summary_cases_old.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -399,8 +399,8 @@ Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
-) (/home/joel/masters/Q_m_n_5/Q_m_n.aux)
-\openout1 = `Q_m_n.aux'.
+) (/home/joel/masters/Q_m_n_5/summary_cases_old.aux)
+\openout1 = `summary_cases_old.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
 LaTeX Font Info:    ... okay on input line 125.
@@ -465,9 +465,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 125.
 LaTeX Info: Redefining \pageref on input line 125.
 LaTeX Info: Redefining \nameref on input line 125.
- (/home/joel/masters/Q_m_n_5/Q_m_n.out) (/home/joel/masters/Q_m_n_5/Q_m_n.out)
+ (/home/joel/masters/Q_m_n_5/summary_cases_old.out) (/home/joel/masters/Q_m_n_5/summary_cases_old.out)
 \@outlinefile=\write4
-\openout4 = `Q_m_n.out'.
+\openout4 = `summary_cases_old.out'.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -500,65 +500,47 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \c@corollary=\count151
 \c@lemma=\count152
 \c@proofpart=\count153
-LaTeX Font Info:    Try loading font information for U+esvect on input line 141.
+LaTeX Font Info:    Try loading font information for U+esvect on input line 140.
  (/usr/share/texlive/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 141.
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 141.
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 141.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 140.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-<Q_m_n_basic.png, id=4, 1704.3675pt x 905.3825pt>
-File: Q_m_n_basic.png Graphic file (type png)
-<use Q_m_n_basic.png>
-Package pdftex.def Info: Q_m_n_basic.png  used on input line 147.
-(pdftex.def)             Requested size: 340.86746pt x 181.07329pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </home/joel/masters/Q_m_n_5/Q_m_n_basic.png>]
-<diagram1.png, id=21, 1687.30376pt x 816.04875pt>
-File: diagram1.png Graphic file (type png)
-<use diagram1.png>
-Package pdftex.def Info: diagram1.png  used on input line 195.
-(pdftex.def)             Requested size: 337.45477pt x 163.20685pt.
- [2 </home/joel/masters/Q_m_n_5/diagram1.png>] [3] [4] [5] [6] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 540.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 540.
- (/home/joel/masters/Q_m_n_5/Q_m_n.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 540.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 540.
-Package rerunfilecheck Info: File `Q_m_n.out' has not changed.
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
+ (/home/joel/masters/Q_m_n_5/summary_cases_old.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
+Package rerunfilecheck Info: File `summary_cases_old.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 540.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 8469 strings out of 492982
- 124353 string characters out of 6134895
- 234015 words of memory out of 5000000
- 11883 multiletter control sequences out of 15000+600000
- 9192 words of font info for 38 fonts, out of 8000000 for 9000
+ 8424 strings out of 492982
+ 123875 string characters out of 6134895
+ 231063 words of memory out of 5000000
+ 11854 multiletter control sequences out of 15000+600000
+ 8846 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,13n,43p,330b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/joel/masters/Q_m_n_5/Q_m_n.pdf (8 pages, 175987 bytes).
+ 33i,13n,43p,331b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on /home/joel/masters/Q_m_n_5/summary_cases_old.pdf (2 pages, 38939 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 29 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
