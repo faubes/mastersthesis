@@ -31,7 +31,8 @@
 \usepackage{hyperref}
 \usepackage[pdftex]{graphicx}
 \usepackage{bm}
-\usepackage{minted}
+\usepackage{color}
+%\usepackage{minted}
 
 %\usepackage{sxbfigxre}
 
@@ -56,7 +57,7 @@
 
 \lhead{Prof. Jean-Lou De Carufel }
 \rhead{Jo\"el Faubert \\ Student \# 2560106}
-\chead{Zombies \& Survivors Working Document \\ 29-5-2018}
+\chead{Zombies \& Survivors Working Document \\ 10-7-2018}
 \rfoot{\today}
 \fancyhfoffset[l]{40pt}
 \fancyhfoffset[r]{40pt}
@@ -118,482 +119,635 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
-\setlist[enumerate]{itemsep=10pt, partopsep=5pt, parsep=10pt}
-\setlist[itemize]{itemsep=5pt, partopsep=5pt, parsep=10pt}
+\setlist[enumerate]{itemsep=0pt, partopsep=5pt, parsep=0pt}
+\setlist[itemize]{itemsep=0pt, partopsep=5pt, parsep=0pt}
 
 \begin{document}
 
+\theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
+\newtheorem{proofpart}{Part}
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
+
+EDITS: Conjecture on upper and lower bounds of Delta
+
+Prove said conjecture
+
+Modify code to remove values of delta which will not permit offset for general zombie start
+
+Find all possible zombie positions where $z_2$ starts on smaller cycle.
+
+Run Floyd-Warshall on torus grid.
+
+Recurse backwards from "zombie loss" positions to find all losing zombie positions
+
+\section{Zombie number of cycle with one chord $Q_{m,n}$}
+
+We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
 \begin{definition}
- We define a family of graphs we call \emph{bifurcated cycles} and denote as $Q_{m,n}$.
- As the name suggests, bifurcated cycles are cycles of length $m+n$ with a single chord
- which divides the cycle into paths $P_1$ and $P_2$ of lengths $m$ and $n$.
+ Take a cycle of length $m+n$ and add a chord which
+ divides the cycle into paths $P_m$ and $P_n$ of lengths $m$ and $n$.
+ Without loss of generality $m \leq n$. We denote such a cycle as $Q_{m,n}$.
 \end{definition}
 
 \begin{center}
- \includegraphics[scale=0.20]{Q_m_n}
-
- $Q_{m,n}$
+ \includegraphics[scale=0.20]{Q_m_n_basic}
 \end{center}
 
-\begin{enumerate}
+\begin{theorem}
+ The single-chord cycle $Q_{m,n}$ is 2-zombie win.
+\end{theorem}
+
+\begin{proof}
+ First, we show that a certain game state is a losing position for the survivor.
+ Second, we show how to position the zombies at the start of the game so that --
+ no matter where the survivor starts -- a losing position is inevitably reached.
+
+ We use the following notation.
+ Denote as $P_m$ and $P_n$ the paths of lengths $m$ and $n$ respectively.
+ Call the endpoints for the chord $u$ and $v$.
+ We think of $Q_{m,n}$ as embbeded in the plane with $P_m$
+ -- the shortest side -- on the left.
+ This does not limit the generality of the following and allows us to define (counter-)clockwise distance: the length of the path
+ along the outer cycle with respect to this embedding.
+
+ Following the rules of the game, the zombies always move along a shortest path toward the survivor we call $zs$-paths. Let
+ $Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ be the set of $i$ different $zs$-paths of length $\ell$ for zombie $k$.
+
+ There is at least one such path since our graph is presumed connected,
+ thus $1 \leq i \leq p$.
+
+ If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
+ include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
+
+ If, however, there are multiple $zs$-paths which have different first moves,
+ then the zombie could make multiple moves.
+
+ If $P_1$ and $P_2$ are two possible $zs$-paths with distinct next moves and
+ \[ |P_1| \leq |P_2| \]
+ then our argument we will suppose that the zombie follows $|P_1|$ since that is a valid move.
+
+ \newpage
+
+ \begin{proofpart} Cornering the Survivor on the Smallest Cycle
+
+  Suppose that the game has reached the following state:
+  \begin{itemize}
+   \item the first zombie is on an endpoint of the chord, say $v$
+   \item the second zombie is $\Delta$ vertices away from $u$, the other endpoint (counting clockwise from $u$ to $z_2$).
+   \item the survivor is somewhere on $P_m \setminus N(v)$.
+  \end{itemize}
+  Denote as $\ell$ the length of the clockwise
+  path from $z_1 = v$ to $s$. Note that we must have $2 \leq \ell \leq m-1$ else the survivor loses on the next round.
+  \begin{center}
+   \includegraphics[scale=0.20]{diagram1}
+  \end{center}
+
+  Because $z_1$ and $s$ are on the sub-cycle $C_{m+1}$ formed by
+  $P_m + \{uv\}$, $z_1$'s move on the next turn depends on the
+  value of $\ell$. If $2\ell < m+1$ then $z_1$ goes clockwise
+  on the subcycle. If $2\ell > m+1$ then $z_1$ takes the chord and
+  goes counter-clockwise.  If we have equality, then $z_1$ may
+  choose either direction since both are paths of equal lengths.
+
+  We assume that once $z_1$ chooses a direction on its move from $v$,
+  that it will continue in that direction:
+  either the zombie has no choice or both directions around
+  the cycle are of the same length (and so
+  may continue in the same direction).
+
+  We can also assume that on its turn the survivor will move away from
+  $z_1$ and keep a distance of $\ell$ (or $m-\ell +1$):
+  any winning survivor strategy involving waiting a turn
+  or moving backwards is equivalent to a survivor strategy which always moves but starts with a smaller (or larger) value of $\ell$.
+
+  Since $z_1$ is already on the same cycle as the survivor, it only has two options:
+
+  \begin{itemize}
+   \item[A.] $z_1$ goes clockwise if $\ell \leq 1 + m - \ell$.
+         Combined with the bounds on $\ell$, this gives $4 \leq 2 \ell \leq m + 1$
+
+   \item[B.] $z_1$ goes counter-clockwise if $1 + m - \ell \leq \ell$.
+         Combined with the bounds on $\ell$, we obtain $m + 1 \leq 2 \ell \leq 2m - 2$
+  \end{itemize}
+
+  For $z_2$, there are four possible shortest paths to the survivor:
+
+  \begin{itemize}
+   \item $P_a$ of length $\Delta + (m - \ell)$
+   \item $P_b$ of length $\Delta + 1 + \ell$
+   \item $P_c$ of length $(n-\Delta) + 1 + (m-\ell)$
+   \item $P_d$ of length $(n-\Delta) + \ell$
+  \end{itemize}
+
+  Comparing path lengths we see that:
+
+  \begin{itemize}
+   \item[I.] $z_2$ moves counter-clockwise if either $|P_a| \leq \min \{ |P_c|, |P_d| \}$ or $|P_b| \leq \min \{ |P_c|, |P_d| \}$.
+
+   \item[II.] $z_2$ goes clockwise if either $|P_c| \leq \min \{ |P_a|, |P_b| \}$ or $|P_d| \leq \min \{ |P_a|, |P_b| \}$.
+  \end{itemize}
+
+  We will examine all combinations of the possible decisions
+  made by the zombies from this configuration:
+
+  \begin{itemize}
+   \item I. $z_2$ goes counter-clockwise
+   \item II. $z_2$ goes clockwise.
+   \item A. $z_1$ goes clockwise
+   \item B. $z_1$ goes counter-clockwise
+  \end{itemize}
+
+  \textit{Case I.A} We have the following constraint on $\ell$ from
+  assumption A.
+  \begin{align*}
+   4 \leq 2 \ell \leq m + 1
+  \end{align*}
+  and the following constraints on $\Delta$ from assumption I.
+  \begin{align*}
+   \Delta + (m - \ell) \leq & n - \Delta + 1 + m - \ell & \text{and} \\
+   \Delta + (m - \ell) \leq & n - \Delta + \ell
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   \Delta + 1 + \ell \leq & n - \Delta + 1 + m - \ell & \text{and} \\
+   \Delta + 1 + \ell \leq & n - \Delta + \ell
+  \end{align*}
+  These can be simplified further with a bit of algebra and  assumption A:
+  \begin{align*}
+   2 \Delta \leq & n+1                    & \text{and} \\
+   2 \Delta \leq & n - m + 2\ell \leq n+1
+  \end{align*}
+  or
+  \begin{align*}
+   2 \Delta \leq & n+m -2 \ell             & \text{and} \\
+   2 \Delta \leq & n -1 \leq n + m - 2\ell
+  \end{align*}
+  So for $z_2$ to follow either $P_a$ or $P_b$ and go counter-clockwise we must have
+  \begin{align*}
+   2 \Delta \leq & n - m + 2\ell & \text{or} \\
+   2 \Delta \leq & n - 1                     \\
+  \end{align*}
+
+  Next we consider: which of $s$ or $z_2$ reaches $u$ first?
+  If $\Delta = m - \ell$ both reach $u$ at the same time, with the survivor moving onto the $z_2$-occupied vertex (and losing).
+  If we have $\Delta = m - \ell + 1$, then $s$ reaches $u$ first
+  but is caught by $z_2$ on the following round.
+  So, to guarantee the survivor has not escaped $P_m$ we need
+  \begin{align*}
+   \Delta \leq & m- \ell + 1 \\
+  \end{align*}
+  otherwise the survivor reaches the chord at least two rounds
+  before $z_2$ can move to block. We wish to prevent this scenario since
+  the survivor could then take the chord and possibly escape, pulling
+  both zombies into a loop on $C_{n}$.
+
+  Lastly, to ensure that $z_2$ moves counter-clockwise once
+  it reaches $u$ and traps the survivor we need
+  \begin{align*}
+   m - \ell - \Delta \leq & 1 + \Delta + \ell \\
+   2 \Delta \geq          & m - 2\ell  -1     \\
+  \end{align*}
+
+  When we combine all the restrictions we obtain
+
+  \textit{Case I.A. Summary}
+
+  $z_1$ goes clockwise:
+  \begin{align*}
+   4 \leq & 2 \ell \leq m + 1
+  \end{align*}
+  and $z_2$ goes counter-clockwise
+  \begin{align*}
+   2 \Delta \leq & n - m + 2\ell & \text{or} \\
+   2 \Delta \leq & n - 1                     \\
+  \end{align*}
+  the zombies win:
+  \begin{align*}
+   2 \Delta \leq      & 2 m- 2 \ell + 2 & \text{and} \\
+   m - 2\ell  -1 \leq & 2 \Delta                     \\
+  \end{align*}
+
+  \textit{Case I.B}
+  From assumption B and the constraint on $\ell$, we must have
+  \begin{align*}
+   m + 1 \leq 2 \ell \leq 2m - 2
+  \end{align*}
+  and the constraints on $\Delta$ from assumption I are again:
+  \begin{align*}
+   \Delta + (m - \ell) \leq & n - \Delta + 1 + m - \ell & \text{and} \\
+   \Delta + (m - \ell) \leq & n - \Delta + \ell
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   \Delta + 1 + \ell \leq & n - \Delta + 1 + m - \ell & \text{and} \\
+   \Delta + 1 + \ell \leq & n - \Delta + \ell
+  \end{align*}
+
+  These can be simplified using assumption B:
+  \begin{align*}
+   2 \Delta \leq & n+1 \leq n-m+2\ell & \text{and} \\
+   2 \Delta \leq & n - m + 2\ell
+  \end{align*}
+  or
+  \begin{align*}
+   2 \Delta \leq & n+m -2 \ell \leq n-1 & \text{and} \\
+   2 \Delta \leq & n -1
+  \end{align*}
+
+  So for $z_2$ to go counter-clockwise in this case we must have
+  \begin{align*}
+   2 \Delta \leq & n + 1         & \text{or} \\
+   2 \Delta \leq & n + m - 2\ell
+  \end{align*}
+
+  Again we must consider who reaches the chord first. We have assumed that $z_1$ is going counter-clockwise. If $\ell = \Delta$, then $z_2$ reaches $u$ and $s$ reaches $v$ on the same round, and therefore $s$ will be caught on the next. Therefore, to guarantee the survivor has not escaped $P_m$ in this scenario we need
+  \begin{align*}
+   \Delta \leq & \ell
+  \end{align*}
+  otherwise the survivor reaches the chord before $z_2$ and
+  could escape.
+
+  Then, to ensure that $z_2$ traps the survivor by going clockwise once
+  it reaches $u$ we need
+  \begin{align*}
+   1 + \ell - \Delta \leq & \Delta -1 + m - \ell + 1 \\
+   2\ell - m + 1 \leq     & 2 \Delta
+  \end{align*}
+
+  \textit{Case I.B. Summary}
+
+  $z_1$ goes counter-clockwise:
+  \begin{align*}
+   m + 1 \leq 2 \ell \leq 2m - 2
+  \end{align*}
+  and $z_2$ goes counter-clockwise
+  \begin{align*}
+   2 \Delta \leq & n + 1         & \text{or} \\
+   2 \Delta \leq & n + m - 2\ell
+  \end{align*}
+  the zombies win:
+  \begin{align*}
+   2 \Delta \leq      & 2 \ell   \\
+   2\ell - m + 1 \leq & 2 \Delta
+  \end{align*}
+
+  \textit{Case II.A} We have the following constraint on $\ell$ from
+  assumption A.
+  \begin{align*}
+   4 \leq 2 \ell \leq m + 1
+  \end{align*}
+  and the following constraints on $\Delta$ from assumption II.
+  \begin{align*}
+   n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  These can be simplified further with a bit of algebra:
+  \begin{align*}
+   n-m +2\ell \leq & 2 \Delta & \text{and} \\
+   n-1 \leq        & 2\Delta
+  \end{align*}
+  or
+  \begin{align*}
+   n + 1 \leq         & 2 \Delta & \text{and} \\
+   n + m - 2\ell \leq & 2 \Delta
+  \end{align*}
+  Which we can combine and deduce that (footnote: see appendix I).
+  \begin{align*}
+   n -m + 2\ell \leq & 2 \Delta & \text{and} \\
+   n-1 \leq          & 2 \Delta
+  \end{align*}
+
+  Again we must consider who reaches the chord first. We have assumed that $z_1$ is going clockwise. If $m - \ell = n - \Delta$, then $z_2$ reaches $v$ and $s$ reaches $u$ on the same round, and therefore $s$ will be caught on the next. Therefore, to guarantee the survivor has not escaped $P_m$ in this scenario we need
+  \begin{align*}
+   n - \Delta \leq & m - \ell     \\
+   \Delta \geq     & n - m + \ell
+  \end{align*}
+  otherwise the survivor reaches the chord before $z_2$ and
+  could escape.
+
+  Then, to ensure that $z_2$ takes the chord and goes counter-clockwise once
+  it reaches $v$, we need
+  \begin{align*}
+   1 + m - \ell - (n - \Delta) \leq & n - \Delta + \ell  \\
+   2 \Delta \leq                    & 2n + 2\ell - m - 1
+  \end{align*}
+
+  \textit{Case II.A. Summary}
+
+  $z_1$ goes clockwise:
+  \begin{align*}
+   4 \leq 2 \ell \leq m + 1
+  \end{align*}
+  and $z_2$ goes clockwise
+  \begin{align*}
+   n -m + 2\ell \leq & 2 \Delta & \text{and} \\
+   n-1 \leq          & 2 \Delta
+  \end{align*}
+  the zombies win:
+  \begin{align*}
+   2 \Delta \geq & 2n - 2m + 2\ell    \\
+   2 \Delta \leq & 2n + 2\ell - m - 1
+  \end{align*}
+
+  \textit{Case II.B}  We have the following constraint on $\ell$ from
+  assumption B.
+  \begin{align*}
+   m + 1 \leq 2 \ell \leq 2m - 2
+  \end{align*}
+  and the following constraints on $\Delta$ from assumption II.
+  \begin{align*}
+   n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  These can be simplified further with a bit of algebra:
+  \begin{align*}
+   n-m+2\ell \leq & 2 \Delta & \text{and} \\
+   n-1 \leq       & 2\Delta
+  \end{align*}
+  or
+  \begin{align*}
+   n+1 \leq        & 2 \Delta & \text{and} \\
+   n+m-2\ell  \leq & 2 \Delta
+  \end{align*}
+
+  From which we conclude that $n+1 \leq 2 \Delta$ (see appendix II).
+
+  Now we consider: which of $s$ or $z_2$ reaches $v$ first?
+  If $n - \Delta = \ell$, then they both reach $u$ at the same time,
+  with the survivor moving onto the $z_2$-occupied vertex (and losing).
+  If we have $n - \Delta = \ell + 1$, then $s$ reaches $u$ first
+  but is caught by $z_2$ on the following round.
+  So, to guarantee the survivor has not escaped $P_m$ we need
+  \begin{align*}
+   n - \Delta \leq & \ell + 1 \\
+  \end{align*}
+  otherwise the survivor reaches the chord before $z_2$ can move
+  to block. If the survivor reaches the chord first, then it could
+  take the chord and possibly escape. (more detail??)
+
+  Then, to ensure that $z_2$ takesgoes clockwise once
+  it reaches $v$, we need
+  \begin{align*}
+   \ell - (n - \Delta) \leq & 1 + (n - \Delta - 1) + (m - \ell + 1) \\
+   2 \Delta \leq            & 2n + m - 2\ell + 1
+  \end{align*}
+
+  \textit{Case II.B. Summary}
+
+  $z_1$ goes counter-clockwise:
+  \begin{align*}
+   m + 1 \leq 2 \ell \leq 2m - 2
+  \end{align*}
+  and $z_2$ goes clockwise
+  \begin{align*}
+   n+1 \leq & 2 \Delta
+  \end{align*}
+  the zombies win:
+  \begin{align*}
+   n - \Delta \leq & \ell + 1           \\
+   2 \Delta \leq   & 2n + m - 2\ell + 1
+  \end{align*}
+
+
+ \end{proofpart}
+
+ \begin{proofpart} Forcing the Survivor into a Losing Position.
+  We now consider the game on this graph in general and show
+  how we can guarantee the survivor will be caught.
+
+  Given $m, n$ and $\Delta$, we place the
+  zombies on $C_{n+1}$ so that the zombies move in
+  opposite direction wherever the survivor may start.
+  We need only consider the cycle $C_{n+1}$ since, if the survivor
+  starts on $C_{m+1} \setminus \{u, v\}$, then the zombies play as
+  though the survivor is on $u$ or $v$.
+
+  We choose $k$ such that positioning
+  \begin{enumerate}
+   \item $z_2$ at $\Delta + k$ clockwise from $u$
+   \item $z_1$ at $k$ counter-clockwise from $v$
+  \end{enumerate}
+  forces the survivor into a losing position: it is either immediately sandwiched on $C_{n+1}$, or inevitably on $C_{m+1}$. (EDIT: elaborate)
+
+  The survivor cannot be next to the zombies else it loses right away.
+  So we choose $k$ such that, even if the survivor is as far
+  away from one of the zombies as possible, then the zombies still move in opposite directions. This leads to the following inequalities
+
+
+  \begin{align*}
+   n - \Delta - 2k - 2 \leq & \Delta + k +1 + k +2 & \text{and} \\
+   \Delta + 2k -1 \leq      & n - 2\Delta +3
+  \end{align*}
+  Solving for $k$ gives
+  \[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
+
+ \end{proofpart}
+
+ \begin{proofpart} Computing the Winning Zombie Start
+
+  Given $m$ and $n$, we choose $\Delta$ so that whenever we reach
+  the scenario described in the first part, the survivor will be cornered.
+  (EDIT: finish)
+ \end{proofpart}
+\end{proof}
+
+\newpage
+\appendix
+\section{Simplifying $z_2$'s inequalities for Case II.A.}
+We have
+\begin{align*}
+ n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + \ell \leq & \Delta + 1 + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+ n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+\end{align*}
+These can be simplified further with a bit of algebra:
+\begin{align*}
+ n-m +2\ell \leq & 2 \Delta & \text{and} \\
+ n-1 \leq        & 2\Delta
+\end{align*}
+or
+\begin{align*}
+ n + 1 \leq         & 2 \Delta & \text{and} \\
+ n + m - 2\ell \leq & 2 \Delta
+\end{align*}
+
+These inequalites are of the form
+\begin{align*}
+ n-x \leq & 2 \Delta & \text{and} \\
+ n-1 \leq & 2\Delta
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+ n + x \leq & 2 \Delta & \text{and} \\
+ n + 1 \leq & 2 \Delta
+\end{align*}
+
+Where $x = m -2\ell$.
+
+Supposing $x\geq 0$, we have
+\begin{align*}
+ n-x \leq & n+x \leq 2 \Delta & \text{and} \\
+ n-1 \leq & n+1 \leq 2\Delta
+\end{align*}
+
+Whereas if $x <0$, then from assumption A we must have $m-2\ell = -1$, so that
+our constraints reduce to
+\begin{align*}
+ n+1 \leq & 2 \Delta & \text{and} \\
+ n-1 \leq & 2 \Delta
+\end{align*}
+
+\newpage
+\section{Simplifying $z_2$'s inequalities for Case II.B.}
+
+We have
+\begin{align*}
+ n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + \ell \leq & \Delta + 1 + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+ n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+ n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+\end{align*}
+These can be simplified further with a bit of algebra:
+\begin{align*}
+ n-m+2\ell \leq & 2 \Delta & \text{and} \\
+ n-1 \leq       & 2\Delta
+\end{align*}
+or
+\begin{align*}
+ n+1 \leq        & 2 \Delta & \text{and} \\
+ n+m-2\ell  \leq & 2 \Delta
+\end{align*}
+
+These inequalites are of the form
+\begin{align*}
+ n-x \leq & 2 \Delta & \text{and} \\
+ n-1 \leq & 2\Delta
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+ n + 1 \leq & 2 \Delta & \text{and} \\
+ n + x \leq & 2 \Delta
+\end{align*}
+
+Where $x = m -2\ell$. Now since assumption B gives $m - 2\ell \leq -1$, we
+see that
+\begin{align*}
+ n-1 \leq & n-x \leq 2 \Delta \\
+          & \text{or}         \\
+ n+x \leq & n+1 \leq 2 \Delta
+\end{align*}
+
+\newpage
+\section{Alternate Strategy}
+
+We wish to show -- in a simpler way -- that $\Delta = \lfloor \frac{n}{2} \rfloor$
+also works for the cornering strategy.
+
+In order to be in Case I. A, we need
+
+\[ 4 \leq 2 \ell \leq m+1 \]
+and
+
+\[ 2\Delta \leq n - m + 2\ell \]
+or
+\[ 2\Delta \leq n-1 \]
+
+Negating these conditions gives
+
+\[ 2\Delta \geq n - m + 2\ell +1 \]
+and
+\[ 2 \Delta \geq n - 1 + 1 \]
+
+or
+
+\[ m+1 \leq 2 \ell \leq 2m -2 \]
+
+Suppose we set $\Delta = \lfloor \frac{m}{2} \rfloor$ and we assume that
+we are not in Case 1. A. Since $2\Delta \geq n$,
+\[
+2\Delta = 2 \left\lfloor \frac{m}{2} \right\rfloor =
+\begin{cases}
+m & \text{if $m$ is even} \\
+m -1 & \text{if $m$ is odd}
+\end{cases}
+\]
+
+Assuming $m$ is odd leads to a contradiction since
+\[ n-1 \geq m-1 = 2\Delta \geq n \]
+
+Since $n \geq m = 2 \Delta \geq n$, we must have $m = n$ and $m$ even.
+
+\begin{align*}
+  2 \Delta & \geq n - m + 2\ell + 1 \\
+  m & \geq m - m + 2 \ell + 1 \\
+  m & \geq 2 \ell + 1 \\
+  2 & \ell \leq m -1
+\end{align*}
+
+So, if $m = n$ and they are even, then we are in Case 1. A unless $2 \ell \leq m -1$.
+
+To recap: If we set $\Delta = \lfloor \frac{m}{2} \rfloor$, we are in Case 1.A unless
+\[ m = n \qquad \text{and they are even} \]
+\[ \Delta = \lfloor \frac{m}{2} \rfloor = \frac{m}{2} \]
+\[ 4 \leq 2 \ell \leq m -1 \]
+
+Now, can we be in Case 1. B? Case 1. B is described by the following constraints:
+
+\[ m+1 \leq 2 \ell \leq 2m -2 \]
+and
+\[2 \Delta \leq n +1 \]
+or
+\[2\Delta \leq n + m - 2 \ell \]
+
+The negation of which is:
+\[2 \Delta \geq n +1 +1 \]
+and
+\[2\Delta \geq n + m - 2 \ell + 1\]
+or
+\[4 \leq 2 \ell \leq m +1 \]
+
+But this leads to the contradiction:
+\[ n \geq m \geq 2 \Delta \geq n +2 \]
+
+In remains to check if we win in Case 2. A.
+
+Assuming still that
+\[ m = n \qquad \text{they are even} \]
+\[ \Delta = \frac{m}{2} \]
+\[ 4 \leq 2 \ell \leq m -1 \]
+
+The win conditions require
+\begin{align*}
+2n - 2m + 2\ell \leq 2 \Delta \leq 2n + 2\ell -m -1 \\
+2m - 2m + m - 1 \leq 2 \Delta \leq 2m + 4 - m - 1 \\
+m - 1 \leq 2 \Delta \leq m + 3
+\end{align*}
+
+Which holds for $\Delta = \frac{m}{2}$.
 
- \item Proof that Bifurcated cycle $Q_{m,n}$ is 2-zombie win if $m, n$ are even.
-
-       We demonstrate the existence of a foolproof 2-zombie-start.
-
-       Let $u,v \in V(G)$ denote the endpoints of the chord and $P_1$ and $P_2$ denote the paths
-       on either side of the cycle.
-
-       By construction we have $\vert P_1 \vert = m$ and $\vert P_2 \vert = n$ and we
-       can assume, without loss of generality, that $m \leq n$. We also assume $m,n \geq 2$, since
-       otherwise the construction adds parallel edges or degenerates to $K_2$.
-
-       Finally, let $C_1$ and $C_2$ be the subcycles of length $m+1$ and $n+1$ induced by
-       $P_1$ and $P_2$ respectively.
-
-       We place the two zombies on vertices $z_1^{(0)}$ and $z_2^{(0)}$ on $P_2$ such that
-
-       \begin{enumerate}
-        \item The distance between the two zombies is $d(z_1^{(0)}, z_2^{(0)}) = n/2$,  and
-        \item There is a path $P_5 = v, v_1, v_2, \dots, v_k = z_1^{(0)}$ of length $k$ between $z_1^{(0)}$ and
-              the chorded vertex $v$. $\vert P_5 \vert = d(z_1^{(0)}, v) = k \geq 0$.
-              If $k=0$, then $P_5$ is the trivial path $v$, and $z_1^{(0)} = v$.
-       \end{enumerate}
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagram1.png}
-       \end{center}
-
-
-       Without loss of generality, we can assume that $0 \leq k \leq n/4$,
-       else we reflect the graph and rename the vertices.
-
-       These zombie positions divide $P_2$ into sub-paths $P_3 = u \dots z_2^{(0)}$,
-       $P_4 = z_2^{(0)} \dots z_1^{(0)}$, and
-       $P_5 = v \dots z_1^{(0)}$.
-
-       %Importantly, placing the zombies at a distance of $n/2$ from one
-       %another divides $C_2$ almost neatly down the middle. If the survivor stays on $C_2$ for
-       %too long (How long? $n/4 +1$ rounds?), the zombies mercilessly surround and capture the survivor.
-
-       %So with this start, we know that the survivor, if it wishes to prolong the game, must flee to
-       %$C_1$ and somehow trick the zombies into a distances of less than $n/2$ (or perhaps $m/2$,
-       %if the survivor somehow returns to $C_2$) and lead them on an infinite loop in the same direction.
-
-       Given this start configuration, we analyze all possible survivor-win scenarios
-       to obtain relationships between $m$, $n$, and $k$.
-       Then we show that there exists $k \geq 0$ such that the survivor will always be captured.
-
-       At the crux of this argument is the fact, given initial conditions,
-       the zombies behave predictably.
-
-       First, notice that if the survivor chooses to start on $P_4$, then the zombies are guaranteed to win
-       since
-
-       \[ 2 \leq d(z_i^{(0)}, s^{(0)}) \leq n/2 - 2 \qquad \text{for $i = 1,2$} \]
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramStartOnP4}
-       \end{center}
-
-       Play is effectively restricted to $P_4$. The zombies
-       move in opposite directions towards the survivor and inevitably corner it.
-
-       So we can assume that the survivor does not start on $P_4$.
-
-       %Next, if the survivor starts on the other half of $C_2$ -- the path formed by $P_3$, $P_5$ and the chord --
-       %then again the zombies must move in opposite directions towards the survivor because
-
-       %\[ 2 \leq d(z_i^{(0)}, s^{(0)}) \leq (|P_3|+|P_5| +1) -2 = \frac{n}{2} -1 \qquad \text{for $i = 1,2$} \]
-
-       %\begin{center}
-       %  \includegraphics[scale=0.15]{diagramStartOnP5}
-       %\end{center}
-
-       %If the survivor stays on this path then it is eventually caught since play is restricted to half of $C_2$.
-
-       We are left with two possible scenarios:
-
-       \begin{enumerate}
-        \item[I.] The zombies move in the same direction, or
-        \item[II.] The zombies go in opposite directions
-       \end{enumerate}
-
-       \emph{Case I.} One way for the survivor to win is to force the zombies to
-       spin in the same direction from the start.
-
-       First we show by contradiction that the zombies cannot both go counterclockwise.
-       Clearly $z_1$ cannot go counterclockwise if $s$ starts on $P_5$.
-       It is impossible if the survivor starts on $C_1$, since all shortest zombie paths
-       to $C_1$ must pass through $u$ or $v$ and the shortest paths to these vertices from $z_1^{(0)}$
-       cannot include $P_4$ because
-
-       \[ d(z_1^{(0)}, v) = |P_5| = k \leq \frac{n}{4} < \frac{n}{2} = |P_4| \qquad \forall n > 0\]
-       \[ d(z_1^{(0)}, u) \leq |P_5| + 1 = k + 1 \leq \frac{n}{4} +1 \leq \frac{n}{4} + \frac{n}{2} = \frac{3n}{4} < n -k = |P_4| + |P_3| \qquad \forall n > 0, 0 \leq k \leq \frac{n}{4}, k \in \Z\]
-
-       Suppose now that the survivor is on $P_3$ and forces the zombies to move counterclockwise.
-       This implies that the shortest $z_1^0s^0$-path includes $P_4$ and at least 2 vertices of $P_3$,
-       and so has length at least $n/2 + 2$. The other path which uses $P_5$,
-       the chord and then part of $P_3$ has length at most
-       \[k + 1 + (n/2 -k) -2 = n/2 -1\]
-       This contradicts the choice of $|P_4|$ as shortest path for $z_1$.
-       So under no circumstances can the survivor force the zombies to move counterclockwise
-       at the beginning of the game.
-       Let us now consider if it is possible to make the zombies move clockwise.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseI_1}
-       \end{center}
-
-       Clearly it is not possible if the survivor starts on $P_3$.
-       It is also impossible if the survivor starts on $P_5$ since assuming the survivor
-       is on $P_5$ and $z_2$ moves clockwise gives
-
-       \[ |P_4| + 2 = \frac{n}{2} +2 \leq |P_3| + 1 + |P_5| -2 = \left(\frac{n}{2} - k\right) + 1 + k-2 = \frac{n}{2} -1 \]
-
-       A contradiction.
-       So $z_2^{(0)}$ will not move clockwise if $s$ starts on $P_5$. The other
-       possibility is that $s$ starts somewhere on $P_1$
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseI_2}
-       \end{center}
-
-       If we assume next that the survivor is on $P_1$ and that $z_2^{(0)}$ moves clockwise, then the shortest
-       $z_2^{(0)}s^{(0)}$-path must pass through $v$ and so
-
-       \[ |P_4| + |P_5| = n/2 + k < |P_3| + 1 = n/2 -k +1 \]
-
-       or
-       \[ n/2 +k \leq n/2 -k \]
-
-       which is possible only when $k=0$. So $z_1^{(0)} = v$ and we have the following
-       start situation:
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseI_3}
-       \end{center}
-
-       If $\ell = m/2$, $z_2^{(0)}$ may go in either direction.
-       So we need $\ell \leq m/2 -1$ to force $z_2$ to move clockwise. We also need $\ell \geq 2$ else the survivor is captured by $z_1$
-       on the next turn.
-
-       For the next $m$ moves, $z_1$ will be forced to follow $s$ clockwise around $C_1$.
-       The survivor must maintain distance at least 2 and so is forced to move around $C_1$. We can assume
-       the initial distance $\ell$ is preserved since the survivor passing (or even reversing)
-       is equivalent to choosing smaller initial distance of $\ell$.
-
-       We look at the next event: when the next player attains the chord.
-       Note that if $s$ and $z_2$ reach $u$ and $v$ on the same round, then $z_2$ captures
-       the survivor on the next turn.
-
-       So either
-       \begin{enumerate}
-        \item[(A)] $z_2$ attains the chorded vertex $v$ before $s$ reaches $u$; or, the reverse,
-        \item[(B)] $s$ reaches the chord before $z_2$.
-       \end{enumerate}
-
-       \emph{Subcase I(A)} $z_2$ reaches $v$ before $s$ reaches $u$.
-
-       Since $z_2$ was at a distance of $n/2$, this event must occur $n/2$ rounds later and $z_1$ will
-       have pursued the survivor that length around $P_1$.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseIA_1}
-       \end{center}
-
-       We have supposed here that $s$ hasn't yet reached the chord, so there exists a path of length
-       \[m - \ell -n/2 \geq 1 \]
-       between $s$ and $u$.
-
-       On the following round, $z_2$ can either follow $z_1$ clockwise along a hull edge or go
-       counterclockwise using the chord edge. But since
-
-       \[ m - \ell - \frac{n}{2} +1 \leq m - 2 -\frac{n}{2}  +1 \leq n - 2 - \frac{n}{2} +1 = \frac{n}{2} -1 < \frac{n}{2} + \ell\]
-
-       We see that the shortest $z_2s$-path cannot follow the hull edge.
-       So $z_2$ takes the chord and moves counterclockwise.
-
-       %The fact that we assumed $m \leq n$ implies that $\frac{m}{2} \leq \frac{n}{2}$, so if $s$ is still on $C_1$
-       %after $n/2$ rounds, $z_1$ forces the survivor past the halfway point of $C_1$ from $u$ and so will
-       %be encircled by $z_2$.
-
-       This allows us to conlude that if the zombies start with $k=0$ and
-       \[ m - \ell -\frac{n}{2}  \geq 0 \]
-       then the survivor will lose.
-
-       To avoid this scenario, the survivor must choose $\ell > m - \frac{n}{2}$,
-       i.e. $\ell \geq m - \frac{n}{2} +1$
-       while still respecting the restriction that $\ell \leq \frac{m}{2}-1$.
-
-       In order to choose such $\ell$ we must have
-       \[ m - \frac{n}{2} +1 \leq \ell \leq \frac{m}{2} -1 \]
-       or, simply,
-       \[ m + 4 \leq n \]
-
-       Such choice for $\ell$ is impossible for the survivor whenever
-       $m+3 \geq n$, so we have a simple winning zombie-strategy for these configurations:
-       choose $k=0$.
-
-       \emph{Subcase I(B)} $s$ reaches $v$ before $z_2$ reaches $u$.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseIB_1}
-       \end{center}
-
-       It takes $m-\ell$ rounds for $s$ to complete its circuit around $C_1$ and reach $u$. So
-       we must have $z_2$ at distance now $n/2 - (m-\ell)$ from $v$. This means we require
-
-       \[ \frac{n}{2} - (m-\ell) \geq 1 \]
-
-       This inequality allows us to bound $\ell$
-       \[ m - \frac{n}{2} +1 \leq \ell \leq \frac{m-1}{2}\]
-       which simplifies to
-       \[ n \geq m+3 \]
-
-       Notice that the survivor has won in this scenario since
-       \[ d(s,z_1) = \ell \leq \frac{m}{2} -1 \leq \frac{n}{2} -1 \]
-       and
-       \[ d(s,z_2) = \frac{n}{2} - (m - \ell) + 1 \leq \frac{n}{2} - m + \left(\frac{m}{2} -1\right) +1 = \frac{n}{2} - \frac{m}{2} < \frac{n}{2} \]
-
-       That is to say, the two zombies are now at distance less than $\frac{n}{2}$ from the survivor,
-       so that the survivor now wins by looping around $C_2$.
-
-       \emph{Case II.} From now on, we assume that the zombies go in different directions at the
-       beginning of the game, so that we inevitably reach the first event of interest at round $k$:
-       when $z_1$ reaches the chord.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagram4}
-       \end{center}
-
-       Notice that when $k = n/4$ both zombies attain the chord at the same time. (Potentially important.
-       If the zombies attain the chord at the same time the distance between them becomes 1,
-       which is advantageous to the survivor trying to group them. Survivor must have zombies trailing within
-       single file lemma).
-
-       The survivor cannot be on $P_3''$, $P_4$ or $P_5$, as this would imply they
-       somehow got around the zombies which are guarding these paths.
-
-       Additionally, the survivor cannot be on $u$, since it is adjacent to $z_1^{(k)}$.
-       So the survivor, if still alive, must be either on $P_1 \setminus N[v]$ or $P_3' \setminus \{ u \} $.
-
-       If the survivor is on $P_3' \setminus \{ u \}$, then on the next turn $z_1^{(k)}$ moves to $u$
-       and the survivor is surrounded on less than half of $C_2$ and hence loses.
-       So we can assume further that the survivor must be on $P_1 \setminus N[v]$.
-       Denote $P_1' : v = x_0 x_1 \dots x_\ell = s^{(k)}$, $P_1'' : s^{(k)} = y_0 y_1 \dots y_{m-\ell} = u$
-       the subpaths formed by the survivor's position on $P_1$.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagram5}
-       \end{center}
-
-       Now, either
-       \begin{enumerate}
-        \item[(A)] $\ell < \frac{m+1}{2}$ (or, equivalently, $\ell \leq \frac{m}{2}$),
-              which forces $z_1$ to follow a hull edge onto $P_1$, or
-              \begin{center}
-               \includegraphics[scale=0.15]{diagram6}
-              \end{center}
-        \item[(B)] $\ell > \frac{m+1}{2}$ (or, equivalently, $\ell \geq \frac{m+2}{2}$),
-              which forces $z_1$ take the chord edge to $u$.
-              \begin{center}
-               \includegraphics[scale=0.15]{diagram7}
-              \end{center}
-        \item[(C)] $l = \frac{m+1}{2}$, in which case the zombie can choose one or the other.
-       \end{enumerate}
-
-       In order to win, the survivor must either:
-
-       \begin{enumerate}
-        \item[1.] Force the two zombies to follow around $C_1$ in the same direction, or
-        \item[2.] Be able to loop around $C_1$ with $z_1$ in pursuit before $z_2$ can reach the chord.
-       \end{enumerate}
-
-       We can assume that the survivor maintains its distance from $z_1$, since
-       standing still or moving towards $z_1$ is the same as choosing a smaller (or larger, in case (B))
-       initial value of $\ell$.
-       We examine both possible survivor-winning scenarios for each possible $z_1$ decision.
-
-       \emph{Case (A)}: We have $\ell < \frac{m+1}{2}$, so that $z_1$ follows a hull edge towards $s$.
-
-       \emph{Subcase (A)1.} $z_2$ reaches the chord before the survivor.
-       The survivor wins by forcing the zombies to follow in the same direction around $C_1$
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseA1_1}
-       \end{center}
-
-       We have assumed that $z_1$ is following $s$ in a clockwise direction. We must consider the distances at
-       round $n/2 - k$, when $z_2$ attains the chord.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseA1_2}
-       \end{center}
-
-       Here $z_1$ must continue in the same direction. In order for the survivor to win, we must have
-       $z_2$ forced to take the chord on the next move and follow in clockwise direction. This implies that
-
-       \begin{align*}
-        1 + n/2-2k + \ell & < m - \ell - (n/2-2k)   \\
-        2\ell             & < m -n +4k -1           \\
-        2\ell             & \leq m - n +4k -2       \\
-        \ell              & \leq \frac{m-n+4k-2}{2}
-       \end{align*}
-
-       Since we know $\ell \geq 2$, this allows us to bound $\ell$:
-
-       \[ 2 \leq \ell \leq \frac{m-n+4k-2}{2} \]
-
-       In order to be able to choose $\ell$, we must then have
-       \[ 2 \leq \frac{m -n + 4k -2}{2} \]
-       or
-       \[ k \geq \frac{n-m+6}{4} \]
-
-       \emph{Subcase (A)2.} The survivor is able to reach the chord before $z_2$ closes in.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseA2_1}
-       \end{center}
-
-       In order for the survivor to win in this scenario, we must have $s$ able to
-       reach the chord before $z_2$ gets to $u$'s neighbour on $P_2$. This implies that
-
-       \begin{align*}
-        \frac{n}{2} - 2k - (m-l) & \geq 2                        \\
-        l                        & \geq m + 2k - \frac{n}{2} + 2
-       \end{align*}
-
-       Now since $l < \frac{m+1}{2}$, or $l \leq \frac{m}{2}$ we have
-
-       \[ m+2k-\frac{n}{2} +2 \leq l \leq \frac{m}{2} \]
-
-       So to be able to choose $\ell$ to make this strategy viable we require
-
-       \[ m+2k-\frac{n}{2} +2 \leq \frac{m}{2} \]
-
-       And solving for $k$ gives
-
-       \[ k \leq \frac{n-m-4}{4} \]
-
-       \emph{Case (B)}: We have $l > \frac{m+1}{2}$, so that $z_1$ follows the chord edge towards $s$.
-
-       \emph{Subcase (B)1.} $z_2$ reaches the chord before $s$. The survivor wins by forcing
-       the zombies to follow in the same (counterclockwise) direction around $C_1$.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseB1_1}
-       \end{center}
-
-       We have assumed that $z_1$ is following $s$ in a counterclockwise direction around $C_1$. We again
-       look at the next decision point: when $z_2$ attains the chord.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseB1_2}
-       \end{center}
-
-       We have assumed that $k \leq \frac{n}{4}$. If we have equality, then the zombies reach
-       the chord at the same time and the survivor has won since the zombies are on less than half
-       of $C_1$ and will move in same direction.
-
-       We can assume that the survivor preserves its distances of $m-l+1$ from $z_1$,
-       since moving back or staying still is equivalent to choosing a larger initial value of $l$.
-       In order for the survivor to win, we must have $z_2$ forced to follow in the same direction.
-       This implies that
-
-       \begin{align*}
-        \frac{n}{2} -2k -1 + (m-l+1) & < 1 + 2k + l - \frac{n}{2} \\
-        n+m                          & < 1 + 4k + 2l              \\
-        2l                           & > n+m - 4k -1              \\
-        2l                           & \geq n+m -4k               \\
-        l                            & \geq \frac{n+m-4k}{2}
-       \end{align*}
-
-       Since $l \leq m -1$, we see that
-       \[ \frac{n+m-4k}{2} \leq l \leq m-1 \]
-
-       So in order to choose $\ell$ to enact this strategy we need
-
-       \[ \frac{n+m-4k}{2} \leq m-1 \]
-
-       Which allows us to conclude that
-       \[ k \geq \frac{n-m+2}{4} \]
-
-       \emph{Subcase (B)2.} $z_1$ follows the chord edge and $s$ reaches the chord before $z_2$
-
-       We start with the same scenario as in (B)1; $z_1$ is forced to take the chord edge since
-       $\ell > \frac{m+1}{2}$. Or, equivalently since $\ell \in \Z$, $\ell \geq \frac{m+2}{2}$.
-
-       \begin{center}
-        \includegraphics[scale=0.15]{diagramCaseB2_2}
-       \end{center}
-
-       $z_2$ was at a distance of $n/2-2k$ from the chorded vertex $u$ and $s$ requires
-       $\ell$ turns in order to reach $v$. Thus, in order for the survivor to escape
-       we must have
-
-       \[ \frac{n}{2} -2k - \ell \geq 1 \]
-
-       Solving for $\ell$ gives
-       \[ \ell \leq \frac{n}{2} -2k -1 \]
-
-       Combined with our lower bound for $\ell$ this gives
-
-       \[ \frac{m+2}{2} \leq \ell \leq \frac{n}{2} -2k -1 \]
-
-       So to be able to choose $\ell$ to make this strategy viable we need
-
-       \[ \frac{m+2}{2} \leq \frac{n}{2} -2k -1 \]
-
-       Solving for $k$ gives
-
-       \[ k \leq \frac{n-m-4}{4} \]
-
-       All together now, we have the following constraints for the different survivor-win scenarios:
-
-       \begin{itemize}
-        \item[II(A)1.] $k \geq \frac{n-m+6}{4}$
-        \item[II(A)2.] $k \leq \frac{n-m-4}{4}$
-        \item[II(B)1.] $k \geq \frac{n-m+2}{4}$
-        \item[II(B)2.] $k \leq \frac{n-m-4}{4}$
-
-       \end{itemize}
-
-       If any of these conditions on $k$ are true, then the surivor has a winning strategy.
-       So, to guarantee that none of these strategies will work, we must choose $k$ such that
-
-       \begin{itemize}
-        \item[II(A)1.] $k < \frac{n-m+6}{4}$
-        \item[II(A)2.] $k > \frac{n-m-4}{4}$
-        \item[II(B)1.] $k < \frac{n-m+2}{4}$
-        \item[II(B)2.] $k > \frac{n-m-4}{4}$
-       \end{itemize}
-
-       Are all satisfied. Or, equivalently,
-
-       \begin{itemize}
-        \item[II(A)1.] $k \leq \frac{n-m+5}{4}$
-        \item[II(A)2.] $k \geq \frac{n-m-3}{4}$
-        \item[II(B)1.] $k \leq \frac{n-m+1}{4}$
-        \item[II(B)2.] $k \geq \frac{n-m-3}{4}$
-       \end{itemize}
-
-       Now because
-
-       \[ \frac{n-m-3}{4} < \frac{n-m+1}{4} < \frac{n-m+5}{4} \]
-
-       We must choose $k \in [\frac{n-m-3}{4}, \frac{n-m+1}{4}]$. We know there exists
-       such an integer $k$ since:
-
-       \[ \frac{n-m+1}{4} - \frac{n-m-3}{4} = 1 \]
-
-
-
-\end{enumerate}
 \end{document}

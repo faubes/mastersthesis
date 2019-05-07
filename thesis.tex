@@ -1,0 +1,81 @@
+% Report template by Joel Faubert
+% Ottawa University
+% Spring 2019
+%
+\documentclass[letterpaper, 12pt]{report}
+
+\usepackage{graphicx} % figures and images
+\graphicspath{ {images/} }
+
+\usepackage{float} % better figure float options
+
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyvrb} % fancy verbatim
+\usepackage{hyperref} % hyperlinks
+\usepackage{amsthm} % proof environment
+\usepackage{algpseudocode} % for algo
+%\usepackage{babel}
+
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\R}{\mathbb{R}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\renewcommand{\baselinestretch}{1} % line spacing
+
+\setlength{\parskip}{0.5cm plus4mm minus3mm} % paragraph spacing
+
+\renewcommand\thesection{\arabic{section}} % numbered heading
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\renewcommand{\bibname}{References}
+
+
+\author{
+  Faubert, Jo\"el\\	\texttt{jfaub011@uottawa.ca}
+}
+
+\title{
+	{Zombies and Survivors on Graphs}\\
+	{\large University of Ottawa} \\
+  {\large Prof. Jean-Lou De Carufel}
+%	{\includegraphics{university.jpg}}
+}
+
+\date{May 3, 2019}
+
+\begin{document}
+
+\nocite{*}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
+
+%\chapter*{Abstract}
+%\input{sections/abstract}
+
+\tableofcontents
+
+\cleardoublepage\pagenumbering{arabic}
+
+\section{Introduction}
+\input{sections/introduction}
+
+\section{Literature Review}
+\input{sections/literature}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{./references}
+
+
+\end{document}
