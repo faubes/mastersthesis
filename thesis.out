@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.0.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.0.1.1}{How to Play}{section.0.1}% 2
+\BOOKMARK [1][-]{section.0.2}{Notation}{}% 3
+\BOOKMARK [2][-]{subsection.0.2.1}{Modeling the Game}{section.0.2}% 4
+\BOOKMARK [2][-]{subsection.0.2.2}{Paths and Moves}{section.0.2}% 5
+\BOOKMARK [2][-]{subsection.0.2.3}{Rounds and Turns}{section.0.2}% 6
+\BOOKMARK [2][-]{subsection.0.2.4}{Zombie Number}{section.0.2}% 7
+\BOOKMARK [1][-]{section.0.3}{Lemmas and Observations}{}% 8
+\BOOKMARK [2][-]{subsection.0.3.1}{The Zombie Strategy}{section.0.3}% 9
+\BOOKMARK [2][-]{subsection.0.3.2}{Keep Your Distance}{section.0.3}% 10
+\BOOKMARK [2][-]{subsection.0.3.3}{There is No Hope}{section.0.3}% 11
+\BOOKMARK [1][-]{section.0.4}{Survivor Strategy}{}% 12
+\BOOKMARK [1][-]{section.0.5}{Win Condition}{}% 13
+\BOOKMARK [1][-]{section.0.6}{Zombies on the Grid}{}% 14
+\BOOKMARK [2][-]{subsection.0.6.1}{The Shadowing Strategy}{section.0.6}% 15
+\BOOKMARK [2][-]{subsection.0.6.2}{Shrinking the Survivor Territory}{section.0.6}% 16
+\BOOKMARK [2][-]{subsection.0.6.3}{Defining Shadowing Rigorously}{section.0.6}% 17
+\BOOKMARK [1][-]{section.0.7}{Zombies on a Cylinder}{}% 18
+\BOOKMARK [1][-]{section.0.8}{A Cycle with one Chord}{}% 19
+\BOOKMARK [1][-]{section.0.9}{Literature Review}{}% 20
+\BOOKMARK [1][-]{section.Alph0.1}{Qm, n Appendices}{}% 21
+\BOOKMARK [1][-]{section.Alph0.1}{Simplifying z2's inequalities for Case II.A.}{}% 22
+\BOOKMARK [1][-]{section.Alph0.2}{Simplifying z2's inequalities for Case II.B.}{}% 23
+\BOOKMARK [1][-]{section.Alph0.3}{Alternate Strategy}{}% 24

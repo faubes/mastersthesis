@@ -1,0 +1,37 @@
+Review Cop-Win Tree and Zombie-Win BFS Tree. Is the triangular grid zombie win?
+
+Review characterization of cop number n graphs -- can notion of BFS trees be extended to this form?
+
+Minmax principle: if a survivor can force the zombies to return to a previous configuration, then s wins.
+
+Q_m,n for small m, n.
+
+Single File Lemma
+
+Rework proofs to add clarity re: rounds vs. turns.
+
+What is the zombie number of a triangulation?
+
+Cycle with two chords?
+
+Review cop number outerplanar is 2. Can proof strategy / graph structure be applied to zombie proof?
+
+Remove subsections in Notation and Lemmas
+
+Add planar graph with zombie number > 3 in Observations
+
+Distance between players is taken at the beginning (or end) of a round: that is when
+the zombies must calculate their next move. The end of round $i$ is the beginning of
+round i+1. You could say the distance at round 0 is infinite, since they have not yet
+chosen a position.
+
+Clarify notation z^i_r as position of player begining of round r >= 1. R for round.
+
+Add new declaration for Diameter operator of graph.
+
+Can a survivor cause oscillation? Zombie and survivor hop back and forth
+between two vertices indefinitely.
+
+A zombie cannot stay in place. It must move.
+
+Add zombie-win start positions to definitions.

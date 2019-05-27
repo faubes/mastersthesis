@@ -1,0 +1,182 @@
+EDITS: We must always clearly state when an action or consequence occurs: at the end of a turn
+or the end of a round. (A round being composed of two turns).
+
+Add Theorem and proof environments.
+
+Another theorem on worst-case capture time? Diameter of grid?
+
+The Grid graph $G_{m,n}$ is a rectangular arrangement of $mn$ vertices in
+$m$ rows and $n$ columns. Vertices are joined by an edge if they are on the same
+row or column. The goal of this section is to prove
+
+\begin{theorem} The zombie number of the Grid is 2 for any $m, n$.
+\end{theorem}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{grid/grid4by5}
+  \caption{$G_{4,5}$}
+\end{figure}
+
+As a quick aside, note that the grid graph can be constructed by taking the
+Cartesian product of two paths $P_m \square P_n$.
+The Cartesian product of $G_1$ and $G_2$, denoted $G_1 \square G_2$ is a graph $G$ whose
+ vertices are all pairs of vertices of the two graphs.
+Two vertex pairs are connected by an edge if they are equal in one component and
+the other is joined in the original graph. In set notation, that is
+
+\[V(G) = \{ (u, v) \mid u \in V(G_1), v \in V(G_2) \} \]
+\[E(G) = \{ \{(u_1, v_1), (u_2, v_2) \} \mid (u_1 \sim_{G_1} u_2 \land v_1 = v_2) \lor (u_1 = u_2 \land v_1 \sim_{G_2} v_2) \} \]
+
+We claim that two zombies suffice to win on this family of graphs since they can execute
+a guarding strategy. To demonstrate this, we need the following observations about shortest
+paths on the grid.
+
+First, if the zombie and the survivor are on the same row (or column) then there is a
+single shortest path and hence only one valid zombie move: the zombie moves
+closer to the survivor along the row (or column).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{grid/samerow}
+  \caption{Zombie and Survivor on Same Row}
+\end{figure}
+
+Second, if the zombie and survivor are on different rows and columns then
+ there are at least two shortest paths joining them and exactly
+ two possible zombie moves: horizontal or vertical.
+The survivor and zombie are assumed on different rows and columns
+so the zombie can make progress in one or the other direction.
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.25\textwidth]{grid/diffrowcol}
+   \caption{Zombie and Survivor on Different Row and Column}
+ \end{figure}
+
+We now show that two zombies can play a shadowing strategy which is guaranteed to
+capture the survivor. We mimic a proof strategy from Cops and Robbers in which we show
+that the Robber Territory is shrinking at every round.
+We analoguously define the Survivor Territory $S_j \subset V(G)$  as
+the set of vertices to which the survivor may move on turn $j$ without being eaten
+by a zombie.
+
+To enact the shadowing strategy, the zombies may choose any starting position
+(and so the set of winning zombie starts $Z_W(G_{m,n}) = V(G_{m,n})$ in Fitzpatrick's notation -- so the grid
+belongs to the family of graphs for which any zombie starting position will work -- Fitzpatrick
+asks if there is a characterization of graphs for which any start will win. We do not have an answer
+but observe that the grid belongs to this family for 2 zombies).
+Each zombie will shadow the survivor's position along an axis: one horizontal,
+the other vertical.
+
+\subsection{The Shadowing Strategy}
+
+\begin{proof}
+Let us consider one zombie at a time, say the zombie which will shadow the
+survivor's vertical shadow (i.e., its column), since the other zombie's behaviour is
+symmetric. We show that the zombie will eventually
+capture the vertical shadow -- that the zombie will close the horizontal distance between the
+survivor and the zombie -- and that, once it does so, the zombie can always recapture the survivor's shadow
+after the survivor moves.
+
+Assuming that the zombie and survivor are on different columns, then the zombie
+may move one column closer since the vertex on the same row but one column closer
+ lies on a shortest path to the survivor. If they are on the same row, then that is
+ the only possible zombie move. In response, the survivor may:
+
+\begin{itemize}
+  \item Remain in place in which case the zombie has closed the horizontal distance by 1.
+  \item Move vertically (up or down) in which case again the zombie has closed the horizontal distance by 1.
+  \item Move horizontally towards the zombie in which case the horizontal distance is reduced by 2.
+  \item Move horizontally away from the zombie in which case the horizontal distance is preserved.
+\end{itemize}
+
+In the first three scenarios, the horizontal distance between the two adversaries has been reduced.
+The fourth scenario in which the survivor moves away cannot occur indefinitely since the
+grid is finite.  Thus, in at most $n$ rounds (the number of columns)
+the zombie will capture the survivor's vertical shadow.
+
+Suppose now that the zombie has captured the survivor's vertical shadow; that they are now
+on the same column. It is
+clear that the zombie can recapture the survivor's shadow no matter how the survivor moves:
+
+\begin{itemize}
+  \item If the survivor moves vertically or remains in place, then the zombie must move vertically
+   and the survivor's vertical shadow remains captured.
+  \item If the survivor moves horizontally, then the zombie may choose to mimic the move and thereby
+  recapture the vertical shadow.
+\end{itemize}
+
+This argument shows that after a finite number of moves a zombie may capture the
+survivor's vertical shadow. Now observe that once the survivor's
+vertical shadow has been captured, the survivor can never enter the zombie-occupied
+row: any attempts to go around the zombie are immediately blocked. (Expand and clarify?)
+
+\subsection{Shrinking the Survivor Territory}
+
+By the previous discussion, after $\max \{ m, n \}$ rounds, both the survivor's vertical
+and horizontal shadows have been captured. Suppose we have reached a point in the
+game where the zombies have moved and captured both horizontal and vertical shadows.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.25\textwidth]{grid/shadowscaptured}
+  \caption{Once Both Shadows Are Captured}
+\end{figure}
+
+The survivor has five possible moves:
+
+\begin{itemize}
+  \item Stay in place, in which case both zombies have a single shortest path and
+  move closer along their current row/column. So the Survivor Territory has shrunk by a column and a row.
+  \item Move vertically, in which case the zombie capturing the vertical shadow
+  has no choice but to move closer, while the other zombie recaptures the horizontal shadow.
+  Here the Survivor Territory has shrunk by one row.
+  \item Move horizontally, in which case the zombie capturing the horizontal shadow
+  has not choice but to move closer, while the other zombie recaptures the vertical shadow.
+  Now the Survivor Territory has shrunk by one column.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.25\textwidth]{grid/survivorterritory}
+  \caption{Shrinking Survivor Territory: The survivor moves up when shadowed; the zombie
+  guarding the vertical shadow must move up, thereby eliminating the row below. The
+  zombie guarding the horizontal shadow also moves up, so its column remains blocked.}
+\end{figure}
+
+In every scenario, at least one of the zombies is forced to move one
+step closer to the survivor. Since the survivor can never enter the rows and columns
+occupied by the shadowing zombies, this means that the Survivor Territory
+ shrinks by at least one row or one column at every round.
+Since the grid is finite, the Survivor Territory is eventually empty and hence
+the survivor is captured.
+
+\end{proof}
+
+\subsection{Defining Shadowing Rigorously}
+
+Label the vertices of the grid using the integer points of the first quadrant
+of the plane and consider $z_1, z_2, s \in V(G_{m,n})$ as points in $[0, m-1] \times [0, n-1]$.
+Rows and columns are then first and second coordinates of points in a finite lattice.
+Say $s^j = (x^j_0, y^j_0), z^j_1 = (x^j_1, y^j_1), z^j_2 = (x^j_2, y^j_2)$ are the
+positions of the players $s, z_1$ and $z_2$ on round $j \geq 0$.
+The players cannot escape the bounds of the grid and so
+ $0 \leq x^j_i \leq n -1$ and $0 \leq y^j_i \leq m-1$ for $i \in \{0, 1, 2\}$ and for $j \geq 0$.
+
+Let's show that -- after a finite number of turns -- a zombie can mirror
+the survivor's $x$-coordinate. Formally, there exists a round $k\geq 0$ such that $x^k_0 = x^{k+1}_1$
+and that for all $j > k$, $x^j_0 = x^{j+1}_1$. That is to say, from turn $k$ onwards, the zombie can
+always move onto the $x$-projection of the survivor on its turn.
+
+Note that have $N[z^j_i] \subseteq \{ (x^j_i, y^j_i), (x^j_i \pm 1, y^j_i), (x^j_i, y^j_i \pm 1) \}$
+and the inclusion is strict when $z^j_i$ is on the boundary of the grid.
+
+Suppose we already have $x^k_0 = x^k_1$. As mentioned above, in this case the
+ zombie has a single shortest path to $(x^k_1, y^k_1 \pm 1)$ where for simplicity
+ we will assume that the move is ``upwards'' to $(x^k_1, y^k_1 + 1)$. The zombie
+ has moved onto the survivor's $x$-coordinate. The survivor has five possible responses.
+
+Now, we can assume that $x^j_0 > x^j_1$ (the opposite being symmetric). The zombie
+may follow two shortest paths, one of which is to $(x^j_1 + 1, y^j_1)$.
+...

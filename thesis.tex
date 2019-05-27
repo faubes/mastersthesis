@@ -5,7 +5,7 @@
 \documentclass[letterpaper, 12pt]{report}
 
 \usepackage{graphicx} % figures and images
-\graphicspath{ {images/} }
+\graphicspath{ {img/} }
 
 \usepackage{float} % better figure float options
 
@@ -20,10 +20,55 @@
 \usepackage{algpseudocode} % for algo
 %\usepackage{babel}
 
-\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+
+% common sets
 \newcommand{\R}{\mathbb{R}}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+% norm shortcut buggy?
+% \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% projection, vectors
+%\DeclareMathOperator{\proj}{Proj}
+%\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+%\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+%\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+% \def\D{\mathrm{d}}
+
+% probability
+% \newcommand{\Expected}{\mathrm{E}}
+% \newcommand{\Var}{\mathrm{Var}}
+% \newcommand{\Cov}{\mathrm{Cov}}
+% \newcommand{\Entropy}{\mathrm{H}}
+% \newcommand{\KL}{\mathrm{KL}}
+
+%\DeclareMathOperator*{\argmax}{arg\,max}
+%\DeclareMathOperator*{\argmin}{arg\,min}
 
 \renewcommand{\baselinestretch}{1} % line spacing
 
@@ -32,8 +77,19 @@
 \renewcommand\thesection{\arabic{section}} % numbered heading
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 
-\renewcommand{\bibname}{References}
+% proof environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proofpart}{Part}
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
 
+\renewcommand{\bibname}{References}
 
 \author{
   Faubert, Jo\"el\\	\texttt{jfaub011@uottawa.ca}
@@ -70,12 +126,44 @@
 \section{Introduction}
 \input{sections/introduction}
 
+% Notation
+\section{Notation}
+\input{sections/notation}
+
+% Lemmas and observations
+\section{Lemmas and Observations}
+\input{sections/lemmas}
+
+% Survivor Strategy?
+\section{Survivor Strategy}
+\input{sections/survivorstrategy}
+
+% Win condition
+\section{Win Condition}
+\input{sections/wincondition}
+
+% Grid
+\section{Zombies on the Grid}
+\input{sections/grid}
+
+% Cylinder
+\section{Zombies on a Cylinder}
+\input{sections/cylinder}
+
+% Q_m_n
+\section{A Cycle with one Chord}
+\input{sections/Q_m_n}
+
 \section{Literature Review}
 \input{sections/literature}
 
-
+\newpage
 \bibliographystyle{IEEEtran}
 \bibliography{./references}
 
+\newpage
+\appendix
+\section{$Q_{m, n}$ Appendices}
+\input{sections/Q_m_n_appendix}
 
 \end{document}

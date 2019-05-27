@@ -1,0 +1,40 @@
+
+Suppose we could agree on some algorithm to fully determine the zombies' behaviour.
+Or, perhaps, assume that all possible games will exhaustively be played by the computer.
+How then, should we program the survivor to maximize its chances of survival?
+On every round, the survivor may stay in place or move to one of its neighbours.
+However, if ever the survivor moves to a vertex adjacent to a zombie, then it loses immediately on the next round.
+So the \textit{valid survivor moves} are the neighbours of the survivor (or its current position), minus those adjacent to one of the $k$ zombies.
+
+If the survivor is $s$ and $Z = \{z_1, z_2, \dots, z_k\}$ is the set of zombie positions, then
+
+\[N[s]\setminus N[Z]\]
+
+Where the neighbourhood of the set $Z$ is the union of all of the zombies' neighbourhoods.
+These survivor moves can be computed by iterating through the neighbours of $s$ and removing those that are neighbours of a zombie.
+Another approach would be to use the results of Floyd-Warshall, as with the zombies:
+
+\begin{enumerate}
+\item Scan row $s$ of $A$ for indexes $x$ where $a_{s,x} = 1$. These are the neighbours of $s$. Add each neighbour a set $S$.
+\item For each neighbour $x$ and for each zombie $z$, $1 \leq z \leq k$, probe $a_{z,x}$. This is the distance from the neighbour to the zombie.
+\item If $a_{z,x} = 1$, then $x$ is adjacent to a zombie and so $S = S \setminus \{x\}$.
+\item Return $S$
+\end{enumerate}
+
+If the set of valid survivor moves is empty, then the survivor is cornered. The only remaining move is to pass, and be caught after another round.
+If the set returned is a singleton, then circumstances have forced the survivor's hand.
+If, however, there many possible moves, then how best do we choose among them?
+
+Perhaps the simplest strategy is to invert the strategy used by the zombies: the survivor makes the move that maximizes its distance from all of the zombies.
+While running the algorithm described above, we could simultaneously compute $\sum_{i=1}^{k} d(x, z_i)$, the sum of all the distances from the neighbour to the
+zombies, and choose one the moves that maximizes this value.
+
+This cowardly strategy is amusingly similar to that of the zombies. It is also a poor strategy. The only way to escape the zombies is to lead them into some sort of cycle,
+as we discuss next. So the survivor needs to act with more sophistication than just fleeing in the opposite direction. The game depicted below is an example
+where the survivor has an easy win, but the strategy above fails.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.20]{survivorstrategy/BadSurvivorStrat.png}
+\caption{a game in which the cowardly strategy fails} \label{fig:BadSurvivorStrat}
+\end{figure}

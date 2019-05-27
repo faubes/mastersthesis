@@ -1,0 +1,72 @@
+
+The following sections will use a few basic ideas and definitions from graph theory.
+Formally, a graph $G = (V, E)$ is composed of:
+
+\begin{itemize}
+\item A set $V$ of vertices.
+\item A set $E \subset V \times V$ of edges described by a pair of endpoints.
+\end{itemize}
+
+If $G = (V,E)$ is a graph and $x,y \in V$ are vertices, we say that vertices $x$ and $y$ are neighbours if $(x,y) \in E$.
+That is, if there is an edge joining $x$ to $y$.
+In these games, the edges are assumed to be undirected and so we may write $xy = yx$
+and consider the two directions as a single edge.
+We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subset V$.
+
+[Need to add degree, subgraph, paths,  distance, diameter]
+
+For example, in Figure 1 we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
+Since $000$ and $001$ are connected, $(000, 001) \in E$.
+The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
+
+\subsection{Modeling the Game}
+
+We need a way to identify the players' positions over time so let
+$z_t^i \in V(G)$ be zombie $i$ on round $t$. Similarly $s_t$ is the
+survivor on round $t$. It might be tempting to group the zombies together
+into some tuple of the vertex set, but each zombie acts independently of
+the others and so this may not always be practical.
+
+We typically use only one survivor, so we normally only use a few zombies, and
+say $i \in \{1, \dots, k\}$ for ``small'' values of $k$.
+
+Indeed, in some cases a single zombie may suffice
+to capture the survivor. (We examine this scenario in the next section.)
+
+The zombies play, then the survivor plays and these two turns make one round.
+In particular, when we start the game we allow $z_0 \in V(G)$ to be
+ any vertex of the graph.
+
+\subsection{Paths and Moves}
+The zombie strategy requires that we consider the shortest path towards the survivor.
+
+In these games we use graph distance (or, equivalently, assume the edges have unit cost).
+In other words, the distance between two vertices is the hop length of a (shortest possible) path
+connecting them.
+(EDIT: The existence and nature of shortest path may warrant further discussion, in lemmas \& observations below.)
+
+Moreover, you may have many possible paths but from a player's perspective only the
+next move really matters. Each zombie must choose $z_{i+1} \in N(z_i)$ such that
+the distance $d(z_i, s_i)$ is reduced. We call all the set of all neighbours on
+a shortest path to the survivor the \textit{zombie moves}.
+
+\subsection{Rounds and Turns}
+You could say that the game starts on round 0 with the zombies choosing their
+start locations. The survivor then also picks. Then round 1 begins with the
+zombies finding, selecting and moving along a shortest path. In some cases the survivor
+may forfeit immediately. This is normal. If the graph is too simple
+then the game is not very interesting.
+
+The players choose start vertices in round 0, and that round 1
+begins with the zombies considering their approach.
+
+
+\subsection{Zombie Number}
+
+EDIT: Not quite. Redo
+
+The minimum number zombies guaranteed to win.
+
+If a single zombie is guaranteed to win on a graph, we say that it is zombie-win
+and that it has zombie number $z(G) = 1$. If it can be shown that $k$ zombies win,
+then $z(G) = k$
