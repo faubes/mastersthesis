@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {6.3}Defining Shadowing Rigorously}{13}{subsection.0.6.3}
 \contentsline {section}{\numberline {7}Zombies on a Cylinder}{13}{section.0.7}
 \contentsline {section}{\numberline {8}A Cycle with one Chord}{14}{section.0.8}
-\contentsline {section}{\numberline {9}Literature Review}{24}{section.0.9}
-\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{26}{section.Alph0.1}
-\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{26}{section.Alph0.1}
-\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{27}{section.Alph0.2}
-\contentsline {section}{\numberline {3}Alternate Strategy}{28}{section.Alph0.3}
+\contentsline {section}{\numberline {9}Literature Review}{25}{section.0.9}
+\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{27}{section.Alph0.1}
+\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{27}{section.Alph0.1}
+\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{28}{section.Alph0.2}
+\contentsline {section}{\numberline {3}Alternate Strategy}{29}{section.Alph0.3}

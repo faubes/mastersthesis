@@ -9,8 +9,28 @@ boundary edge are joined to vertices on the opposite side.
   \caption{$C_{4,5}$}
 \end{figure}
 
-Note that this a planar graph for any $m$ and $n$. Again, cylinder graph can be constructed by taking the
-Cartesian product of a cycle and a path $C_m \square P_n$.
+Again, the Cylinder graph can be considered as the Cartesian product $C_{m,n} = P_m \square C_n$ 
+of a cycle and a path. Note that this a planar graph for any $m$ and $n$.
 
 We claim now that three zombies suffice to win on this family of graphs since they can execute
 a guarding strategy similar to the one detailed in the previous section.
+
+Place two zombies on a row such that $d(z_1, z_2) = \lfloor \frac{n}{2} \rfloor$.
+Now observe that if the survivor finishes its turn on a different row, the zombies may move
+to a vertex of the same column but closer row.
+If the survivor finishes its turn on the same row, then the zombies have a single
+zombie move on the same row but to a closer column.
+
+Thus, after a finite number of rounds, the zombies can shadow the survivor's
+horizontal shadow. Indeed, if we place these two zombies in the middle
+of the cylinder, then the survivor's horizontal shadow is captured in at most
+$\lceil \frac{m}{2} \rceil$ rounds.
+
+The survivor is now trapped between these two zombies since they
+can always move to recapture its horizontal shadow.
+However, it could alternate between rows and thereby defeat the shadowing zombies.
+
+We add another zombie to capture the survivor's vertical shadow.
+Once the zombie's horizontal and vertical shadows are captured, the survivor
+cannot remain on the same row and is unable to change row
+indefinitely and thus will be cornered.
