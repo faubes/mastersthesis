@@ -38,28 +38,47 @@ In particular, when we start the game we allow $z_0 \in V(G)$ to be
  any vertex of the graph.
 
 \subsection{Paths and Moves}
-The zombie strategy requires that we consider the shortest path towards the survivor.
+The zombie strategy requires that we consider all shortests paths connecting
+the zombie to the survivor.
+
+For zombie $k$, write
+$Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ be the set of $i$ different $z_ks$-paths of length $\ell$.
+
+There is at least one such path since our graph is presumed connected,
+so $i > 0$ and $Z_k \neq \emptyset$.
+
+If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
+include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
+
+If, however, there are multiple $zs$-paths which have different first moves,
+then the zombie could make multiple moves.
+
+We call all the set of all neighbours on
+a shortest path to the survivor the \textit{zombie moves}, which formally are
+
+\[ Z[x] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \]
 
 In these games we use graph distance (or, equivalently, assume the edges have unit cost).
 In other words, the distance between two vertices is the hop length of a (shortest possible) path
 connecting them.
 (EDIT: The existence and nature of shortest path may warrant further discussion, in lemmas \& observations below.)
 
-Moreover, you may have many possible paths but from a player's perspective only the
-next move really matters. Each zombie must choose $z_{i+1} \in N(z_i)$ such that
-the distance $d(z_i, s_i)$ is reduced. We call all the set of all neighbours on
-a shortest path to the survivor the \textit{zombie moves}.
 
 \subsection{Rounds and Turns}
-You could say that the game starts on round 0 with the zombies choosing their
-start locations. The survivor then also picks. Then round 1 begins with the
-zombies finding, selecting and moving along a shortest path. In some cases the survivor
-may forfeit immediately. This is normal. If the graph is too simple
-then the game is not very interesting.
+We divide the game into rounds and turns. A round consists of two turns:
+a zombie turn and a survivor turn. This is necessary because we must
+consider distances between the players at different points of the game:
+at the beginning and middle of each round.
 
-The players choose start vertices in round 0, and that round 1
-begins with the zombies considering their approach.
+We track this by counting the turns. It is the zombie's turn
+on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
+Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
 
+The game starts on round 0 with the zombies choosing
+initial vertices. The survivor follows. In a sense the game really begins in
+round 1 with the zombies finding, selecting and moving along a shortest path.
+The survivor responds. The game repeats in this way until the survivor is caught,
+or both players agree that the survivor will always escape.
 
 \subsection{Zombie Number}
 

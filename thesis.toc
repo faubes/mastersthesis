@@ -4,21 +4,21 @@
 \contentsline {subsection}{\numberline {2.1}Modeling the Game}{3}{subsection.0.2.1}
 \contentsline {subsection}{\numberline {2.2}Paths and Moves}{4}{subsection.0.2.2}
 \contentsline {subsection}{\numberline {2.3}Rounds and Turns}{4}{subsection.0.2.3}
-\contentsline {subsection}{\numberline {2.4}Zombie Number}{4}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.4}Zombie Number}{5}{subsection.0.2.4}
 \contentsline {section}{\numberline {3}Lemmas and Observations}{5}{section.0.3}
 \contentsline {subsection}{\numberline {3.1}The Zombie Strategy}{5}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Keep Your Distance}{5}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}There is No Hope}{6}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.2}Keep Your Distance}{6}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}There is No Hope}{7}{subsection.0.3.3}
 \contentsline {section}{\numberline {4}Survivor Strategy}{7}{section.0.4}
 \contentsline {section}{\numberline {5}Win Condition}{8}{section.0.5}
-\contentsline {section}{\numberline {6}Zombies on the Grid}{8}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}The Shadowing Strategy}{10}{subsection.0.6.1}
-\contentsline {subsection}{\numberline {6.2}Shrinking the Survivor Territory}{11}{subsection.0.6.2}
+\contentsline {section}{\numberline {6}Zombies on the Grid}{9}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}The Shadowing Strategy}{11}{subsection.0.6.1}
+\contentsline {subsection}{\numberline {6.2}Shrinking the Survivor Territory}{12}{subsection.0.6.2}
 \contentsline {subsection}{\numberline {6.3}Defining Shadowing Rigorously}{13}{subsection.0.6.3}
-\contentsline {section}{\numberline {7}Zombies on a Cylinder}{13}{section.0.7}
-\contentsline {section}{\numberline {8}A Cycle with one Chord}{14}{section.0.8}
-\contentsline {section}{\numberline {9}Literature Review}{25}{section.0.9}
-\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{27}{section.Alph0.1}
-\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{27}{section.Alph0.1}
-\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{28}{section.Alph0.2}
-\contentsline {section}{\numberline {3}Alternate Strategy}{29}{section.Alph0.3}
+\contentsline {section}{\numberline {7}Zombies on a Cylinder}{14}{section.0.7}
+\contentsline {section}{\numberline {8}Cycle With One Chord}{15}{section.0.8}
+\contentsline {section}{\numberline {9}Existence of Winning Start}{28}{section.0.9}
+\contentsline {section}{\numberline {10}Literature Review}{30}{section.0.10}
+\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{32}{section.Alph0.1}
+\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{32}{section.Alph0.1}
+\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{33}{section.Alph0.2}

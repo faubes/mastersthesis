@@ -1,10 +1,15 @@
+Check Delta for m = n-1, m = n-2, m = n-3
+
+
 Review Cop-Win Tree and Zombie-Win BFS Tree. Is the triangular grid zombie win?
+
+If a graph is zombie-win, there must exist a BFS copwin tree?
+
 
 Review characterization of cop number n graphs -- can notion of BFS trees be extended to this form?
 
 Minmax principle: if a survivor can force the zombies to return to a previous configuration, then s wins.
 
-Q_m,n for small m, n.
 
 Single File Lemma
 
@@ -35,3 +40,19 @@ between two vertices indefinitely.
 A zombie cannot stay in place. It must move.
 
 Add zombie-win start positions to definitions.
+
+Q_m_n
+
+Q_m,n for small m, n.
+
+Conjecture on upper and lower bounds of Delta
+
+Prove said conjecture
+
+Modify code to remove values of delta which will not permit offset for general zombie start
+
+Find all possible zombie positions where $z_2$ starts on smaller cycle.
+
+Run Floyd-Warshall on torus grid.
+
+Recurse backwards from "zombie loss" positions to find all losing zombie positions
