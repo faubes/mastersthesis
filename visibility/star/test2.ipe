@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70206" creator="Ipe 7.2.7">
+<info created="D:20190814160445" modified="D:20190814161004"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/ptarc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fptarc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<pen name="heavier" value="0.8"/>
+<pen name="fat" value="1.2"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<layer name="beta"/>
+<view layers="beta" active="beta"/>
+<use layer="alpha" matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="368 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="432 624" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="512 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="512 448" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="384 400" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="432 480" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="432 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="464 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="480 496" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -128 192" name="mark/disk(sx)" pos="400 528" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+368 544 m
+400 528 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+400 528 m
+432 560 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+432 560 m
+464 544 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+464 544 m
+480 496 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+480 496 m
+432 480 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+432 480 m
+400 528 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+384 400 m
+368 544 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+384 400 m
+432 480 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+384 400 m
+512 448 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+480 496 m
+512 448 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+512 448 m
+512 560 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+512 560 m
+464 544 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+512 560 m
+432 624 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+432 624 m
+432 560 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+432 624 m
+368 544 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+432 560 m
+432 480 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+400 528 m
+480 496 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+400 528 m
+464 544 l
+</path>
+<path matrix="1 0 0 1 -128 192" stroke="black">
+464 544 m
+432 480 l
+</path>
+<use matrix="1 0 0 1 -40 63.1549" name="mark/disk(sx)" pos="368 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -197.549 -47.2409" name="mark/disk(sx)" pos="432 624" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -335.365 -62.8184" name="mark/disk(sx)" pos="512 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -335.365 -49.1816" name="mark/disk(sx)" pos="512 448" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -149.549 -80.7591" name="mark/disk(sx)" pos="384 400" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -104 -191.155" name="mark/disk(sx)" pos="432 480" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -10.4511 -240.759" name="mark/disk(sx)" pos="432 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 15.3653 -145.182" name="mark/disk(sx)" pos="464 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -0.634654 1.18158" name="mark/disk(sx)" pos="480 496" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 21.5489 48.7591" name="mark/disk(sx)" pos="400 528" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+456 623.155 m
+549.549 592.759 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+549.549 592.759 m
+549.549 335.241 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+549.549 335.241 m
+607.365 414.818 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+607.365 414.818 m
+607.365 513.182 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+607.365 513.182 m
+456 304.845 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+456 304.845 m
+549.549 592.759 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+362.451 335.241 m
+456 623.155 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+362.451 335.241 m
+456 304.845 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+362.451 335.241 m
+304.635 414.818 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+607.365 513.182 m
+304.635 414.818 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+304.635 414.818 m
+304.635 513.182 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+304.635 513.182 m
+607.365 414.818 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+304.635 513.182 m
+362.451 592.759 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+362.451 592.759 m
+549.549 335.241 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+362.451 592.759 m
+456 623.155 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+549.549 335.241 m
+456 304.845 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+549.549 592.759 m
+607.365 513.182 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+549.549 592.759 m
+607.365 414.818 l
+</path>
+<path matrix="1 0 0 1 -128 -16" stroke="black">
+607.365 414.818 m
+456 304.845 l
+</path>
+<use matrix="1 0 0 1 -266.867 -335.272" name="mark/disk(sx)" pos="368 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -388.687 -320.707" name="mark/disk(sx)" pos="432 624" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -287.78 -261.435" name="mark/disk(sx)" pos="512 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -138.1 -249.894" name="mark/disk(sx)" pos="512 448" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -112.451 -243.538" name="mark/disk(sx)" pos="384 400" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -254.329 -463.293" name="mark/disk(sx)" pos="432 480" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -405.9 -442.193" name="mark/disk(sx)" pos="432 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -295.352 -420.362" name="mark/disk(sx)" pos="464 544" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -198.027 -457.545" name="mark/disk(sx)" pos="480 496" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -298.867 -488.148" name="mark/disk(sx)" pos="400 528" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+325.133 176.728 m
+325.133 7.85181 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+325.133 7.85181 m
+250.1 85.8074 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+250.1 85.8074 m
+392.648 91.638 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+392.648 91.638 m
+505.973 6.4551 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+505.973 6.4551 m
+401.671 -15.2927 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+401.671 -15.2927 m
+325.133 7.85181 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+495.549 124.462 m
+325.133 176.728 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+495.549 124.462 m
+401.671 -15.2927 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+495.549 124.462 m
+597.9 166.106 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+505.973 6.4551 m
+597.9 166.106 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+597.9 166.106 m
+448.22 266.565 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+448.22 266.565 m
+392.648 91.638 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+448.22 266.565 m
+267.313 271.293 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+267.313 271.293 m
+250.1 85.8074 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+267.313 271.293 m
+325.133 176.728 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+250.1 85.8074 m
+401.671 -15.2927 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+325.133 7.85181 m
+505.973 6.4551 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+325.133 7.85181 m
+392.648 91.638 l
+</path>
+<path matrix="1 0 0 1 -224 32" stroke="black">
+392.648 91.638 m
+401.671 -15.2927 l
+</path>
+<use layer="beta" matrix="1 0 0 1 -201.852 -187.25" name="mark/disk(sx)" pos="384 640" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -196.049 -214.868" name="mark/disk(sx)" pos="384 672" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -189.343 -249.726" name="mark/disk(sx)" pos="384 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -219.714 -255.866" name="mark/disk(sx)" pos="416 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -254.495 -261.761" name="mark/disk(sx)" pos="448 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -261.663 -198.701" name="mark/disk(sx)" pos="448 640" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -233.852 -193.694" name="mark/disk(sx)" pos="416 640" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -281.132 -265.739" name="mark/disk(sx)" pos="480 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -311.064 -271.857" name="mark/disk(sx)" pos="512 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -329.275 -278.512" name="mark/disk(sx)" pos="528 704" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -335.466 -250.634" name="mark/disk(sx)" pos="528 672" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -342.506 -216.232" name="mark/disk(sx)" pos="528 640" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -330.289 -210.319" name="mark/disk(sx)" pos="512 640" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -297.868 -203.886" name="mark/disk(sx)" pos="480 640" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+290.657 486.274 m
+283.951 489.132 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+283.951 489.132 m
+278.148 484.75 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+278.148 484.75 m
+278.148 478.306 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+278.148 478.306 m
+282.337 473.299 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+282.337 473.299 m
+278.132 468.114 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+278.132 468.114 m
+277.711 461.681 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+277.711 461.681 m
+281.494 455.768 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+281.494 455.768 m
+288.534 453.366 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+288.534 453.366 m
+294.725 457.488 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+294.725 457.488 m
+296.936 464.143 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+296.936 464.143 m
+294.868 470.261 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+294.868 470.261 m
+289.505 474.239 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+289.505 474.239 m
+292.286 480.134 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+292.286 480.134 m
+290.657 486.274 l
+</path>
+<path matrix="1 0 0 1 -96 -32" stroke="black">
+289.505 474.239 m
+282.337 473.299 l
+</path>
+<use matrix="1 0 0 1 -21 -124" name="mark/disk(sx)" pos="128 576" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -15 -118" name="mark/disk(sx)" pos="112 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -43 -118" name="mark/disk(sx)" pos="160 560" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 12 -96" name="mark/disk(sx)" pos="80 528" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -26 -96" name="mark/disk(sx)" pos="128 528" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -48 -96" name="mark/disk(sx)" pos="160 528" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -86 -96" name="mark/disk(sx)" pos="208 528" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -15 -74" name="mark/disk(sx)" pos="112 496" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -37 -74" name="mark/disk(sx)" pos="144 496" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 22 -52" name="mark/disk(sx)" pos="80 464" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 -20 -52" name="mark/disk(sx)" pos="112 464" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+134 530 m
+144 540 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+154 530 m
+144 540 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+129 520 m
+134 530 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+139 520 m
+134 530 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+149 520 m
+154 530 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+159 520 m
+154 530 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+134 510 m
+139 520 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+144 510 m
+139 520 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+129 500 m
+134 510 l
+</path>
+<path matrix="1 0 0 1 -37 -88" stroke="black">
+139 500 m
+134 510 l
+</path>
+</page>
+</ipe>

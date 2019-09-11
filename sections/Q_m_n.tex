@@ -42,8 +42,8 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
   We seek a winning zombie strategy (that is, a zombie start) for $m \geq 3$, $n \geq 6$.
   The chord is the crux of the game, so first we assume that one zombie is on the chord
-  and another at some distance $\Delta$ while the survivor is somewhere on $P_m$,
-  the smaller path. We know the first zombie chases the survivor around the cycle, so
+  and another at some distance $\Delta$ while the survivor is somewhere on $P_m$.
+  We know the first zombie chases the survivor around the cycle, so
   we need to control the arrival of the second zombie so that the survivor cannot escape,
   nor can it trick the second zombie into spinning the same direction as the first.
 
@@ -64,14 +64,8 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
  \newpage
 
  \begin{proofpart} Cornering the Survivor on the Smallest Cycle
-   Let $u$ and $v$ be the endpoints of the chord and label the vertices
-   such that $u=0$, $v=m$ and the paths $P_m$ and $P_n$ enumerate the vertices clockwise.
-   Set $z_1 = u$ and $z_2 = m+\Delta$. The path from $z_2$ to $v$
-   has length $\Delta$ and so it would take that many rounds for $z_2$ to reach the
-   chord from the clockwise direction and $n-\Delta$ rounds to reach $u$ from the other.
-   We can calculate values of $\Delta$ which will result in the survivor's capture.
 
-  Suppose that the game has reached the following state:
+   Suppose that the game has reached the following state:
 
   \begin{center}
     \includegraphics[scale=0.20]{q_m_n/diagram1}
@@ -80,17 +74,18 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
   \begin{itemize}
    \item the first zombie is on an endpoint of the chord, say $v$
    \item there are $\Delta$ vertices counting clockwise from $u$ to $z_2$.
-   \item the survivor is somewhere on $P_m \setminus N(v)$.
+   \item the survivor is on $P_m$ at a distance of $\ell$ vertices counting
+   clockwise from $v$.
   \end{itemize}
 
-  By comparing the lengths of different paths, we calculate the values $\Delta$
+  By comparing the lengths of different paths, we calculate the values of $\Delta$
   which guarantee that the survivor will be cornered on $P_m$. That is to say,
   the survivor will be intercepted by $z_2$ before it can reach any vertex
   in $Q_{m,n} \setminus P_m$.
 
   Denote as $\ell$ the length of the clockwise
   path from $v$ to $s$. Note that we must have $2 \leq \ell \leq m-1$ else
-  $z_2$ captures the survivor on the next round.
+  $z_1$ captures the survivor on the next round.
 
   We can assume that once $z_1$ chooses a direction from $v$
   that it will continue in that direction:
@@ -120,11 +115,11 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
   There are four possible shortest paths for $z_2$ to the survivor:
 
   \begin{center}
-    \includegraphics[scale=0.30]{q_m_n/z2_path_Pa}
-    \includegraphics[scale=0.30]{q_m_n/z2_path_Pb}
+    \includegraphics[scale=0.45]{q_m_n/z2_path_Pa}
+    \includegraphics[scale=0.45]{q_m_n/z2_path_Pb}
 
-    \includegraphics[scale=0.30]{q_m_n/z2_path_Pc}
-    \includegraphics[scale=0.30]{q_m_n/z2_path_Pd}
+    \includegraphics[scale=0.45]{q_m_n/z2_path_Pc}
+    \includegraphics[scale=0.45]{q_m_n/z2_path_Pd}
   \end{center}
 
   \begin{itemize}
@@ -184,8 +179,8 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
   \end{align*}
 
   Next we consider: which of $s$ or $z_2$ reaches $u$ first?
-  If $\Delta = m - \ell$ both reach $u$ on the same round,
-  with the survivor moving onto the $z_2$-occupied vertex (and losing).
+  If $\Delta = m - \ell$ both $z_2$ and $s$ reach $u$ on the same round,
+  with the survivor moving onto the zombie-occupied vertex (and losing).
   If we have $\Delta = m - \ell + 1$, then $s$ reaches $u$ first
   but is caught by $z_2$ on the following round.
   So, to guarantee the survivor has not escaped $P_m$ we need
@@ -197,13 +192,16 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
   the survivor could then take the chord and possibly escape, pulling
   both zombies into a loop either on $C_{m}$ or $C_{n}$.
   This constraint on $\Delta$ guarantees that the survivor cannot
-  escape $C_m$ before $z_2$'s arrival.
+  escape $C_m$ before $z_2$'s arrival in Case I.A.
 
   That is not sufficient, however. We must also ensure that $z_2$ moves
   counter-clockwise (opposite to $z_1$) once it reaches $u$ in order to trap the
   survivor. So we need
   \begin{align*}
    m - \ell - \Delta \leq & 1 + \Delta + \ell \\
+\end{align*}
+Or, in terms of $\Delta$,
+\begin{align*}
    2 \Delta \geq          & m - 2\ell  -1     \\
   \end{align*}
 
@@ -307,39 +305,72 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
    n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
    n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
   \end{align*}
-  These can be simplified further with a bit of algebra:
+  These can be simplified with a bit of algebra:
   \begin{align*}
    n-m +2\ell \leq & 2 \Delta & \text{and} \\
    n-1 \leq        & 2\Delta
   \end{align*}
-  or
+  \begin{center}or\end{center}
   \begin{align*}
    n + 1 \leq         & 2 \Delta & \text{and} \\
    n + m - 2\ell \leq & 2 \Delta
   \end{align*}
-  Which we can combine and deduce that (footnote: see appendix I).
+
+  These inequalites are of the form
   \begin{align*}
-   n -m + 2\ell \leq & 2 \Delta & \text{and} \\
-   n-1 \leq          & 2 \Delta
+   n-x \leq & 2 \Delta & \text{and} \\
+   n-1 \leq & 2\Delta
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   n + x \leq & 2 \Delta & \text{and} \\
+   n + 1 \leq & 2 \Delta
+  \end{align*}
+
+  Where $x = m -2\ell$.
+
+  Supposing $x\geq 0$, we have
+  \begin{align*}
+   n-x \leq & n+x \leq 2 \Delta & \text{and} \\
+   n-1 < & n+1 \leq 2 \Delta
+  \end{align*}
+  and take the lowest bounds because of the disjunction, so that
+   $2\Delta \geq n-x = n-m+2\ell$ and $2\Delta \geq n-1$ suffices.
+
+  Since assumption A gives $m-2\ell \geq -1$, supposing $x < 0$ reduces the inequalites to
+  \begin{align*}
+   n+1 \leq & 2 \Delta & \text{and} \\
+   n-1 \leq & 2 \Delta
+  \end{align*}
+  which is satisfied by $2\Delta \geq n-x = n-m+2\ell$ and $2\Delta \geq n-1$.
+
+  Thus $z_2$ will go clockwise under assumption A if
+  \begin{align*}
+   2\Delta \geq & n-m+2\ell & \text{and} \\
+    2\Delta \geq & n-1
   \end{align*}
 
   We have assumed that $z_1$ is going clockwise. If $m - \ell = n - \Delta$,
-  then $z_2$ reaches $v$ and $s$ reaches $u$ on the same round, and therefore $s$
+  then $z_2$ reaches $v$ and $s$ reaches $u$ on the same round and $s$
   will be caught on the next. Therefore, to guarantee the survivor has not
   escaped $P_m$ in this scenario we need
   \begin{align*}
    n - \Delta \leq & m - \ell     \\
    \Delta \geq     & n - m + \ell
   \end{align*}
-  otherwise the survivor could reach the chord before $z_2$ escape.
+  otherwise the survivor could reach the chord before $z_2$.
 
-  Then, to ensure that $z_2$ takes the chord and goes counter-clockwise once
+  After $n-\Delta$ rounds, we have (insert diagram)
+
+  Then, to ensure that $z_2$ goes counter-clockwise once
   it reaches $v$, we need
   \begin{align*}
    1 + m - \ell - (n - \Delta) \leq & n - \Delta + \ell  \\
    2 \Delta \leq                    & 2n + 2\ell - m - 1
   \end{align*}
 
+
+  All together this gives
   \textit{Case II.A. Summary}
 
   $z_1$ goes clockwise:
@@ -383,7 +414,45 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
    n+m-2\ell  \leq & 2 \Delta
   \end{align*}
 
-  From which we conclude that $n+1 \leq 2 \Delta$ (see appendix II).
+  We have
+  \begin{align*}
+   n - \Delta + \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   n - \Delta + 1 + m - \ell \leq & \Delta + (m - \ell) & \text{and} \\
+   n - \Delta + 1 + m - \ell \leq & \Delta + 1 + \ell
+  \end{align*}
+  These can be simplified further with a bit of algebra:
+  \begin{align*}
+   n-m+2\ell \leq & 2 \Delta & \text{and} \\
+   n-1 \leq       & 2\Delta
+  \end{align*}
+  or
+  \begin{align*}
+   n+1 \leq        & 2 \Delta & \text{and} \\
+   n+m-2\ell  \leq & 2 \Delta
+  \end{align*}
+
+  These inequalites are of the form
+  \begin{align*}
+   n-x \leq & 2 \Delta & \text{and} \\
+   n-1 \leq & 2\Delta
+  \end{align*}
+  \begin{center}or\end{center}
+  \begin{align*}
+   n + 1 \leq & 2 \Delta & \text{and} \\
+   n + x \leq & 2 \Delta
+  \end{align*}
+
+  Where $x = m -2\ell$. Now since assumption B gives $m - 2\ell \leq -1$, we
+  see that
+  \begin{align*}
+   n-1 \leq & n-x \leq 2 \Delta \\
+            & \text{or}         \\
+   n+x \leq & n+1 \leq 2 \Delta
+  \end{align*}
 
   Now we consider: which of $s$ or $z_2$ reaches $v$ first?
   If $n - \Delta = \ell$, then they both reach $u$ at the same time,
@@ -450,7 +519,7 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
   \begin{align*}
    n - \Delta - 2k - 2 \leq & \Delta + k +1 + k +2 & \text{and} \\
-   \Delta + 2k -1 \leq      & n - 2\Delta +3
+   \Delta + 2k -1 \leq      & n - \Delta -2k +2x`
   \end{align*}
   Solving for $k$ gives
   \[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
@@ -473,6 +542,7 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
   value of $\ell$.
 
   \textit{Case I.A. Summary}
+
   $z_1$ goes clockwise:
   \begin{align*}
    4 \leq & 2 \ell \leq m + 1
@@ -488,6 +558,7 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
    m - 2\ell  -1 \leq & 2 \Delta                     \\
   \end{align*}
   \textit{Case I.B. Summary}
+
   $z_1$ goes counter-clockwise:
   \begin{align*}
    m + 1 \leq 2 \ell \leq 2m - 2
@@ -503,6 +574,7 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
    2\ell - m + 1 \leq & 2 \Delta
   \end{align*}
   \textit{Case II.A. Summary}
+
   $z_1$ goes clockwise:
   \begin{align*}
    4 \leq 2 \ell \leq m + 1
@@ -518,6 +590,7 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
    2 \Delta \leq & 2n + 2\ell - m - 1
   \end{align*}
   \textit{Case II.B. Summary}
+
   $z_1$ goes counter-clockwise:
   \begin{align*}
    m + 1 \leq 2 \ell \leq 2m - 2
@@ -569,10 +642,9 @@ Suppose that we are in Case I. A. and $\Delta = \lfloor \frac{m}{2} \rfloor$.
 Case I. A is characterized by the following constraints:
 
 \[ 4 \leq 2 \ell \leq m+1 \]
-and
-
+\begin{center}and\end{center}
 \[ 2\Delta \leq n - m + 2\ell \]
-or
+\begin{center}or\end{center}
 \[ 2\Delta \leq n-1 \]
 
 The zombies win if
@@ -594,11 +666,9 @@ Which shows that the zombie-win requirements are met.
 Suppose now that we are not in Case 1. A. Negating the constraints of Case I. A. gives
 
 \[ 2\Delta \geq n - m + 2\ell +1 \]
-and
+\begin{center}and\end{center}
 \[ 2 \Delta \geq n - 1 + 1 \]
-
-or
-
+\begin{center}or\end{center}
 \[ m+1 \leq 2 \ell \leq 2m -2 \]
 
 If we assume that $m$ is odd and $ 2 \Delta \geq n$ then we obtain a

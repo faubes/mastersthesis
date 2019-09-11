@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {6.3}Defining Shadowing Rigorously}{13}{subsection.0.6.3}
 \contentsline {section}{\numberline {7}Zombies on a Cylinder}{14}{section.0.7}
 \contentsline {section}{\numberline {8}Cycle With One Chord}{15}{section.0.8}
-\contentsline {section}{\numberline {9}Existence of Winning Start}{28}{section.0.9}
-\contentsline {section}{\numberline {10}Literature Review}{30}{section.0.10}
-\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{32}{section.Alph0.1}
-\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{32}{section.Alph0.1}
-\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{33}{section.Alph0.2}
+\contentsline {section}{\numberline {9}Existence of Winning Start}{29}{section.0.9}
+\contentsline {section}{\numberline {10}Literature Review}{31}{section.0.10}
+\contentsline {section}{\numberline {1}$Q_{m, n}$ Appendices}{33}{section.Alph0.1}
+\contentsline {section}{\numberline {1}Simplifying $z_2$'s inequalities for Case II.A.}{33}{section.Alph0.1}
+\contentsline {section}{\numberline {2}Simplifying $z_2$'s inequalities for Case II.B.}{34}{section.Alph0.2}

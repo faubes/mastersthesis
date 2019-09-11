@@ -1,0 +1,11 @@
+[the number of vertices in the graph]
+[a comma seperated list containing the ids of the adjacent vertices]
+[a comma seperated list containing the ids of the adjacent vertices]
+[a comma seperated list containing the ids of the adjacent vertices]
+[a comma seperated list containing the ids of the adjacent vertices]
+[a comma seperated list containing the ids of the adjacent vertices]
+...
+...
+...
+
+NOTE: Your vertex ids need to start at 0

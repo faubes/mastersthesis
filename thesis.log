@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  19 JUL 2019 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  12 AUG 2019 12:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -740,35 +740,35 @@ Package pdftex.def Info: img/q_m_n/Q_m_n_basic.png  used on input line 10.
 <img/q_m_n/diagram1.png, id=310, 1687.30376pt x 816.04875pt>
 File: img/q_m_n/diagram1.png Graphic file (type png)
 <use img/q_m_n/diagram1.png>
-Package pdftex.def Info: img/q_m_n/diagram1.png  used on input line 77.
+Package pdftex.def Info: img/q_m_n/diagram1.png  used on input line 71.
 (pdftex.def)             Requested size: 337.45477pt x 163.20685pt.
  [17 </home/joel/masters/img/q_m_n/diagram1.png>]
-<img/q_m_n/z2_path_Pa.pdf, id=317, 455.8079pt x 162.2582pt>
+<img/q_m_n/z2_path_Pa.pdf, id=317, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pa.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pa.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 123.
-(pdftex.def)             Requested size: 136.74342pt x 48.67783pt.
-<img/q_m_n/z2_path_Pb.pdf, id=318, 455.8079pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 118.
+(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
+<img/q_m_n/z2_path_Pb.pdf, id=318, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pb.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pb.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 124.
-(pdftex.def)             Requested size: 136.74342pt x 48.67783pt.
-<img/q_m_n/z2_path_Pc.pdf, id=319, 455.8079pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 119.
+(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
+<img/q_m_n/z2_path_Pc.pdf, id=319, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pc.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pc.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 126.
-(pdftex.def)             Requested size: 136.74342pt x 48.67783pt.
-<img/q_m_n/z2_path_Pd.pdf, id=320, 455.8079pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 121.
+(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
+<img/q_m_n/z2_path_Pd.pdf, id=320, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pd.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pd.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 127.
-(pdftex.def)             Requested size: 136.74342pt x 48.67783pt.
- [18 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]) (/home/joel/masters/sections/literature.tex) [30] (/home/joel/masters/thesis.bbl
+Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 122.
+(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
+ [18 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]) (/home/joel/masters/sections/literature.tex) [31] (/home/joel/masters/thesis.bbl
 Underfull \hbox (badness 2617) in paragraph at lines 42--45
 \T1/cmr/m/n/12 2072558330 / understanding-[]pac-[]man-[]ghost-[]behavior$[], De-cem-ber 2010, (Ac-cessed on
  []
 
-) [31
+) [32
 
 ]
 
@@ -796,7 +796,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 2.
 
-[32pdfTeX warning (ext4): destination with the same identifier (name{section.Alph0.1}) has been already used, duplicate ignored
+[33pdfTeX warning (ext4): destination with the same identifier (name{section.Alph0.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -816,7 +816,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
- [33]
+ [34]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (/home/joel/masters/thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
@@ -826,19 +826,19 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 7768 strings out of 492982
- 110178 string characters out of 6134895
+ 7769 strings out of 492982
+ 110185 string characters out of 6134895
  197482 words of memory out of 5000000
  11071 multiletter control sequences out of 15000+600000
  22548 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,12n,31p,367b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,12n,31p,367b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 rm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on /home/joel/masters/thesis.pdf (36 pages, 644001 bytes).
+Output written on /home/joel/masters/thesis.pdf (37 pages, 641576 bytes).
 PDF statistics:
  595 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
- 90 named destinations out of 1000 (max. 500000)
+ 433 compressed objects within 5 object streams
+ 91 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 
