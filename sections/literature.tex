@@ -1,5 +1,25 @@
-\begin{itemize}
-  \item Cops and Robbers results?
-  \item Deterministic zombies
-  \item Probabilistic zombies
-\end{itemize}
+\subsection{Cops and Robbers}
+
+Cops and Robbers is a well-known game and many results are collected in \cite{bonato2011game}. The cop-number of a graph $c(G)$ is defined as the minimum number of cops required to guarantee a cop win
+on $G$.
+
+Here is an overview of some known results:
+
+If $G$ has girth at least 5, then $c(G)\geq \delta(G)$ where $\delta(G)$ is the minimum degree of $G$ \cite{aigner1984game}.
+
+
+There exist characterizations of graphs for which $c(G) = 1$ (known as cop-win graphs, see
+\cite{bonato2011game}[p. 30]) and
+also more generally for graphs where $c(G) = k$ (known as k-cop-win graphs, see \cite{bonato2011game}[p. 39]).
+In fact, there exists a polynomial time algorithm for deciding whether a graph is k-cop-win  (see \cite{bonato2011game}[p.119]).
+
+
+One of the most surprising results about the Game of Cops and Robbers are owed to \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
+Basically, a graph is planar if it can be drawn in the plane (say, on a piece of paper) without crossing any edges.
+In such graphs, Aigner and Fromme showed that 3 cops are sufficient to guarantee the robber will be caught, no matter how large the graph!
+Provided that the cops follow an appropriate strategy, of course.
+
+\subsection{Deterministic zombies}
+
+
+\subsection{Probabilistic zombies}

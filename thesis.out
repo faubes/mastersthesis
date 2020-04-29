@@ -1,24 +1,25 @@
 \BOOKMARK [1][-]{section.0.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.0.1.1}{How to Play}{section.0.1}% 2
 \BOOKMARK [1][-]{section.0.2}{Notation}{}% 3
-\BOOKMARK [2][-]{subsection.0.2.1}{Modeling the Game}{section.0.2}% 4
+\BOOKMARK [2][-]{subsection.0.2.1}{Playing and Modeling the Game}{section.0.2}% 4
 \BOOKMARK [2][-]{subsection.0.2.2}{Paths and Moves}{section.0.2}% 5
-\BOOKMARK [2][-]{subsection.0.2.3}{Rounds and Turns}{section.0.2}% 6
-\BOOKMARK [2][-]{subsection.0.2.4}{Zombie Number}{section.0.2}% 7
-\BOOKMARK [1][-]{section.0.3}{Lemmas and Observations}{}% 8
-\BOOKMARK [2][-]{subsection.0.3.1}{The Zombie Strategy}{section.0.3}% 9
-\BOOKMARK [2][-]{subsection.0.3.2}{Keep Your Distance}{section.0.3}% 10
-\BOOKMARK [2][-]{subsection.0.3.3}{There is No Hope}{section.0.3}% 11
-\BOOKMARK [1][-]{section.0.4}{Survivor Strategy}{}% 12
-\BOOKMARK [1][-]{section.0.5}{Win Condition}{}% 13
-\BOOKMARK [1][-]{section.0.6}{Zombies on the Grid}{}% 14
-\BOOKMARK [2][-]{subsection.0.6.1}{The Shadowing Strategy}{section.0.6}% 15
-\BOOKMARK [2][-]{subsection.0.6.2}{Shrinking the Survivor Territory}{section.0.6}% 16
-\BOOKMARK [2][-]{subsection.0.6.3}{Defining Shadowing Rigorously}{section.0.6}% 17
-\BOOKMARK [1][-]{section.0.7}{Zombies on a Cylinder}{}% 18
-\BOOKMARK [1][-]{section.0.8}{Cycle With One Chord}{}% 19
-\BOOKMARK [1][-]{section.0.9}{Existence of Winning Start}{}% 20
-\BOOKMARK [1][-]{section.0.10}{Literature Review}{}% 21
-\BOOKMARK [1][-]{section.Alph0.1}{Qm, n Appendices}{}% 22
-\BOOKMARK [1][-]{section.Alph0.1}{Simplifying z2's inequalities for Case II.A.}{}% 23
-\BOOKMARK [1][-]{section.Alph0.2}{Simplifying z2's inequalities for Case II.B.}{}% 24
+\BOOKMARK [2][-]{subsection.0.2.3}{Zombie Number}{section.0.2}% 6
+\BOOKMARK [1][-]{section.0.3}{Literature Review}{}% 7
+\BOOKMARK [2][-]{subsection.0.3.1}{Cops and Robbers}{section.0.3}% 8
+\BOOKMARK [2][-]{subsection.0.3.2}{Deterministic zombies}{section.0.3}% 9
+\BOOKMARK [2][-]{subsection.0.3.3}{Probabilistic zombies}{section.0.3}% 10
+\BOOKMARK [1][-]{section.0.4}{Cop-win and Zombie-win Graphs}{}% 11
+\BOOKMARK [1][-]{section.0.5}{Survivor Strategy}{}% 12
+\BOOKMARK [1][-]{section.0.6}{Planar Zombies}{}% 13
+\BOOKMARK [1][-]{section.0.7}{Zombies on the Grid}{}% 14
+\BOOKMARK [2][-]{subsection.0.7.1}{The Shadowing Strategy}{section.0.7}% 15
+\BOOKMARK [2][-]{subsection.0.7.2}{Shrinking the Survivor Territory}{section.0.7}% 16
+\BOOKMARK [2][-]{subsection.0.7.3}{Defining Shadowing Rigorously}{section.0.7}% 17
+\BOOKMARK [1][-]{section.0.8}{Zombies on a Cylinder}{}% 18
+\BOOKMARK [1][-]{section.0.9}{Cycle With One Chord}{}% 19
+\BOOKMARK [1][-]{section.0.10}{Existence of Winning Start}{}% 20
+\BOOKMARK [1][-]{section.Alph0.1}{Qm, n Appendices}{}% 21
+\BOOKMARK [1][-]{section.Alph0.1}{Simplifying z2's inequalities for Case II.A.}{}% 22
+\BOOKMARK [1][-]{section.Alph0.2}{Simplifying z2's inequalities for Case II.B.}{}% 23
+\BOOKMARK [1][-]{section.Alph0.3}{Planar Zombies Counterexample Case III}{}% 24
+\BOOKMARK [1][-]{section.Alph0.4}{Case IV}{}% 25

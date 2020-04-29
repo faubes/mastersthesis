@@ -1,5 +1,9 @@
 
-The following sections will use a few basic ideas and definitions from graph theory.
+The graphs are assumed to be finite and connected: that is, there is a finite
+number of vertices and there exists a path between every pair of vertices.
+Playing on graphs with multiple connected components does not make much sense in the context of these games.
+
+The following sections will use a few definitions from graph theory.
 Formally, a graph $G = (V, E)$ is composed of:
 
 \begin{itemize}
@@ -13,36 +17,57 @@ In these games, the edges are assumed to be undirected and so we may write $xy =
 and consider the two directions as a single edge.
 We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subset V$.
 
-[Need to add degree, subgraph, paths,  distance, diameter]
-
 For example, in Figure 1 we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
 Since $000$ and $001$ are connected, $(000, 001) \in E$.
 The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
 
-\subsection{Modeling the Game}
+The degree of a vertex is the number of edges incident to that vertex. The minimum and maximum
+degrees of a graph are sometimes denoted as $\delta(G)$ and $\Delta(G)$, respectively.
 
-We need a way to identify the players' positions over time so let
-$z_t^i \in V(G)$ be zombie $i$ on round $t$. Similarly $s_t$ is the
-survivor on round $t$. It might be tempting to group the zombies together
+\subsection{Playing and Modeling the Game}
+
+The survivor is $s \in V(G)$ and $z_i \in V(G)$ are zombies with $i \in \{1, \dots, k\}$.
+In the games studied there is a single survivor and a ``small'' number $k$ of zombies.
+
+We divide the game into rounds and turns. A round consists of two turns:
+a zombie turn and a survivor turn.
+
+The game starts on round 0 with the zombies choosing
+initial vertices. The survivor follows. In a sense the game really begins in
+round 1 with the zombies finding, selecting and moving along a shortest path.
+The survivor responds. The game repeats in this way until the survivor is caught,
+or both players agree that the survivor will always escape.
+
+We can implement this aspect of the game fairly easily by couting the turns.
+It is the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
+Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
+
+It is occasionally useful to identify the players' positions over time, in which
+case let $z_t^i \in V(G)$ be zombie $i$ on round $t$. Similarly $s_t$ is the
+survivor on round $t$. This burdensome notation will be omitted when possible.
+
+It might be tempting to group the zombies together
 into some tuple of the vertex set, but each zombie acts independently of
 the others and so this may not always be practical.
-
-We typically use only one survivor, so we normally only use a few zombies, and
-say $i \in \{1, \dots, k\}$ for ``small'' values of $k$.
-
-Indeed, in some cases a single zombie may suffice
-to capture the survivor. (We examine this scenario in the next section.)
-
-The zombies play, then the survivor plays and these two turns make one round.
-In particular, when we start the game we allow $z_0 \in V(G)$ to be
- any vertex of the graph.
 
 \subsection{Paths and Moves}
 The zombie strategy requires that we consider all shortests paths connecting
 the zombie to the survivor.
+In the studied discrete graphs below, the distance between two vertices is the hop length of a (shortest possible) path connecting them.
 
-For zombie $k$, write
-$Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ be the set of $i$ different $z_ks$-paths of length $\ell$.
+A path $P = v_0, v_1, v_2, \dots , v_n$ is a ``strict'' walk: a non-repeating sequence of
+adjacent vertices in a graph. A path is an example of a subgraph $G' = (V(P), E(P))$ since $V(P) \subseteq V$ and $E(P) \subseteq E$.
+
+Paths allow us to define a distance $d(x,y)$ between vertices as the length of the shortest path connecting them (or infinity if such does not exist) and computing such paths is a classic
+problem in computer science.
+
+The diameter and girth of a graph are useful properties which appear in some
+of the theorems herein.
+The diameter $\diam(G)$ is the length of the longest possible path in $G$ and the girth of a graph is the length of the minimum order subcycle.
+
+Now consider zombie $k$. According to the rules of the game, on its turn the zombie
+``must move on a shortest path'' towards the survivor. More precisely, this requires
+considering $Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ the set of $i$ different $z_ks$-paths of length $\ell$.
 
 There is at least one such path since our graph is presumed connected,
 so $i > 0$ and $Z_k \neq \emptyset$.
@@ -54,31 +79,11 @@ If, however, there are multiple $zs$-paths which have different first moves,
 then the zombie could make multiple moves.
 
 We call all the set of all neighbours on
-a shortest path to the survivor the \textit{zombie moves}, which formally are
+a shortest path to the survivor the \textit{zombie moves}, which could be denoted
 
-\[ Z[x] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \]
+\[ Z[x; s] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \]
 
-In these games we use graph distance (or, equivalently, assume the edges have unit cost).
-In other words, the distance between two vertices is the hop length of a (shortest possible) path
-connecting them.
-(EDIT: The existence and nature of shortest path may warrant further discussion, in lemmas \& observations below.)
-
-
-\subsection{Rounds and Turns}
-We divide the game into rounds and turns. A round consists of two turns:
-a zombie turn and a survivor turn. This is necessary because we must
-consider distances between the players at different points of the game:
-at the beginning and middle of each round.
-
-We track this by counting the turns. It is the zombie's turn
-on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
-Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
-
-The game starts on round 0 with the zombies choosing
-initial vertices. The survivor follows. In a sense the game really begins in
-round 1 with the zombies finding, selecting and moving along a shortest path.
-The survivor responds. The game repeats in this way until the survivor is caught,
-or both players agree that the survivor will always escape.
+the zombies moves from $x$ given survivor is on $s$.
 
 \subsection{Zombie Number}
 

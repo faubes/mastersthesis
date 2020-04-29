@@ -1,79 +1,60 @@
 
-This report presents and discusses the Game of Zombies and Survivors on Graphs (Z \& S or the Zombie Game), a variation
-of the classic Game of Cops and Robbers recently studied in \cite{fitzpatrick2016deterministic}.
-Z \& S is a vertex-pursuit game in which players take turns moving tokens on a graph with
+Vertex pursuit games are adversarial games played on a graphs.
+A graph is a mathematical model used to describe structures such as networks and
+maps. Players take turns moving tokens on a graph (the game board, if you like) with
 the objective to capture (or evade) the other player.
-A graph is a mathematical model used to describe networks, maps and -- appropriately enough -- board games.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.20]{intro/cube.png}
-\caption{The Cube Graph} \label{fig:Cube}
-\end{figure}
+Many variations of these graph pursuit games have been proposed. There are many rules and
+parameters to tweak to produce different games:
+\begin{enumerate}
+\item How much information do the players have?
+\item Do they know each others positions?From how far away?
+\item Do the players know the playing field, i.e., the graph?
+\item Are the players restricted to vertices or edges?
+\item Are players obligated to move?
+\item Does the graph change over time somehow?
+\end{enumerate}
 
-Many games can be modelled using graphs. Monopoly, for example, can be seen as a large cycle in which every vertex is joined to the twelve (?) following vertices in clockwise order. Rolling the die determines which edge to follow.
+The Game of Cops and Robbers on Graphs \cite{bonato2011game} is perhaps the most
+well-known vertex pursuit game. It is a perfect information game with Cops trying
+to catch the Robber.
 
-A graph theoretic perspective can be applied to video games, which often involve pathfinding, mazes and chases.
-In their introduction, the authors of \cite{bonato2011game} show how to convert the labyrinth in Pacman into a graph:
-the vertices are the intersections of the maze and vertices are connected by an edge whenever a corridor links the intersections.
+A variation called Zombies and Survivors (Z \& S or Zombie Game) was recently proposed and studied in \cite{fitzpatrick2016deterministic} and \cite{fitzpatrick2018game}.
+Z \& S is the same as Cops and Robbers with the added twist that the zombies are required to move directly towards the survivor.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.20]{intro/maze.png}
-\caption{A Maze and its Corresponding Graph \cite{bonato2011game}[p.2]} \label{fig:BonatoMazeGraph}
-\end{figure}
+This thesis has been an attempt to better understand this variant and, in particular,
+to see if the results obtained for Cops and Robbers still hold when the cops
+are constrained in their strategy.
 
 \subsection{How to Play}
 
-The Game of Zombies and Survivors is a variant of Cops and Robbers,
-a well-studied game. See \cite{bonato2011game} for a comprehensive study of Cops
-and Robbers.
+To begin, the zombies choose starting vertices.
+Then, the survivor choooses a start position.
+Then on the next and each following round the zombies (must) move toward the survivor
+and, if uncaught, the survivor (may) move. Here a move is an instantaneous jump
+along an edge from one vertex to another.
 
-If familiar with the Game of Cops and Robbers, the reader may skip this section:
-the only difference between the two games is that the zombies must move
-along shortest paths towards the survivor. The cops are under no such restriction.
+The sophistication of the zombies' strategy gives them their name:
+you can imagine the zombies -- arms outstretched -- ambling directly towards the survivor.
+In this game, the players have complete information of the graph and the positions of the players. Indeed, the zombies need to know the position of the survivor to enact
+their strategy.
 
-Zombies and Survivors is an adversarial game where one player controls the survivor(s),
-the other the zombie(s).
-Usually we keep it simple and have a few zombies chase a single survivor. After all,
-if a signel survivor can't hope to escape, then adding more is simply gruesome.
-
-Each round, the players take turns moving from vertex to vertex along the edges of a graph.
-More precisely, the zombies all move, then the survivor moves.
-The zombies seek to capture the survivor (move onto the same vertex)
-while the survivor tries to escape indefinitely.
-
-To begin, the zombies choose starting vertices to occupy.
-Next, the survivor choooses a start position; ideally, one not too close to any of the zombies.
-On the next and each following round the zombies move toward the survivor along a shortest path.
-
-The sophistication of the zombie's strategy gives them their name.
-You can almost imagine the zombies, arms outstretched, ambling directly towards the survivor.
-Once all the zombies have moved, the survivor can move (flee) to a neighbouring vertex or pass.
+The zombies move, the survivor responds and these two turns make one round.
+It has been asked by new players if the order of play might be reversed but
+then zombies always win.
 
 The game concludes when either:
 \begin{itemize}
-\item A zombie catches the survivor. That is, a zombie moves onto the vertex
-occupied by the survivor. This is a zombie win.
+\item A zombie catches the survivor. That is, a zombie wins by moving onto the vertex
+occupied by the survivor.
 \item It becomes clear that the survivor will never be caught.
-In this case we say it is survivor win.
+In this case the survivor wins.
 \end{itemize}
 
-We discuss winning conditions in greater detail in a later section.
+It is easy to determine that a zombie has won. It is perhaps not as obvious how
+to determine the latter. We discuss winning conditions in greater detail in a later section.
 
-The game can be uninteresting depending on the shape of the graph.
-For example, if there are more zombies than vertices,
-then the survivor cannot even start. If the board is a cycle, a path or a tree,
-then the game is decided by the opening round.
-The goal then becomes to create graphs to keep the game surprising. The outcome of a game in some way describes a feature of
-a graph: its complexity, its connectivity, or perhaps, its ``survivability.'' Indeed, the number of zombies required to guarantee
-that the survivor is caught can be seen as a graph parameter.
-
-Before the game begins, the players agree to play on a
-particular graph with a specific number of zombies. These could be considered
-parameters of the game.
-
-The graphs are assumed to be finite and connected: that is, there is a finite
-number of vertices and there exists a path between every pair of vertices.
-Playing on graphs with multiple connected components does not make much sense in the context of these games.
-In our analysis, the players have complete information about the graph and the positions of the players.
+The Z \& S games studied herein use a few zombies chasing a single survivor. The game
+can be adapted to multiple surivors by making the zombies move toward
+to the closest survivor but if a single survivor can't hope to escape then adding more ``survivors''
+is a little gruesome.

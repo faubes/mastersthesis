@@ -1,0 +1,7 @@
+Move A so that it is reflex and not colinear
+
+Re-check all visibility-inc diagonals involving A.
+
+Re-calculate bfs-layers
+
+

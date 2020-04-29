@@ -18,6 +18,7 @@
 \usepackage{hyperref} % hyperlinks
 \usepackage{amsthm} % proof environment
 \usepackage{algpseudocode} % for algo
+\usepackage{float} % fix position of figures with [H]
 %\usepackage{babel}
 
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
@@ -50,6 +51,11 @@
 %\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
 % norm shortcut buggy?
 % \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+%metrics
+
+\DeclareMathOperator{\dist}{d}
+\DeclareMathOperator{\diam}{diam}
 
 % projection, vectors
 %\DeclareMathOperator{\proj}{Proj}
@@ -130,17 +136,29 @@
 \section{Notation}
 \input{sections/notation}
 
+\section{Literature Review}
+\input{sections/literature}
+
+% this section is no good
 % Lemmas and observations
-\section{Lemmas and Observations}
-\input{sections/lemmas}
+%\section{Observations}
+%\input{sections/observations}
+
+% Existing theory
+\section{Cop-win and Zombie-win Graphs}
+\input{sections/copwin_trees}
 
 % Survivor Strategy?
 \section{Survivor Strategy}
 \input{sections/survivorstrategy}
 
 % Win condition
-\section{Win Condition}
-\input{sections/wincondition}
+% \section{Win Condition}
+% \input{sections/wincondition}
+
+% Planar Zombies
+\section{Planar Zombies}
+\input{sections/planar.tex}
 
 % Grid
 \section{Zombies on the Grid}
@@ -154,8 +172,6 @@
 \section{Cycle With One Chord}
 \input{sections/Q_m_n}
 
-\section{Literature Review}
-\input{sections/literature}
 
 \newpage
 \bibliographystyle{IEEEtran}
@@ -166,4 +182,7 @@
 \section{$Q_{m, n}$ Appendices}
 \input{sections/Q_m_n_appendix}
 
+\newpage
+\section{Planar Zombies Counterexample Case III}
+\input{sections/appendix_planar_case3}
 \end{document}

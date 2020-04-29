@@ -35,6 +35,10 @@ S.~Fitzpatrick, J.~Howell, M.~Messinger, and D.~Pike, ``A deterministic version
   of the game of zombies and survivors on graphs,'' \emph{Discrete Applied
   Mathematics}, vol. 213, pp. 1--12, 2016.
 
+\bibitem{fitzpatrick2018game}
+S.~L. Fitzpatrick, ``The game of zombies and survivors on the cartesian
+  products of trees,'' \emph{arXiv preprint arXiv:1806.04628}, 2018.
+
 \bibitem{clarke2002constrained}
 N.~E.~B. Clarke, ``Constrained cops and robber.'' 2002.
 
