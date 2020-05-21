@@ -17,9 +17,15 @@ In these games, the edges are assumed to be undirected and so we may write $xy =
 and consider the two directions as a single edge.
 We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subset V$.
 
-For example, in Figure 1 we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
+For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
 Since $000$ and $001$ are connected, $(000, 001) \in E$.
 The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
+
+\begin{figure}
+\centering
+\includegraphics[scale = 0.25]{intro/cube.png}
+\caption{The Hypercube of Dimension 3 \label{fig:hyper-cube}}
+\end{figure}
 
 The degree of a vertex is the number of edges incident to that vertex. The minimum and maximum
 degrees of a graph are sometimes denoted as $\delta(G)$ and $\Delta(G)$, respectively.

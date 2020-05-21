@@ -12,10 +12,10 @@ row or column. The goal of this section is to prove
 \begin{theorem} The zombie number of the Grid is 2 for any $m, n$.
 \end{theorem}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{grid/grid4by5}
-  \caption{$G_{4,5}$}
+  \caption{$G_{4,5}$ \label{fig:grid4by5}}
 \end{figure}
 
 As a quick aside, note that the grid graph can be constructed by taking the
@@ -36,10 +36,10 @@ First, if the zombie and the survivor are on the same row (or column) then there
 single shortest path and hence only one valid zombie move: the zombie moves
 closer to the survivor along the row (or column).
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{grid/samerow}
-  \caption{Zombie and Survivor on Same Row}
+  \caption{Zombie and Survivor on Same Row \label{fig:samerow}}
 \end{figure}
 
 Second, if the zombie and survivor are on different rows and columns then
@@ -48,10 +48,10 @@ Second, if the zombie and survivor are on different rows and columns then
 The survivor and zombie are assumed on different rows and columns
 so the zombie can make progress in one or the other direction.
 
- \begin{figure}[h]
+ \begin{figure}
    \centering
    \includegraphics[width=0.25\textwidth]{grid/diffrowcol}
-   \caption{Zombie and Survivor on Different Row and Column}
+   \caption{Zombie and Survivor on Different Row and Column\label{fig:diffrowcol}}
  \end{figure}
 
 We now show that two zombies can play a shadowing strategy which is guaranteed to
@@ -118,10 +118,10 @@ By the previous discussion, after $\max \{ m, n \}$ rounds, both the survivor's 
 and horizontal shadows have been captured. Suppose we have reached a point in the
 game where the zombies have moved and captured both horizontal and vertical shadows.
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=0.25\textwidth]{grid/shadowscaptured}
-  \caption{Once Both Shadows Are Captured}
+  \caption{Once Both Shadows Are Captured\label{fig:shadowscaptured}}
 \end{figure}
 
 The survivor has five possible moves:
@@ -142,7 +142,7 @@ The survivor has five possible moves:
   \includegraphics[width=0.25\textwidth]{grid/survivorterritory}
   \caption{Shrinking Survivor Territory: The survivor moves up when shadowed; the zombie
   guarding the vertical shadow must move up, thereby eliminating the row below. The
-  zombie guarding the horizontal shadow also moves up, so its column remains blocked.}
+  zombie guarding the horizontal shadow also moves up, so its column remains blocked.\label{fig:survivorterritory}}
 \end{figure}
 
 In every scenario, at least one of the zombies is forced to move one

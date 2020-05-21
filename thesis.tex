@@ -3,12 +3,9 @@
 % Spring 2019
 %
 \documentclass[letterpaper, 12pt]{report}
-
 \usepackage{graphicx} % figures and images
 \graphicspath{ {img/} }
-
 \usepackage{float} % better figure float options
-
 \usepackage[utf8]{inputenc}
 \usepackage{fullpage}
 \usepackage[T1]{fontenc}
@@ -20,10 +17,8 @@
 \usepackage{algpseudocode} % for algo
 \usepackage{float} % fix position of figures with [H]
 %\usepackage{babel}
-
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rcleil}
-
 % common sets
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Qu}{\mathbb{Q}}
@@ -35,7 +30,6 @@
 \newcommand{\V}{\mathcal{V}}
 \newcommand{\K}{\mathcal{K}}
 \newcommand{\M}{\mathcal{M}}
-
 % Power set
 \newcommand{\PU}{\mathcal{P}(\mathcal{U})}
 
@@ -53,7 +47,6 @@
 % \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
 %metrics
-
 \DeclareMathOperator{\dist}{d}
 \DeclareMathOperator{\diam}{diam}
 
@@ -72,16 +65,12 @@
 % \newcommand{\Cov}{\mathrm{Cov}}
 % \newcommand{\Entropy}{\mathrm{H}}
 % \newcommand{\KL}{\mathrm{KL}}
-
 %\DeclareMathOperator*{\argmax}{arg\,max}
 %\DeclareMathOperator*{\argmin}{arg\,min}
-
-\renewcommand{\baselinestretch}{1} % line spacing
-
-\setlength{\parskip}{0.5cm plus4mm minus3mm} % paragraph spacing
-
-\renewcommand\thesection{\arabic{section}} % numbered heading
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+%\renewcommand{\baselinestretch}{1} % line spacing
+%\setlength{\parskip}{0.5cm plus4mm minus3mm} % paragraph spacing
+%\renewcommand\thesection{\arabic{section}} % numbered heading
+%\renewcommand\thesubsection{\thesection.\arabic{subsection}}
 
 % proof environments
 \theoremstyle{definition}
@@ -97,43 +86,32 @@
 
 \renewcommand{\bibname}{References}
 
-\author{
-  Faubert, Jo\"el\\	\texttt{jfaub011@uottawa.ca}
-}
-
-\title{
-	{Zombies and Survivors on Graphs}\\
-	{\large University of Ottawa} \\
-  {\large Prof. Jean-Lou De Carufel}
-%	{\includegraphics{university.jpg}}
-}
-
-\date{May 3, 2019}
+\title{Zombies and Survivors on Graphs}
+\author{Jo\"el Faubert, \\ \textit{jfaub011@uottawa.ca}}
 
 \begin{document}
-
-\nocite{*}
+%\nocite{*}
 
 \hypersetup{pageanchor=false}
-\begin{titlepage}
-\maketitle
-\end{titlepage}
+\input{titlepage}
+
 \hypersetup{pageanchor=true}
 
 \pagenumbering{roman}
 
-%\chapter*{Abstract}
-%\input{sections/abstract}
+\chapter*{Abstract}
+\input{sections/abstract}
 
 \tableofcontents
 
 \cleardoublepage\pagenumbering{arabic}
 
+\chapter{Zombies and Survivors}
 \section{Introduction}
 \input{sections/introduction}
 
 % Notation
-\section{Notation}
+\subsection{Notation}
 \input{sections/notation}
 
 \section{Literature Review}
@@ -145,8 +123,8 @@
 %\input{sections/observations}
 
 % Existing theory
-\section{Cop-win and Zombie-win Graphs}
-\input{sections/copwin_trees}
+%\section{Cop-win and Zombie-win Graphs}
+%\input{sections/copwin_trees}
 
 % Survivor Strategy?
 \section{Survivor Strategy}
@@ -172,6 +150,8 @@
 \section{Cycle With One Chord}
 \input{sections/Q_m_n}
 
+\section{Visiblity Graphs, Cop-win Trees, Zombie Trees}
+%\input{sections/visibility}
 
 \newpage
 \bibliographystyle{IEEEtran}

@@ -4,14 +4,14 @@ While we have not yet answered this question, we have found a planar graph for w
 
 Such a graph $G$ consists of an interior 5-cycle with 5 outer paths connecting two adjacent vertices of the interior cycle.
 There are also edges connecting the second and before-last outer paths to allow the survivor to escape in certain situations.
-This graph, which is illustrated in Figure 1, is an extension of the graph in \cite{fitzpatrick2016deterministic}[Fig. 2] which has
+This graph, which is illustrated in Figure~\ref{fig:planarG2}, is an extension of the graph in \cite{fitzpatrick2016deterministic}[Fig. 2] which has
 $z(G) = 3 > 2 = c(G)$.
 
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[scale=0.5]{planar/Graph2.png}
-\caption{A graph with $z(G) > 3$} \label{fig:planarG1}
+\caption{A graph with $z(G) > 3$ \label{fig:planarG2}}
 \end{figure}
 
 We refer to the beginning of the game where the zombies and the survivor choose their starting positions as round zero or the starting round.
@@ -42,12 +42,12 @@ Our proof relies on a special characteristic of this graph: if the survivor and 
 the zombies on the same side of the survivor and within a distance of 2, 3, 4 or 5, then the survivor can win by fleeing away from the zombies around the outermost 15-cycle.
 
 To see this, let $E' = \{xy \in E(G) : x, y \in Y\}$ be the set of edges which connect an exterior 5-path to another and let $G' = G - E'$ be the subgraph without these edges.
-These edges are highlighted in red in the following figure:
+These edges are highlighted in red in Figure~\ref{fig:planarG3}:
 
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph3.png}
-\caption{An escape strategy for the survivor} \label{fig:planarG2}
+\caption{An escape strategy for the survivor\label{fig:planarG3}}
 \end{figure}
 
 If the survivor and zombie are both on the outermost cycle at distances 2 or 3 then
@@ -81,10 +81,10 @@ If the survivor starts on $y_1 \in Y$ (one of the vertices of degree 3), and mov
 Notice that as soon as all three zombies are within a distance of 5 of the survivor on the outermost 15-path, then by the discussion above
  the game is won by the survivor.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round0.png}
-\caption{Case I, Round 0} \label{fig:planarG3}
+\caption{Case I, Round 0\label{fig:planarG2C1R0}}
 \end{figure}
 
 On the first round, the zombies each have a single shortest path to the survivor on 12 and thus must move as follows:
@@ -96,10 +96,10 @@ On the first round, the zombies each have a single shortest path to the survivor
 \end{itemize}
 
 The survivor responds by moving to 9. These moves are illustrated in the following figures:
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round1.png}
-\caption{Case I, Round 1} \label{fig:planarG4}
+\caption{Case I, Round 1\label{fig:planarG2C1R1}}
 \end{figure}
 
 \newpage
@@ -113,10 +113,10 @@ Yet again the zombies have a single shortest path to the survivor on 9 and thus 
 
 The survivor responds by moving to 8. These moves are illustrated in the following figure:
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round2.png}
-\caption{Case I, Round 2} \label{fig:planarG5}
+\caption{Case I, Round 2\label{fig:planarG2C1R2}}
 \end{figure}
 
 \newpage
@@ -124,10 +124,10 @@ The survivor responds by moving to 8. These moves are illustrated in the followi
 Finally, after round 3 all zombies are within a distance of 3 of the survivor on the outermost 15-cycle, and so the survivor wins by running anti-clockwise
 on the cycle $G[S]$.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round3.png}
-\caption{Case I, Round 3} \label{fig:planarG6}
+\caption{Case I, Round 3\label{fig:planarG2C1R3}}
 \end{figure}
 
 This shows that however the 3 zombies on the interior 5-cycle may be arranged in the initial round, they will not be able to corner the survivor following this
@@ -145,10 +145,10 @@ is not on the shortest path between $s$ and $z_3$. That is to say, the survivor 
 This choice of start vertex is always available to the survivor. Without loss of generality, assume that $z_3$ has chosen one of the vertices on the
 exterior 5-path 6-10.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case2Round0.png}
-\caption{Case 2, Round 0} \label{fig:planarG2Case2}
+\caption{Case 2, Round 0\label{fig:planarG2C2R0}}
 \end{figure}
 
 \begin{itemize}
@@ -356,7 +356,5 @@ interior 5-cycle. Now, at least one of the survivor's neighbours is an unoccupie
 
 After the next round, all three zombies are on the interior 5-cycle or one step behind the survivor and the survivor has won the game by moving to a vertex in $Y$
 as in Case I.
-
-
 
 \end{proof}

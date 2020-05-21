@@ -6,9 +6,11 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
  Without loss of generality $m \leq n$. We denote such a cycle as $Q_{m,n}$.
 \end{definition}
 
-\begin{center}
+\begin{figure}
+  \centering
  \includegraphics[scale=0.15]{q_m_n/Q_m_n_basic}
-\end{center}
+ \caption{A cycle with one chord \label{fig:Q_m_n_basic}}
+\end{figure}
 
 \begin{theorem}
  The zombie number of a cycle $Q_{m,n}$  $(3 \leq m \leq n)$ with
@@ -63,13 +65,16 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
  \newpage
 
- \begin{proofpart} Cornering the Survivor on the Smallest Cycle
+ \subsection{Cornering the Survivor on the Smallest Cycle}
 
+\begin{proofpart}
    Suppose that the game has reached the following state:
 
-  \begin{center}
+  \begin{figure}
+    \centering
     \includegraphics[scale=0.20]{q_m_n/diagram1}
-  \end{center}
+    \caption{One zombie on the chord \label{fig:onthechord}}
+  \end{figure}
 
   \begin{itemize}
    \item the first zombie is on an endpoint of the chord, say $v$
@@ -114,13 +119,15 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
   There are four possible shortest paths for $z_2$ to the survivor:
 
-  \begin{center}
+  \begin{figure}
+    \centering
     \includegraphics[scale=0.45]{q_m_n/z2_path_Pa}
     \includegraphics[scale=0.45]{q_m_n/z2_path_Pb}
 
     \includegraphics[scale=0.45]{q_m_n/z2_path_Pc}
     \includegraphics[scale=0.45]{q_m_n/z2_path_Pd}
-  \end{center}
+    \caption{Four possible outcomes \label{fig:different_paths}}
+  \end{figure}
 
   \begin{itemize}
    \item $P_a$ of length $\Delta + (m - \ell)$
@@ -493,7 +500,8 @@ Or, in terms of $\Delta$,
 
  \end{proofpart}
 
- \begin{proofpart} Forcing the Survivor into a Losing Position.
+\subsection{Forcing the Survivor into a Losing Position}
+ \begin{proofpart}
   We now consider the game on this graph in general and show
   how we can guarantee the survivor will be caught.
 
@@ -621,7 +629,7 @@ calculating the bounds
 \end{proof}
 
 \newpage
-\section{Existence of Winning Start}
+\subsection{Existence of Winning Start}
 
 We wish to show that, for any $m, n$, there exist $\Delta$ and $k$
 which guarantee the survivor is caught.
