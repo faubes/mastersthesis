@@ -106,21 +106,21 @@
 
 \cleardoublepage\pagenumbering{arabic}
 
-\chapter{Zombies and Survivors}
-\section{Introduction}
+\chapter{Introduction}
+
 \input{sections/introduction}
 
 % Notation
-\subsection{Notation}
+\section{Notation}
 \input{sections/notation}
 
 \section{Literature Review}
 \input{sections/literature}
 
-% this section is no good
+\chapter{Half-finished ideas that may be worth including}
 % Lemmas and observations
-%\section{Observations}
-%\input{sections/observations}
+\section{Observations}
+\input{sections/observations}
 
 % Existing theory
 %\section{Cop-win and Zombie-win Graphs}
@@ -131,38 +131,41 @@
 \input{sections/survivorstrategy}
 
 % Win condition
-% \section{Win Condition}
-% \input{sections/wincondition}
+%\section{Win Condition}
+%\input{sections/wincondition}
 
 % Planar Zombies
-\section{Planar Zombies}
+\chapter{Planar Zombies \label{chapter planar zombies}}
 \input{sections/planar.tex}
 
+
+%\chapter{On Regular Graphs}
 % Grid
-\section{Zombies on the Grid}
-\input{sections/grid}
+%\section{Zombies on the Grid}
+%\input{sections/grid}
 
 % Cylinder
-\section{Zombies on a Cylinder}
-\input{sections/cylinder}
+%\section{Zombies on a Cylinder}
+%\input{sections/cylinder}
 
 % Q_m_n
-\section{Cycle With One Chord}
+\chapter{Cycle With One Chord \label{chapter q_m_n}}
 \input{sections/Q_m_n}
 
-\section{Visiblity Graphs, Cop-win Trees, Zombie Trees}
-%\input{sections/visibility}
+\chapter{Conclusion, Future Works}
+\input{sections/conclusion}
 
 \newpage
 \bibliographystyle{IEEEtran}
 \bibliography{./references}
 
-\newpage
 \appendix
+
+\chapter{End Matter}
 \section{$Q_{m, n}$ Appendices}
 \input{sections/Q_m_n_appendix}
 
-\newpage
-\section{Planar Zombies Counterexample Case III}
-\input{sections/appendix_planar_case3}
+\section{Planar Zombies Counter-Example Case III}
+%\input{sections/appendix_planar_case2}
+%\input{sections/appendix_planar_case3}
 \end{document}

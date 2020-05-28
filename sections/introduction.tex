@@ -1,22 +1,21 @@
 There's been a robbery downtown and the robbers are escaping by car. Officers
-already on the streets are notified moments later. The robbers make a desperate dash for the highway but have a squad car in pursuit. A media helicopter captures the scene from above.
+already on the streets are notified moments later. The robbers make a desperate dash for the highway but are spotted and soon followed by the policer. A media helicopter captures the scene from above.
 
-The robbers seem to be getting away, putting some distance between themselves and the sirens.
-Suddenly, the car slams into a strip of tire spikes. The left two tires are shredded,
-causing the driver to lose control. The vehicle veers off the road, flips upside down
-and eventually comes to a stop in the ditch. The crash is soon surrounded by
-flashing lights.
+The robbers seem to be getting away -- putting some distance between themselves and the sirens.
+Suddenly, the driver slams on the breaks. A squad car ahead has thrown out a strip of tire spikes! The left two tires are shredded, causing the driver to lose control. The vehicle veers off the road, flips upside down and eventually comes to a stop in the ditch. The crash is soon surrounded by
+the flashing lights of emergency vehicles.
 
-The advantage of communication and central control allows the police to employ
- an effective strategy: position officers to cut off likely escape routes. A mathematician
- (or computer scientist) might consider these types of scenarios and wonder:
- was there ever any hope of escape? Maybe the robbers took the wrong route.
- Or what if instead of cops, it's a bunch of mindless zombies?
+Was there ever any hope of escape? Maybe the robbers took the wrong route.
+They should have planned a vehicle swap. Or used a tunnel. Could it be that there were
+so many police officers that all routes were covered? That capture was inevitable?
+Perhaps the advantages of communication and central coordination allow the police to
+  cut off likely escape routes, so that the probability of escape is low.
+Now, a (somewhat dispassionate) mind might watch these salacious stories on the news and wonder
+ if you could apply math to it. To answer some of the above for sure.
 
-Vertex pursuit games are adversarial games played on graphs and an attempt
-to model these types of problems.
-Graphs are used to formally describe structures such as networks and
-maps. Players take turns moving tokens on a graph (the game board, if you like) with
+Vertex pursuit games are adversarial games played on graphs and attempt model this sort
+of scenario.
+Players take turns moving tokens on a graph (the game board, if you like) with
 the objective to capture (or evade) the other player.
 
 Many variations of these graph pursuit games have been proposed. There are many rules and
@@ -31,24 +30,30 @@ parameters to tweak to produce different games:
 \item Does the graph change over time somehow?
 \end{enumerate}
 
+
+The combination of graph theory and game theory has led to the creation of a new
+field of inquiry about agents ``chasing'' or ''following" each other.
 The Game of Cops and Robbers on Graphs \cite{bonato2011game} is perhaps the most
 well-known vertex pursuit game. It is a perfect information game with Cops trying
-to catch the Robber.
+to catch the Robber. [define perfect information, add cite]
 
-A variation called Zombies and Survivors (Z \& S or Zombie Game) was recently proposed and studied in \cite{fitzpatrick2016deterministic} and \cite{fitzpatrick2018game}.
-Z \& S is the same as Cops and Robbers with the added twist that the zombies are required to move directly towards the survivor.
+A variation called Zombies and Survivors (Z \& S or Zombie Game) was recently proposed and studied  \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
+Z \& S is the same as Cops and Robbers with the added twist that the zombies are required to move directly towards the Survivor. More precisely, the Zombies has to move along an edge
+on a shortest path toward the Survivor.
 
 This thesis has been an attempt to better understand this variant and, in particular,
 to see if the results obtained for Cops and Robbers still hold when the cops
-are constrained in their strategy.
+are constrained in their strategy. In particular, in Chapter~\ref{chapter planar zombies}
+we give an example of a planar graph where 3 zombies always lose.
+Then in Chapter~\ref{chapter q_m_n} we show how two zombies always win on a cycle with one chord.
 
-\subsection{How to Play}
+\section{How to Play}
 
 To begin, the zombies choose starting vertices.
 Then, the survivor choooses a start position.
-Then on the next and each following round the zombies (must) move toward the survivor
-and, if uncaught, the survivor (may) move. Here a move is an instantaneous jump
-along an edge from one vertex to another.
+Then on the next and each following round the zombies must move toward the survivor
+and, if uncaught, the survivor may move to one of its neighbouring vertices or stay in place.
+ Here a move is an instantaneous jump along an edge from one vertex to another.
 
 The sophistication of the zombies' strategy gives them their name:
 you can imagine the zombies -- arms outstretched -- ambling directly towards the survivor.
@@ -56,21 +61,17 @@ In this game, the players have complete information of the graph and the positio
 their strategy.
 
 The zombies move, the survivor responds and these two turns make one round.
-It has been asked by new players if the order of play might be reversed but
-then zombies always win.
 
 The game concludes when either:
 \begin{itemize}
 \item A zombie catches the survivor. That is, a zombie wins by moving onto the vertex
 occupied by the survivor.
-\item It becomes clear that the survivor will never be caught.
-In this case the survivor wins.
+\item The survivor wins if it can evade the zombies indefinitely.
 \end{itemize}
 
-It is easy to determine that a zombie has won. It is perhaps not as obvious how
-to determine the latter. We discuss winning conditions in greater detail in a later section.
+%It is easy to determine that a zombie has won. It is perhaps not as obvious how
+%to determine the latter. We discuss winning conditions in greater detail in Section~\ref{}.
 
 The Z \& S games studied herein use a few zombies chasing a single survivor. The game
-can be adapted to multiple surivors by making the zombies move toward
-to the closest survivor but if a single survivor can't hope to escape then adding more ``survivors''
-is a little gruesome.
+can be adapted to multiple survivors by making the zombies move toward
+to the closest. We focus on games with a single survivor.

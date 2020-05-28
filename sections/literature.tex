@@ -1,4 +1,5 @@
-The following is a summary of results relevant to the Game of Zombies and Survivors.
+We start with some key results from Cops and Robbers since much of our thesis is comparison
+between the two games. Or \textit{the cost of being undead} as Fitzpatrick \cite{fitzpatrick2016deterministic} would call it.
 
 \subsection{Cops and Robbers, Cop-Number}
 
@@ -9,13 +10,11 @@ so-called because it is the successive deletion of \textit{corners} resulting in
 (see the last section on dismantlings, cop-win trees and visiblity graphs ).
 
 The Cop-number of a graph (denoted $c(G)$) is introduced by Aigner and Fromme in \cite{aigner1984game}) and defined as the minimum number of Cops required
-to guarantee a Cop win on a graph $G$.
+to guarantee a Cop win on a graph $G$. Later, \cite{berarducci1993cop} and \cite{hahn2003characterisation} generalized the idea of cop-win graphs
+into $k$-copwin graphs.
 
-It is possible to recognize graphs for which $k$ Cops are guaranteed to win, i.e. $c(G) = k$ \cite{berarducci1993cop} and \cite{hahn2003characterisation}.
-A graph is $k$-cop win if and only if there
-exists a function (on a $k$-product of the graph to represent the position of the Cops)
-which satisfies certain properties; essentially it is a function which takes as input a position $C$ of Cops
-and returns the next position for the Cops that guarantees a win (see \cite{bonato2011game}[p. 119]).
+A graph is $k$-cop win if and only if there exists a function (on a $k$-product of the graph to represent the position of the Cops)
+which satisfies certain properties; essentially it is a function which takes as input a position $C$ of Cops and returns the next position for the Cops that guarantees a win (see \cite{bonato2011game}[p. 119]).
 There exists a polynomial-time algorithm for deciding whether a graph is $k$-Cop-win by iteratively
 solving for this function.
 
@@ -25,21 +24,24 @@ overview \cite{gera2016graph}[p. 31].
 
 \subsection{The Cop-Number and the Genus of the Graph}
 
-One of the most surprising results about the Game of Cops and Robbers are owed to Aigner and Fromme \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
+One of the most surprising results about the Game of Cops and Robbers is owed to Aigner and Fromme \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
 Basically, a graph is planar if it can be drawn in the plane (say, on a piece of paper) without crossing any edges. Aigner and Fromme describe a 3-Cop strategy which uses \textit{isometric} paths of the graph to encircle and entrap the Robber.
 
-Outerplanar graphs are planar graphs whose vertices all belong to the outer face.  \cite{clarke2002constrained} shows that the cop number of outerplanar graphs is 2 by considering
-two possible cases: those with and without cut vertices.
+Outerplanar graphs are planar graphs which can be drawn such that all vertices belong to the outer face. Clarker \cite{clarke2002constrained} showed that the cop number of outerplanar graphs is 2 by considering
+two possible cases: those with and without cut vertices. The 2 Cops have a winning strategy on outerplanar graphs without cut vertices, and this strategy can be used to cordon off sections (blocks)
+of the outerplanar graph.
 
-Planar graphs of order $n$ \cite{bonato2017topological}
+The game has also been studied for graphs embeddable in surfaces of higher order.
+In 2001, Schroeder conjectured \cite{bonato2017topological} that for a graph of genus $g$,
+the cop-number is at most $g+3$.
 
 \subsection{Relation to the Girth and Minimum Degree of a Graph}
 
 Aigner and Fromme also show a relationship between the Cop-number, the girth of a graph and
 its minimum degree \cite{aigner1984game}. More precisely, if $G$ has girth at least 5, then $c(G)\geq \delta(G)$ where $\delta(G)$ is the minimum degree of $G$.
 
-This result has since been refined by \cite{} and again recently in \cite{}.
-
+This result has since been refined by \cite{frankl1987cops} and again recently in a
+seminar by B. Mohar.
 
 \subsection{Dismantlings, Cop-win Trees, Zombie-win Trees}
 
@@ -104,7 +106,7 @@ and was first proposed in \cite{clarke2002constrained}.
 A copwin spanning tree $S$ is defined as a tree where $x,y\in V(G)$
 $xy \in E(S)$ if there exists a retract $f_j$ in the dismantling
 $F_n = f_{n} \circ f_{n-1} \circ \cdots \circ f_{2} \circ f_1$
-such that $f_j (x) = y$ or $f_j (y) = x$.
+such that $f_j (x) = y$ or $f_j (y) = x$ in $G[j]$.
 
 Copwin spanning trees give a strategy for the cops to follow: start at the root
 (the last vertex in the ordering) and descend the tree in the branch containing the robber.
@@ -112,23 +114,56 @@ Lemmas 2.1.2 and 2.1.3 from \cite{clarke2002constrained} show that the cop
 can always stay in the same branch (and above) the robber in the tree. So the
 robber is eventually stuck in a leaf and caught.
 
-Zombies cannot apply a cornering strategy, however. Fitzpatrick showed that a
-graph is zombie-win if a specific spanning tree exists \cite{fitzpatrick2016deterministic}:
+\subsection{Deterministic Zombies}
 
-Theorem 6. [Fitzpatrick] If there exists a breadth-first search of a graph G such that the associated spanning tree is also a cop-win spanning tree, then G is zombie-win.
+Zombies and Survivors (or more specifically, ``deterministic zombies'') are an interesting variation proposed in \cite{fitzpatrick2016deterministic}. In these games, the
+Cops are replaced by Zombies which must follow a geodesic to the Survivor.
+
+The Zombie Number is defined analogously to the Cop Number: it is the number of Zombies
+required to capture the Survivor. However, in Z \& S there are two additional considerations:
+the zombie start and the zombie choices.
+In this type of game, the starting locations for the zombies is of utmost importance:
+consider how difficult it might be to evade adversaries which are clustered versus some
+that are well-dispersed. So we say $z(G) = k$ if $k$ zombies are guaranteed to win
+given an appropriate (or optimal) start. Additionally, the rules of this game permit
+some agency to the zombies: when confronted with multiple geodesics, they may have
+a choice between neighbouring vertices. Zombie number also presumes that
+the zombies make the correct choices. Perhaps more precisely, the zombie number of a
+graph is $k$ if $k$ zombies, suitably positioned, can play a game which guarantees the survivor
+is caught.
+
+Unlike Cops, these Zombies cannot apply a cornering strategy. Or any strategy.
+As a consequence, you need at least as many Zombies as you need Cops.
+This is one of the first observations
+in \cite{fitzpatrick2016deterministic}: the Cop Number $c(G)$ is a lower bound of the Zombie Number. The Zombies are weaker versions of Cops, similar in a way to the ``fully active'' Cops from \cite{gromovikov2018fully} where the Cops must move on their turn. Both
+active and ``lazy'' Cops have more freedom of choice than the zombies, and thus
+fewer are required to ensure victory.
+
+Does a characterization exist for Zombie-win graphs? Those for which a single zombie
+can always win? One has yet to be described. Howeover, \cite{fitzpatrick2016deterministic} showed that a graph is zombie-win if a specific spanning tree exists:
+
+\begin{theorem}[Fitzpatrick] If there exists a breadth-first search of a graph $G$ such that the associated spanning tree is also a cop-win spanning tree, then G is zombie-win.
+\end{theorem}
 
 Thus a sufficient condition for zombie-win graphs are those for which a specific copwin tree exists: one equivalent to a breadth-first search of the graph from some vertex. It remains unclear if it is also a necessary condition.
 
-A few questions: are copwin graphs necessarily zombie win? (No. Smallest counter example?)
+A few questions: are copwin graphs necessarily zombie win? No. Smallest counter example is also
+found by \cite{fitzpatrick2016deterministic} and is reproduced below \ref{fig:copwin_but_notzombie_win}
 What is the dismantling of this copwin but not-zombie win graph. Since a dismantling exists,
 a copwin spanning tree exists.
 
-Here is an example of a graph and two dismantlings, one of which results in a BFS tree,
-and the other does not.
+\begin{figure}
+\centering
+\includegraphics[scale=0.50]{copwin_tree/copwin_but_notzombie_win}
+\caption{Cop-Win but not Zombie-Win \label{fig:copwin_but_notzombie_win}}
+\end{figure}
 
-\begin{figure}[h!]
+Below \ref{fig:copwin_tree_example1} is an example of a graph and two dismantlings, one of which results in a BFS tree, and the other does not.
+
+\begin{figure}
 \centering
 \includegraphics[scale=0.70]{copwin_tree/copwin_tree_example1}
+\caption{A Cop-win tree \label{fig:copwin_tree_example1}}
 \end{figure}
 
 Here are two dismantlings, their orderings, and the resulting copwin spanning trees.
@@ -169,7 +204,7 @@ Zombies are often depicted as mindless or aimless. It is a common trope that zom
 idle around, moving in random directions until they somehow (suddenly) distinguish
 the uninfected. It is only at this point that the zombies will charge.
 
-Such behavior likely inspired another type of pursuit game in which the zombies start randomly on
+Such behavior likely inspired another type of pursuit game \cite{bonato2016probabilistic} in which the zombies start randomly on
 the graph. Once the survivor chooses a start vertex, the zombies ``notice'' the survivor and start
 moving directly towards it.
 
@@ -178,7 +213,3 @@ So study of these games becomes probabilistic; zombies win if they have at least
 The (probabilistic) zombie number of a graph is the number of zombies required for a 50\% chance of winning and this zombie number is
 obtained for several classes of graphs in \cite{bonato2016probabilistic} and for
 toroidal grids in \cite{pralat2019many}.
-
-\subsection{Deterministic zombies}
-
-This is the version of the game we study below.

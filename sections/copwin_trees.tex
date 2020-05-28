@@ -1,7 +1,6 @@
-Dismantlings, copwin trees, zombiewin trees.
-
-A copwin spanning tree is defined in \cite{fitzpatrick2016deterministic}
-and \cite{clarke2002constrained}.
+zombie-win
+A cop-win spanning tree is defined in \cite{fitzpatrick2016deterministic}
+and \cite{clarke2002constrained}. We summarize below for convenience.
 
 A (one-point) retract is an edge preserving function $f : G \mapsto H = G \setminus v$
 (aka a homomorphism) such that $f(v) = x$ for some $x \neq v \in V(G)$ and $f$ restricted on $H$ is the identity.
@@ -14,7 +13,8 @@ and
 
 If $G$ is a reflexive graph, then a one-point retract can be seen as joining
 two vertices. The edge between two adjacent vertices becomes another loop.
-The retract maps a graph $G$ to graph $G'$ with one less vertex.
+A retract maps a graph $G$ to graph $G'$ with one less vertex, but with connectivity
+somehow preserved.
 
 Recall that corners are vertices $v$ whose closed neighbourhoods
 are a subset of a neighbours' closed neighbourhood, i.e.
@@ -48,20 +48,20 @@ Not all vertices of a graph need be corners in order for there
 to exist a dismantling: it suffices to have an ordering where each $v_i$ is a corner in
 $G[v_i, v_{i+1}, \dots, v_n]$.
 
-Such a sequence of $f_j$'s defines a copwin ordering
+Such a sequence of $f_j$'s defines a cop-win ordering
 \[ \mathcal{O} = \{ v_1, v_2, \dots, v_n\} \]
  where $v_1$ is a corner in $G_1 = G$, $v_2$ is a corner in $G - v_1$, and so on.
 
-A fundamental result in C \& R is that copwin graphs -- graphs for which a single
+A fundamental result in C \& R is that cop-win graphs -- graphs for which a single
 cop is guaranteed to win --  are characterized by the existence of such dismantlings.
-A graph is copwin if and only if it is dismantlable.
+A graph is cop-win if and only if it is dismantlable.
 
-A copwin spanning tree $S$ is defined as a tree where $x,y\in V(G)$
+A cop-win spanning tree $S$ is defined as a tree where $x,y\in V(G)$
 $xy \in E(S)$ if there exists a retract $f_j$ in the dismantling
 $F_n = f_{n} \circ f_{n-1} \circ \cdots \circ f_{2} \circ f_1$
 such that $f_j (x) = y$ or $f_j (y) = x$.
 
-Copwin spanning trees give a strategy for the cops to follow: start at the root
+Cop-win spanning trees give a strategy for the cops to follow: start at the root
 (the last vertex in the ordering) and descend the tree in the branch containing the robber.
 Lemmas 2.1.2 and 2.1.3 from \cite{clarke2002constrained} show that the cop
 can always stay in the same branch (and above) the robber in the tree. So the
@@ -70,24 +70,27 @@ robber is eventually stuck in a leaf and caught.
 Zombies cannot apply a cornering strategy, however. Fitzpatrick showed that a
 graph is zombie-win if a specific spanning tree exists:
 
-Theorem 6. [Fitzpatrick] If there exists a breadth-first search of a graph G such that the associated spanning tree is also a cop-win spanning tree, then G is zombie-win.
+\begin{theorem}[6. Fitzpatrick]
+If there exists a breadth-first search of a graph $G$ such that the associated spanning tree is also a cop-win spanning tree, then $G$ is zombie-win.
+\end{theorem}
 
-This characterizes zombie-win graphs as those for which a specific copwin tree exists: one equivalent
+This characterizes zombie-win graphs as those for which a specific cop-win tree exists: one equivalent
 to a breadth-first search of the graph from some vertex.
 
-A few questions: are copwin graphs necessarily zombie win? (No. Smallest counter example?)
-What is the dismantling of this copwin but not-zombie win graph. Since a dismantling exists,
-a copwin spanning tree exists. Why cannot it take occur as a BFS?
+A few questions: are cop-win graphs necessarily zombie-win? (No. Smallest counter example?)
+What is the dismantling of this cop-win but not-zombie-win graph. Since a dismantling exists,
+a cop-win spanning tree exists. Why cannot it take occur as a BFS?
 
-Here is an example of a graph and two dismantlings, one of which results in a BFS tree,
+Here \ref{fig:copwin_tree1} is an example of a graph and two dismantlings, one of which results in a BFS tree,
 and the other does not.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.70]{copwin_tree/copwin_tree_example1}
+\caption{A Cop-win Spanning Tree \label{fig:copwin_tree1}}
 \end{figure}
 
-Here are two dismantlings, their orderings, and the resulting copwin spanning trees.
+Here are two dismantlings, their orderings, and the resulting cop-win spanning trees.
 \begin{align*}
   f_1(b) = f \\
   f_2(c) = d \\
@@ -109,11 +112,13 @@ Gives ordering $\mathcal{O}_1 = \{ b, c, f, a, e, d, g \}$. Whereas
 \end{align*}
 
 Also gives a dismantling with ordering $\mathcal{O}_2 = \{b, a, c, f, e, g, d \}$.
-But only the second produces a copwin tree obtainable as a bread-first search.
+This is illustrated in \ref{fig:cop-win_bfs_trees}: only the second dismantling
+produces a cop-win tree obtainable as a bread-first search.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.70]{copwin_tree/copwin_tree_example1_trees}
+\caption{Cop-win but Not Breadth-First Tree \label{fig:copwin_bfs_trees}}
 \end{figure}
 
 Moreover, it would seem that a zombie loses if it starts on $g$, but not on $d$.

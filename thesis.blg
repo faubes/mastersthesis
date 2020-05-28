@@ -15,45 +15,45 @@ Warning--empty journal in hahn2003characterisation
 Warning--empty journal in clarke2002constrained
 
 Done.
-You've used 15 entries,
+You've used 18 entries,
             4087 wiz_defined-function locations,
-            905 strings with 9382 characters,
-and the built_in function-call counts, 9126 in all, are:
-= -- 766
-> -- 177
-< -- 71
-+ -- 94
-- -- 29
-* -- 422
-:= -- 1499
-add.period$ -- 30
-call.type$ -- 15
-change.case$ -- 13
-chr.to.int$ -- 156
-cite$ -- 17
-duplicate$ -- 674
-empty$ -- 724
-format.name$ -- 38
-if$ -- 2079
+            919 strings with 9977 characters,
+and the built_in function-call counts, 11121 in all, are:
+= -- 909
+> -- 253
+< -- 79
++ -- 132
+- -- 46
+* -- 516
+:= -- 1797
+add.period$ -- 36
+call.type$ -- 18
+change.case$ -- 16
+chr.to.int$ -- 174
+cite$ -- 20
+duplicate$ -- 828
+empty$ -- 895
+format.name$ -- 58
+if$ -- 2542
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 110
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 243
+int.to.str$ -- 18
+missing$ -- 143
+newline$ -- 77
+num.names$ -- 18
+pop$ -- 331
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 715
+skip$ -- 865
 stack$ -- 0
-substring$ -- 373
-swap$ -- 516
-text.length$ -- 19
+substring$ -- 418
+swap$ -- 624
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
+type$ -- 18
 warning$ -- 2
-while$ -- 47
-width$ -- 17
-write$ -- 159
+while$ -- 54
+width$ -- 20
+write$ -- 185
 (There were 2 warnings)

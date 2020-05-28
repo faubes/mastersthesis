@@ -1,25 +1,27 @@
 
-The graphs are assumed to be finite and connected: that is, there is a finite
+In this thesis, all graphs are assumed to be finite and connected. That is, there is a finite
 number of vertices and there exists a path between every pair of vertices.
-Playing on graphs with multiple connected components does not make much sense in the context of these games.
+Playing on graphs with multiple connected components can be reduced to playing
+multiple games in parallel.
 
 The following sections will use a few definitions from graph theory.
 Formally, a graph $G = (V, E)$ is composed of:
 
 \begin{itemize}
 \item A set $V$ of vertices.
-\item A set $E \subset V \times V$ of edges described by a pair of endpoints.
+\item A set $E$ of edges ${u,v}$ where $u, v \in V$.
 \end{itemize}
 
-If $G = (V,E)$ is a graph and $x,y \in V$ are vertices, we say that vertices $x$ and $y$ are neighbours if $(x,y) \in E$.
+If $G = (V,E)$ is a graph and $x,y \in V$ are vertices, we say that vertices $x$ and $y$ are neighbours if $xy \in E$.
 That is, if there is an edge joining $x$ to $y$.
 In these games, the edges are assumed to be undirected and so we may write $xy = yx$
 and consider the two directions as a single edge.
-We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subset V$.
+We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subseteq V$.
 
 For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
 Since $000$ and $001$ are connected, $(000, 001) \in E$.
 The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
+[Add definition of closed neighborhood]
 
 \begin{figure}
 \centering
@@ -33,24 +35,25 @@ degrees of a graph are sometimes denoted as $\delta(G)$ and $\Delta(G)$, respect
 \subsection{Playing and Modeling the Game}
 
 The survivor is $s \in V(G)$ and $z_i \in V(G)$ are zombies with $i \in \{1, \dots, k\}$.
-In the games studied there is a single survivor and a ``small'' number $k$ of zombies.
+Notice that the notation represents both a player and its position in the graph.
+In the games studied there is a single survivor and $k \geq 1$ of zombies.
 
 We divide the game into rounds and turns. A round consists of two turns:
 a zombie turn and a survivor turn.
 
 The game starts on round 0 with the zombies choosing
 initial vertices. The survivor follows. In a sense the game really begins in
-round 1 with the zombies finding, selecting and moving along a shortest path.
+round 1 with each zombie independently selecting a shortest path
+toward the survivor and moving along the next edge.
 The survivor responds. The game repeats in this way until the survivor is caught,
 or both players agree that the survivor will always escape.
 
-We can implement this aspect of the game fairly easily by couting the turns.
-It is the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
+It is convenient to define the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
 Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
 
 It is occasionally useful to identify the players' positions over time, in which
-case let $z_t^i \in V(G)$ be zombie $i$ on round $t$. Similarly $s_t$ is the
-survivor on round $t$. This burdensome notation will be omitted when possible.
+case let $z_r^i \in V(G)$ be zombie $i$ on round $r$. Similarly $s_r$ is the
+survivor on round $r$. This burdensome notation will be omitted when possible.
 
 It might be tempting to group the zombies together
 into some tuple of the vertex set, but each zombie acts independently of
@@ -58,20 +61,21 @@ the others and so this may not always be practical.
 
 \subsection{Paths and Moves}
 The zombie strategy requires that we consider all shortests paths connecting
-the zombie to the survivor.
-In the studied discrete graphs below, the distance between two vertices is the hop length of a (shortest possible) path connecting them.
+each zombie to the survivor. Let us be precisely define these terms.
+%In the studied discrete graphs below, the distance between two vertices is the hop length of a %(shortest possible) path connecting them.
 
 A path $P = v_0, v_1, v_2, \dots , v_n$ is a ``strict'' walk: a non-repeating sequence of
-adjacent vertices in a graph. A path is an example of a subgraph $G' = (V(P), E(P))$ since $V(P) \subseteq V$ and $E(P) \subseteq E$.
+adjacent vertices in a graph. A path is an example of a subgraph $G' = (V(P), E(P))$ since $V(P) \subseteq V$ and $E(P) \subseteq E$. A cycle is a path of at least 3 vertices where the
+start and endpoints are the same vertex.
 
 Paths allow us to define a distance $d(x,y)$ between vertices as the length of the shortest path connecting them (or infinity if such does not exist) and computing such paths is a classic
 problem in computer science.
 
 The diameter and girth of a graph are useful properties which appear in some
 of the theorems herein.
-The diameter $\diam(G)$ is the length of the longest possible path in $G$ and the girth of a graph is the length of the minimum order subcycle.
+The diameter $\diam(G)$ is the length of a longest possible shortest path in $G$ and the girth of a graph is the length of the minimum order subcycle.
 
-Now consider zombie $k$. According to the rules of the game, on its turn the zombie
+Consider zombie $k$. According to the rules of the game, on its turn the zombie
 ``must move on a shortest path'' towards the survivor. More precisely, this requires
 considering $Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ the set of $i$ different $z_ks$-paths of length $\ell$.
 
@@ -90,13 +94,3 @@ a shortest path to the survivor the \textit{zombie moves}, which could be denote
 \[ Z[x; s] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \]
 
 the zombies moves from $x$ given survivor is on $s$.
-
-\subsection{Zombie Number}
-
-EDIT: Not quite. Redo
-
-The minimum number zombies guaranteed to win.
-
-If a single zombie is guaranteed to win on a graph, we say that it is zombie-win
-and that it has zombie number $z(G) = 1$. If it can be shown that $k$ zombies win,
-then $z(G) = k$

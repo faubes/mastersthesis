@@ -76,6 +76,10 @@ N.~E.~B. Clarke, ``Constrained cops and robber.'' 2002.
 A.~Bonato and B.~Mohar, ``Topological directions in cops and robbers,''
   \emph{arXiv preprint arXiv:1709.09050}, 2017.
 
+\bibitem{gromovikov2018fully}
+I.~Gromovikov, W.~B. Kinnersley, and B.~Seamone, ``Fully active cops and
+  robbers,'' \emph{arXiv preprint arXiv:1808.06734}, 2018.
+
 \bibitem{bonato2016probabilistic}
 A.~Bonato, D.~Mitsche, X.~P{\'e}rez-Gim{\'e}nez, and P.~Pra{\l}at, ``A
   probabilistic version of the game of zombies and survivors on graphs,''
@@ -84,5 +88,15 @@ A.~Bonato, D.~Mitsche, X.~P{\'e}rez-Gim{\'e}nez, and P.~Pra{\l}at, ``A
 \bibitem{pralat2019many}
 P.~Pra{\l}at, ``How many zombies are needed to catch the survivor on toroidal
   grids?'' \emph{Theoretical Computer Science}, vol. 794, pp. 3--11, 2019.
+
+\bibitem{lubiw2017visibility}
+A.~Lubiw, J.~Snoeyink, and H.~Vosoughpour, ``Visibility graphs,
+  dismantlability, and the cops and robbers game,'' \emph{Computational
+  Geometry}, vol.~66, pp. 14--27, 2017.
+
+\bibitem{aichholzer2011convexifying}
+O.~Aichholzer, G.~Aloupis, E.~D. Demaine, M.~L. Demaine, V.~Dujmovic,
+  F.~Hurtado, A.~Lubiw, G.~Rote, A.~Schulz, D.~L. Souvaine \emph{et~al.},
+  ``Convexifying polygons without losing visibilities.'' in \emph{CCCG}, 2011.
 
 \end{thebibliography}

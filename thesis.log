@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  20 MAY 2020 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  28 MAY 2020 14:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -666,38 +666,50 @@ Chapter 1.
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
 ) (/home/joel/masters/sections/notation.tex [2]
-<img/intro/cube.png, id=205, 434.62375pt x 386.44376pt>
+<img/intro/cube.png, id=186, 434.62375pt x 386.44376pt>
 File: img/intro/cube.png Graphic file (type png)
 <use img/intro/cube.png>
 Package pdftex.def Info: img/intro/cube.png  used on input line 26.
 (pdftex.def)             Requested size: 108.65567pt x 96.6107pt.
  [3 </home/joel/masters/img/intro/cube.png>]) (/home/joel/masters/sections/literature.tex [4] [5] [6]
-<img/copwin_tree/copwin_tree_example1.pdf, id=254, 212.29312pt x 149.9984pt>
+<img/copwin_tree/copwin_but_notzombie_win.png, id=244, 502.87875pt x 528.97626pt>
+File: img/copwin_tree/copwin_but_notzombie_win.png Graphic file (type png)
+<use img/copwin_tree/copwin_but_notzombie_win.png>
+Package pdftex.def Info: img/copwin_tree/copwin_but_notzombie_win.png  used on input line 157.
+(pdftex.def)             Requested size: 251.43875pt x 264.48747pt.
+ [7]
+<img/copwin_tree/copwin_tree_example1.pdf, id=252, 212.29312pt x 149.9984pt>
 File: img/copwin_tree/copwin_tree_example1.pdf Graphic file (type pdf)
 <use img/copwin_tree/copwin_tree_example1.pdf>
-Package pdftex.def Info: img/copwin_tree/copwin_tree_example1.pdf  used on input line 131.
+Package pdftex.def Info: img/copwin_tree/copwin_tree_example1.pdf  used on input line 165.
 (pdftex.def)             Requested size: 148.60417pt x 104.99815pt.
- [7 </home/joel/masters/img/copwin_tree/copwin_tree_example1.pdf>]
+ [8 </home/joel/masters/img/copwin_tree/copwin_but_notzombie_win.png> </home/joel/masters/img/copwin_tree/copwin_tree_example1.pdf>]
 <img/copwin_tree/copwin_tree_example1_trees.pdf, id=273, 469.25313pt x 149.9984pt>
 File: img/copwin_tree/copwin_tree_example1_trees.pdf Graphic file (type pdf)
 <use img/copwin_tree/copwin_tree_example1_trees.pdf>
-Package pdftex.def Info: img/copwin_tree/copwin_tree_example1_trees.pdf  used on input line 160.
+Package pdftex.def Info: img/copwin_tree/copwin_tree_example1_trees.pdf  used on input line 195.
 (pdftex.def)             Requested size: 328.47495pt x 104.99815pt.
-) (/home/joel/masters/sections/survivorstrategy.tex [8 </home/joel/masters/img/copwin_tree/copwin_tree_example1_trees.pdf>]
-<img/survivorstrategy/BadSurvivorStrat.png, id=303, 576.1525pt x 557.08125pt>
+) [9 </home/joel/masters/img/copwin_tree/copwin_tree_example1_trees.pdf>] [10]
+Chapter 2.
+(/home/joel/masters/sections/observations.tex [11
+
+]) (/home/joel/masters/sections/survivorstrategy.tex [12]
+<img/survivorstrategy/BadSurvivorStrat.png, id=317, 576.1525pt x 557.08125pt>
 File: img/survivorstrategy/BadSurvivorStrat.png Graphic file (type png)
 <use img/survivorstrategy/BadSurvivorStrat.png>
 Package pdftex.def Info: img/survivorstrategy/BadSurvivorStrat.png  used on input line 38.
 (pdftex.def)             Requested size: 115.22845pt x 111.41428pt.
-) (/home/joel/masters/sections/planar.tex [9]
-<img/planar/Graph2.png, id=315, 575.14874pt x 546.04pt>
+) (/home/joel/masters/sections/wincondition.tex [13 </home/joel/masters/img/survivorstrategy/BadSurvivorStrat.png>]) [14]
+Chapter 3.
+(/home/joel/masters/sections/planar.tex
+<img/planar/Graph2.png, id=335, 575.14874pt x 546.04pt>
 File: img/planar/Graph2.png Graphic file (type png)
 <use img/planar/Graph2.png>
 Package pdftex.def Info: img/planar/Graph2.png  used on input line 13.
@@ -707,183 +719,156 @@ Overfull \hbox (18.0728pt too wide) detected at line 31
 []
  []
 
-[10 </home/joel/masters/img/survivorstrategy/BadSurvivorStrat.png>]
-<img/planar/Graph3.png, id=324, 1013.7875pt x 961.5925pt>
+[15
+
+]
+<img/planar/Graph3.png, id=342, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph3.png Graphic file (type png)
 <use img/planar/Graph3.png>
 Package pdftex.def Info: img/planar/Graph3.png  used on input line 49.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [11 </home/joel/masters/img/planar/Graph2.png>]
-<img/planar/Graph2Case1Round0.png, id=332, 1013.7875pt x 961.5925pt>
+ [16 </home/joel/masters/img/planar/Graph2.png>] [17 </home/joel/masters/img/planar/Graph3.png>]
+<img/planar/Graph2Case1Round0.png, id=355, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round0.png Graphic file (type png)
 <use img/planar/Graph2Case1Round0.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round0.png  used on input line 86.
+Package pdftex.def Info: img/planar/Graph2Case1Round0.png  used on input line 90.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
-<img/planar/Graph2Case1Round1.png, id=333, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round1.png, id=356, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round1.png Graphic file (type png)
 <use img/planar/Graph2Case1Round1.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round1.png  used on input line 101.
+Package pdftex.def Info: img/planar/Graph2Case1Round1.png  used on input line 105.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [12 </home/joel/masters/img/planar/Graph3.png>] [13 </home/joel/masters/img/planar/Graph2Case1Round0.png> </home/joel/masters/img/planar/Graph2Case1Round1.png>]
-<img/planar/Graph2Case1Round2.png, id=344, 1013.7875pt x 961.5925pt>
+ [18 </home/joel/masters/img/planar/Graph2Case1Round0.png>]
+<img/planar/Graph2Case1Round2.png, id=362, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round2.png Graphic file (type png)
 <use img/planar/Graph2Case1Round2.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round2.png  used on input line 118.
+Package pdftex.def Info: img/planar/Graph2Case1Round2.png  used on input line 122.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [14 </home/joel/masters/img/planar/Graph2Case1Round2.png>]
-<img/planar/Graph2Case1Round3.png, id=350, 1013.7875pt x 961.5925pt>
+ [19 </home/joel/masters/img/planar/Graph2Case1Round1.png>]
+<img/planar/Graph2Case1Round3.png, id=368, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round3.png Graphic file (type png)
 <use img/planar/Graph2Case1Round3.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round3.png  used on input line 129.
+Package pdftex.def Info: img/planar/Graph2Case1Round3.png  used on input line 133.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [15 </home/joel/masters/img/planar/Graph2Case1Round3.png>]
-<img/planar/Graph2Case2Round0.png, id=356, 1013.7875pt x 961.5925pt>
+ [20 </home/joel/masters/img/planar/Graph2Case1Round2.png>]
+<img/planar/Graph2Case2Round0.png, id=374, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case2Round0.png Graphic file (type png)
 <use img/planar/Graph2Case2Round0.png>
-Package pdftex.def Info: img/planar/Graph2Case2Round0.png  used on input line 150.
+Package pdftex.def Info: img/planar/Graph2Case2Round0.png  used on input line 154.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [16 </home/joel/masters/img/planar/Graph2Case2Round0.png>] [17] [18] [19] [20]) (/home/joel/masters/sections/grid.tex
-<img/grid/grid4by5.pdf, id=386, 261.97874pt x 197.73875pt>
-File: img/grid/grid4by5.pdf Graphic file (type pdf)
-<use img/grid/grid4by5.pdf>
-Package pdftex.def Info: img/grid/grid4by5.pdf  used on input line 17.
-(pdftex.def)             Requested size: 234.8775pt x 177.28737pt.
- [21 </home/joel/masters/img/grid/grid4by5.pdf>]
-<img/grid/samerow.pdf, id=397, 409.15962pt x 128.8815pt>
-File: img/grid/samerow.pdf Graphic file (type pdf)
-<use img/grid/samerow.pdf>
-Package pdftex.def Info: img/grid/samerow.pdf  used on input line 41.
-(pdftex.def)             Requested size: 234.8775pt x 73.98434pt.
-<img/grid/diffrowcol.pdf, id=398, 279.31953pt x 281.59204pt>
-File: img/grid/diffrowcol.pdf Graphic file (type pdf)
-<use img/grid/diffrowcol.pdf>
-Package pdftex.def Info: img/grid/diffrowcol.pdf  used on input line 53.
-(pdftex.def)             Requested size: 117.43875pt x 118.39674pt.
- [22 </home/joel/masters/img/grid/samerow.pdf> </home/joel/masters/img/grid/diffrowcol.pdf>]
-<img/grid/shadowscaptured.pdf, id=425, 177.0615pt x 177.0615pt>
-File: img/grid/shadowscaptured.pdf Graphic file (type pdf)
-<use img/grid/shadowscaptured.pdf>
-Package pdftex.def Info: img/grid/shadowscaptured.pdf  used on input line 123.
-(pdftex.def)             Requested size: 117.43875pt x 117.4418pt.
- [23]
-<img/grid/survivorterritory.pdf, id=430, 177.0615pt x 177.0615pt>
-File: img/grid/survivorterritory.pdf Graphic file (type pdf)
-<use img/grid/survivorterritory.pdf>
-Package pdftex.def Info: img/grid/survivorterritory.pdf  used on input line 142.
-(pdftex.def)             Requested size: 117.43875pt x 117.4418pt.
- [24 </home/joel/masters/img/grid/shadowscaptured.pdf> </home/joel/masters/img/grid/survivorterritory.pdf>]) (/home/joel/masters/sections/cylinder.tex
-<img/cylinder/cylinder4by5.pdf, id=465, 288.64337pt x 481.31218pt>
-File: img/cylinder/cylinder4by5.pdf Graphic file (type pdf)
-<use img/cylinder/cylinder4by5.pdf>
-Package pdftex.def Info: img/cylinder/cylinder4by5.pdf  used on input line 8.
-(pdftex.def)             Requested size: 164.41711pt x 274.15984pt.
+ [21 </home/joel/masters/img/planar/Graph2Case1Round3.png>]
 
+LaTeX Warning: Reference `appendix:planarZombies' on page 22 undefined on input line 181.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[25]) (/home/joel/masters/sections/Q_m_n.tex
-<img/q_m_n/Q_m_n_basic.png, id=470, 1704.3675pt x 905.3825pt>
+[22 </home/joel/masters/img/planar/Graph2Case2Round0.png>] [23] [24] [25]) [26]
+Chapter 4.
+(/home/joel/masters/sections/Q_m_n.tex
+<img/q_m_n/Q_m_n_basic.png, id=408, 1704.3675pt x 905.3825pt>
 File: img/q_m_n/Q_m_n_basic.png Graphic file (type png)
 <use img/q_m_n/Q_m_n_basic.png>
 Package pdftex.def Info: img/q_m_n/Q_m_n_basic.png  used on input line 11.
 (pdftex.def)             Requested size: 255.64409pt x 135.80151pt.
- [26 </home/joel/masters/img/cylinder/cylinder4by5.pdf>] [27 </home/joel/masters/img/q_m_n/Q_m_n_basic.png>] [28]
-<img/q_m_n/diagram1.png, id=492, 1687.30376pt x 816.04875pt>
+ [27
+
+ </home/joel/masters/img/q_m_n/Q_m_n_basic.png>] [28]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 68.
+
+<img/q_m_n/diagram1.png, id=421, 1687.30376pt x 816.04875pt>
 File: img/q_m_n/diagram1.png Graphic file (type png)
 <use img/q_m_n/diagram1.png>
 Package pdftex.def Info: img/q_m_n/diagram1.png  used on input line 75.
 (pdftex.def)             Requested size: 337.45477pt x 163.20685pt.
-<img/q_m_n/z2_path_Pa.pdf, id=493, 462.58018pt x 162.2582pt>
+<img/q_m_n/z2_path_Pa.pdf, id=422, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pa.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pa.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 124.
 (pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pb.pdf, id=494, 462.58018pt x 162.2582pt>
+<img/q_m_n/z2_path_Pb.pdf, id=423, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pb.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pb.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 125.
 (pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pc.pdf, id=495, 462.58018pt x 162.2582pt>
+<img/q_m_n/z2_path_Pc.pdf, id=424, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pc.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pc.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 127.
 (pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pd.pdf, id=496, 462.58018pt x 162.2582pt>
+<img/q_m_n/z2_path_Pd.pdf, id=425, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pd.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pd.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 128.
 (pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
- [29 </home/joel/masters/img/q_m_n/diagram1.png>] [30 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]) [42] (/home/joel/masters/thesis.bbl [43
+[29 </home/joel/masters/img/q_m_n/diagram1.png>] [30 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]) [42]
+Chapter 5.
+(/home/joel/masters/sections/conclusion.tex
+<img/polygon/polygon_with_bfs_dismantling.pdf, id=606, 143.8213pt x 104.81157pt>
+File: img/polygon/polygon_with_bfs_dismantling.pdf Graphic file (type pdf)
+<use img/polygon/polygon_with_bfs_dismantling.pdf>
+Package pdftex.def Info: img/polygon/polygon_with_bfs_dismantling.pdf  used on input line 37.
+(pdftex.def)             Requested size: 107.86569pt x 78.60847pt.
+) [43
 
-]) [44]
+] (/home/joel/masters/thesis.bbl [44 </home/joel/masters/img/polygon/polygon_with_bfs_dismantling.pdf>] [45
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 162.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 162.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 162.
-
-(/home/joel/masters/sections/Q_m_n_appendix.tex
+]) [46]
+Appendix A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2.
+(hyperref)                removing `math shift' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 2.
+(hyperref)                removing `subscript' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2.
+(hyperref)                removing `math shift' on input line 165.
 
-[45pdfTeX warning (ext4): destination with the same identifier (name{section.Alph0.1}) has been already used, duplicate ignored
+(/home/joel/masters/sections/Q_m_n_appendix.tex [47
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.50 \newpage
-             ]
+] [48]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 51.
+(hyperref)                removing `math shift' on input line 49.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 51.
+(hyperref)                removing `subscript' on input line 49.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 51.
+(hyperref)                removing `math shift' on input line 49.
 
-) [46] (/home/joel/masters/sections/appendix_planar_case3.tex [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
- [67]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+ [49]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
  (/home/joel/masters/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6EFBC8F7AA8962D1F22165255C7E9F7A;2390.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
+(rerunfilecheck)             Checksum: 84AB243FA0FAB0FD635EFD19BF27E4B4;1978.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
  ) 
 Here is how much of TeX's memory you used:
- 7893 strings out of 492982
- 112455 string characters out of 6134895
- 206806 words of memory out of 5000000
- 11115 multiletter control sequences out of 15000+600000
+ 7852 strings out of 492982
+ 111835 string characters out of 6134895
+ 199594 words of memory out of 5000000
+ 11100 multiletter control sequences out of 15000+600000
  19272 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,12n,31p,371b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/publi
-c/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/joel/masters/thesis.pdf (70 pages, 1102886 bytes).
+ 28i,12n,31p,336b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on /home/joel/masters/thesis.pdf (52 pages, 1063662 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 637 compressed objects within 7 object streams
- 160 named destinations out of 1000 (max. 500000)
- 364 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 748 PDF objects out of 1000 (max. 8388607)
+ 548 compressed objects within 6 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 
