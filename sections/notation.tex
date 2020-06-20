@@ -1,27 +1,30 @@
-
-In this thesis, all graphs are assumed to be finite and connected. That is, there is a finite
-number of vertices and there exists a path between every pair of vertices.
-Playing on graphs with multiple connected components can be reduced to playing
-multiple games in parallel.
-
-The following sections will use a few definitions from graph theory.
+The following sections will use a few standard definitions from graph theory (and vertex-pursuit theory) which we include here for reference.
 Formally, a graph $G = (V, E)$ is composed of:
 
 \begin{itemize}
 \item A set $V$ of vertices.
-\item A set $E$ of edges ${u,v}$ where $u, v \in V$.
+\item A set $E$ of edges $\{u,v\}$ where $u, v \in V$.
 \end{itemize}
 
-If $G = (V,E)$ is a graph and $x,y \in V$ are vertices, we say that vertices $x$ and $y$ are neighbours if $xy \in E$.
-That is, if there is an edge joining $x$ to $y$.
-In these games, the edges are assumed to be undirected and so we may write $xy = yx$
-and consider the two directions as a single edge.
-We call the set of all neighbours of $x$ the neighbourhood of $x$ which we denote $N(x) \subseteq V$.
+The graphs studied herein are finite, connected, and undirected.
+This means that there is a finite
+number of vertices and that there exists a path connecting every pair of vertices.
+We also write $V(G)$ for the set of vertices of $G$ and $E(G)$ for the set of edges of $G$.
 
-For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}$.
-Since $000$ and $001$ are connected, $(000, 001) \in E$.
-The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
-[Add definition of closed neighborhood]
+Let $G = (V,E)$ be a graph with vertices $x,y \in V$.
+By undirected, we mean that an edge from $x$ to $y$ implies an edge from $y$ to $x$.
+So we treat the two directions as a single edge and write $\{x,y\}$ or simply $xy = yx \in E$.
+Playing on graphs with multiple connected components can be reduced to playing
+multiple games in parallel: the players are restricted to their starting connected component.
+
+We say that vertices $x$ and $y$ are neighbours if $xy \in E$; that is, if there is an edge joining $x$ to $y$.
+The set $N(x) = \{ y \in V | xy \in E \} \subseteq V$ is the \textit{neighbourhood} of $x$.
+The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$.
+
+For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ a, b, c, d, e, f, g, h \}$.
+Since $a$ and $b$ are connected by an edge, we have $ab \in E$.
+The neighbourhood of $a$ is $N(a) = \{ b,d,f \}$ and the closed neighbourhood of $a$ is
+$N[a] = \{ a, b, d, f \}$.
 
 \begin{figure}
 \centering
@@ -29,68 +32,21 @@ The neighbourhood of $000$ is $N(000) = \{ 001, 010, 100 \}$.
 \caption{The Hypercube of Dimension 3 \label{fig:hyper-cube}}
 \end{figure}
 
-The degree of a vertex is the number of edges incident to that vertex. The minimum and maximum
-degrees of a graph are sometimes denoted as $\delta(G)$ and $\Delta(G)$, respectively.
+The \textit{degree} of a vertex is the number of edges incident to that vertex (or equivalently the
+cardinality of its neighbourhood $\lvert N(x) \rvert$). The \textit{minimum} and \textit{maximum
+degrees} of a graph are $\min \text{ or } \max \{ \lvert N(x)\rvert | x \in V\}$ and are denoted as $\delta(G)$ and $\Delta(G)$, respectively.
 
-\subsection{Playing and Modeling the Game}
-
-The survivor is $s \in V(G)$ and $z_i \in V(G)$ are zombies with $i \in \{1, \dots, k\}$.
-Notice that the notation represents both a player and its position in the graph.
-In the games studied there is a single survivor and $k \geq 1$ of zombies.
-
-We divide the game into rounds and turns. A round consists of two turns:
-a zombie turn and a survivor turn.
-
-The game starts on round 0 with the zombies choosing
-initial vertices. The survivor follows. In a sense the game really begins in
-round 1 with each zombie independently selecting a shortest path
-toward the survivor and moving along the next edge.
-The survivor responds. The game repeats in this way until the survivor is caught,
-or both players agree that the survivor will always escape.
-
-It is convenient to define the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
-Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
-
-It is occasionally useful to identify the players' positions over time, in which
-case let $z_r^i \in V(G)$ be zombie $i$ on round $r$. Similarly $s_r$ is the
-survivor on round $r$. This burdensome notation will be omitted when possible.
-
-It might be tempting to group the zombies together
-into some tuple of the vertex set, but each zombie acts independently of
-the others and so this may not always be practical.
-
-\subsection{Paths and Moves}
-The zombie strategy requires that we consider all shortests paths connecting
-each zombie to the survivor. Let us be precisely define these terms.
-%In the studied discrete graphs below, the distance between two vertices is the hop length of a %(shortest possible) path connecting them.
-
+Two basic classes of graphs are important in the study of these games: paths and cycles.
 A path $P = v_0, v_1, v_2, \dots , v_n$ is a ``strict'' walk: a non-repeating sequence of
-adjacent vertices in a graph. A path is an example of a subgraph $G' = (V(P), E(P))$ since $V(P) \subseteq V$ and $E(P) \subseteq E$. A cycle is a path of at least 3 vertices where the
-start and endpoints are the same vertex.
+adjacent vertices in a graph. A cycle $C_n$ is a path of length $n \geq 3$ with an additional edge joining the last vertex back to the first (a so-called \textit{closed} path).
 
-Paths allow us to define a distance $d(x,y)$ between vertices as the length of the shortest path connecting them (or infinity if such does not exist) and computing such paths is a classic
-problem in computer science.
+We say that a graph contains a path $P$ if $P$ is a subgraph of $G$, so $V(P) \subseteq V(G)$ and $E(P) \subseteq E(G)$. More generally, with $S \subseteq V(G)$ a set of vertices, write $G[S]$ for the \textit{induced subgraph}: the graph which contains $S$ and the edges of $G$ which join vertices of $S$.
 
-The diameter and girth of a graph are useful properties which appear in some
+Paths allow us to define a distance between vertices $d_G(x,y)$ as the length of the shortest path connecting $x$ to $y$ (or infinity if such a path does not exist; never the case in our games). Computing such paths, also known as \textit{geodesics}, is a classic problem in computer science.
+
+A geodesic has the additional property of being \textit{isometric} \cite{pan2006isometric}, meaning that the distance between vertices of an isometric paths is preserved in the subgraph induced by the path. This property allows players to guard or patrol isometric paths \cite{aigner1984game}, preventing
+the robber from entering (and thus crossing) the path without capture.
+
+Finally, the \textit{diameter} and \textit{girth} of a graph are two useful graph properties which appear in some
 of the theorems herein.
-The diameter $\diam(G)$ is the length of a longest possible shortest path in $G$ and the girth of a graph is the length of the minimum order subcycle.
-
-Consider zombie $k$. According to the rules of the game, on its turn the zombie
-``must move on a shortest path'' towards the survivor. More precisely, this requires
-considering $Z_k = \{  \exists \ell : z_k = u_{i,0}, u_{i, 1}, u_{i, 2}, \dots, u_{i, \ell-1}, s= u_{i, \ell}\}$ the set of $i$ different $z_ks$-paths of length $\ell$.
-
-There is at least one such path since our graph is presumed connected,
-so $i > 0$ and $Z_k \neq \emptyset$.
-
-If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
-include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
-
-If, however, there are multiple $zs$-paths which have different first moves,
-then the zombie could make multiple moves.
-
-We call all the set of all neighbours on
-a shortest path to the survivor the \textit{zombie moves}, which could be denoted
-
-\[ Z[x; s] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \]
-
-the zombies moves from $x$ given survivor is on $s$.
+The diameter $\diam(G)$ is the length of a longest possible shortest path in $G$. The girth of a graph is the length of the minimum order subcycle.

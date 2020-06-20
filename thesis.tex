@@ -16,6 +16,7 @@
 \usepackage{amsthm} % proof environment
 \usepackage{algpseudocode} % for algo
 \usepackage{float} % fix position of figures with [H]
+\usepackage{multicol}
 %\usepackage{babel}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rcleil}
@@ -114,25 +115,13 @@
 \section{Notation}
 \input{sections/notation}
 
-\section{Literature Review}
-\input{sections/literature}
+% Classical Cops & Robbers
+\section{Classical Cops and Robbers}
+\input{sections/intro_cops}
 
-\chapter{Half-finished ideas that may be worth including}
-% Lemmas and observations
-\section{Observations}
-\input{sections/observations}
-
-% Existing theory
-%\section{Cop-win and Zombie-win Graphs}
-%\input{sections/copwin_trees}
-
-% Survivor Strategy?
-\section{Survivor Strategy}
-\input{sections/survivorstrategy}
-
-% Win condition
-%\section{Win Condition}
-%\input{sections/wincondition}
+% Zombies & Survivors
+\section{Cops Turn Into Zombies}
+\input{sections/intro_zombies}
 
 % Planar Zombies
 \chapter{Planar Zombies \label{chapter planar zombies}}
@@ -161,11 +150,32 @@
 
 \appendix
 
+
+%\section{Literature Review}
+%\input{sections/literature}
+
+%\chapter{Half-finished ideas that may be worth including}
+% Lemmas and observations
+%\section{Observations}
+%\input{sections/observations}
+
+% Existing theory
+%\section{Cop-win and Zombie-win Graphs}
+%\input{sections/copwin_trees}
+
+% Survivor Strategy?
+%\section{Survivor Strategy}
+%\input{sections/survivorstrategy}
+
+% Win condition
+%\section{Win Condition}
+%\input{sections/wincondition}
+
 \chapter{End Matter}
-\section{$Q_{m, n}$ Appendices}
-\input{sections/Q_m_n_appendix}
+%\section{$Q_{m, n}$ Appendices}
+%\input{sections/Q_m_n_appendix}
 
 \section{Planar Zombies Counter-Example Case III}
 %\input{sections/appendix_planar_case2}
-%\input{sections/appendix_planar_case3}
+\input{sections/appendix_planar_case3}
 \end{document}

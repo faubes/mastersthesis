@@ -1,27 +1,19 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}How to Play}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Notation}{3}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Playing and Modeling the Game}{3}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Paths and Moves}{4}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}Literature Review}{4}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Cops and Robbers, Cop-Number}{5}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}The Cop-Number and the Genus of the Graph}{5}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Relation to the Girth and Minimum Degree of a Graph}{5}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Dismantlings, Cop-win Trees, Zombie-win Trees}{6}{subsection.1.3.4}
-\contentsline {subsection}{\numberline {1.3.5}Deterministic Zombies}{7}{subsection.1.3.5}
-\contentsline {subsection}{\numberline {1.3.6}Probabilistic zombies}{9}{subsection.1.3.6}
-\contentsline {chapter}{\numberline {2}Half-finished ideas that may be worth including}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Observations}{11}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Keep Your Distance}{11}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Survivor Strategy}{12}{section.2.2}
-\contentsline {section}{\numberline {2.3}Win Condition}{14}{section.2.3}
-\contentsline {chapter}{\numberline {3}Planar Zombies }{15}{chapter.3}
-\contentsline {chapter}{\numberline {4}Cycle With One Chord }{27}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}Cornering the Survivor on the Smallest Cycle}{29}{subsection.4.0.1}
-\contentsline {subsection}{\numberline {4.0.2}Forcing the Survivor into a Losing Position}{37}{subsection.4.0.2}
-\contentsline {subsection}{\numberline {4.0.3}Existence of Winning Start}{40}{subsection.4.0.3}
-\contentsline {chapter}{\numberline {5}Conclusion, Future Works}{43}{chapter.5}
-\contentsline {chapter}{\numberline {A}End Matter}{47}{appendix.A}
-\contentsline {section}{\numberline {A.1}$Q_{m, n}$ Appendices}{47}{section.A.1}
-\contentsline {section}{\numberline {A.2}Simplifying $z_2$'s inequalities for Case II.B.}{49}{section.A.2}
-\contentsline {section}{\numberline {A.3}Planar Zombies Counter-Example Case III}{49}{section.A.3}
+\contentsline {section}{\numberline {1.1}Notation}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Classical Cops and Robbers}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}How to Play Cops and Robbers}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Cops and robbers, Cop-Number}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}The Cop-Number and the Genus of the Graph}{5}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Relation to the Girth and Minimum Degree of a Graph}{5}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Dismantlings, Cop-win Trees }{5}{subsection.1.2.5}
+\contentsline {section}{\numberline {1.3}Cops Turn Into Zombies}{6}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}How to Play Zombies and Survivor}{6}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Modeling the Game}{7}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Paths and Moves}{7}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Deterministic Zombies}{8}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Probabilistic zombies}{10}{subsection.1.3.5}
+\contentsline {chapter}{\numberline {2}Planar Zombies }{12}{chapter.2}
+\contentsline {chapter}{\numberline {3}Cycle With One Chord }{24}{chapter.3}
+\contentsline {chapter}{\numberline {4}Conclusion, Future Works}{41}{chapter.4}
+\contentsline {chapter}{\numberline {A}End Matter}{45}{appendix.A}
+\contentsline {section}{\numberline {A.1}Planar Zombies Counter-Example Case III}{45}{section.A.1}

@@ -1,0 +1,128 @@
+We start with an explanation of the game, then give some key results from C \& R since much of our thesis is a comparison between the two games. We investigate ``the cost of being undead'', as Fitzpatrick \cite{fitzpatrick2016deterministic} would call it.
+
+\subsection{How to Play Cops and Robbers}
+
+C \& R is a two player game: one player controls the cops, the other the robber.
+The cops begin the game by choosing start vertices. Next, the robber choooses a start position.
+On each following round the cops may move along an edge to a neighbouring vertex
+or remain in position.
+Here a move is an instantaneous jump between adjacent vertices.
+If the robber remains uncaught after the cops have had a chance to move, the
+robber then gets the opportunity to move along an edge.
+
+In this game, the players have complete information of the graph and the positions of the players.
+The cops move, the robber responds and these two \textit{turns} make one \textit{round}.
+
+The game is decided when either:
+\begin{itemize}
+\item A cop captures the robber. That is, the cop player wins if one of the cops move onto the vertex
+occupied by the robber.
+\item The robber wins if it can evade the cops indefinitely.
+\end{itemize}
+
+\subsection{Cops and robbers, Cop-Number}
+
+Study of vertex-pursuit games is first attributed to Quilliot \cite{quilliot1978jeux, quilliot1983problemes}, and Nowakowski and Winkler \cite{nowakowski1983vertex}.
+These researchers independently consider games of C \& R with a single cop and characterize by way of a relation those graphs where the cop always wins. These are now known as \textit{cop-win} graphs
+and can be recognized by the existence of an ordering of the vertices called a \textit{dismantling};
+so-called because it is the successive deletion of \textit{corners} resulting in a single vertex (see Subsection~\ref{intro dismantlings}).
+
+The \textit{cop-number} of a graph, denoted $c(G)$, is introduced by Aigner and Fromme  \cite{aigner1984game} and defined as the minimum number of cops required
+to guarantee they win on a graph $G$. Later, Berarducci et al. and Hahn et al.  generalized the characterization of cop-win graphs
+into \textit{$k$-cop win} graphs \cite{berarducci1993cop, hahn2003characterisation}.
+
+A graph is $k$-cop win if and only if there exists a function (on a $k$-product of the graph to represent the position of the cops)
+which satisfies certain properties; essentially it is a function which takes as input a position $C$ of cops and returns the next position for the cops that guarantees a win (see \cite{bonato2011game}[p. 119]).
+There exists a polynomial-time algorithm for deciding whether a graph is $k$-cop-win by iteratively
+solving for this function, so we can decide if $c(G) \leq k$ for any graph in polynomial time as long as $k$ is fixed and not a function of $\lvert V(G) \rvert$.
+
+Another important line of inquiry relating to the cop-number is the investigation of Meyniel's conjecture, which posits that $\bigO(\sqrt{\lvert V(G)\rvert })$ is an upper bound on the cop-number \cite{frankl1987cops}.
+Incremental progress has been made on special classes of graphs as well as for graphs in general  \cite{gera2016graph}[p. 31].
+
+\subsection{The Cop-Number and the Genus of the Graph}
+
+One of the most surprising results about the C \& R is owed to Aigner and Fromme \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
+Basically, a graph is planar if it can be drawn in the plane (say, on a piece of paper) without crossing any edges. Aigner and Fromme describe a 3-cop strategy which uses \textit{isometric} paths of the graph to encircle and entrap the robber.
+
+Outerplanar graphs are planar graphs which can be drawn such that all vertices belong to a common face
+(called the \textit{outerface}). Clarke \cite{clarke2002constrained} showed that the cop number of outerplanar graphs is 2 by considering
+two possible cases: those with and without cut vertices. The 2 cops have a winning strategy on outerplanar graphs without cut vertices, and this strategy can be used to cordon off sections (blocks)
+of the outerplanar graph.
+
+The game has also been studied for graphs embeddable in surfaces of higher order.
+In 2001, Schroeder conjectured \cite{bonato2017topological} that for a graph of genus $g$,
+the cop-number is at most $g+3$. [TODO: Include here the best known bound].
+
+\subsection{Relation to the Girth and Minimum Degree of a Graph}
+
+Aigner and Fromme also show a relationship between the cop-number, the girth of a graph and
+its minimum degree \cite{aigner1984game}. More precisely, if $G$ has girth at least 5, then $c(G)\geq \delta(G)$ where $\delta(G)$ is the minimum degree of $G$.
+
+This result has since been refined \cite{frankl1987cops}: if $G$ has girth at least $8t-3$ and $\delta(G) = d$, then more than $d^t$ cops are needed to win. In a recent
+seminar by B. Mohar (Graph Searching Online Seminar, held May 1, 2020) it was
+argued that a graph with girth $g$ and $\delta(G)=d$ will require at least $\tfrac{1}{g}(d-1)^{\lfloor \frac{g-1}{4} \rfloor}$.
+
+\subsection{Dismantlings, Cop-win Trees \label{intro dismantlings}}
+
+Quilliot and Nowakowski both indepedently characterized cop-win graphs as those which
+admit a \textit{dismantling}.
+
+Let $G$ be a reflexive graph with $x\in V(G)$ a fixed vertex. A (one-point) \textit{retract} is an edge preserving function $f : G \rightarrow H = G \setminus v$
+(aka a homomorphism) such that $f(v) = x$ for some $x \neq v \in V(G)$ and $f$ restricted on $H$ is the identity.
+
+Formally,
+
+\[ f(v) = x \qquad f(u) = u \qquad \forall u \in V(G)\setminus \{ v \} \]
+
+and
+
+\[ xy \in E(G) \implies f(x)f(y) \in E(G \setminus \{ v \}) \].
+
+Since the graphs studied herein are reflexive, a one-point retract can be seen as the
+absorption of one vertex into another. The edge between two adjacent vertices becomes another loop.
+The retract maps a graph $G$ to graph $G'$ with one less vertex.
+
+A vertex $u$ is a \textit{corner} if its closed neighbourhood
+is a subset of one of of its neighbours' closed neighbourhood, i.e.,
+
+\[u \in V(G) \qquad \text{and} \qquad \exists v\in V(G) : N[u] \subseteq N[v] \].
+
+It is possible to define a retract on corner $u$: if $u$ is a corner, then it is
+dominated by some $v \in V(G)$. So if $x \in V(G)$, $x \neq u$ and
+$xu \in E(G)$ then $xv \in E(G)$ since $u$ is a corner. Therefore the map
+
+\[ f(x) = \begin{cases}
+v & \text{if } x = u \\
+x & \text{otherwise}
+\end{cases} \]
+
+is edge-preserving since $f(x)f(u) = xv$ and $xv \in E(G)$, so $xv \in E(H) = E(G - u)$.
+For other vertices $x,y \not\in \{u,v\}$, $f(x)f(y) = xy \in E(G)$ so $f(x)f(y) \in E(G- v)$ also.
+This shows that $f$ is a homomorphism as required and hence a retract.
+This is a formal way of saying that a corner of a graph can be folded into a
+dominating vertex.
+
+A \textit{dismantling} is a sequence of retracts $f_1, f_2, \dots, f_{n-1}$ such that the
+composition $F_{n-1} = f_{n-1} \circ f_{n-2} \circ \cdots f_2 \circ f_1$ gives a
+function for which $F_{n-1} (G) = K_1$. That is, there is a sequence of retracts
+which maps the graph to a single vertex.
+
+Not all vertices of a graph need to be corners in order for there
+to exist a dismantling: it suffices to have an ordering where each $v_i$ is a corner in
+$G[\{v_i, v_{i+1}, \dots, v_n\}]$.
+Such a sequence of $f_i$'s defines a copwin ordering
+\[ \mathcal{O} = ( v_1, v_2, \dots, v_n ) \]
+ where $v_1$ is a corner in $G_1 = G$, $v_2$ is a corner in $G - v_1$, and so on.
+A fundamental result in C \& R is that cop-win graphs -- graphs for which a single
+cop is guaranteed to win --  are characterized by the existence of such dismantlings.
+A graph is copwin if and only if it is dismantlable.
+
+A cop-win spanning tree combines the idea of a dismantling with a spanning tree
+and was first proposed in \cite{clarke2002constrained}. A cop-win spanning tree $S$ is defined as a tree where $x,y\in V(G)$ and $xy \in E(S)$ if there exists a retract $f_j$ in the dismantling
+$F_n = f_{n} \circ f_{n-1} \circ \cdots \circ f_{2} \circ f_1$
+such that $f_j (x) = y$ or $f_j (y) = x$ in $G[\{j, j+1, \dots, n \}]$.
+Cop-win spanning trees give a strategy for the cops to follow: start at the root
+(the last vertex in the ordering) and descend the tree in the branch containing the robber.
+Lemmas 2.1.2 and 2.1.3 from \cite{clarke2002constrained} show that the cop
+can always stay in the same branch (and above) the robber in the tree. So the
+robber is eventually stuck in a leaf and caught.

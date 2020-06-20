@@ -1,48 +1,76 @@
-We start with some key results from Cops and Robbers since much of our thesis is comparison
-between the two games. Or \textit{the cost of being undead} as Fitzpatrick \cite{fitzpatrick2016deterministic} would call it.
+\subsection{How to Play Zombies and Survivor}
 
-\subsection{Cops and Robbers, Cop-Number}
+Zombies and Survivor is similar to C \& R except that zombies move
+``directly'' toward the survivor. More precisely, on the zombies' turn
+each zombie independently selects a shortest path toward the survivor (a \textit{geodesic})
+and moves along the edge to the next vertex of the path.
 
-Study of vertex pursuit games is first attributed to Quilliot \cite{quilliot1978jeux, quilliot1983problemes}, and Nowakowski and Winkler \cite{nowakowski1983vertex}.
-Both authors independently consider games of Cops and Robbers with a single Cop and characterize by way of a relation those graphs where the Cop always wins. These are now known as \textit{Cop-win} graphs
-and can be recognized by the existence of an ordering of the vertices called a \textit{dismantling};
-so-called because it is the successive deletion of \textit{corners} resulting in a single vertex
-(see the last section on dismantlings, cop-win trees and visiblity graphs ).
+The sophistication of the zombies' strategy gives them their name:
+you can imagine the zombies -- arms outstretched -- ambling directly towards the survivor.
+As in C \& R, the players have complete information of the graph and the positions of the players. Indeed, the zombies need to know the position of the survivor to enact
+their strategy.
 
-The \textit{Cop-number} of a graph, denoted $c(G)$, is introduced by Aigner and Fromme  \cite{aigner1984game} and defined as the minimum number of Cops required
-to guarantee they win on a graph $G$. Later, \cite{berarducci1993cop} and \cite{hahn2003characterisation} generalized the characterization of cop-win graphs
-into $k$-copwin graphs.
+If uncaught, the survivor may move to one of its neighbouring vertices or stay in place.
+ Again, a move is an instantaneous jump along an edge from one vertex to another.
 
-A graph is $k$-cop win if and only if there exists a function (on a $k$-product of the graph to represent the position of the Cops)
-which satisfies certain properties; essentially it is a function which takes as input a position $C$ of Cops and returns the next position for the Cops that guarantees a win (see \cite{bonato2011game}[p. 119]).
-There exists a polynomial-time algorithm for deciding whether a graph is $k$-Cop-win by iteratively
-solving for this function.
+The game concludes when either:
+\begin{itemize}
+\item A zombie eats the survivor by moving to the survivor's vertex.
+\item The survivor evades the zombies indefinitely.
+\end{itemize}
 
-Another important line of inquiry relating to the Cop-number is the investigation of Meyniel's conjecture, which posits that $\bigO(\sqrt{|V(G)|})$ is an upper bound on the Cop-number \cite{frankl1987cops}.
-Incremental progress has been made on special classes of graphs as well as for graphs in general. See also for a recent
-overview \cite{gera2016graph}[p. 31].
+%It is easy to determine that a zombie has won. It is perhaps not as obvious how
+%to determine the latter. We discuss winning conditions in greater detail in Section~\ref{}.
 
-\subsection{The Cop-Number and the Genus of the Graph}
+%The Z \& S games studied herein use a few zombies chasing a single survivor. The game
+%can be adapted to multiple survivors by making the zombies move toward
+%to the closest. We focus on games with a single survivor.
 
-One of the most surprising results about the Game of Cops and Robbers is owed to Aigner and Fromme \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
-Basically, a graph is planar if it can be drawn in the plane (say, on a piece of paper) without crossing any edges. Aigner and Fromme describe a 3-Cop strategy which uses \textit{isometric} paths of the graph to encircle and entrap the Robber.
+\subsection{Modeling the Game}
 
-Outerplanar graphs are planar graphs which can be drawn such that all vertices belong to a common face
-(called the outer face). Clarke \cite{clarke2002constrained} showed that the cop number of outerplanar graphs is 2 by considering
-two possible cases: those with and without cut vertices. The 2 Cops have a winning strategy on outerplanar graphs without cut vertices, and this strategy can be used to cordon off sections (blocks)
-of the outerplanar graph.
+We call $s \in V(G)$ the survivor and $z_i \in V(G)$ are zombies with $i \in \{1, \dots, k\}$.
+This notation represents both a player and its position in the graph.
+In the games studied there is a single survivor and $k \geq 1$ of zombies.
 
-The game has also been studied for graphs embeddable in surfaces of higher order.
-In 2001, Schroeder conjectured \cite{bonato2017topological} that for a graph of genus $g$,
-the cop-number is at most $g+3$. [Include here the best known bound].
 
-\subsection{Relation to the Girth and Minimum Degree of a Graph}
+We divide the game into rounds and turns. A round consists of two turns:
+a zombie turn and a survivor turn.
+It is convenient to define the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
+Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
 
-Aigner and Fromme also show a relationship between the Cop-number, the girth of a graph and
-its minimum degree \cite{aigner1984game}. More precisely, if $G$ has girth at least 5, then $c(G)\geq \delta(G)$ where $\delta(G)$ is the minimum degree of $G$.
+It is occasionally useful to identify the players' positions over time, in which
+case let $z_r^i \in V(G)$ be zombie $i$ on round $r$. Similarly $s_r$ is the
+survivor on round $r$. This burdensome notation will be omitted when possible.
 
-This result has since been refined by \cite{frankl1987cops} and again recently in a
-seminar by B. Mohar (Graph Searching Seminar, held online May 1, 2020).
+It might be tempting to group the zombies together
+into some tuple of the vertex set, but each zombie acts independently of
+the others and so this may not be practical.
+
+\subsection{Paths and Moves}
+The zombie strategy requires consideration of all geodesics connecting
+each zombie to the survivor. Let us be precisely define these terms.
+%In the studied discrete graphs below, the distance between two vertices is the hop length of a %(shortest possible) path connecting them.
+
+
+Consider zombie $k$. According to the rules of the game, on its turn the zombie
+``must move on a shortest path'' towards the survivor. The \textit{zombie moves}
+are those neighbours which lie on a shortest path toward the survivor, and which could be denoted
+
+\[ Z[x, s] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \} \]
+
+the zombies moves from $x$ given survivor is on $s$.
+
+
+[fix me here; simplify; clarify]
+
+There is at least one such move since our graph is presumed connected,
+so $i > 0$ and $Z_k \neq \emptyset$.
+
+If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
+include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
+
+If, however, there are multiple $zs$-paths which have different first moves,
+then the zombie could make multiple moves.
 
 
 \subsection{Deterministic Zombies}
@@ -144,3 +172,10 @@ So study of these games becomes probabilistic; zombies win if they have at least
 The (probabilistic) zombie number of a graph is the minimum number of zombies required for a 50\% chance of winning and this zombie number is
 obtained for several classes of graphs in \cite{bonato2016probabilistic} and for
 toroidal grids in \cite{pralat2019many}.
+
+The original paper on probabilistic zombies \cite{bonato2016probabilistic} also includes a lemma which is useful for our work
+in Chapters~\ref{chapter planar zombies} and \ref{chapter q_m_n}:
+
+\begin{lemma}[3.1, \cite{bonato2016probabilistic}] The survivor wins on $C_n$ against $k \geq 2$ zombies if and only if all zombies are initially located on an induced subpath
+containing at most $\lceil\frac{n}{2}\rceil-2$ vertices.
+\end{lemma}

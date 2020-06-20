@@ -26,6 +26,11 @@ A.~Bonato and R.~Nowakowski, \emph{The Game of Cops and Robbers on Graphs},
   ser. Student mathematical library.\hskip 1em plus 0.5em minus 0.4em\relax
   American Mathematical Society, 2011.
 
+\bibitem{schaefer1978complexity}
+T.~J. Schaefer, ``On the complexity of some two-person perfect-information
+  games,'' \emph{Journal of Computer and System Sciences}, vol.~16, no.~2, pp.
+  185--225, 1978.
+
 \bibitem{fitzpatrick2016deterministic}
 S.~Fitzpatrick, J.~Howell, M.~Messinger, and D.~Pike, ``A deterministic version
   of the game of zombies and survivors on graphs,'' \emph{Discrete Applied
@@ -34,6 +39,14 @@ S.~Fitzpatrick, J.~Howell, M.~Messinger, and D.~Pike, ``A deterministic version
 \bibitem{fitzpatrick2018game}
 S.~L. Fitzpatrick, ``The game of zombies and survivors on the cartesian
   products of trees,'' \emph{arXiv preprint arXiv:1806.04628}, 2018.
+
+\bibitem{pan2006isometric}
+J.-J. Pan and G.~J. Chang, ``Isometric path numbers of graphs,'' \emph{Discrete
+  mathematics}, vol. 306, no.~17, pp. 2091--2096, 2006.
+
+\bibitem{aigner1984game}
+M.~Aigner and M.~Fromme, ``A game of cops and robbers,'' \emph{Discrete Applied
+  Mathematics}, vol.~8, no.~1, pp. 1--12, 1984.
 
 \bibitem{quilliot1978jeux}
 A.~Quilliot, ``Jeux et pointes fixes sur les graphes,'' Ph.D. dissertation, Ph.
@@ -48,10 +61,6 @@ A.~Quilliot, ``Jeux et pointes fixes sur les graphes,'' Ph.D. dissertation, Ph.
 \bibitem{nowakowski1983vertex}
 R.~Nowakowski and P.~Winkler, ``Vertex-to-vertex pursuit in a graph,''
   \emph{Discrete Mathematics}, vol.~43, no. 2-3, pp. 235--239, 1983.
-
-\bibitem{aigner1984game}
-M.~Aigner and M.~Fromme, ``A game of cops and robbers,'' \emph{Discrete Applied
-  Mathematics}, vol.~8, no.~1, pp. 1--12, 1984.
 
 \bibitem{berarducci1993cop}
 A.~Berarducci and B.~Intrigila, ``On the cop number of a graph,''

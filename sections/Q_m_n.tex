@@ -1,73 +1,86 @@
-We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
+Games played on cycles are straightforward: if the zombies are too close, the survivor can lead
+the zombies in the same direction around the cycle. Otherwise, the zombies are too far apart and whichever side (sub-path of the cycle) the survivor may choose, the zombies will move in opposite directions and win. In this Chapter, we investigate the game on cycles augmented by a single chord.
 
 \begin{definition}
- Take a cycle of length $m+n$ and add a chord which
+ Take a cycle of length $m+n-2$ and add a chord which
  divides the cycle into paths $P_m$ and $P_n$ of lengths $m$ and $n$.
  Without loss of generality $m \leq n$. We denote such a cycle as $Q_{m,n}$.
 \end{definition}
 
+Figure~\ref{fig:Q_7_8} is an example of such a graph.
+
 \begin{figure}
   \centering
- \includegraphics[scale=0.15]{q_m_n/Q_m_n_basic}
- \caption{A cycle with one chord \label{fig:Q_m_n_basic}}
+ \includegraphics[scale=0.5]{q_m_n/Q_7_8}
+ \caption{$Q_{7,8}$ \label{fig:Q_7_8}}
 \end{figure}
 
-\begin{theorem}
- The zombie number of a cycle $Q_{m,n}$  $(3 \leq m \leq n)$ with
- a chord dividing the cycle into paths of lengths $m$ and $n$ is 2.
-\end{theorem}
+The construction contains three sub-cycles which could potentially
+trip up the zombies as the survivor could trick the zombies into circling
+on one of these sub-cycles.
+Let us first examine the construction for small values of $m$ and $n$.
 
-\begin{proof}
-  Denote as $P_m$ and $P_n$ the paths of lengths $m$ and $n$ respectively.
- We think of $Q_{m,n}$ as embbeded in the plane with $P_m$
- -- the shortest side -- on the left.
- This does not limit the generality of the following and allows us to define
- (counter-)clockwise distance: the length of the path
- along a cycle with respect to this embedding.
+ \begin{itemize}
+  \item Setting $m=n=1$ gives $K_2$ with two added loops, which is zombie-win.
 
-  Setting $m=n=1$ gives $K_2$ with two added loops, which is zombie-win.
-
-  With $m=n=2$ we have two adjacent cliques $K_3$ which are dominated by a single vertex,
+  \item With $m=n=2$ we have two adjacent cliques $K_3$ which are dominated by a single vertex,
   so it is also zombie-win.
 
-  For $m=2$ and $n\geq 4$, 2 zombies win by starting on diametrically
+  \item For $m=2$ and $n\geq 4$, 2 zombies win by starting on diametrically
   opposed vertices on the cycle $C_{n+2}$.
 
-  If $m=n=3$ the zombie number is 2 since two zombies on the chord enpoints dominate the graph.
+  \item If $m=n=3$ the zombie number is 2 since two zombies on the chord enpoints dominate the graph.
 
-  For $m=3$, $n=4$, the zombie number is also 2: placing the zombies on the endpoints
+  \item For $m=3$, $n=4$, the zombie number is also 2: placing the zombies on the endpoints
   of the chord divides the graph into $C_4$ and $C_5$ and the zombies clearly win from this
   position.
 
-  The same strategy works for $Q_{3,6}$, $Q_{4.4}$, $Q_{4,5}$ and $Q_{5,5}$ but it does
-  not work for $Q_{3,7}$, $Q_{4,6}$ nor indeed for any $Q_{m,n}$ for $m \geq 3$ and $n \geq 6$.
+\end{itemize}
 
-  We seek a winning zombie strategy (that is, a zombie start) for $m \geq 3$, $n \geq 6$.
-  The chord is the crux of the game, so first we assume that one zombie is on the chord
-  and another at some distance $\Delta$ while the survivor is somewhere on $P_m$.
-  We know the first zombie chases the survivor around the cycle, so
-  we need to control the arrival of the second zombie so that the survivor cannot escape,
-  nor can it trick the second zombie into spinning the same direction as the first.
+The zombie strategy that starts on the endpoints of the chord works for $Q_{3,6}$, $Q_{4.4}$, $Q_{4,5}$ and $Q_{5,5}$ but it does
+not work for $Q_{3,7}$, $Q_{4,6}$ nor indeed for any $Q_{m,n}$ for $m \geq 3$ and $n \geq 6$.
 
-  Second, we show how to position the zombies at the start of the game so that --
-  no matter where the survivor starts -- a losing position is guaranteed.
-  Either the survivor is stuck on a path between the two zombies (so that capture
-  is obviously inevitable) or the survivor will be pushed into the carefully
-  orchestrated scenario described in the first part of the proof.
+Unfortunately for the survivor, we are able to show
+the existence of starting positions for the zombies (obtained as a function of $m, n$) which
+limits the survivor's options and prevents the zombies from being led in the same direction.
 
-  Lastly, we show that such a starting position is always available to the zombies
-  for any $m \geq 3$, $n \geq 6$.
+\begin{theorem}
+ The zombie number of $Q_{m,n}$  $(3 \leq m \leq n)$ is 2.
+\end{theorem}
 
- Note that if $P_1$ and $P_2$ are two possible $zs$-paths with distinct next moves and
- \[ |P_1| \leq |P_2| \]
- then in the following argument we suppose that the zombie follows $|P_1|$
- since that is a valid move.
+In the proof below, we imagine $Q_{m,n}$ as embbeded in the plane with $P_m$
+-- the shortest side -- on the left.
+This does not limit the generality of the following and allows us to define
+(counter-)clockwise distance: the length of the path
+along a cycle with respect to the given direction on this embedding.
+Note also that if $P_1$ and $P_2$ are two possible zombie-survivor-paths with distinct next moves and
+\[ |P_1| \leq |P_2| \]
+then in the following argument we suppose that the zombie follows $|P_1|$
+since that is a valid move.
 
- \newpage
+\begin{proof}
+  We seek a winning zombie start for $m \geq 3$, $n \geq 6$.
+  We describe a strategy in three separate parts, which we summarize here.
 
- \subsection{Cornering the Survivor on the Smallest Cycle}
+  The chord is the crux of the game, so we assume that one zombie is on an endpoint of the chord and that the other is at some distance $\Delta$ from the chord.
+  We also assume that the survivor is somewhere on $P_m$, the smaller path.
+  In such a scenario, we know that the first zombie will chase the survivor around the cycle
+  $C_{m+1} = P_m + uv$, which will force the survivor to flee (in the same direction) after at most $\left\lfloor \frac{m}{2} \right\rfloor -2$ rounds.
 
-\begin{proofpart}
+  We can find the intervals of $\Delta$ which guarantee the survivor will be cornered by considering all possible combinations of directions chosen by the zombies (refer to Part~\ref{thm q_m_n 1}). The zombies' choice of direction is not really a choice, after all: the choice of a direction implies something about the
+  the position of the survivor and the length of the possible zombie-survivor paths.
+  %That is, after $\Delta$ rounds, both zombies (and the survivor) are on $C_{m+1}$ and the zombies %are not on an induced sub-path of length $\lfloor \frac{m}{2} \rfloor -2$.
+
+  Next, we show how to position the zombies at the start of the game so that
+  no matter where the survivor starts a losing position is guaranteed:
+  we offset the zombies on the larger cycle with an additional parameter $k$, which ensures the zombies are not too close together and therefore guard $C_{n+1}$ (refer to Part~\ref{thm q_m_n 2}). After $k$ rounds, the survivor will have no choice but to retreat to the smaller cycle and fall into the carefully
+  orchestrated trap described in the first part of the proof.
+
+  In Part~\ref{thm q_m_n 3}, we show that such a starting position is available to the zombies
+  for any $m \geq 3$, $n \geq 6$. Finally in Part~\ref{thm q_m_n 4} we describe a simple algorithm to compute these winning start positions.
+
+\begin{description}
+  \item Cornering the Survivor on $C_{m+1}$. \label{thm q_m_n 1}
    Suppose that the game has reached the following state:
 
   \begin{figure}
@@ -121,11 +134,11 @@ We analyze the Game of Zombies \& Survivors on a cycle with a single chord.
 
   \begin{figure}
     \centering
-    \includegraphics[scale=0.45]{q_m_n/z2_path_Pa}
-    \includegraphics[scale=0.45]{q_m_n/z2_path_Pb}
+    \includegraphics[scale=0.75]{q_m_n/z2_path_Pa}
+    \includegraphics[scale=0.75]{q_m_n/z2_path_Pb}
 
-    \includegraphics[scale=0.45]{q_m_n/z2_path_Pc}
-    \includegraphics[scale=0.45]{q_m_n/z2_path_Pd}
+    \includegraphics[scale=0.75]{q_m_n/z2_path_Pc}
+    \includegraphics[scale=0.75]{q_m_n/z2_path_Pd}
     \caption{Four possible outcomes \label{fig:different_paths}}
   \end{figure}
 
@@ -498,21 +511,19 @@ Or, in terms of $\Delta$,
   \end{align*}
 
 
- \end{proofpart}
+  \item Guarding the large cycle $C_{m+1}$.\label{thm q_m_n 2}
 
-\subsection{Forcing the Survivor into a Losing Position}
- \begin{proofpart}
-  We now consider the game on this graph in general and show
-  how we can guarantee the survivor will be caught.
+  %We now consider the game on this graph in general and show
+  %how we can position the zombies on $C_{n+1}$ to limit the survivor's options and thereby guarantee it will be caught.
 
-  Given $m, n$ and $\Delta$ as computed below, we place the
-  zombies on $C_{n+1}$ so that the zombies move in
-  opposite direction wherever the survivor may start.
-  We need only consider the cycle $C_{n+1}$ since, if the survivor
-  starts on $C_{m+1} \setminus \{u, v\}$, then the zombies play as
-  though the survivor is on $u$ or $v$.
+  %Given $m, n$ and $\Delta$ as computed above, we place the
+  %zombies on $C_{n+1}$ so that the zombies move in
+  %opposite directions wherever the survivor may start.
+  %We need only consider the cycle $C_{n+1}$ since, if the survivor
+  %starts on $C_{m+1} \setminus \{u, v\}$, then the zombies play as
+  %though the survivor is on $u$ or $v$.
 
-  We choose $k$ such that positioning
+  Choose $k$ such that positioning
   \begin{enumerate}
    \item $z_2$ at $\Delta + k$ clockwise from $u$
    \item $z_1$ at $k$ counter-clockwise from $v$
@@ -540,96 +551,12 @@ Or, in terms of $\Delta$,
    the zombies must move towards the chord and in $k$ rounds we reach the
     scenario described in Part 1 when $z_1$ reaches the chord and $z_2$ is
     $\Delta$ away. With suitable $\Delta$, then, the survivor cannot win.
- \end{proofpart}
-
- \begin{proofpart} Computing the Winning Zombie Start
-
-  Given $m$ and $n$, we choose $\Delta$ so that whenever we reach
-  the scenario described in the first part, the survivor will be cornered.
-  Such $\Delta$ must satisfy the following constraints for any possible
-  value of $\ell$.
-
-  \textit{Case I.A. Summary}
-
-  $z_1$ goes clockwise:
-  \begin{align*}
-   4 \leq & 2 \ell \leq m + 1
-  \end{align*}
-  and $z_2$ goes counter-clockwise
-  \begin{align*}
-   2 \Delta \leq & n - m + 2\ell & \text{or} \\
-   2 \Delta \leq & n - 1                     \\
-  \end{align*}
-  the zombies win:
-  \begin{align*}
-   2 \Delta \leq      & 2 m- 2 \ell + 2 & \text{and} \\
-   m - 2\ell  -1 \leq & 2 \Delta                     \\
-  \end{align*}
-  \textit{Case I.B. Summary}
-
-  $z_1$ goes counter-clockwise:
-  \begin{align*}
-   m + 1 \leq 2 \ell \leq 2m - 2
-  \end{align*}
-  and $z_2$ goes counter-clockwise
-  \begin{align*}
-   2 \Delta \leq & n + 1         & \text{or} \\
-   2 \Delta \leq & n + m - 2\ell
-  \end{align*}
-  the zombies win:
-  \begin{align*}
-   2 \Delta \leq      & 2 \ell   \\
-   2\ell - m + 1 \leq & 2 \Delta
-  \end{align*}
-  \textit{Case II.A. Summary}
-
-  $z_1$ goes clockwise:
-  \begin{align*}
-   4 \leq 2 \ell \leq m + 1
-  \end{align*}
-  and $z_2$ goes clockwise
-  \begin{align*}
-   n -m + 2\ell \leq & 2 \Delta & \text{and} \\
-   n-1 \leq          & 2 \Delta
-  \end{align*}
-  the zombies win:
-  \begin{align*}
-   2 \Delta \geq & 2n - 2m + 2\ell    \\
-   2 \Delta \leq & 2n + 2\ell - m - 1
-  \end{align*}
-  \textit{Case II.B. Summary}
-
-  $z_1$ goes counter-clockwise:
-  \begin{align*}
-   m + 1 \leq 2 \ell \leq 2m - 2
-  \end{align*}
-  and $z_2$ goes clockwise
-  \begin{align*}
-   n+1 \leq & 2 \Delta
-  \end{align*}
-  the zombies win:
-  \begin{align*}
-   n - \Delta \leq & \ell + 1           \\
-   2 \Delta \leq   & 2n + m - 2\ell + 1
-  \end{align*}
-
-A simple algorithm to calculate possible values of $\Delta$ loops
-over $0 \leq \Delta \leq n$ and over $2 \leq \ell \leq m-1$ and tests,
-for each $\Delta$ and each $\ell$, to determine which of the four cases is
-applicable and, if in one of the cases, whether the zombie-win constrains are
-satisfied. A value of $\Delta$ is accepted if, for every value of $\ell$, the
-zombies win.
-
-Once we have obtained possible $\Delta$, we can then determine $k$ by
-calculating the bounds
-\[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
 
 
- \end{proofpart}
-\end{proof}
 
-\newpage
-\subsection{Existence of Winning Start}
+
+
+\item Existence of $\Delta$ and $k$ for any $m,n$ \label{thm q_m_n 4}
 
 We wish to show that, for any $m, n$, there exist $\Delta$ and $k$
 which guarantee the survivor is caught.
@@ -733,3 +660,88 @@ m - 1 \leq 2 \Delta \leq m + 3
 \end{align*}
 
 Which holds for $\Delta = \frac{m}{2}$.
+
+\item Computing $\Delta$ \label{thm q_m_n 3}
+
+ Given $m$ and $n$, we choose $\Delta$ so that whenever we reach
+ the scenario described in the first part, the survivor will be cornered.
+ Such $\Delta$ must satisfy the following constraints for any possible
+ value of $\ell$.
+
+ \textit{Case I.A. Summary}
+
+ $z_1$ goes clockwise:
+ \begin{align*}
+  4 \leq & 2 \ell \leq m + 1
+ \end{align*}
+ and $z_2$ goes counter-clockwise
+ \begin{align*}
+  2 \Delta \leq & n - m + 2\ell & \text{or} \\
+  2 \Delta \leq & n - 1                     \\
+ \end{align*}
+ the zombies win:
+ \begin{align*}
+  2 \Delta \leq      & 2 m- 2 \ell + 2 & \text{and} \\
+  m - 2\ell  -1 \leq & 2 \Delta                     \\
+ \end{align*}
+ \textit{Case I.B. Summary}
+
+ $z_1$ goes counter-clockwise:
+ \begin{align*}
+  m + 1 \leq 2 \ell \leq 2m - 2
+ \end{align*}
+ and $z_2$ goes counter-clockwise
+ \begin{align*}
+  2 \Delta \leq & n + 1         & \text{or} \\
+  2 \Delta \leq & n + m - 2\ell
+ \end{align*}
+ the zombies win:
+ \begin{align*}
+  2 \Delta \leq      & 2 \ell   \\
+  2\ell - m + 1 \leq & 2 \Delta
+ \end{align*}
+ \textit{Case II.A. Summary}
+
+ $z_1$ goes clockwise:
+ \begin{align*}
+  4 \leq 2 \ell \leq m + 1
+ \end{align*}
+ and $z_2$ goes clockwise
+ \begin{align*}
+  n -m + 2\ell \leq & 2 \Delta & \text{and} \\
+  n-1 \leq          & 2 \Delta
+ \end{align*}
+ the zombies win:
+ \begin{align*}
+  2 \Delta \geq & 2n - 2m + 2\ell    \\
+  2 \Delta \leq & 2n + 2\ell - m - 1
+ \end{align*}
+ \textit{Case II.B. Summary}
+
+ $z_1$ goes counter-clockwise:
+ \begin{align*}
+  m + 1 \leq 2 \ell \leq 2m - 2
+ \end{align*}
+ and $z_2$ goes clockwise
+ \begin{align*}
+  n+1 \leq & 2 \Delta
+ \end{align*}
+ the zombies win:
+ \begin{align*}
+  n - \Delta \leq & \ell + 1           \\
+  2 \Delta \leq   & 2n + m - 2\ell + 1
+ \end{align*}
+
+A simple algorithm to calculate possible values of $\Delta$ loops
+over $0 \leq \Delta \leq n$ and over $2 \leq \ell \leq m-1$ and tests,
+for each $\Delta$ and each $\ell$, to determine which of the four cases is
+applicable and, if in one of the cases, whether the zombie-win constrains are
+satisfied. A value of $\Delta$ is accepted if, for every value of $\ell$, the
+zombies win.
+
+Once we have obtained possible $\Delta$, we can then determine $k$ by
+calculating the bounds
+\[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
+
+\end{description}
+\end{proof}

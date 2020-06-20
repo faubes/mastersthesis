@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  28 MAY 2020 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  20 JUN 2020 16:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -574,42 +574,90 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip53
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count121
+\mult@box=\box31
+\multicol@leftmargin=\dimen118
+\c@unbalance=\count122
+\c@collectmore=\count123
+\doublecol@number=\count124
+\multicoltolerance=\count125
+\multicolpretolerance=\count126
+\full@width=\dimen119
+\page@free=\dimen120
+\premulticols=\dimen121
+\postmulticols=\dimen122
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box32
+\last@line=\box33
+\maxbalancingoverflow=\dimen123
+\mult@rightbox=\box34
+\mult@grightbox=\box35
+\mult@gfirstbox=\box36
+\mult@firstbox=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\c@columnbadness=\count127
+\c@finalcolumnbadness=\count128
+\last@try=\dimen124
+\multicolovershoot=\dimen125
+\multicolundershoot=\dimen126
+\mult@nat@firstbox=\box55
+\colbreak@box=\box56
+\mc@col@check@num=\count129
 )
-\c@definition=\count121
-\c@theorem=\count122
-\c@proposition=\count123
-\c@corollary=\count124
-\c@lemma=\count125
-\c@proofpart=\count126
+\c@definition=\count130
+\c@theorem=\count131
+\c@proposition=\count132
+\c@corollary=\count133
+\c@lemma=\count134
+\c@proofpart=\count135
  (/home/joel/masters/thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count127
-\scratchdimen=\dimen118
-\scratchbox=\box31
-\nofMPsegments=\count128
-\nofMParguments=\count129
+\scratchcounter=\count136
+\scratchdimen=\dimen127
+\scratchbox=\box57
+\nofMPsegments=\count137
+\nofMParguments=\count138
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count130
-\MPscratchDim=\dimen119
-\MPnumerator=\count131
-\makeMPintoPDFobject=\count132
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen128
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -623,27 +671,27 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 92.
+\AtBeginShipoutBox=\box58
+Package hyperref Info: Link coloring OFF on input line 93.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count133
+\c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
-LaTeX Info: Redefining \nameref on input line 92.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
  (/home/joel/masters/thesis.out) (/home/joel/masters/thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
-Package hyperref Info: Option `pageanchor' set `false' on input line 95.
+Package hyperref Info: Option `pageanchor' set `false' on input line 96.
  (/home/joel/masters/titlepage.tex [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-Package hyperref Info: Option `pageanchor' set `true' on input line 98.
+Package hyperref Info: Option `pageanchor' set `true' on input line 99.
  (/home/joel/masters/sections/abstract.tex) [1
 
 ] (/home/joel/masters/thesis.toc
@@ -665,210 +713,167 @@ Chapter 1.
 (/home/joel/masters/sections/introduction.tex [1
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
+]) (/home/joel/masters/sections/notation.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
-) (/home/joel/masters/sections/notation.tex [2]
-<img/intro/cube.png, id=186, 434.62375pt x 386.44376pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
+<img/intro/cube.png, id=132, 428.60126pt x 403.5075pt>
 File: img/intro/cube.png Graphic file (type png)
 <use img/intro/cube.png>
-Package pdftex.def Info: img/intro/cube.png  used on input line 26.
-(pdftex.def)             Requested size: 108.65567pt x 96.6107pt.
- [3 </home/joel/masters/img/intro/cube.png>]) (/home/joel/masters/sections/literature.tex [4] [5] [6]
-<img/copwin_tree/copwin_but_notzombie_win.png, id=244, 502.87875pt x 528.97626pt>
+Package pdftex.def Info: img/intro/cube.png  used on input line 31.
+(pdftex.def)             Requested size: 107.15004pt x 100.87662pt.
+ [2]) (/home/joel/masters/sections/intro_cops.tex [3 </home/joel/masters/img/intro/cube.png>] [4] [5]) (/home/joel/masters/sections/intro_zombies.tex [6] [7]
+<img/copwin_tree/copwin_but_notzombie_win.png, id=215, 502.87875pt x 528.97626pt>
 File: img/copwin_tree/copwin_but_notzombie_win.png Graphic file (type png)
 <use img/copwin_tree/copwin_but_notzombie_win.png>
-Package pdftex.def Info: img/copwin_tree/copwin_but_notzombie_win.png  used on input line 157.
+Package pdftex.def Info: img/copwin_tree/copwin_but_notzombie_win.png  used on input line 116.
 (pdftex.def)             Requested size: 251.43875pt x 264.48747pt.
- [7]
-<img/copwin_tree/copwin_tree_example1.pdf, id=252, 212.29312pt x 149.9984pt>
+<img/copwin_tree/copwin_tree_example1.pdf, id=217, 212.29312pt x 149.9984pt>
 File: img/copwin_tree/copwin_tree_example1.pdf Graphic file (type pdf)
 <use img/copwin_tree/copwin_tree_example1.pdf>
-Package pdftex.def Info: img/copwin_tree/copwin_tree_example1.pdf  used on input line 165.
+Package pdftex.def Info: img/copwin_tree/copwin_tree_example1.pdf  used on input line 124.
 (pdftex.def)             Requested size: 148.60417pt x 104.99815pt.
- [8 </home/joel/masters/img/copwin_tree/copwin_but_notzombie_win.png> </home/joel/masters/img/copwin_tree/copwin_tree_example1.pdf>]
-<img/copwin_tree/copwin_tree_example1_trees.pdf, id=273, 469.25313pt x 149.9984pt>
+ [8] [9 </home/joel/masters/img/copwin_tree/copwin_but_notzombie_win.png> </home/joel/masters/img/copwin_tree/copwin_tree_example1.pdf>]
+<img/copwin_tree/copwin_tree_example1_trees.pdf, id=244, 469.25313pt x 149.9984pt>
 File: img/copwin_tree/copwin_tree_example1_trees.pdf Graphic file (type pdf)
 <use img/copwin_tree/copwin_tree_example1_trees.pdf>
-Package pdftex.def Info: img/copwin_tree/copwin_tree_example1_trees.pdf  used on input line 195.
+Package pdftex.def Info: img/copwin_tree/copwin_tree_example1_trees.pdf  used on input line 154.
 (pdftex.def)             Requested size: 328.47495pt x 104.99815pt.
-) [9 </home/joel/masters/img/copwin_tree/copwin_tree_example1_trees.pdf>] [10]
+ [10 </home/joel/masters/img/copwin_tree/copwin_tree_example1_trees.pdf>]) [11]
 Chapter 2.
-(/home/joel/masters/sections/observations.tex [11
-
-]) (/home/joel/masters/sections/survivorstrategy.tex [12]
-<img/survivorstrategy/BadSurvivorStrat.png, id=317, 576.1525pt x 557.08125pt>
-File: img/survivorstrategy/BadSurvivorStrat.png Graphic file (type png)
-<use img/survivorstrategy/BadSurvivorStrat.png>
-Package pdftex.def Info: img/survivorstrategy/BadSurvivorStrat.png  used on input line 38.
-(pdftex.def)             Requested size: 115.22845pt x 111.41428pt.
-) (/home/joel/masters/sections/wincondition.tex [13 </home/joel/masters/img/survivorstrategy/BadSurvivorStrat.png>]) [14]
-Chapter 3.
 (/home/joel/masters/sections/planar.tex
-<img/planar/Graph2.png, id=335, 575.14874pt x 546.04pt>
+<img/planar/Graph2.png, id=288, 575.14874pt x 546.04pt>
 File: img/planar/Graph2.png Graphic file (type png)
 <use img/planar/Graph2.png>
-Package pdftex.def Info: img/planar/Graph2.png  used on input line 13.
+Package pdftex.def Info: img/planar/Graph2.png  used on input line 15.
 (pdftex.def)             Requested size: 287.57367pt x 273.01933pt.
 
-Overfull \hbox (18.0728pt too wide) detected at line 31
+Overfull \hbox (18.0728pt too wide) detected at line 26
 []
  []
 
-[15
+[12
 
 ]
-<img/planar/Graph3.png, id=342, 1013.7875pt x 961.5925pt>
+<img/planar/Graph3.png, id=298, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph3.png Graphic file (type png)
 <use img/planar/Graph3.png>
-Package pdftex.def Info: img/planar/Graph3.png  used on input line 49.
+Package pdftex.def Info: img/planar/Graph3.png  used on input line 64.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [16 </home/joel/masters/img/planar/Graph2.png>] [17 </home/joel/masters/img/planar/Graph3.png>]
-<img/planar/Graph2Case1Round0.png, id=355, 1013.7875pt x 961.5925pt>
+ [13 </home/joel/masters/img/planar/Graph2.png>]
+<img/planar/Graph2Case1Round0.png, id=308, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round0.png Graphic file (type png)
 <use img/planar/Graph2Case1Round0.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round0.png  used on input line 90.
+Package pdftex.def Info: img/planar/Graph2Case1Round0.png  used on input line 97.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
-<img/planar/Graph2Case1Round1.png, id=356, 1013.7875pt x 961.5925pt>
+ [14 </home/joel/masters/img/planar/Graph3.png>]
+<img/planar/Graph2Case1Round1.png, id=317, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round1.png Graphic file (type png)
 <use img/planar/Graph2Case1Round1.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round1.png  used on input line 105.
+Package pdftex.def Info: img/planar/Graph2Case1Round1.png  used on input line 112.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [18 </home/joel/masters/img/planar/Graph2Case1Round0.png>]
-<img/planar/Graph2Case1Round2.png, id=362, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round2.png, id=319, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round2.png Graphic file (type png)
 <use img/planar/Graph2Case1Round2.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round2.png  used on input line 122.
+Package pdftex.def Info: img/planar/Graph2Case1Round2.png  used on input line 126.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [19 </home/joel/masters/img/planar/Graph2Case1Round1.png>]
-<img/planar/Graph2Case1Round3.png, id=368, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round3.png, id=321, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round3.png Graphic file (type png)
 <use img/planar/Graph2Case1Round3.png>
-Package pdftex.def Info: img/planar/Graph2Case1Round3.png  used on input line 133.
+Package pdftex.def Info: img/planar/Graph2Case1Round3.png  used on input line 135.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [20 </home/joel/masters/img/planar/Graph2Case1Round2.png>]
-<img/planar/Graph2Case2Round0.png, id=374, 1013.7875pt x 961.5925pt>
+ [15 </home/joel/masters/img/planar/Graph2Case1Round0.png>] [16 </home/joel/masters/img/planar/Graph2Case1Round1.png> </home/joel/masters/img/planar/Graph2Case1Round2.png>]
+<img/planar/Graph2Case2Round0.png, id=335, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case2Round0.png Graphic file (type png)
 <use img/planar/Graph2Case2Round0.png>
-Package pdftex.def Info: img/planar/Graph2Case2Round0.png  used on input line 154.
+Package pdftex.def Info: img/planar/Graph2Case2Round0.png  used on input line 153.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
- [21 </home/joel/masters/img/planar/Graph2Case1Round3.png>]
-
-LaTeX Warning: Reference `appendix:planarZombies' on page 22 undefined on input line 181.
-
-[22 </home/joel/masters/img/planar/Graph2Case2Round0.png>] [23] [24] [25]) [26]
-Chapter 4.
+ [17 </home/joel/masters/img/planar/Graph2Case1Round3.png>] [18 </home/joel/masters/img/planar/Graph2Case2Round0.png>] [19] [20] [21] [22]) [23]
+Chapter 3.
 (/home/joel/masters/sections/Q_m_n.tex
-<img/q_m_n/Q_m_n_basic.png, id=408, 1704.3675pt x 905.3825pt>
-File: img/q_m_n/Q_m_n_basic.png Graphic file (type png)
-<use img/q_m_n/Q_m_n_basic.png>
-Package pdftex.def Info: img/q_m_n/Q_m_n_basic.png  used on input line 11.
-(pdftex.def)             Requested size: 255.64409pt x 135.80151pt.
- [27
+<img/q_m_n/Q_7_8.pdf, id=374, 184.73216pt x 185.72185pt>
+File: img/q_m_n/Q_7_8.pdf Graphic file (type pdf)
+<use img/q_m_n/Q_7_8.pdf>
+Package pdftex.def Info: img/q_m_n/Q_7_8.pdf  used on input line 14.
+(pdftex.def)             Requested size: 92.36584pt x 92.86069pt.
+ [24
 
- </home/joel/masters/img/q_m_n/Q_m_n_basic.png>] [28]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 68.
-
-<img/q_m_n/diagram1.png, id=421, 1687.30376pt x 816.04875pt>
+ </home/joel/masters/img/q_m_n/Q_7_8.pdf>]
+<img/q_m_n/diagram1.png, id=388, 1687.30376pt x 816.04875pt>
 File: img/q_m_n/diagram1.png Graphic file (type png)
 <use img/q_m_n/diagram1.png>
-Package pdftex.def Info: img/q_m_n/diagram1.png  used on input line 75.
+Package pdftex.def Info: img/q_m_n/diagram1.png  used on input line 88.
 (pdftex.def)             Requested size: 337.45477pt x 163.20685pt.
-<img/q_m_n/z2_path_Pa.pdf, id=422, 462.58018pt x 162.2582pt>
+ [25]
+<img/q_m_n/z2_path_Pa.pdf, id=396, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pa.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pa.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 124.
-(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pb.pdf, id=423, 462.58018pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 137.
+(pdftex.def)             Requested size: 346.93428pt x 121.69333pt.
+<img/q_m_n/z2_path_Pb.pdf, id=397, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pb.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pb.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 125.
-(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pc.pdf, id=424, 462.58018pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 138.
+(pdftex.def)             Requested size: 346.93428pt x 121.69333pt.
+<img/q_m_n/z2_path_Pc.pdf, id=398, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pc.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pc.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 127.
-(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-<img/q_m_n/z2_path_Pd.pdf, id=425, 462.58018pt x 162.2582pt>
+Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 140.
+(pdftex.def)             Requested size: 346.93428pt x 121.69333pt.
+<img/q_m_n/z2_path_Pd.pdf, id=399, 462.58018pt x 162.2582pt>
 File: img/q_m_n/z2_path_Pd.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pd.pdf>
-Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 128.
-(pdftex.def)             Requested size: 208.15915pt x 73.0155pt.
-[29 </home/joel/masters/img/q_m_n/diagram1.png>] [30 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]) [42]
-Chapter 5.
+Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 141.
+(pdftex.def)             Requested size: 346.93428pt x 121.69333pt.
+ [26 </home/joel/masters/img/q_m_n/diagram1.png>]
+Overfull \hbox (2.81168pt too wide) in paragraph at lines 155--156
+[]$\OML/cmm/m/it/12 z[]$ \T1/cmr/m/n/12 moves counter-clockwise if ei-ther $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 j ^^T []fj\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 jg$ \T1/cmr/m/n/12 or $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 j ^^T []fj\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P[]\OMS/cmsy/m/n/12 jg$\T1/cmr/m/n/12 . 
+ []
+
+[27] [28 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]) [39] [40]
+Chapter 4.
 (/home/joel/masters/sections/conclusion.tex
-<img/polygon/polygon_with_bfs_dismantling.pdf, id=606, 143.8213pt x 104.81157pt>
+<img/polygon/polygon_with_bfs_dismantling.pdf, id=580, 143.8213pt x 104.81157pt>
 File: img/polygon/polygon_with_bfs_dismantling.pdf Graphic file (type pdf)
 <use img/polygon/polygon_with_bfs_dismantling.pdf>
 Package pdftex.def Info: img/polygon/polygon_with_bfs_dismantling.pdf  used on input line 37.
 (pdftex.def)             Requested size: 107.86569pt x 78.60847pt.
-) [43
+) [41
 
-] (/home/joel/masters/thesis.bbl [44 </home/joel/masters/img/polygon/polygon_with_bfs_dismantling.pdf>] [45
+] (/home/joel/masters/thesis.bbl [42 </home/joel/masters/img/polygon/polygon_with_bfs_dismantling.pdf>] [43
 
-]) [46]
+]) [44]
 Appendix A.
+(/home/joel/masters/sections/appendix_planar_case3.tex [45
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 165.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 165.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 165.
-
-(/home/joel/masters/sections/Q_m_n_appendix.tex [47
-
-] [48]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 49.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 49.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 49.
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
- [49]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+] [46] [47] [48] [49] [50] [51] [52])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+ [53]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (/home/joel/masters/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 84AB243FA0FAB0FD635EFD19BF27E4B4;1978.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+(rerunfilecheck)             Checksum: F2CFED1215D8C52CA0C96D25D4ADE3BA;1360.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 7852 strings out of 492982
- 111835 string characters out of 6134895
- 199594 words of memory out of 5000000
- 11100 multiletter control sequences out of 15000+600000
- 19272 words of font info for 54 fonts, out of 8000000 for 9000
+ 7938 strings out of 492982
+ 112974 string characters out of 6134895
+ 246679 words of memory out of 5000000
+ 11201 multiletter control sequences out of 15000+600000
+ 17318 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,12n,31p,336b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/joel/masters/thesis.pdf (52 pages, 1063662 bytes).
+ 28i,12n,28p,385b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on /home/joel/masters/thesis.pdf (56 pages, 1042000 bytes).
 PDF statistics:
- 748 PDF objects out of 1000 (max. 8388607)
- 548 compressed objects within 6 object streams
- 140 named destinations out of 1000 (max. 500000)
- 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 751 PDF objects out of 1000 (max. 8388607)
+ 545 compressed objects within 6 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
