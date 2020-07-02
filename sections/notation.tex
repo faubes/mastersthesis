@@ -6,25 +6,25 @@ Formally, a graph $G = (V, E)$ is composed of:
 \item A set $E$ of edges $\{u,v\}$ where $u, v \in V$.
 \end{itemize}
 
-The graphs studied herein are finite, connected, and undirected.
-This means that there is a finite
-number of vertices and that there exists a path connecting every pair of vertices.
 We also write $V(G)$ for the set of vertices of $G$ and $E(G)$ for the set of edges of $G$.
-
 Let $G = (V,E)$ be a graph with vertices $x,y \in V$.
-By undirected, we mean that an edge from $x$ to $y$ implies an edge from $y$ to $x$.
-So we treat the two directions as a single edge and write $\{x,y\}$ or simply $xy = yx \in E$.
-Playing on graphs with multiple connected components can be reduced to playing
-multiple games in parallel: the players are restricted to their starting connected component.
+The graphs studied herein are finite, connected, undirected and reflexive.
+There is a \textit{finite} number of vertices and \textit{connected} means there exists a path connecting every pair of vertices.
+We limit ourselves to connected graphs because playing on graphs with multiple connected components can be reduced to playing multiple games in parallel: the players are restricted to their starting connected component. By undirected, we mean that an edge from $x$ to $y$ implies an edge from $y$ to $x$ so we treat the two directions as a single edge and write $\{x,y\}$ or simply $xy = yx \in E$.
+Lastly, in order to model a player's choice to pass on a turn, we suppose each vertex also has a loop (an edge to itself), making the graph reflexive. This way, players still choose an edge even though they do not move to a different vertex.
 
-We say that vertices $x$ and $y$ are neighbours if $xy \in E$; that is, if there is an edge joining $x$ to $y$.
+We will have occasion to use a few more concepts of graph theory. We say that vertices $x$ and $y$ are \textit{neighbours} if $xy \in E$; that is, if there is an edge joining $x$ to $y$.
 The set $N(x) = \{ y \in V | xy \in E \} \subseteq V$ is the \textit{neighbourhood} of $x$.
-The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$.
+The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$. A set $S \subseteq V(G)$ is said to be \textit{dominating} if $\cup_x N(x) \supseteq V(G)$. In the context of these games, a dominating set guarantees a win for the pursuers, since all possible start vertices are covered (and the evader loses in round 1). 
+
+The \textit{degree} of a vertex is the number of edges incident to that vertex (or equivalently the
+cardinality of its neighbourhood $\lvert N(x) \rvert$). The \textit{minimum} and \textit{maximum
+degrees} of a graph are $\min \text{ or } \max \{ \lvert N(x)\rvert : x \in V\}$ and are denoted as $\delta(G)$ and $\Delta(G)$, respectively.
 
 For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ a, b, c, d, e, f, g, h \}$.
 Since $a$ and $b$ are connected by an edge, we have $ab \in E$.
 The neighbourhood of $a$ is $N(a) = \{ b,d,f \}$ and the closed neighbourhood of $a$ is
-$N[a] = \{ a, b, d, f \}$.
+$N[a] = \{ a, b, d, f \}$. In this example, we also have that $\delta(G) = \Delta(G) = 3$ since all vertices have degree 3.
 
 \begin{figure}
 \centering
@@ -32,21 +32,13 @@ $N[a] = \{ a, b, d, f \}$.
 \caption{The Hypercube of Dimension 3 \label{fig:hyper-cube}}
 \end{figure}
 
-The \textit{degree} of a vertex is the number of edges incident to that vertex (or equivalently the
-cardinality of its neighbourhood $\lvert N(x) \rvert$). The \textit{minimum} and \textit{maximum
-degrees} of a graph are $\min \text{ or } \max \{ \lvert N(x)\rvert | x \in V\}$ and are denoted as $\delta(G)$ and $\Delta(G)$, respectively.
-
 Two basic classes of graphs are important in the study of these games: paths and cycles.
 A path $P = v_0, v_1, v_2, \dots , v_n$ is a ``strict'' walk: a non-repeating sequence of
 adjacent vertices in a graph. A cycle $C_n$ is a path of length $n \geq 3$ with an additional edge joining the last vertex back to the first (a so-called \textit{closed} path).
-
-We say that a graph contains a path $P$ if $P$ is a subgraph of $G$, so $V(P) \subseteq V(G)$ and $E(P) \subseteq E(G)$. More generally, with $S \subseteq V(G)$ a set of vertices, write $G[S]$ for the \textit{induced subgraph}: the graph which contains $S$ and the edges of $G$ which join vertices of $S$.
+We say that a graph contains a path $P$ if $P$ is a \textit{subgraph} of $G$, so $V(P) \subseteq V(G)$ and $E(P) \subseteq E(G)$. More generally, with $S \subseteq V(G)$ a set of vertices, write $G[S]$ for the \textit{induced subgraph}: the graph which contains $S$ and the edges of $G$ which join vertices of $S$.
 
 Paths allow us to define a distance between vertices $d_G(x,y)$ as the length of the shortest path connecting $x$ to $y$ (or infinity if such a path does not exist; never the case in our games). Computing such paths, also known as \textit{geodesics}, is a classic problem in computer science.
-
-A geodesic has the additional property of being \textit{isometric} \cite{pan2006isometric}, meaning that the distance between vertices of an isometric paths is preserved in the subgraph induced by the path. This property allows players to guard or patrol isometric paths \cite{aigner1984game}, preventing
+A geodesic has the additional property of being \textit{isometric} \cite{pan2006isometric}, meaning that the distance between vertices of an isometric path is preserved in the subgraph induced by the path. This property allows players to guard or patrol isometric paths \cite{aigner1984game}, preventing
 the robber from entering (and thus crossing) the path without capture.
 
-Finally, the \textit{diameter} and \textit{girth} of a graph are two useful graph properties which appear in some
-of the theorems herein.
-The diameter $\diam(G)$ is the length of a longest possible shortest path in $G$. The girth of a graph is the length of the minimum order subcycle.
+Finally, the \textit{diameter} and \textit{girth} of a graph are two useful graph properties which appear in some of the theorems herein. The diameter $\diam(G)$ is the length of a longest possible shortest path in $G$. The girth of a graph is the length of the minimum order subcycle.

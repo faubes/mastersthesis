@@ -2,18 +2,21 @@
 \BOOKMARK [1][-]{section.1.1}{Notation}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Classical Cops and Robbers}{chapter.1}% 3
 \BOOKMARK [2][-]{subsection.1.2.1}{How to Play Cops and Robbers}{section.1.2}% 4
-\BOOKMARK [2][-]{subsection.1.2.2}{Cops and robbers, Cop-Number}{section.1.2}% 5
-\BOOKMARK [2][-]{subsection.1.2.3}{The Cop-Number and the Genus of the Graph}{section.1.2}% 6
-\BOOKMARK [2][-]{subsection.1.2.4}{Relation to the Girth and Minimum Degree of a Graph}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.5}{Dismantlings, Cop-win Trees }{section.1.2}% 8
-\BOOKMARK [1][-]{section.1.3}{Cops Turn Into Zombies}{chapter.1}% 9
-\BOOKMARK [2][-]{subsection.1.3.1}{How to Play Zombies and Survivor}{section.1.3}% 10
-\BOOKMARK [2][-]{subsection.1.3.2}{Modeling the Game}{section.1.3}% 11
-\BOOKMARK [2][-]{subsection.1.3.3}{Paths and Moves}{section.1.3}% 12
-\BOOKMARK [2][-]{subsection.1.3.4}{Deterministic Zombies}{section.1.3}% 13
-\BOOKMARK [2][-]{subsection.1.3.5}{Probabilistic zombies}{section.1.3}% 14
-\BOOKMARK [0][-]{chapter.2}{Planar Zombies }{}% 15
-\BOOKMARK [0][-]{chapter.3}{Cycle With One Chord }{}% 16
-\BOOKMARK [0][-]{chapter.4}{Conclusion, Future Works}{}% 17
-\BOOKMARK [0][-]{appendix.A}{End Matter}{}% 18
-\BOOKMARK [1][-]{section.A.1}{Planar Zombies Counter-Example Case III}{appendix.A}% 19
+\BOOKMARK [2][-]{subsection.1.2.2}{The Cop-Number and the Genus of the Graph}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.3}{Relation to the Girth and Minimum Degree of a Graph}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.4}{Dismantlings, Cop-win Trees }{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.5}{Cops and Computational Geometry}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.6}{Playing on a Changing Landscape}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Cops Turn Into Zombies}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.3.1}{How to Play Zombies and Survivor}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.2}{Deterministic Zombies}{section.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.3.3}{Probabilistic zombies}{section.1.3}% 13
+\BOOKMARK [0][-]{chapter.2}{Planar Zombies }{}% 14
+\BOOKMARK [0][-]{chapter.3}{Cycle With One Chord }{}% 15
+\BOOKMARK [1][-]{section.3.1}{Cornering the Survivor on Cm+1}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Guarding the large cycle Cn+1}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Existence of \040and k for any m,n }{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Computing \040and k }{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Conclusion, Future Works}{}% 20
+\BOOKMARK [0][-]{appendix.A}{End Matter}{}% 21
+\BOOKMARK [1][-]{section.A.1}{Planar Zombies Counter-Example Case IV}{appendix.A}% 22

@@ -1,20 +1,13 @@
 Aigner and Fromme \cite{aigner1984game} showed that the cop number of a planar graph is at most three;
 three cops can guard isometric paths to constrict the robber territory over time.
-Unfortunately, Zombies aren't smart enough to apply this strategy. So could a survivor
+Unfortunately, Zombies are not smart enough to apply this strategy. So could a survivor
 potentially evade an infinite number of Zombies, given the right planar graph?
 While we have not yet answered this question, we have found a planar graph for which the zombie number is greater than 3.
-This graph, which is illustrated in Figure~\ref{fig:planarG2}, is an extension of the graph
-identified by Fitzpatrick \cite{fitzpatrick2016deterministic}[Fig. 2] which has
+Our counterexample, which is illustrated in Figure~\ref{fig:planar}, is an extension of the outerplanar graph identified by Fitzpatrick \cite{fitzpatrick2016deterministic}[Fig. 2] which has
 $z(G) = 3 > 2 = c(G)$.
 
 Our graph $G$ is constructed by taking a 5-cycle and augmenting it by adding paths of length 5 which
 connect adjacent vertices of the cycle. We then connect each 5-path to neighbouring 5-paths by way of an edge from the 2nd (or 4th) vertices. Though arbitrary, we fix the embedding described in order to refer to the parts of the graph.
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{planar/Graph2.png}
-\caption{A graph with $z(G) > 3$ \label{fig:planarG2}}
-\end{figure}
 
 We will call vertices
 \begin{align*}
@@ -22,26 +15,16 @@ C &= \{ 1, \dots, 5 \} & \text{the interior 5-cycle} \\
 X &= V(G) \setminus C & \text{those vertices not on the interior 5-cycle} \\
 Y &= \{7, 9, 12, 14, 17, 19, 22, 24, 27, 29\} & \text{the vertices of degree 3.} \\
 S &= \{ 7,8,9,12,13,14,17,18,19, 22,23,24,27,28,29 \} & \text{the outermost 15-cycle}
-%Z &= \{8, 13, 18, 23, 28 \} & \text{the set of peripheral vertices}
 \end{align*}
 
-%We refer to the beginning of the game where the zombies and the survivor choose their starting %positions as round zero or the starting round.
-We assume that the zombies choose distinct starting vertices to maximize their chances of winning since the game is easily won by the survivor
-if there are fewer than 3 zombies (for example, by adding another arbitrary zombie and following one of the strategies described below).
+Our proof relies on a strategy available to the survivor on this graph which we call \textit{Running Around the Outside}. Observe that if the zombies and survivor are on $G[S]$ on an induced sub-path of length at most 6, then the survivor wins by fleeing away from the zombies around the outermost 15-cycle.
 
-%We refer to the vertex of the $i$'th zombie, $1 \leq i \leq 3$  as $z_i^j$ with round zero being the
-%starting or initial round where first the zombies choose a start vertex and then the survivor chooses %a start vertex.
-
-Our proof relies on a special characteristic of this graph: if the survivor and the three zombies are all on $G[S]$, the outermost 15-cycle,  with
-the zombies on the same side of the survivor and within a distance of 2, 3, 4 or 5, then the survivor can win by fleeing away from the zombies around the outermost 15-cycle.
-
-To see this, let $E' = \{xy \in E(G) : x, y \in Y\}$ be the set of edges which connect an exterior 5-path to another and let $G' = G - E'$ be the subgraph without these edges. These edges are highlighted in red in Figure~\ref{fig:planarG3}.
+To see this, let $E' = \{xy \in E(G) : x, y \in Y\}$ be the set of edges which connect an exterior 5-path to another and let $G' = G - E'$ be the subgraph without these edges. These edges are highlighted in red in Figure~\ref{fig:planar}.
 The table below \ref{table outermost cycle} compares the length of possible zombie-survivor paths of
-lengths at most 5 in both graphs (without loss of generality, the graph having symmetries).
+lengths at most 5 in $G$ and $G'$.
 
-If the survivor and zombie are both on the outermost cycle at distances 2 or 3, then
-the fact that the zombies must stay in $S$ is clear.
-When the zombie and the survivor are both in $S$ and within a distance of 4 or 5, then the shortest path from the zombie to the survivor is contained entirely in $S$ and thus zombies never have the opportunity to leave the outermost 15-cycle.
+This table shows that when the zombie and the survivor are both in $S$ and within a distance of 4 or 5, then the shortest path from the zombie to the survivor is contained entirely in $S$ and thus zombies never have the opportunity to leave the outermost 15-cycle.
+When the survivor and zombie are both on the outermost cycle at distances 2 or 3, then the zombies must stay on $S$ since it requires at least 2 moves to exit $S$ (so the shortest path must be the one in $S$). We conclude that the survivor has won if all players are on an induced sub-path of $G[S]$ of length at most 6 (and at least 3 since there needs to be an empty vertex between the leading zombie and survivor).
 
 \begin{table}
 \centering
@@ -56,32 +39,36 @@ z & s & shortest path in $G$ & $d_{G}(z,s)$ & shortest path in $G'$ & $d_{G'}(z,
 9 & 17 & 9,12,13,14,17 & 4 & 9, 10, 2, 3, 16, 17 & 5 \\
 12 & 18 & 12, 13, 14, 17, 18 & 4 & 12, 11, 2, 3, 16, 17, 18 & 6
 \end{tabular}
-\caption{Zombies Cannot Exit the Outermost Cycle \label{table outermost cycle}}
+\caption{Zombies cannot exit the outermost cycle if within distance 5\label{table outermost cycle}}
 \end{table}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.25]{planar/Graph3.png}
-\caption{An Escape Strategy for the Survivor\label{fig:planarG3}}
+\includegraphics[scale=0.5]{planar/planar}
+\caption{A graph with $z(G) > 3$. Edges of the interior 5-cycle are blue and edges of $E'$ are red \label{fig:planar}}
 \end{figure}
 
+\begin{theorem}
+  The zombie-number of planar graphs is at least 4.
+\end{theorem}
 
 \begin{proof}
-  We must provide a winning survivor strategy for every possible zombie-start arrangement. We divide all possible zombie-starts by the number of zombies which start on the
+  By counter-example: we give a graph $G$ on which the survivor defeats 3 zombies.
+  We must provide a winning survivor strategy for every possible 3 zombie start configuration on $G$. We divide all possible zombie-starts by the number of zombies which start on the
   interior 5-cycle.
 
   \begin{itemize}
-  \item $z_i \in C$ for $1 \leq i \leq 3$: all the zombies start on the interior 5-cycle (refer to Case~\ref{planar case 1}).
-  \item $z_1, z_2 \in C$ and $z_3 \in X = V(G) \setminus C$: two of the zombies are on the interior 5-cycle but one is not (refer to Case~\ref{planar case 2}).
-  \item $z_1, z_2 \in X$:  one zombie chooses a vertex on the interior 5-cycle, two others start on the exterior (refer to Case~\ref{planar case 3}).
-  \item All three zombies start on exterior vertices $X$ (refer to Case~\ref{planar case 4}).
+  \item All the zombies start on the interior 5-cycle. That is, $z_i \in C$ for $1 \leq i \leq 3$ (refer to Case~\ref{planar case 1}).
+  \item Two of the zombies are on the interior 5-cycle but one is not so $z_1, z_2 \in C$ and $z_3 \in X = V(G) \setminus C$ (refer to Case~\ref{planar case 2}).
+  \item All three zombies start on exterior vertices $X$ (refer to Case~\ref{planar case 3}).
+  \item One zombie chooses a vertex on the interior 5-cycle, two others start on the exterior, i.e. $z_1, z_2 \in X$ and $z_3 \in C$ (refer to Case~\ref{planar case 4}).
   \end{itemize}
 
   Since these cases are exhaustive, the survivor can always respond to a zombie start with a winning
   strategy, and so $z(G) > 3$.
 
   \begin{description}
-\item[Case 1 \label{planar case 1}]: The three zombies choose vertices on the interior 5-cycle.
+\item[Case I \label{planar case 1}]: The three zombies choose vertices on the interior 5-cycle.
 
 Instead of showing that the strategy works for all possible configurations of 3 zombies on the interior 5-cycle,
 we show that the survivor can win against 5 zombies occupying every vertex of the interior 5-cycle.
@@ -95,7 +82,7 @@ If the survivor starts on $y_1 \in Y$, and moves to $y_2\in Y$ using edge $y_1y_
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round0.png}
-\caption{Case I, Round 0\label{fig:planarG2C1R0}}
+\caption{Case I, Round 0. The survivor is green; zombies are red.\label{fig:planarG2C1R0}}
 \end{figure}
 
 On the first round, the zombies each have a single shortest path to the survivor on 12 and thus must move as follows:
@@ -110,7 +97,7 @@ The survivor responds by moving to 9. Round 1 moves are illustrated in Figures~\
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round1.png}
-\caption{Case I, Round 1\label{fig:planarG2C1R1}}
+\caption{Case I, Round 1. Zombies are red; survivor is green. Arrows along edges indicate each players' next move.\label{fig:planarG2C1R1}}
 \end{figure}
 
 Yet again the zombies have a single shortest path to the survivor on 9 and thus move as follows:
@@ -124,24 +111,22 @@ The survivor responds by moving to 8. These moves are illustrated in Figure~\ref
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round2.png}
-\caption{Case I, Round 2\label{fig:planarG2C1R2}}
+\caption{Case I, Round 2. Zombies are red; survivor is green. Arrows along edges indicate each players' next move.\label{fig:planarG2C1R2}}
 \end{figure}
 
-Finally, after round 3 all zombies are within a distance of 3 of the survivor on the outermost 15-cycle. See Figure~\ref{fig:planarG2C1R3}. The survivor wins by running anti-clockwise
-on the cycle $G[S]$.
+After round 3 all zombies are within a distance of 3 of the survivor on the outermost 15-cycle. See Figure~\ref{fig:planarG2C1R3}. The survivor by Running Around the Outside, i.e., by moving counter-clockwise on the cycle $G[S]$.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case1Round3.png}
-\caption{Case I, Round 3\label{fig:planarG2C1R3}}
+\caption{Case I, Round 3. Zombies are red; survivor is green. Arrows along edges indicate each players' next move.\label{fig:planarG2C1R3}}
 \end{figure}
 
 This shows that however the 3 zombies on the interior 5-cycle may be arranged in the initial round, they will not be able to corner the survivor following this strategy.
 
-\item[Case II \label{planar case 2}]: Two zombies ($z_1$, $z_2$) choose vertices on the interior 5-cycle and one zombie ($z_3$) chooses a vertex in $X = \{ 6, \dots, 30 \}$,
+\item[Case II \label{planar case 2}]: Two zombies $z_1$ and $z_2$ choose vertices on the interior 5-cycle and one zombie $z_3$ chooses a vertex in $X = \{ 6, \dots, 30 \}$,
 an exterior vertex.
 
-We use the same strategy as in Case I with an additional restriction on the survivor's start vertex.
 The survivor starts on $s = y_1 \in Y$  (a vertex of degree 3) such that $3 \leq d_{G[X]}(s, z_3) \leq 4$ and so that the edge connecting $y_1$ to $y_2 \in Y$
 is not on the shortest path between $s$ and $z_3$. That is to say, the survivor can flee from $z_3$ along an edge connecting two exterior 5-paths.
 
@@ -151,7 +136,7 @@ exterior 5-path 6-10.
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{planar/Graph2Case2Round0.png}
-\caption{Case 2, Round 0\label{fig:planarG2C2R0}}
+\caption{The survivor strategy in Case II. One of the red vertices has a zombie, and the two green vertices are survivor starts. \label{fig:planarG2C2R0}}
 \end{figure}
 
 \begin{itemize}
@@ -170,22 +155,24 @@ $d(z_3, s) = 4$ and thus the third zombie can been forced to chase around the ou
 
 If $z_3$ chooses to move to the interior cycle then all three zombies are on the interior 5-cycle and we have reached a situation just as in Case I, Round 1 \ref{fig:planarG2C1R1}: three zombies are on the interior 5-cycle, and the survivor is on a vertex $y\in Y$. The survivor wins using the strategy from Case I.
 
-This shows that the survivor will always escape the third zombie following this strategy. Now because this strategy is a restricted version of the strategy from
-Case 1, we know that the zombies that start on the interior 5-cycle will not be able to corner the survivor. Therefore, this strategy defeats all possible
+This shows that the survivor will always escape the third zombie following this strategy. Because this strategy is a restricted version of the strategy from
+Case I, we know that the zombies that start on the interior 5-cycle will not be able to corner the survivor. Therefore, this strategy defeats all possible
 start configurations where two zombies start on the interior 5-cycle and the third starts on the exterior.
 
-\item[Case III\label{planar case 3}]: One zombie chooses a vertex on the interior 5-cycle, the two others choose vertices on the exterior.
+\item[Case III \label{planar case 3}]: All three zombies choose exterior vertices in $X$.
 
-We were unable to develop an argument to  show why the survivor wins in this case.
-Instead, Appendix~\ref{appendix:planarZombies} provides tables showing the first few moves of a winning survivor strategy
-for every possible zombie start (without loss of generality).
+We will show that the survivor can always start on the interior 5-cycle and wait (or flee) on the interior cyle until the zombies collect in a subpath behind it, at which point the survivor can exit the interior 5-cycle and begin Running Around the Outside. We separate this case into sub-cases based on the number of moves required by the zombies to reach the interior cycle.
 
-\item[Case IV \label{planar case 4}]: All three zombies choose exterior vertices in $X$.
+\begin{enumerate}
+  \item All three zombies require the same number of rounds to reach the interior 5-cycle.
+  \item Two zombies start adjacent to the interior 5-cycle, and the third is at distance 2 from the interior 5-cycle.
+  \item Two zombies start at a distance of 2 from the interior 5-cycle and the third is at a distance of 3.
+  \item Two zombies start adjacent to the interior 5-cycle, and the third is at distance 3 from the interior 5-cycle.
+  \item One zombie starts adjacent to the interior 5-cycle, and the other two are at a distance of 2 from the interior 5-cycle.
+\end{enumerate}
 
-We separate this case again into sub-cases based on the number of moves required
-by the zombies to reach the interior cycle.
 
-\item[Case IV(a)]: All three zombies require the same number of rounds to reach the interior 5-cycle.
+\item[Case III(a)]: All three zombies require the same number of rounds to reach the interior 5-cycle.
 
 Suppose all the zombies have chosen vertices in $X$ which are adjacent to vertices in $C$. These are vertices $Q = \{6, 10, 11, 15, 16, 20, 21, 25, 26, 30 \}$.
 Because there are 3 zombies and 5 interior vertices, there will always be at least two vertices in the interior cycle that are not threatened in
@@ -204,11 +191,11 @@ In round 1, the zombies approach the survivor by moving to vertices in $Q$. Let 
 which are not on the interior 5-cycle. Now, either:
 
 \begin{enumerate}
-\item $q_0$ and $q_1$ are occupied by zombies. In this case, there is some $c \in N(s^0) \cap C$ which is not threatened by a zombie (since two of them are adjacent
+\item Both $q_0$ and $q_1$ are occupied by zombies. In this case, there is some $c \in N(s^0) \cap C$ which is not threatened by a zombie (since two of them are adjacent
 to $s$). Therefore the survivor can safely move onto another vertex on the interior 5-cycle and, on the following round, move to an occupied vertex in $Q$. After
 another round the survivor moves to a vertex in $Y$ and we again have reached a situation as in Case I.
 
-\item $q_0$ and $q_1$ are not both occupied by zombies. In this case, the survivor can exit the interior 5-cycle immediately by moving to a vertex in $Q$. After
+\item At least one of $q_0$ and $q_1$ is not occupied by zombies. In this case, the survivor can exit the interior 5-cycle immediately by moving to a vertex in $Q$. After
  the next round, all three zombies are on the interior 5-cycle and the survivor moves to a vertex in $Y$ and again we are in a situation like Case I.
 \end{enumerate}
 
@@ -217,7 +204,7 @@ have no choice but to move to vertices in $Y$ and so we find ourselves in the ca
 
 Now we must deal with the cases where the zombies are at different distances from the center cycle.
 
-\item[Case IV(b)]: Two zombies start adjacent to the interior 5-cycle, and the third is at distance 2 from the interior 5-cycle.
+\item[Case III(b)]: Two zombies start adjacent to the interior 5-cycle, and the third is at distance 2 from the interior 5-cycle.
 
 Suppose that two of the zombies have chosen vertices in $Q$ and the other has chosen a vertex in $Y$. That is, two zombies are adjacent to the interior 5-cycle
 while the third requires two rounds to reach the interior 5-cycle.
@@ -227,20 +214,20 @@ the interior 5-cycle.
 
 In round 1, two zombies enter the interior 5-cycle and the third moves to a vertex $q \in Q$ adjacent to the interior 5-cycle.
 The survivor exits the interior 5-cycle to another vertex $q_0 \in Q$. This move is always available to the survivor since only one vertex in $Q$ is occupied by
-a zombie and every vertex in $C$ is adjacent to two verties in $Q$.
+a zombie and every vertex in $C$ is adjacent to two vertices of $Q$.
 
-After the next turn, all three zombies are on the interior 5-cycle and the survivor is on a vertex $s^2 \in Y$ and so the survivor has a winning strategy.
+After the next turn, all three zombies are on the interior 5-cycle: two are already on the interior 5-cycle; the other must follow a shortest path which uses interior vertices since the shortest path between any two vertices of $Q$ goes through the interior. The survivor moves to a vertex $s_2 \in Y$ and wins using the strategy from Case I.
 
-\item[Case IV(c)]: Two zombies start at a distance of 2 from the interior 5-cycle and the third is at a distance of 3.
+\item[Case III(c)]: Two zombies start at a distance of 2 from the interior 5-cycle and the third is at a distance of 3.
 
 The survivor may start on any of the vertices on the interior 5-cycle since none are threatened by a zombie.
 
-In round 1, two zombies move to vertices in $Q$ and the third moves to a vertex in $Y$. If the survivor is unthreatened after the first round, she may simply pass.
-If the survivor is threatened by one of the zombies adjacent to the interior 5-cycle, then at least one of her neighbours on the interior 5-cycle is unthreatened.
+In round 1, two zombies move to vertices in $Q$ and the third moves to a vertex in $Y$. If the survivor is unthreatened after the first round, it can simply pass.
+If the survivor is threatened by a zombies adjacent to the interior 5-cycle, then at least one of the survivor's neighbours on the interior 5-cycle is unthreatened since there are two zombies on $Q$.
 
-In either case, after round 1 we find ourselves in the situation described in Case IV(b).
+In either case, after round 1 we find ourselves in the situation described in Case III(b).
 
-\item[Case IV(d)]: Two zombies start adjacent to the interior 5-cycle, and the third is at distance 3 from the interior 5-cycle.
+\item[Case III(d)]: Two zombies start adjacent to the interior 5-cycle, and the third is at distance 3 from the interior 5-cycle.
 
 This scenario is slightly more complicated as the survivor must avoid being trapped by the third zombie. Consider, for example, the start configuration
 $\bar{z} = (10, 26, 18)$. If the survivor chooses to start at 4, then the game plays out as follows:
@@ -289,7 +276,7 @@ Round & $z$ & $s$ \\
 
 Thus after 7 rounds, the survivor has succesfully baited all three zombies onto an exterior 5-path and so the game is won.
 
-\item[Case IV(e)]: One zombie starts adjacent to the interior 5-cycle, and the other two are at a distance of 2 from the interior 5-cycle.
+\item[Case III(e)]: One zombie starts adjacent to the interior 5-cycle, and the other two are at a distance of 2 from the interior 5-cycle.
 
 Again, the survivor's strategy in this case is to waste time on the interior 5-cycle in order to allow all the zombies to approach. Since only one of the
 zombies is adjacent to the interior 5-cycle, there are four potential start vertices for the survivor. Any of these will work.
@@ -310,8 +297,7 @@ round, all three zombies are on the interior 5-cycle and we are in a situation l
 
 In either case, the survivor has a simple winning strategy.
 
-
-\item[Case IV(f)]: One zombie starts at a distance of 2 from the interior 5-cycle, and the other two are at a distance of 3.
+\item[Case III(f)]: One zombie starts at a distance of 2 from the interior 5-cycle, and the other two are at a distance of 3.
 
 The survivor starts in the interior 5-cycle. None of the vertices on the interior 5-cycle are threatened by the zombies, since they are at a distance at least 2.
 
@@ -322,7 +308,7 @@ pose no threat in this round.
 
 There is now one zombie at distance of 1 from the interior 5-cycle and two zombies at a distance of 2, and so we have returned to the situation describe in Case IV(e).
 
-\item[Case IV(g)]: One zombie starts at a distance of 1 from the interior 5-cycle, and the other two are at a distance of 3.
+\item[Case III(g)]: One zombie starts at a distance of 1 from the interior 5-cycle, and the other two are at a distance of 3.
 
 The survivor starts on one of the four safe vertices on the interior 5-cycle.
 
@@ -344,7 +330,7 @@ round, all three zombies are on the interior 5-cycle and we are in a situation l
 \end{enumerate}
 
 
-\item[Case IV(h)]: The three zombies are at different distances from the interior 5-cycle.
+\item[Case III(h)]: The three zombies are at different distances from the interior 5-cycle.
 
 In particular, this means that the zombies are at distances 1, 2 and 3 from the interior 5-cycle.
 
@@ -359,5 +345,26 @@ interior 5-cycle. Now, at least one of the survivor's neighbours is an unoccupie
 
 After the next round, all three zombies are on the interior 5-cycle or one step behind the survivor and the survivor has won the game by moving to a vertex in $Y$
 as in Case I.
+
+\item[Case IV\label{planar case 4}]: One zombie chooses a vertex on the interior 5-cycle, the two others choose vertices on the exterior.
+
+We were unable to develop an argument to show why the survivor wins in this case.
+Instead, Appendix~\ref{appendix:planarZombies} provides tables showing the first few moves of a winning survivor strategy
+for every possible zombie start (without loss of generality).
+
+For example, suppose the zombies start on 1, 8 and 15, then the survivor can respond with 28 and win by Running Around the Outside after round 4. The first few moves of this game are detailed in Table~\ref{table start 1 8 15}.
+\begin{table}
+\begin{tabular}{c | c | c | c | c }
+Round & $z_1$ & $z_2$ & $z_3$ & $s$ \\
+\hline
+0 & 1 & 8 & 15 & 28 \\
+1 & 30 & 7 & 3 & 27 \\
+2 & 29 & 29 & 4 & 24 \\
+3 & 28 & 28 & 5 & 23 \\
+4 & 27 & 27 & 25 & 22 \\
+\end{tabular}
+\caption{If the zombies start at 1, 8 and 15, then the survivor wins by choosing 28. \label{table start 1 8 15}}
+\end{table}
+
 \end{description}
 \end{proof}

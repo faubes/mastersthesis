@@ -21,6 +21,13 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bonato2017graph}
+A.~Bonato and P.~Pralat, \emph{Graph searching games and probabilistic
+  methods}.\hskip 1em plus 0.5em minus 0.4em\relax CRC Press, 2017.
+
+\bibitem{bellman1967graphs}
+R.~Bellman, ``Graphs, dynamic programming, and finite games,'' 1967.
+
 \bibitem{bonato2011game}
 A.~Bonato and R.~Nowakowski, \emph{The Game of Cops and Robbers on Graphs},
   ser. Student mathematical library.\hskip 1em plus 0.5em minus 0.4em\relax
@@ -28,8 +35,7 @@ A.~Bonato and R.~Nowakowski, \emph{The Game of Cops and Robbers on Graphs},
 
 \bibitem{schaefer1978complexity}
 T.~J. Schaefer, ``On the complexity of some two-person perfect-information
-  games,'' \emph{Journal of Computer and System Sciences}, vol.~16, no.~2, pp.
-  185--225, 1978.
+  games,'' \emph{Journal of Computer and System Sciences}, vol.~16.
 
 \bibitem{fitzpatrick2016deterministic}
 S.~Fitzpatrick, J.~Howell, M.~Messinger, and D.~Pike, ``A deterministic version
@@ -84,6 +90,22 @@ N.~E.~B. Clarke, ``Constrained cops and robber.'' 2002.
 \bibitem{bonato2017topological}
 A.~Bonato and B.~Mohar, ``Topological directions in cops and robbers,''
   \emph{arXiv preprint arXiv:1709.09050}, 2017.
+
+\bibitem{schroder2001copnumber}
+B.~S. Schr{\"o}der, ``The copnumber of a graph is bounded by [3/2 genus (g)]+
+  3,'' in \emph{Categorical perspectives}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2001, pp. 243--263.
+
+\bibitem{gavenvciak2018cops}
+T.~Gaven{\v{c}}iak, P.~Gordinowicz, V.~Jel{\'\i}nek, P.~Klav{\'\i}k, and
+  J.~Kratochv{\'\i}l, ``Cops and robbers on intersection graphs,''
+  \emph{European Journal of Combinatorics}, vol.~72, pp. 45--69, 2018.
+
+\bibitem{erlebach2020game}
+T.~Erlebach and J.~T. Spooner, ``A game of cops and robbers on graphs with
+  periodic edge-connectivity,'' in \emph{International Conference on Current
+  Trends in Theory and Practice of Informatics}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 2020, pp. 64--75.
 
 \bibitem{gromovikov2018fully}
 I.~Gromovikov, W.~B. Kinnersley, and B.~Seamone, ``Fully active cops and

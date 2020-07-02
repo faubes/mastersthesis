@@ -18,7 +18,7 @@ of scenario.
 By having players take turns moving tokens on a graph (the game board, if you like) with
 the objective to capture (or evade) the other player, it is possible to simulate such chases.
 
-Many variations of these graph pursuit games have been proposed [TODO: Cite 2 or 3 general books on the topic]. There are many rules and
+Many variations of these graph pursuit games have been proposed \cite{bonato2017graph, bellman1967graphs}. There are many rules and
 parameters to tweak to produce different games:
 
 \begin{enumerate}
@@ -40,8 +40,9 @@ A variation called Zombies and Survivors (Z \& S or Zombie Game) was recently pr
 Z \& S is the same as Cops and Robbers with the added twist that the zombies are required to move directly towards the survivor. More precisely, the zombies have to move along an edge
 on a shortest path toward the survivor.
 
-This thesis has been an attempt to better understand this variant and, in particular,
+This thesis has been an attempt to better understand this variant and
 to see if the results obtained for Cops and Robbers still hold when the cops
-are constrained in their strategy. In general, we would like to have a better understanding between the number of cops needed to win and different constraints imposed on the pursuers. In particular, in Chapter~\ref{chapter planar zombies}
+are constrained in their strategy. In general, we would like to know how different constraints imposed on the pursuers affects the number of pursuers required to win. We investigate ``the cost of being undead'', as Fitzpatrick \cite{fitzpatrick2016deterministic} would call it.
+In particular, in Chapter~\ref{chapter planar zombies}
 we give an example of a planar graph where 3 zombies always lose.
-Then in Chapter~\ref{chapter q_m_n} we show how two zombies always win on a cycle with one chord.
+Then in Chapter~\ref{chapter q_m_n} we show how two zombies can win on a cycle with one chord.

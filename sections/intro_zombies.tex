@@ -1,115 +1,79 @@
+Zombies and Survivors (or more specifically, ``deterministic zombies'') are an interesting variation proposed in \cite{fitzpatrick2016deterministic}. In these games, the
+cops are replaced by zombies which must follow a geodesic to the survivor.
+
 \subsection{How to Play Zombies and Survivor}
 
 Zombies and Survivor is similar to C \& R except that zombies move
 ``directly'' toward the survivor. More precisely, on the zombies' turn
-each zombie independently selects a shortest path toward the survivor (a \textit{geodesic})
+each zombie selects a shortest path toward the survivor (a \textit{geodesic})
 and moves along the edge to the next vertex of the path.
 
 The sophistication of the zombies' strategy gives them their name:
 you can imagine the zombies -- arms outstretched -- ambling directly towards the survivor.
 As in C \& R, the players have complete information of the graph and the positions of the players. Indeed, the zombies need to know the position of the survivor to enact
-their strategy.
+their strategy. If uncaught, the survivor may move to one of its neighbouring vertices or stay in place. Again, a move is an instantaneous jump along an edge from one vertex to another.
 
-If uncaught, the survivor may move to one of its neighbouring vertices or stay in place.
- Again, a move is an instantaneous jump along an edge from one vertex to another.
-
-The game concludes when either:
+The game is decided if either:
 \begin{itemize}
 \item A zombie eats the survivor by moving to the survivor's vertex.
-\item The survivor evades the zombies indefinitely.
+\item The survivor can evade the zombies indefinitely.
 \end{itemize}
-
-%It is easy to determine that a zombie has won. It is perhaps not as obvious how
-%to determine the latter. We discuss winning conditions in greater detail in Section~\ref{}.
-
-%The Z \& S games studied herein use a few zombies chasing a single survivor. The game
-%can be adapted to multiple survivors by making the zombies move toward
-%to the closest. We focus on games with a single survivor.
-
-\subsection{Modeling the Game}
 
 We call $s \in V(G)$ the survivor and $z_i \in V(G)$ are zombies with $i \in \{1, \dots, k\}$.
 This notation represents both a player and its position in the graph.
 In the games studied there is a single survivor and $k \geq 1$ of zombies.
 
-
-We divide the game into rounds and turns. A round consists of two turns:
-a zombie turn and a survivor turn.
-It is convenient to define the zombie's turn on $t \equiv 0 \mod{2}$ and the survivor's turn on $t \equiv 1 \mod{2}$.
+As in C \& R, we divide the game into \textit{rounds} and \textit{turns}. A round consists of two turns: a zombie turn and a survivor turn.
+It is convenient to define the zombie's turn on $t \equiv 0 (\mod{2})$ and the survivor's turn on $t \equiv 1 (\mod{2})$.
 Round $r$ is given by $\lfloor \frac{t}{2} \rfloor$.
 
 It is occasionally useful to identify the players' positions over time, in which
 case let $z_r^i \in V(G)$ be zombie $i$ on round $r$. Similarly $s_r$ is the
 survivor on round $r$. This burdensome notation will be omitted when possible.
 
-It might be tempting to group the zombies together
-into some tuple of the vertex set, but each zombie acts independently of
-the others and so this may not be practical.
+We must be careful about the zombies' moves: since there can be multiple shortest paths linking a zombie $z_k$ to a survivor $s$, the zombie may have some limited agency on its turn. According to the rules of the game, on its turn the zombie
+``must move on a shortest path'' towards the survivor. The possible \textit{zombie moves}
+are those neighbours of $z_k$ which lie on a shortest path toward the survivor, which we denote
 
-\subsection{Paths and Moves}
-The zombie strategy requires consideration of all geodesics connecting
-each zombie to the survivor. Let us be precisely define these terms.
-%In the studied discrete graphs below, the distance between two vertices is the hop length of a %(shortest possible) path connecting them.
+\[ Z[z_k, s] = \{ y \in N(x) \mid d(y, s) = d(z_k, s) - 1 \} \]
 
-
-Consider zombie $k$. According to the rules of the game, on its turn the zombie
-``must move on a shortest path'' towards the survivor. The \textit{zombie moves}
-are those neighbours which lie on a shortest path toward the survivor, and which could be denoted
-
-\[ Z[x, s] = \{ y \in N(x) \mid d(y, s) = d(x, s) - 1 \} \]
-
-the zombies moves from $x$ given survivor is on $s$.
-
-
-[fix me here; simplify; clarify]
+the zombies moves from $z_k$ given survivor is on $s$.
 
 There is at least one such move since our graph is presumed connected,
-so $i > 0$ and $Z_k \neq \emptyset$.
-
-If there is only one path, then $z_k$'s next move is $u_{i, 1}$. If all $zs$-paths
-include $u_{i,1}$, then again $z_k$'s next move must be to that vertex.
-
-If, however, there are multiple $zs$-paths which have different first moves,
-then the zombie could make multiple moves.
-
+so $Z[z_k,s] \neq \emptyset$. If there is only one path, then $z_k$'s has no choice but to move to the next vertex of that path. If all possible shortest paths move through the same next vertex, then again $z_k$ does not have any choice on its move. If, however, there are multiple shortest paths connecting the zombie tothe survivor with different first moves, then the zombie could make multiple moves. In our version of the game (in which we consider all possible outcomes), the zombies can coordinate before choosing their next move. In this way, the survivor will only win if it wins in every possible zombie-play.
 
 \subsection{Deterministic Zombies}
 
-Zombies and Survivors (or more specifically, ``deterministic zombies'') are an interesting variation proposed in \cite{fitzpatrick2016deterministic}. In these games, the
-Cops are replaced by Zombies which must follow a geodesic to the Survivor.
-
-The Zombie Number is defined analogously to the Cop Number: it is the number of Zombies
+The zombie number of a graph is defined analogously to the cop number: it is the number of Zombies
 required to capture the Survivor. However, in Z \& S there are two additional considerations:
 the zombie start and the zombie choices.
-In this type of game, the starting locations for the zombies is of utmost importance:
-consider how difficult it might be to evade adversaries which are clustered versus some
+In Z \& S, the starting locations for the zombies is of utmost importance..
+It is much easier to evade zombies which are clustered versus some
 that are well-dispersed. So we say $z(G) = k$ if $k$ is the minimum number of
-zombies required to guaranteed a win
-given an appropriate (or optimal) start. Additionally, the rules of this game permit
+zombies required to guaranteed a win given an appropriate (or optimal) start.
+
+Additionally, the rules of this game permit
 some agency to the zombies: when confronted with multiple geodesics, they may have
-a choice between neighbouring vertices. Zombie number also presumes that
-the zombies make the correct choices. Perhaps more precisely, the zombie number of a
+a choice between neighbouring vertices. Our definition of the zombie number also presumes that
+the zombies make the correct choices. So more precisely, the zombie number of a
 graph is $k$ if $k$ zombies, suitably positioned, can play a game which guarantees the survivor
 is caught.
 
-Unlike Cops, these Zombies cannot apply a cornering strategy. Or any strategy.
-As a consequence, you need at least as many Zombies as you need Cops.
+Unlike cops, these zombies cannot apply a cornering strategy. Or any strategy.
+As a consequence, we need at least as many zombies as you need cops.
 This is one of the first observations
-in \cite{fitzpatrick2016deterministic}: the Cop Number $c(G)$ is a lower bound of the Zombie Number. The Zombies are weaker versions of Cops, similar in a way to the ``fully active'' Cops from \cite{gromovikov2018fully} where the Cops must move on their turn. Both
-active and ``lazy'' Cops have more freedom of choice than the zombies, and thus
+in \cite{fitzpatrick2016deterministic}: the cop-number $c(G)$ is a lower bound of the zombie-number $z(G)$. The zombies are weaker versions of cops, similar in a way to the ``fully active'' cops from \cite{gromovikov2018fully} wherein the cops are obligated to move on their turn. Both
+active and ``lazy'' cops have more freedom of choice than the zombies, and thus
 fewer are required to ensure victory.
 
-Does a characterization exist for Zombie-win graphs? Those for which a single zombie
-can always win? One has yet to be described. Howeover, \cite{fitzpatrick2016deterministic} showed that a graph is zombie-win if a specific spanning tree exists:
+Does there exist a characterization for zombie-win graphs -- a characterization for graph on which a single zombie can always win? One has yet to be described. Howeover, \cite{fitzpatrick2016deterministic} showed that a graph is zombie-win if a specific spanning tree exists:
 
 \begin{theorem}[Fitzpatrick] If there exists a breadth-first search of a graph $G$ such that the associated spanning tree is also a cop-win spanning tree, then G is zombie-win.
 \end{theorem}
 
-Thus a sufficient condition for zombie-win graphs are those for which a specific copwin tree exists: one equivalent to a breadth-first search of the graph from some vertex. It is unknown if it is also a necessary condition.
+Thus a sufficient condition for zombie-win graphs are those for which a specific cop-win tree exists: a cop-win tree obtainable as a breadth-first search of the graph from some root vertex. It is unknown if it is also a necessary condition.
 
-A few questions: are cop-win graphs necessarily zombie-win? No. A counter example \cite{fitzpatrick2016deterministic} is reproduced below \ref{fig:copwin_but_notzombie_win}.
-%What is the dismantling of this cop-win but not-zombie win graph. Since a dismantling exists,
-%a cop-win spanning tree exists.
+A few questions: are cop-win graphs necessarily zombie-win? No. A counter example \cite{fitzpatrick2016deterministic} is reproduced below (refer to Figure~\ref{fig:copwin_but_notzombie_win}).
 
 \begin{figure}
 \centering
@@ -117,7 +81,7 @@ A few questions: are cop-win graphs necessarily zombie-win? No. A counter exampl
 \caption{Cop-Win but not Zombie-Win \label{fig:copwin_but_notzombie_win}}
 \end{figure}
 
-Below \ref{fig:copwin_tree_example1} is an example of a graph and two dismantlings, one of which results in a BFS tree, and the other does not.
+Below is an example of a graph and two dismantlings, one of which results in a BFS tree, and the other does not (refer to Figure~\ref{fig:copwin_tree_example1}).
 
 \begin{figure}
 \centering
