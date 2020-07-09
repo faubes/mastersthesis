@@ -1,0 +1,184 @@
+% Report template by Joel Faubert
+% Ottawa University
+% Spring 2019
+%
+\documentclass[letterpaper, 12pt]{report}
+\usepackage{graphicx} % figures and images
+\graphicspath{ {img/} }
+\usepackage{float} % better figure float options
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyvrb} % fancy verbatim
+\usepackage{hyperref} % hyperlinks
+\usepackage{amsthm} % proof environment
+\usepackage{algpseudocode} % for algo
+\usepackage{float} % fix position of figures with [H]
+\usepackage{multicol}
+%\usepackage{babel}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rcleil}
+% common sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Qu}{\mathbb{Q}}
+\newcommand{\Na}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Rel}{\mathcal{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\M}{\mathcal{M}}
+% Power set
+\newcommand{\PU}{\mathcal{P}(\mathcal{U})}
+
+% big O
+\newcommand{\bigO}{\mathcal{O}}
+
+% matrices
+%\newcommand{\bpm}{\begin{bmatrix}}
+%\newcommand{\epm}{\end{bmatrix}}
+%\newcommand{\vm}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+%\newcommand{\Dmnt}[9]{\begin{vmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{vmatrix}}
+%\newcommand{\dmnt}[4]{\begin{vmatrix}#1 & #2 \\ #3 & #4 \end{vmatrix}}
+%\newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\end{bmatrix}}
+% norm shortcut buggy?
+% \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+%metrics
+\DeclareMathOperator{\dist}{d}
+\DeclareMathOperator{\diam}{diam}
+
+% projection, vectors
+%\DeclareMathOperator{\proj}{Proj}
+%\newcommand{\vctproj}[2][]{\proj_{\vv{#1}}\vv{#2}}
+%\newcommand{\dotprod}[2]{\vv{#1}\cdot\vv{#2}}
+%\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+% derivative
+% \def\D{\mathrm{d}}
+
+% probability
+% \newcommand{\Expected}{\mathrm{E}}
+% \newcommand{\Var}{\mathrm{Var}}
+% \newcommand{\Cov}{\mathrm{Cov}}
+% \newcommand{\Entropy}{\mathrm{H}}
+% \newcommand{\KL}{\mathrm{KL}}
+%\DeclareMathOperator*{\argmax}{arg\,max}
+%\DeclareMathOperator*{\argmin}{arg\,min}
+%\renewcommand{\baselinestretch}{1} % line spacing
+%\setlength{\parskip}{0.5cm plus4mm minus3mm} % paragraph spacing
+%\renewcommand\thesection{\arabic{section}} % numbered heading
+%\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+% proof environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proofpart}{Part}
+\newtheorem{claim}{Claim}[theorem]
+\renewcommand\theclaim{\arabic{claim}}
+\newtheorem{case}{Case}[claim]
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
+
+\renewcommand{\bibname}{References}
+
+\title{Zombies and Survivors on Graphs}
+\author{Jo\"el Faubert, \\ \textit{jfaub011@uottawa.ca}}
+
+\begin{document}
+%\nocite{*}
+
+\hypersetup{pageanchor=false}
+\input{titlepage}
+
+\hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
+
+\chapter*{Abstract}
+\input{sections/abstract}
+
+\tableofcontents
+
+\cleardoublepage\pagenumbering{arabic}
+
+\chapter{Introduction}
+
+\input{sections/introduction}
+
+% Notation
+\section{Notation}
+\input{sections/notation}
+
+% Classical Cops & Robbers
+\section{Classical Cops and Robbers}
+\input{sections/intro_cops}
+
+% Zombies & Survivors
+\section{Cops Turn Into Zombies}
+\input{sections/intro_zombies}
+
+% Planar Zombies
+\chapter{Planar Zombies \label{chapter planar zombies}}
+\input{sections/planar.tex}
+
+
+%\chapter{On Regular Graphs}
+% Grid
+%\section{Zombies on the Grid}
+%\input{sections/grid}
+
+% Cylinder
+%\section{Zombies on a Cylinder}
+%\input{sections/cylinder}
+
+% Q_m_n
+\chapter{Cycle With One Chord \label{chapter q_m_n}}
+\input{sections/Q_m_n}
+
+\chapter{Conclusion, Future Works}
+\input{sections/conclusion}
+
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{./references}
+
+\appendix
+
+
+%\section{Literature Review}
+%\input{sections/literature}
+
+%\chapter{Half-finished ideas that may be worth including}
+% Lemmas and observations
+%\section{Observations}
+%\input{sections/observations}
+
+% Existing theory
+%\section{Cop-win and Zombie-win Graphs}
+%\input{sections/copwin_trees}
+
+% Survivor Strategy?
+%\section{Survivor Strategy}
+%\input{sections/survivorstrategy}
+
+% Win condition
+%\section{Win Condition}
+%\input{sections/wincondition}
+
+\chapter{End Matter}
+%\section{$Q_{m, n}$ Appendices}
+%\input{sections/Q_m_n_appendix}
+
+\section{Planar Zombies Counter-Example Case IV}
+%\input{sections/appendix_planar_case2}
+\input{sections/appendix_planar_case4}
+\end{document}

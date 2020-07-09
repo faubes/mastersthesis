@@ -1,0 +1,756 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{fitzpatrick2016deterministic}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FS}{%
+         family={Fitzpatrick},
+         familyi={F\bibinitperiod},
+         given={SL},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Howell},
+         familyi={H\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+      {{hash=MM}{%
+         family={Messinger},
+         familyi={M\bibinitperiod},
+         given={ME},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Pike},
+         familyi={P\bibinitperiod},
+         given={DA},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{FSHJMM+1}
+    \strng{fullhash}{FSHJMMPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1\bibrangedash 12}
+    \field{title}{A Deterministic Version of the Game of Zombies and Survivors
+  on Graphs}
+    \field{volume}{213}
+    \field{journaltitle}{Discrete Applied Mathematics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{fitzpatrick2018game}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FSL}{%
+         family={Fitzpatrick},
+         familyi={F\bibinitperiod},
+         given={Shannon\bibnamedelima L},
+         giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FSL1}
+    \strng{fullhash}{FSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Game of Zombies and Survivors on the Cartesian Products
+  of Trees}
+    \field{journaltitle}{arXiv preprint arXiv:1806.04628}
+    \field{year}{2018}
+  \endentry
+
+  \entry{aigner1984game}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AM}{%
+         family={Aigner},
+         familyi={A\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fromme},
+         familyi={F\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{AMFM1}
+    \strng{fullhash}{AMFM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 12}
+    \field{title}{A Game of Cops and Robbers}
+    \field{volume}{8}
+    \field{journaltitle}{Discrete Applied Math\-ematics}
+    \field{year}{1984}
+  \endentry
+
+  \entry{bonato2017graph}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BA}{%
+         family={Bonato},
+         familyi={B\bibinitperiod},
+         given={Anthony},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pralat},
+         familyi={P\bibinitperiod},
+         given={Pawel},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{BAPP1}
+    \strng{fullhash}{BAPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Graph searching games and probabilistic methods}
+    \field{year}{2017}
+  \endentry
+
+  \entry{bellman1967graphs}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BR}{%
+         family={Bellman},
+         familyi={B\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \strng{namehash}{BR1}
+    \strng{fullhash}{BR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Graphs, dynamic programming, and finite games}
+    \field{year}{1967}
+  \endentry
+
+  \entry{bonato2011game}{book}{}
+    \name{author}{2}{}{%
+      {{hash=BA}{%
+         family={Bonato},
+         familyi={B\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NkR}{%
+         family={Nowa\-kowski},
+         familyi={N\bibinitperiod-k\bibinitperiod},
+         given={R.J.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Mathematical Society}%
+    }
+    \strng{namehash}{BANkR1}
+    \strng{fullhash}{BANkR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{9780821853474}
+    \field{series}{Student mathematical library}
+    \field{title}{The Game of Cops and Robbers on Graphs}
+    \field{year}{2011}
+  \endentry
+
+  \entry{schaefer1978complexity}{article}{}
+    \name{author}{1}{}{%
+      {{hash=STJ}{%
+         family={Schaefer},
+         familyi={S\bibinitperiod},
+         given={Thomas\bibnamedelima J},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{STJ1}
+    \strng{fullhash}{STJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2}
+    \field{pages}{185\bibrangedash 225}
+    \field{title}{On the complexity of some two-person perfect-information
+  games}
+    \field{volume}{16}
+    \field{journaltitle}{Journal of Computer and System Sciences}
+    \field{year}{1978}
+  \endentry
+
+  \entry{pan2006isometric}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PJJ}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Jun-Jie},
+         giveni={J\bibinitperiod-J\bibinitperiod},
+      }}%
+      {{hash=CGJ}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Gerard\bibnamedelima J},
+         giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{PJJCGJ1}
+    \strng{fullhash}{PJJCGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{17}
+    \field{pages}{2091\bibrangedash 2096}
+    \field{title}{Isometric path numbers of graphs}
+    \field{volume}{306}
+    \field{journaltitle}{Discrete mathematics}
+    \field{year}{2006}
+  \endentry
+
+  \entry{quilliot1978jeux}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=QA}{%
+         family={Quilliot},
+         familyi={Q\bibinitperiod},
+         given={Alain},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QA1}
+    \strng{fullhash}{QA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Jeux et pointes fixes sur les graphes}
+    \list{institution}{1}{%
+      {Ph. D. Dissertation, Universit{\'e} de Paris VI}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{1978}
+  \endentry
+
+  \entry{quilliot1983problemes}{article}{}
+    \name{author}{1}{}{%
+      {{hash=QA}{%
+         family={Quilliot},
+         familyi={Q\bibinitperiod},
+         given={Alain},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QA1}
+    \strng{fullhash}{QA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{131\bibrangedash 145}
+    \field{title}{Probl{\`e}mes de jeux, de point fixe, de connectivit{\'e} et
+  de repr{\'e}sentation sur des graphes, des ensembles ordonn{\'e}s et des
+  hypergraphes}
+    \field{journaltitle}{These d’Etat, Universit{\'e} de Paris VI}
+    \field{year}{1983}
+  \endentry
+
+  \entry{nowakowski1983vertex}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NR}{%
+         family={Nowakowski},
+         familyi={N\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Winkler},
+         familyi={W\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{NRWP1}
+    \strng{fullhash}{NRWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2-3}
+    \field{pages}{235\bibrangedash 239}
+    \field{title}{Vertex-to-Vertex Pursuit in a Graph}
+    \field{volume}{43}
+    \field{journaltitle}{Discrete Mathematics}
+    \field{year}{1983}
+  \endentry
+
+  \entry{berarducci1993cop}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BA}{%
+         family={Berarducci},
+         familyi={B\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=IB}{%
+         family={Intrigila},
+         familyi={I\bibinitperiod},
+         given={Benedetto},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BAIB1}
+    \strng{fullhash}{BAIB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{4}
+    \field{pages}{389\bibrangedash 403}
+    \field{title}{On the Cop Number of a Graph}
+    \field{volume}{14}
+    \field{journaltitle}{Advances in Applied Mathematics}
+    \field{year}{1993}
+  \endentry
+
+  \entry{hahn2003characterisation}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HG}{%
+         family={Hahn},
+         familyi={H\bibinitperiod},
+         given={Gena},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={MacGillivray},
+         familyi={M\bibinitperiod},
+         given={Gary},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{HGMG1}
+    \strng{fullhash}{HGMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{A Characterisation of k-cop-win Graphs and Digraphs}
+    \field{year}{2003}
+  \endentry
+
+  \entry{frankl1987cops}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FP}{%
+         family={Frankl},
+         familyi={F\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{FP1}
+    \strng{fullhash}{FP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{301\bibrangedash 305}
+    \field{title}{Cops and Robbers in Graphs with Large Girth and Cayley
+  Graphs}
+    \field{volume}{17}
+    \field{journaltitle}{Discrete Applied Mathematics}
+    \field{year}{1987}
+  \endentry
+
+  \entry{gera2016graph}{book}{}
+    \name{author}{3}{}{%
+      {{hash=GR}{%
+         family={Gera},
+         familyi={G\bibinitperiod},
+         given={Ralucca},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hedetniemi},
+         familyi={H\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Larson},
+         familyi={L\bibinitperiod},
+         given={Craig},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{GRHSLC1}
+    \strng{fullhash}{GRHSLC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Graph Theory: Favorite Conjectures and Open Problems-1}
+    \field{year}{2016}
+  \endentry
+
+  \entry{clarke2002constrained}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CNEB}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={Nancy Elaine\bibnamedelima Blanche},
+         giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Dalhousie University}%
+    }
+    \strng{namehash}{CNEB1}
+    \strng{fullhash}{CNEB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Constrained Cops and Robber.}
+    \field{year}{2002}
+  \endentry
+
+  \entry{bonato2017topological}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BA}{%
+         family={Bonato},
+         familyi={B\bibinitperiod},
+         given={Anthony},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Mohar},
+         familyi={M\bibinitperiod},
+         given={Bojan},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BAMB1}
+    \strng{fullhash}{BAMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Topological Directions in Cops and Robbers}
+    \field{journaltitle}{arXiv preprint arXiv:1709.09050}
+    \field{year}{2017}
+  \endentry
+
+  \entry{schroder2001copnumber}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=SBS}{%
+         family={Schr{\"o}der},
+         familyi={S\bibinitperiod},
+         given={Bernd\bibnamedelima SW},
+         giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SBS1}
+    \strng{fullhash}{SBS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Categorical perspectives}
+    \field{pages}{243\bibrangedash 263}
+    \field{title}{The copnumber of a graph is bounded by [3/2 genus (g)]+ 3}
+    \field{year}{2001}
+  \endentry
+
+  \entry{beveridge2011cops}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BA}{%
+         family={Beveridge},
+         familyi={B\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dudek},
+         familyi={D\bibinitperiod},
+         given={Andrzej},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Frieze},
+         familyi={F\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={M{\"u}ller},
+         familyi={M\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BADAFA+1}
+    \strng{fullhash}{BADAFAMT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Cops and robbers on geometric graphs}
+    \field{journaltitle}{arXiv preprint arXiv:1108.2549}
+    \field{year}{2011}
+  \endentry
+
+  \entry{gavenvciak2018cops}{article}{}
+    \name{author}{5}{}{%
+      {{hash=GT}{%
+         family={Gaven{\v{c}}iak},
+         familyi={G\bibinitperiod},
+         given={Tom{\'a}{\v{s}}},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GP}{%
+         family={Gordinowicz},
+         familyi={G\bibinitperiod},
+         given={Przemys{\l}aw},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=JV}{%
+         family={Jel{\'\i}nek},
+         familyi={J\bibinitperiod},
+         given={V{\'\i}t},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Klav{\'\i}k},
+         familyi={K\bibinitperiod},
+         given={Pavel},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kratochv{\'\i}l},
+         familyi={K\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{GTGPJV+1}
+    \strng{fullhash}{GTGPJVKPKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{45\bibrangedash 69}
+    \field{title}{Cops and robbers on intersection graphs}
+    \field{volume}{72}
+    \field{journaltitle}{European Journal of Combinatorics}
+    \field{year}{2018}
+  \endentry
+
+  \entry{gromovikov2018fully}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GI}{%
+         family={Gromovikov},
+         familyi={G\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=KWB}{%
+         family={Kinnersley},
+         familyi={K\bibinitperiod},
+         given={William\bibnamedelima B},
+         giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Seamone},
+         familyi={S\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GIKWBSB1}
+    \strng{fullhash}{GIKWBSB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Fully Active Cops and Robbers}
+    \field{journaltitle}{arXiv preprint arXiv:1808.06734}
+    \field{year}{2018}
+  \endentry
+
+  \entry{bonato2016probabilistic}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BA}{%
+         family={Bonato},
+         familyi={B\bibinitperiod},
+         given={Anthony},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Mitsche},
+         familyi={M\bibinitperiod},
+         given={Dieter},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PGX}{%
+         family={P{\'e}rez-Gim{\'e}nez},
+         familyi={P\bibinitperiod-G\bibinitperiod},
+         given={Xavier},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pra{\l}at},
+         familyi={P\bibinitperiod},
+         given={Pawe{\l}},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{BAMDPGX+1}
+    \strng{fullhash}{BAMDPGXPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2\bibrangedash 14}
+    \field{title}{A Probabilistic Version of the Game of Zombies and Survivors
+  on Graphs}
+    \field{volume}{655}
+    \field{journaltitle}{Theoretical Computer Science}
+    \field{year}{2016}
+  \endentry
+
+  \entry{aichholzer2011convexifying}{inproceedings}{}
+    \true{moreauthor}
+    \name{author}{10}{}{%
+      {{hash=AO}{%
+         family={Aichholzer},
+         familyi={A\bibinitperiod},
+         given={Oswin},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=AG}{%
+         family={Aloupis},
+         familyi={A\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DED}{%
+         family={Demaine},
+         familyi={D\bibinitperiod},
+         given={Erik\bibnamedelima D},
+         giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=DML}{%
+         family={Demaine},
+         familyi={D\bibinitperiod},
+         given={Martin\bibnamedelima L},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Dujmovic},
+         familyi={D\bibinitperiod},
+         given={Vida},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=HF}{%
+         family={Hurtado},
+         familyi={H\bibinitperiod},
+         given={Ferran},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Lubiw},
+         familyi={L\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RG}{%
+         family={Rote},
+         familyi={R\bibinitperiod},
+         given={G{\"u}nter},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Schulz},
+         familyi={S\bibinitperiod},
+         given={Andr{\'e}},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SDL}{%
+         family={Souvaine},
+         familyi={S\bibinitperiod},
+         given={Diane\bibnamedelima L},
+         giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AOAGDED+1}
+    \strng{fullhash}{AOAGDEDDMLDVHFLARGSASDL+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{CCCG}
+    \field{title}{Convexifying Polygons Without Losing Visibilities.}
+    \field{year}{2011}
+  \endentry
+
+  \entry{lubiw2017visibility}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LA}{%
+         family={Lubiw},
+         familyi={L\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Snoeyink},
+         familyi={S\bibinitperiod},
+         given={Jack},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VH}{%
+         family={Vosoughpour},
+         familyi={V\bibinitperiod},
+         given={Hamideh},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{LASJVH1}
+    \strng{fullhash}{LASJVH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{14\bibrangedash 27}
+    \field{title}{Visibility Graphs, Dismantlability, and the Cops and Robbers
+  Game}
+    \field{volume}{66}
+    \field{journaltitle}{Computational Geometry}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

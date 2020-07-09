@@ -1,3 +1,5 @@
+\section{Notation}
+
 The following sections will use a few standard definitions from graph theory (and vertex-pursuit theory) which we include here for reference.
 Formally, a graph $G = (V, E)$ is composed of:
 
@@ -15,7 +17,7 @@ Lastly, in order to model a player's choice to pass on a turn, we suppose each v
 
 We will have occasion to use a few more concepts of graph theory. We say that vertices $x$ and $y$ are \textit{neighbours} if $xy \in E$; that is, if there is an edge joining $x$ to $y$.
 The set $N(x) = \{ y \in V | xy \in E \} \subseteq V$ is the \textit{neighbourhood} of $x$.
-The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$. A set $S \subseteq V(G)$ is said to be \textit{dominating} if $\cup_x N(x) \supseteq V(G)$. In the context of these games, a dominating set guarantees a win for the pursuers, since all possible start vertices are covered (and the evader loses in round 1). 
+The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$. A set $S \subseteq V(G)$ is said to be \textit{dominating} if $\cup_x N(x) \supseteq V(G)$. In the context of these games, a dominating set guarantees a win for the pursuers, since all possible start vertices are covered (and the evader loses in round 1).
 
 The \textit{degree} of a vertex is the number of edges incident to that vertex (or equivalently the
 cardinality of its neighbourhood $\lvert N(x) \rvert$). The \textit{minimum} and \textit{maximum

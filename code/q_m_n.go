@@ -91,7 +91,7 @@ func find_offset(m, n int, possible_deltas []int) (possible_offsets []int) {
 }
 
 func main() {
-	max_n, max_m := 50, 50
+	max_n, max_m := 12, 12
 	for i := 4; i < max_m; i++ {
 		for j := i; j < max_n; j++ {
 			possible_deltas := find_delta(i, j)

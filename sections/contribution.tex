@@ -1,39 +1,11 @@
-In Chapter 2, we showed the existence of a graph for which 3 zombies always lose,
+In Chapter 2, we show the existence of a graph for which 3 zombies always lose,
 thereby showing that the upper bound on the cop-number for planar graphs does not
 apply to zombies. This is hardly surprising, since the 3 Cops must effect a sophisticated
 strategy in order to capture the Robber, and the Zombies cannot coordinate in this way.
 
-It remains to be shown if there is in fact an upper bound on the zombie-number for
- planar graphs. The example obtained in this thesis was a sort of extrapolation from
- the example given \cite{fitzpatrick2016deterministic}, which showed that
- the cop-number need not always equal the zombie-number. Is it possible to construct
- increasingly elaborate graphs (while still being planar) which would always provide
- the survivor with a winning strategy?
-
- Having made no further progress in this direction, we decided to investigate a simpler
- class of graphs: outerplanar ones. In this case, as we have noted, it has been shown
- \cite{clarke2002constrained} that 2 Cops suffice to guarantee a win.
-
- It is also known that maximally-outerplanar graphs are zombie-win \cite{fitzpatrick2016deterministic}
- and it is clear that 2 Zombies suffice for a cycle, but what can be said about those
- outerplanar graphs in between the two extremes?
-
- It has been our experience that 2 Zombies often suffice on outerplanar graphs. But
- not always. The choice of zombie start is critical. This is the
- motivation for our work on $Q_{m,n}$ -- the cycle with a single chord. Perhaps if we
- could segment or decompose an outerplanar graph into simpler components, then we could at least give an upper bound: perhaps 1 or 2 Zombies per block. It is not clear how we can
- generalize our findings however. Adding a single extra chord changes the entire game.
-
- Finally, we spent some considerable time pondering games of Z \& S on visibility graphs.
- Recently, \cite{lubiw2017visibility} applied a result about visibility-augmenting edges from \cite{aichholzer2011convexifying} to conclude that visibility graphs of simple polygons
- are cop-win. A natural question then is to wonder if they are also zombie-win.
-
-We have implemented tools which allow us to search, brute force, for Breadth-First Search
-dismantling trees (i.e., zombie-win trees). So far, every polygon tested produces a visibility
-graph which admits such a tree. See \ref{fig:polygon_with_bfs_dismantling} for an example.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.75]{polygon/polygon_with_bfs_dismantling}
-  \caption{A Polygon Inscribed with a BFS Cop-win Tree \label{fig:polygon_with_bfs_dismantling}}
-\end{figure}
+In Chapter 3, we investigate a simpler class of graphs: a cycle with a single chord.
+It has been our experience that 2 Zombies often suffice on outerplanar graphs. But
+not always. The choice of zombie start is critical. This is the
+motivation for our work on $Q_{m,n}$ -- the cycle with a single chord. Perhaps if we
+could segment or decompose an outerplanar graph into simpler components, then we could at least give an upper bound: perhaps 1 or 2 Zombies per block. It is not clear how we can
+generalize our findings however. Adding a single extra chord changes the entire game.
