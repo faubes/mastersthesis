@@ -1,11 +1,8 @@
 \chapter{Introduction}\label{chapter intro}
 
 There has been a robbery downtown and the robbers are escaping by car. Officers
-already on the streets are notified moments later. The robbers make a desperate dash for the highway but are spotted and soon tailed by police.
-
-The robbers seem to be getting away -- putting some distance between themselves and the sirens.
-Suddenly, the driver slams on the breaks. A squad car ahead has thrown out a strip of tire spikes! The left two tires are shredded, causing the driver to lose control. The vehicle veers off the road, flips upside down and eventually comes to a stop in the ditch. A media helicopter hovers overhead, capturing
-a chaotic scene flooded by the flashing lights of emergency vehicles.
+already on the streets are notified only minutes later. The robbers seem to be getting away -- putting some distance between themselves and the chasing sirens.
+The driver slams on the breaks, too slow to react to the strip of tire spikes thrown by an ambushing officer! Two tires are shredded and the driver loses control. The robbers are quickly surrounded and apprehended. The media arrives; the crash is captured by a hovering helicopter.
 
 Was there ever any hope of escape? Perhaps the robbers took the wrong route.
 They should have planned a vehicle swap. Or used a tunnel. Could it be that there were
@@ -20,8 +17,7 @@ of scenario.
 By having players take turns moving tokens on a graph (the game board, if you like) with
 the objective to capture (or evade) the other player, it is possible to simulate such chases.
 
-Many variations of these graph pursuit games have been proposed \cite{bonato2017graph, bellman1967graphs}. There are many rules and
-parameters to tweak to produce different games:
+Many variations of these graph pursuit games have been proposed \cite{bonato2017graph, bellman1967graphs}. There are many rules and parameters to tweak to produce different games:
 
 \begin{enumerate}
 \item How much information do the players have?
@@ -32,18 +28,17 @@ parameters to tweak to produce different games:
 \item Does the graph change over time?
 \end{enumerate}
 
-The Game of Cops and Robbers on Graphs \cite{bonato2011game} is perhaps the most
+The Game of Cops and Robbers on Graphs (C \& R) \cite{bonato2011game} is perhaps the most
 well-known vertex pursuit game. It is a perfect information game with Cops trying
 to catch the Robber. In a perfect information game, all players know everything about the game.
 In this context, the players know each other's positions (they see each other) and they
 know the landscape (graph) around them \cite{schaefer1978complexity}.
 
-A variation called Zombies and Survivors (Z \& S or Zombie Game) was recently proposed and studied  \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
-Z \& S is the same as Cops and Robbers with the added twist that the zombies are required to move directly towards the survivor. More precisely, the zombies have to move along an edge
-on a shortest path toward the survivor.
+A variation called Zombies and Survivors (Z \& S) was recently proposed and studied  \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
+Z \& S is the same as C \& R with the added twist that the zombies are required to move directly towards the survivor. On their turn, the zombies move closer to the survivor using a shortest path connecting the two.
 
 This thesis has been an attempt to better understand this variant and
-to see if the results obtained for Cops and Robbers still hold when the cops
+to see if the results obtained for C \& R still hold when the cops
 are constrained in their strategy. In general, we would like to know how different constraints imposed on the pursuers affects the number of pursuers required to win. We investigate ``the cost of being undead'', as Fitzpatrick \cite{fitzpatrick2016deterministic} would call it.
 In particular, in Chapter~\ref{chapter planar zombies}
 we give an example of a planar graph where 3 zombies always lose whereas 3 cops win in the classical version of the game (refer to Subsection~\ref{intro cops and genus}).
@@ -51,8 +46,7 @@ In Chapter~\ref{chapter q_m_n} we show how two zombies can win on a cycle with o
 
 \section{Notation}
 
-The following sections will use a few standard definitions from graph theory (and vertex-pursuit theory) which we include here for reference.
-Formally, a graph $G = (V, E)$ is composed of:
+The following sections will use definitions from graph theory (and vertex-pursuit theory) which we include here for reference. Formally, a graph $G = (V, E)$ is composed of:
 
 \begin{itemize}
 \item A set $V$ of vertices.
@@ -103,8 +97,8 @@ The \textit{Cartesian product} of $G$ and $H$ is denoted $G \square H$ and defin
 \[ V(G \square H) = V(G) \times V(H) \]
 and edges
 \begin{align*}
-  E(G \square H) = \{ (x_1,y_1)(x_2,y_2) | (x_1x_2 \in E(G) \land y_1 = y_2) &\lor \\
-  (x_1 = x_2 \land y_1y_2 \in E(H)) \} \mperiod
+  E(G \square H) = \{ (x_1,y_1)(x_2,y_2) | &(x_1x_2 \in E(G) \land y_1 = y_2) \lor \\
+  & (x_1 = x_2 \land y_1y_2 \in E(H)) \} \mperiod
 \end{align*}
 The \textit{strong product} of $G$ and $H$, denoted $G \boxtimes H$, is similarly defined as the graph with vertices
 \[ V(G \boxtimes H) = V(G) \times V(H) \]
@@ -160,7 +154,7 @@ Incremental progress toward this bound has been made on special classes of graph
 
 A vertex $u$ is a \textit{corner} if its closed neighbourhood
 is a subset of one of of its neighbours' closed neighbourhood. Formally, this is
-\[u \in V(G) \qquad \text{and} \qquad \exists \, v\in V(G) : N[u] \subseteq N[v] \].
+\[u \in V(G) \qquad \text{and} \qquad \exists \, v\in V(G) : N[u] \subseteq N[v] \mperiod \]
 We say that corner $u$ is \textit{dominated} or \textit{cornered} by $v$.
 
 By supposing that a single cop wins on $G$, it can be shown that $G$ must contain a corner. Consider the robber's last turn: if the robber loses on the next turn, it must be because the robber cannot stay in place nor can it move to a neighbour without being caught on the next turn. This is precisely the case when the cop is on a vertex which corners the survivor. In a sense, a corner is a dead end for the robber, and thus would be avoided by a clever robber. It would be useful, then to study the game on the graph after removing or deleting the corner.
@@ -356,7 +350,7 @@ Let $H$ be a graph with $m$ vertices and at least one vertex of degree $m - 1$. 
 \end{theorem}
 
 
-\subsection{Probabilistic zombies}\label{subsection intro probabilistic}
+\subsection{Probabilistic Zombies}\label{subsection intro probabilistic}
 
 Zombies are often depicted as mindless or aimless. It is a common trope that zombies
 idle around, moving in random directions until they somehow (suddenly) distinguish

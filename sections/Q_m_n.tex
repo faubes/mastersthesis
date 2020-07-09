@@ -19,7 +19,7 @@ The construction contains three sub-cycles which the survivor could use to fool 
 Let us first examine the construction for small values of $m$ and $n$.
 
  \begin{lemma}
-\[ z(Q_{2,2}) = 1 \mperiod \]
+The zombie-number $z(Q_{2,2}) = 1$.
  \end{lemma}
 \begin{proof}
   Setting $m=n=2$ yields a graph with two adjacent cliques $K_3$, which are dominated by a single vertex so it is zombie-win.
@@ -147,13 +147,11 @@ along a cycle with respect to the given direction on this embedding.
 
   Comparing path lengths we see that:
 
-  \begin{itemize}
-   \item[I.] $z_2$ moves counter-clockwise if either
+  $z_2$ moves counter-clockwise if either
    \[ |P_a| \leq \min \{ |P_c|, |P_d| \}\qquad \text{or} \qquad |P_b| \leq \min \{ |P_c|, |P_d| \} \tag{I} \label{assumption i} \mperiod \]
 
-   \item[II.] $z_2$ goes clockwise if either
+  $z_2$ goes clockwise if either
    \[ |P_c| \leq \min \{ |P_a|, |P_b| \}\qquad \text{or} \qquad |P_d| \leq \min \{ |P_a|, |P_b| \} \tag{II} \label{assumption ii}\mperiod \]
-  \end{itemize}
 
   We will examine all combinations of these possible ``zombie-decisions'' to show that there exist values of $\Delta$ which prevent the survivor's escape in any of the possible games (from this start configuration where the survivor is on $P_m$). We break it down as follows:
 
@@ -174,9 +172,9 @@ along a cycle with respect to the given direction on this embedding.
     \caption{Case I.A. \label{fig:case_1_a_1}}
   \end{figure}
 
-  We obtain the following constraints on $\ell$ from \ref{assumption a}.
+  We obtain the following constraints on $\ell$ from \ref{assumption a}
   \[ 4 \leq 2 \ell \leq m + 1 \]
-  and the following constraints on $\Delta$ from \ref{assumption i}.
+  and the following constraints on $\Delta$ from \ref{assumption i}
   \begin{align*}
    \Delta + (m - \ell) &\leq n - \Delta + 1 + m - \ell && \text{and} \\
    \Delta + (m - \ell) &\leq n - \Delta + \ell
@@ -199,7 +197,7 @@ along a cycle with respect to the given direction on this embedding.
   So for $z_2$ to follow either $P_a$ or $P_b$ and go counter-clockwise we must have
   \begin{align*}
    2 \Delta &\leq n - m + 2\ell && \text{or} \\
-   2 \Delta &\leq n - 1                     \\
+   2 \Delta &\leq n - 1 \mperiod
   \end{align*}
 
   We must determine which of $s$ or $z_2$ reaches $u$ first. Consider the game after $\Delta$ rounds, as illustrated in Figure~\ref{fig:case_1_a_2}.
@@ -226,16 +224,16 @@ along a cycle with respect to the given direction on this embedding.
   survivor. So we need
   \[ m - \ell - \Delta \leq 1 + \Delta + \ell \]
   Or, in terms of $\Delta$,
-  \[ 2 \Delta \geq m - 2\ell  -1 \]
+  \[ 2 \Delta \geq m - 2\ell  -1 \mperiod \]
 
   When we combine all the restrictions we obtain the following characterization for Case I.A.:
 
   $z_1$ goes clockwise:
   \[ 4 \leq 2 \ell \leq m + 1 \]
   and $z_2$ goes counter-clockwise:
-  \[ 2 \Delta \leq n - m + 2\ell \qquad \text{or} \qquad 2 \Delta \leq n - 1 \]
-  the zombies win:
-  \[ 2 \Delta \leq 2 m- 2 \ell + 2 \qquad \text{and} \qquad m - 2\ell  -1 \leq 2 \Delta \]
+  \[ 2 \Delta \leq n - m + 2\ell \qquad \text{or} \qquad 2 \Delta \leq n - 1 \mperiod \]
+  The zombies win:
+  \[ 2 \Delta \leq 2 m- 2 \ell + 2 \qquad \text{and} \qquad m - 2\ell  -1 \leq 2 \Delta \mperiod \]
 
   \item \textit{Case I.B.} $z_2$ and $z_1$ both go counter-clockwise.
 
@@ -256,7 +254,7 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
   \begin{align*}
    \Delta + 1 + \ell &\leq n - \Delta + 1 + m - \ell && \text{and} \\
-   \Delta + 1 + \ell &\leq n - \Delta + \ell
+   \Delta + 1 + \ell &\leq n - \Delta + \ell \mperiod
   \end{align*}
 
   Simplifying using \ref{assumption b} yields:
@@ -267,13 +265,13 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
   \begin{align*}
    2 \Delta &\leq n+m -2 \ell \leq n-1 && \text{and} \\
-   2 \Delta &\leq n -1
+   2 \Delta &\leq n -1 \mperiod
   \end{align*}
 
   So for $z_2$ to go counter-clockwise in this case we must have
   \begin{align*}
    2 \Delta &\leq n + 1         && \text{or} \\
-   2 \Delta &\leq n + m - 2\ell
+   2 \Delta &\leq n + m - 2\ell \mperiod
   \end{align*}
 
   Again we must consider who reaches the chord first. Consider the game after $\Delta$ rounds, as illustrated in Figure~\ref{fig:case_1_b_2}.
@@ -292,7 +290,7 @@ along a cycle with respect to the given direction on this embedding.
   it reaches $u$ we need
   \begin{align*}
    1 + \ell - \Delta &\leq \Delta -1 + m - \ell + 1 && \text{and} \\
-   2\ell - m + 1 &\leq 2 \Delta
+   2\ell - m + 1 &\leq 2 \Delta \mperiod
   \end{align*}
 
   We obtain the following characterization for Case I.B.:
@@ -300,9 +298,9 @@ along a cycle with respect to the given direction on this embedding.
   $z_1$ goes counter-clockwise:
   \[ m + 1 \leq 2 \ell \leq 2m - 2\]
   and $z_2$ goes counter-clockwise
-  \[ 2 \Delta \leq n + 1 \qquad \text{or} \qquad 2 \Delta \leq n + m - 2\ell \]
-  the zombies win:
-  \[ 2 \Delta \leq 2 \ell \qquad \text{and} \qquad 2\ell - m + 1 \leq 2 \Delta \]
+  \[ 2 \Delta \leq n + 1 \qquad \text{or} \qquad 2 \Delta \leq n + m - 2\ell \mperiod\]
+  The zombies win:
+  \[ 2 \Delta \leq 2 \ell \qquad \text{and} \qquad 2\ell - m + 1 \leq 2 \Delta \mperiod\]
 
   \item \textit{Case II.A.} $z_2$ and $z_1$ both go clockwise.
 
@@ -313,9 +311,9 @@ along a cycle with respect to the given direction on this embedding.
     \caption{Case II.A. \label{fig:case_2_a_1}}
   \end{figure}
 
-  We have the following constraint on $\ell$ from \ref{assumption b}.
+  We have the following constraint on $\ell$ from \ref{assumption b}
   \[ 4 \leq 2 \ell \leq m + 1 \]
-  and the following constraints on $\Delta$ from \ref{assumption ii}.
+  and the following constraints on $\Delta$ from \ref{assumption ii}
   \begin{align*}
    n - \Delta + 1 + m - \ell &\leq \Delta + m - \ell && \text{and} \\
    n - \Delta + 1 + m - \ell &\leq \Delta + 1 + \ell
@@ -323,7 +321,7 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
     \begin{align*}
      n - \Delta + \ell &\leq \Delta + m - \ell && \text{and} \\
-     n - \Delta + \ell &\leq \Delta + 1 + \ell
+     n - \Delta + \ell &\leq \Delta + 1 + \ell \mperiod
     \end{align*}
   Simplifying with a bit of algebra yields:
   \begin{align*}
@@ -333,7 +331,7 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
   \begin{align*}
    n + 1 &\leq 2 \Delta && \text{and} \\
-   n + m - 2\ell &\leq 2 \Delta
+   n + m - 2\ell &\leq 2 \Delta \mperiod
   \end{align*}
 
   These inequalites are of the form
@@ -344,10 +342,9 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
   \begin{align*}
    n + x &\leq 2 \Delta && \text{and} \\
-   n + 1 &\leq 2 \Delta
+   n + 1 &\leq 2 \Delta \mcomma
   \end{align*}
-
-  Where $x = m -2\ell$.
+where $x = m -2\ell$.
 
   Supposing $x\geq 0$, we have
   \begin{align*}
@@ -385,24 +382,24 @@ along a cycle with respect to the given direction on this embedding.
   escaped $P_m$ in this scenario we need
   \begin{align*}
    n - \Delta &\leq m - \ell   && \text{and}  \\
-   \Delta &\geq n - m + \ell
+   \Delta &\geq n - m + \ell \mcomma
   \end{align*}
   otherwise the survivor could reach the chord before $z_2$.
 
   To ensure that $z_2$ goes counter-clockwise once it reaches $v$, we need
   \begin{align*}
    1 + m - \ell - (n - \Delta) &\leq n - \Delta + \ell  \\
-   2 \Delta &\leq 2n + 2\ell - m - 1
+   2 \Delta &\leq 2n + 2\ell - m - 1 \mperiod
   \end{align*}
 
   We obtain the following characterization for Case II.B.:
 
   $z_1$ goes clockwise:
-  \[ 4 \leq 2 \ell \leq m + 1 \]
+  \[ 4 \leq 2 \ell \leq m + 1 \mcomma \]
   and $z_2$ goes clockwise
-  \[ n -m + 2\ell \leq 2 \Delta \qquad \text{and} \qquad n-1 \leq 2 \Delta \]
-  the zombies win:
-  \[ 2 \Delta \geq 2n - 2m + 2\ell \qquad \text{and} \qquad 2 \Delta \leq 2n + 2\ell - m - 1\]
+  \[ n -m + 2\ell \leq 2 \Delta \qquad \text{and} \qquad n-1 \leq 2 \Delta \mperiod \]
+  The zombies win:
+  \[ 2 \Delta \geq 2n - 2m + 2\ell \qquad \text{and} \qquad 2 \Delta \leq 2n + 2\ell - m - 1 \mperiod\]
 
 
   \item \textit{Case II.B.} $z_2$ goes clockwise and $z_1$ goes counter-clockwise.
@@ -414,11 +411,11 @@ along a cycle with respect to the given direction on this embedding.
     \caption{Case II.B. \label{fig:case_2_b_1}}
   \end{figure}
 
-  We have the following constraint on $\ell$ from \ref{assumption b}.
+  We have the following constraint on $\ell$ from \ref{assumption b}
   \begin{align*}
-   m + 1 \leq 2 \ell \leq 2m - 2
+   m + 1 \leq 2 \ell \leq 2m - 2 \mcomma
   \end{align*}
-  and the following constraints on $\Delta$ from \ref{assumption ii}.
+  and the following constraints on $\Delta$ from \ref{assumption ii}
   \begin{align*}
    n - \Delta + 1 + m - \ell &\leq \Delta + m - \ell && \text{and} \\
    n - \Delta + 1 + m - \ell &\leq \Delta + 1 + \ell
@@ -426,7 +423,7 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
     \begin{align*}
      n - \Delta + \ell &\leq \Delta + m - \ell && \text{and} \\
-     n - \Delta + \ell &\leq \Delta + 1 + \ell
+     n - \Delta + \ell &\leq \Delta + 1 + \ell \mperiod
     \end{align*}
 
   These can be simplified with a bit of algebra:
@@ -437,7 +434,7 @@ along a cycle with respect to the given direction on this embedding.
   or
   \begin{align*}
    n+1 \leq        & 2 \Delta & \text{and} \\
-   n+m-2\ell  &\leq 2 \Delta
+   n+m-2\ell  &\leq 2 \Delta \mperiod
   \end{align*}
 
   These inequalities are of the form
@@ -448,7 +445,7 @@ along a cycle with respect to the given direction on this embedding.
   \begin{center}or\end{center}
   \begin{align*}
    n + 1 &\leq 2 \Delta & \text{and} \\
-   n + x &\leq 2 \Delta,
+   n + x &\leq 2 \Delta \mcomma
   \end{align*}
 
   where $x = m -2\ell$. Since \ref{assumption b} gives $m - 2\ell \leq -1$, we
@@ -470,7 +467,7 @@ along a cycle with respect to the given direction on this embedding.
   but is caught by $z_2$ on the following round.
   So, to guarantee the survivor has not escaped $P_m$ we need
   \begin{align*}
-   n - \Delta &\leq \ell + 1 \\
+   n - \Delta &\leq \ell + 1 \mcomma \\
   \end{align*}
   otherwise the survivor reaches the chord before $z_2$ can move
   to block. If the survivor reaches the chord first, then it could
@@ -479,26 +476,26 @@ along a cycle with respect to the given direction on this embedding.
   To ensure that $z_2$ goes clockwise once it reaches $v$, we need
   \begin{align*}
    \ell - (n - \Delta) &\leq 1 + (n - \Delta - 1) + (m - \ell + 1) \\
-   2 \Delta \leq            & 2n + m - 2\ell + 1
+   2 \Delta \leq            & 2n + m - 2\ell + 1 \mperiod
   \end{align*}
 
   We obtain the following characterization for Case II.B.:
 
   $z_1$ goes counter-clockwise:
-  \[ m + 1 \leq 2 \ell \leq 2m - 2 \]
+  \[ m + 1 \leq 2 \ell \leq 2m - 2 \mcomma \]
   and $z_2$ goes clockwise:
-  \[ n+1 \leq 2 \Delta \]
-  the zombies win:
-  \[ n - \Delta \leq \ell + 1 \qquad \text{and} \qquad 2 \Delta \leq 2n + m - 2\ell + 1 \]
+  \[ n+1 \leq 2 \Delta \mperiod\]
+  The zombies win:
+  \[ n - \Delta \leq \ell + 1 \qquad \text{and} \qquad 2 \Delta \leq 2n + m - 2\ell + 1 \mperiod \]
 
 \end{itemize}
 
 We will show (in Section~\ref{thm q_m_n 3}) that with $\Delta = \left\lfloor \frac{m}{2} \right\rfloor$, the zombies can always (successfully) execute this cornering strategy. Of course, this is not sufficient to show the zombies win: there is no guarantee that the survivor will choose to start along $P_m$ as is assumed here, so we cannot simply start with this zombie configuration. Instead, we must force the survivor's hand.
 \end{proofpart}
 
-  \section{Guarding the large cycle $C_{n+1}$\label{thm q_m_n 2}}
+  \section{Guarding the Largest Cycle $C_{n+1}$\label{thm q_m_n 2}}
 \begin{proofpart}
-  We consider the game on this type of graph in general and show
+  We consider the game on $Q_{m,n}$ in general and show
   how we can position the zombies on $C_{n+1}$ to limit the survivor's options and thereby guarantee it will be caught.
 
   %Given $m, n$ and $\Delta$ as computed above, we place the
@@ -516,29 +513,25 @@ We will show (in Section~\ref{thm q_m_n 3}) that with $\Delta = \left\lfloor \fr
   forces the survivor into a losing position: it is either immediately sandwiched on $C_{n+1}$,
   or falls into the trap described above on $C_{m+1}$.
 
-  The survivor cannot start next to the zombies else it loses right away.
-  So we choose $k$ such that, even if the survivor is as far away from one of the zombies as possible on $C_n$, then the zombies still move in opposite directions (refer to Figure~\ref{fig:guarding}). This leads to the following inequalities
+  \begin{figure}
+    \centering
+    \includegraphics{q_m_n/guarding1}
+    \includegraphics{q_m_n/guarding2}
+    \caption{Preventing the zombies from turning in same direction on $C_{m+1}$\label{fig:guarding}}
+  \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics{q_m_n/guarding1}
-  \includegraphics{q_m_n/guarding2}
-  \caption{Preventing the zombies from turning in same direction on $C_{m+1}$\label{fig:guarding}}
-\end{figure}
+  The survivor cannot start next to the zombies else it loses right away.
+  So we choose $k$ such that, even if the survivor is as far away from one of the zombies as possible on $C_{n+1}$, the zombies still move in opposite directions. This is when the survivor is at distance two from one of the zombies (refer to Figure~\ref{fig:guarding}) and leads to the following inequalities:
+
   \begin{align*}
    n - \Delta - 2k - 2 &\leq \Delta + k +1 + k +2 && \text{and} \\
-   \Delta + 2k -1 &\leq n - \Delta -2k +2.
+   \Delta + 2k -1 &\leq n - \Delta -2k +2 \mperiod
   \end{align*}
   Solving for $k$ gives
-  \[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
+  \[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \mperiod \]
 
   A choice of $k$ which satisfies these constraints guarantees that the zombies move in opposite directions if the survivor starts on $C_n$.
 
-  Now consider the survivor's options when the zombies start as described here.
-  If the survivor starts between the zombies such that
-  access to the chord is blocked, then clearly the survivor has lost. Otherwise,
-   in $k$ rounds $z_1$ reaches the endpoint of the chord. If the survivor is on the subpath of $C_{n+1}$ of length $\Delta$ (connecting $u$ to $z_2$), then on the next move $z_1$ will take the chord and trap the survivor.
-   Therefore, after $k$ rounds the survivor must be on $P_m \setminus N[u]$ or it has already lost. But this is precisely the scenario described in Part~\ref{thm q_m_n 1} when $z_1$ reaches the chord and $z_2$ is $\Delta$ away. With suitable $\Delta$, then, the survivor is cornered on the smaller cycle.
 \end{proofpart}
 
 \section{Existence of $\Delta$ and $k$ for any $m,n$ \label{thm q_m_n 3}}
@@ -547,7 +540,7 @@ We will show (in Section~\ref{thm q_m_n 3}) that with $\Delta = \left\lfloor \fr
 We wish to show that, for any $m, n$, there exist $\Delta$ and $k$
 which guarantee the survivor is caught.
 First, we show that $\Delta = \lfloor \frac{m}{2} \rfloor$ always
-works for the cornering strategy.
+works for the Cornering Strategy.
 
 Note that
 \[
@@ -555,7 +548,7 @@ Note that
 \begin{cases}
 m & \text{if $m$ is even} \\
 m -1 & \text{if $m$ is odd}
-\end{cases}
+\end{cases} \mcomma
 \]
 and so $m -1 \leq 2 \lfloor \frac{m}{2} \rfloor \leq m$.
 
@@ -564,26 +557,23 @@ Case I.A. is characterized by the following constraints:
 
 \[ 4 \leq 2 \ell \leq m+1 \]
 \begin{center}and\end{center}
-\[ 2\Delta \leq n - m + 2\ell \qquad \text{or} \qquad 2\Delta \leq n-1 \]
-
+\[ 2\Delta \leq n - m + 2\ell \qquad \text{or} \qquad 2\Delta \leq n-1 \mperiod \]
 The zombies win if
+\[ 2 \Delta \leq 2 m- 2 \ell + 2 \qquad \text{and} \qquad m - 2\ell  -1 \leq 2 \Delta \mperiod \]
 
-\[ 2 \Delta \leq 2 m- 2 \ell + 2 \qquad \text{and} \qquad m - 2\ell  -1 \leq 2 \Delta \]
-
-So if we are in Case I.A. and $\Delta = \left\lfloor \frac{m}{2} \right\rfloor$. In this case, the zombies win since
+In this case, the zombies win since
 \[ 2 \Delta = 2 \lfloor \frac{m}{2} \rfloor \leq m < 2m - (m+1) + 2\leq 2 m- 2 \ell + 2 \]
 \begin{center}and\end{center}
 \[ m - 2\ell -1 \leq m - 5 < 2 \lfloor \frac{m}{2} \rfloor = 2 \Delta \]
-shows that the zombie-win requirements are met.
+shows that the zombie-win requirements of Case I.A. are met.
 
-Suppose that we are not in Case I. A. Recall that in all cases we must have $2 \leq \ell \leq m-1$. Therefore, negating the constraints of Case I. A. gives
+Suppose that we are not in Case I.A. Recall that in all cases we must have $2 \leq \ell \leq m-1$. Therefore, negating the constraints of Case I.A. gives
 
 \[2\ell \leq 3 \qquad \text{or} \qquad m+2 \leq 2 \ell \]
 \begin{center}or\end{center}
 \[ 2\Delta \geq n - m + 2\ell +1 \qquad \text{and} \qquad 2 \Delta \geq n - 1 + 1 \]
 
 But $2\ell \leq 3$ is only possible if $\ell = 1$, and this is not a valid value for $\ell$ (it puts the survivor too close to $z_1$). With the upper bound on $\ell$, the game is not in Case I.A. if
-
 \[m+2 \leq 2 \ell \leq 2m-2\]
 \begin{center}or\end{center}
 \[ 2\Delta \geq n - m + 2\ell +1 \qquad \text{and} \qquad 2 \Delta \geq n - 1 + 1 = n \tag{*} \label{not i a}\].
@@ -613,11 +603,11 @@ In the first case, with $m+2 \leq 2\ell \leq 2m-2$, the zombies can apply Case I
 
 \[ m+1 \leq 2 \ell \leq 2m -2 \]
 and
-\[2 \Delta \leq n +1 \qquad \text{or} \qquad 2\Delta \leq n + m - 2 \ell \]
+\[2 \Delta \leq n +1 \qquad \text{or} \qquad 2\Delta \leq n + m - 2 \ell \mperiod \]
 
 Because $\Delta  = \left\lfloor \frac{m}{2} \right\rfloor$ and $m+2 \leq 2\ell \leq 2m-2$, satisfies these constraints, the zombies can enact the strategy of Case I.B. They will win since this choice of $\Delta$ also satisfies the win conditions of Case I.B.:
 
-\[ 2\Delta \leq 2 \ell \qquad \text{and} \qquad 2\ell -m+1 \leq 2\Delta \]
+\[ 2\Delta \leq 2 \ell \qquad \text{and} \qquad 2\ell -m+1 \leq 2\Delta \mperiod \]
 
 The first win condition is satisfied since $2\Delta \leq m < m+2 \leq 2\ell$, the second satisfied because $2\ell -m+1 \leq (2m-2)- m+1 = m-2 < m-1 \leq 2\Delta$.
 
@@ -637,15 +627,13 @@ It remains to show there exists a suitable value for $k$. Since $k$ is constrain
 \[ n - 2\Delta -5 \leq 4k \leq n-2\Delta +3 \]
 it suffices to show that the interval
 \[ [ \frac{n-2\Delta -5}{4}, \frac{n-2\Delta+3}{4}] \]
-contains at least one non-negative integer.
-
-We know there is at least one integer since
-\[ \left\lvert \frac{n-2\Delta+3}{4} - \frac{n-2\Delta -5}{4} \right\rvert = 2 \].
+contains an integer, which must be so since
+\[ \left\lvert \frac{n-2\Delta+3}{4} - \frac{n-2\Delta -5}{4} \right\rvert = 2 \mperiod \]
 
 To show that there exists $k \geq 0$, suppose we have
-\[ n- 2\Delta +3 < 0 \]
+\[ n- 2\Delta +3 < 0 \mcomma \]
 which means
-\[ n < 2\Delta -3 \]
+\[ n < 2\Delta -3 \mperiod \]
 
 With $\Delta = \left\lfloor \frac{m}{2} \right\rfloor$ we obtain a contradiction since we have presumed that $m \leq n$.
 
@@ -655,14 +643,14 @@ With $\Delta = \left\lfloor \frac{m}{2} \right\rfloor$ we obtain a contradiction
 \section{Putting It All Together}\label{thm q_m_n 4}
 From the proof we obtain the following strategy:
 \begin{corollary}
-  Two zombies win on $Q_{m,n}$ by placing one zombie at a counter-clockwise distance of
+  Two zombies win on $Q_{m,n}$ by placing $z_1$ at a counter-clockwise distance of
   \[ k = \left\lfloor \frac{n - 2 \left\lfloor\frac{m}{2}\right\rfloor +3}{4} \right\rfloor \]
-  from $u$ and placing the other zombie at a clockwise distance of
+  from $u$ and placing $z_2$ at a clockwise distance of
   \[ \left\lfloor \frac{m}{2} \right\rfloor + k \]
   from $v$.
 \end{corollary}
 \begin{proof}
-  Place $z_1$ at
+  Place the zombies as described.
   If the survivor starts on $P_n$ between the two zombies, then it loses because the large cycle is guarded as per Section~\ref{thm q_m_n 2}.
   Otherwise, the zombies will push the survivor towards $P_m$.
   If, after $k$ rounds, the survivor is still on $P_m$, then it is on a path of length at most $\Delta = \lfloor \frac{m}{2} \rfloor - 2$ (it cannot be adjacent to either $z_1$ or $z_2$). The two zombies and the survivor are on an induced subpath smaller than half the cycle $C_{n+1}$ and so the survivor has lost.
