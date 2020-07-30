@@ -572,6 +572,42 @@
     \field{year}{2018}
   \endentry
 
+  \entry{lubiw2017visibility}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LA}{%
+         family={Lubiw},
+         familyi={L\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Snoeyink},
+         familyi={S\bibinitperiod},
+         given={Jack},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VH}{%
+         family={Vosoughpour},
+         familyi={V\bibinitperiod},
+         given={Hamideh},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{LASJVH1}
+    \strng{fullhash}{LASJVH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{14\bibrangedash 27}
+    \field{title}{Visibility Graphs, Dismantlability, and the Cops and Robbers
+  Game}
+    \field{volume}{66}
+    \field{journaltitle}{Computational Geometry}
+    \field{year}{2017}
+  \endentry
+
   \entry{gromovikov2018fully}{article}{}
     \name{author}{3}{}{%
       {{hash=GI}{%
@@ -715,42 +751,6 @@
     \field{booktitle}{CCCG}
     \field{title}{Convexifying Polygons Without Losing Visibilities.}
     \field{year}{2011}
-  \endentry
-
-  \entry{lubiw2017visibility}{article}{}
-    \name{author}{3}{}{%
-      {{hash=LA}{%
-         family={Lubiw},
-         familyi={L\bibinitperiod},
-         given={Anna},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=SJ}{%
-         family={Snoeyink},
-         familyi={S\bibinitperiod},
-         given={Jack},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=VH}{%
-         family={Vosoughpour},
-         familyi={V\bibinitperiod},
-         given={Hamideh},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{LASJVH1}
-    \strng{fullhash}{LASJVH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{pages}{14\bibrangedash 27}
-    \field{title}{Visibility Graphs, Dismantlability, and the Cops and Robbers
-  Game}
-    \field{volume}{66}
-    \field{journaltitle}{Computational Geometry}
-    \field{year}{2017}
   \endentry
 \enddatalist
 \endinput

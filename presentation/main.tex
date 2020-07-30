@@ -1,0 +1,52 @@
+\documentclass{beamer} %
+\usepackage{pgfpages}
+%\setbeameroption{hide notes} % Only slides
+%\setbeameroption{show only notes} % Only notes
+\setbeameroption{show notes on second screen=bottom} % Both
+\usetheme{CambridgeUS}
+\usepackage[latin1]{inputenc}
+\usefonttheme{professionalfonts}
+\usepackage{times}
+% \usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{csquotes}
+% \usetikzlibrary{arrows,shapes}
+%\usepackage{media9} % for animation
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\DeclareMathOperator{\sign}{sgn}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}
+
+
+\author{Jo\"el Faubert}
+\title{Zombies and Survivors on Graphs}
+
+\begin{document}
+
+\begin{comment}
+:Title: Thesis defense: Zombies and Survivors on Graphs
+:Tags: Thesis; vertex pursuit games;
+\end{comment}
+
+\everymath{\displaystyle}
+
+\section{Intro}
+\input{introduction.tex}
+
+\section{Planar Zombies}
+\input{planar.tex}
+
+\section{Cycle With One Chord}
+\input{q_m_n.tex}
+
+\section{Conclusion}
+\input{conclusion.tex}
+
+\section{References}
+\input{references.tex}
+
+\end{document}

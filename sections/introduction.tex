@@ -11,10 +11,10 @@ Perhaps the advantages of communication and central coordination allow the polic
   cut off likely escape routes, so that the probability of escape is low.
 
 A (somewhat dispassionate) mind might watch these salacious stories on the news and wonder
- if you could apply math to these types of questions. To answer some of the above for sure.
+ how to apply math to these types of questions. To answer some of the above for sure.
 Vertex pursuit games are adversarial games played on graphs which model this sort
 of scenario.
-By having players take turns moving tokens on a graph (the game board, if you like) with
+By having players take turns moving tokens on a graph (the game board) with
 the objective to capture (or evade) the other player, it is possible to simulate such chases.
 
 Many variations of these graph pursuit games have been proposed \cite{bonato2017graph, bellman1967graphs}. There are many rules and parameters to tweak to produce different games:
@@ -231,10 +231,12 @@ Intersection graphs are constructed by equating sets with vertices and adding an
 
 Gaven{\v{c}}iak et al. \cite{gavenvciak2018cops} also examined the game of C \& R on similar constructions. First, the authors show that several classes of intersection graphs have unbounded cop-number. Second, they find that the cop-number of intersection graphs of arc-connected subsets is at most $10g+5$ for an orientable surface of genus $g$.
 
+Lubiw et al. \cite{lubiw2017visibility} showed that the visibility graph of any simple polygon is dismantlable and hence cop-win.
+
 \section{Cops Turn Into Zombies}
 
 Zombies and Survivors is a variation of Cops and Robbers first proposed by Fitzpatrick \cite{fitzpatrick2016deterministic} and is the game studied herein. In Z \& S games, the
-cops are replaced by zombies which always move closer to the robber (who is now a survivor). The sophistication of the zombies' strategy gives them their name: you can imagine the zombies -- arms outstretched -- ambling directly towards the survivor. However, there is some ambiguity without further precision: how exactly do the zombies move closer to the survivor? What if there are multiple options?
+cops are replaced by zombies which always move closer to the robber (who is now a survivor). The sophistication of the zombies' strategy gives them their name:  arms outstretched, the zombies amble directly towards the survivor. However, there is some ambiguity without further precision: how exactly do the zombies move closer to the survivor? What if there are multiple options?
 
 In the version first proposed by Fitzpatrick, the zombies choose their start positions. On their turn, they select a shortest path toward the survivor (a \textit{geodesic}) and moves along the edge to the next vertex of the path. If there are multiple such paths, we assume that a zombie makes an optimal choice (these are deterministic zombies; see~\ref{subsection intro deterministic}) or we choose randomly (so called probabilistic zombies; see~\ref{subsection intro probabilistic}). In this thesis, we study the deterministic version of the game which is concerned with the worst-case outcomes for the survivor.
 
@@ -360,35 +362,35 @@ Such behavior likely inspired another type of pursuit game \cite{bonato2016proba
 Without knowing where the zombies start, however, it is impossible to know the outcome with certainty.
 The \textit{probabilistic zombie-number} of a graph is the minimum number of these random zombies required to give the zombies a 50\% chance of winning. We omit the term probabilistic for the remainder of this section. Accepting some uncertainty in the outcomes of games simplifies the problem of the zombie choice: if there is more than one possible zombie move then choose one randomly.
 
-Firstly, the zombie-number is unbounded. A graph which requires arbitrarily many zombies can be constructed by taking a cycle of length at least $5$ and attaching additional vertices to one of the vertices of the cycle. In this way, we can make the odds that the zombies start on vertices which ``guard'' the cycle arbitrarily small:
+Firstly, the zombie-number is unbounded. A graph which requires arbitrarily many zombies can be constructed by taking a cycle of length at least $5$ and attaching additional vertices to one of the vertices of the cycle. In this way, we can make the odds that the zombies start on vertices which ``guard'' the cycle arbitrarily small. Indeed, we have the following property \cite{bonato2016probabilistic}:
 \begin{lemma}
 The survivor wins on $C_n$ against $k \geq 2$ zombies if and only if all zombies are initially located on an induced subpath containing at most $\lceil\frac{n}{2}\rceil-2$ vertices. \label{lemma subpath}
 \end{lemma}
 
-The zombie-number of cycles, projective planes, hyper cubes, grids and toroidal grids has also been considered. It has been shown that the zombie-number of cycles is
+The zombie-number of cycles, projective planes, hyper cubes, grids and toroidal grids has also been considered. Bonato et al. proved the following theorem \cite{bonato2016probabilistic} which gives the zombie-number of cycles.
 
 \begin{theorem}
   \[z(C_n) =
   \begin{cases}
-    4 & \text{if} \, n \geq 27 \, \text{or} \, n=23,25, \\
-    3 & \text{if} \, 11 \leq n \leq 22 \, \text{or} \, n=9,24,26, \\
-    2 & \text{if} \, 4 \leq n \leq 8 \, \text{or} \, n=10, \\
-    1 & \text{if} \, n =3
+    4 & \text{if} \; n \geq 27 \; \text{or} \; n=23,25, \\
+    3 & \text{if} \; 11 \leq n \leq 22 \; \text{or} \; n=9,24,26, \\
+    2 & \text{if} \; 4 \leq n \leq 8 \; \text{or} \; n=10, \\
+    1 & \text{if} \; n =3
 \end{cases} \mperiod \]
 \end{theorem}
 
-Two zombies are enough to get even odds of capturing the survivor:
+On the grid, two zombies are enough to get even odds \cite{bonato2016probabilistic} of capturing the survivor:
 \begin{theorem}
   Let $G_n$ be the grid graph isomorphic to $P_n \square P_n$. The zombie-number of $G_n$ is 2.
 \end{theorem}
 We note that the proof strategy of this theorem in \cite{bonato2016probabilistic} also works for deterministic zombies. Two deterministic zombies thus are guaranteed to win by effecting a coordinate-shadowing strategy on the grid.
 
-The zombie-number of a hyper cube $Q_n$ of dimension $n$ is
+The zombie-number of a hyper cube $Q_n$ of dimension $n$ is:
 \begin{theorem}
 $z(Q_n) = \frac{2n}{3} + \Theta(\sqrt{n})$, as $n \rightarrow \infty$.
 \end{theorem}
 
 \section{Our Contributions}
-Fitzpatrick \cite{fitzpatrick2016deterministic} gave an example of an outerplanar graph for which $z(G) >2$, showing that the upper bound of two for the cop-number on outerplanar graphs does not apply to zombies. In Chapter~\ref{chapter planar zombies}, we take inspiration from this counter-example and give a planar graph on which three zombies always lose. This shows that the upper bound of 3 for the cop-number of planar graphs does not apply either.
+Fitzpatrick \cite{fitzpatrick2016deterministic} gave an example of an outerplanar graph $G$ for which $z(G) >2$, showing that the upper bound of two for the cop-number on outerplanar graphs does not apply to zombies. In Chapter~\ref{chapter planar zombies}, we take inspiration from this counter-example and give a planar graph on which three zombies always lose. This shows that the upper bound of 3 for the cop-number of planar graphs does not apply either.
 
-Cycles (and subcycles) are important in these games since the survivor cannot hope to win without one. Two zombies win on a cycle by choosing diametrically opposed vertices. In Chapter~\ref{chapter q_m_n}, we show that two zombies win on a cycle with a single chord.
+Cycles (and subcycles) are important in these games since the survivor cannot hope to win without one. Two zombies win on a cycle by choosing diametrically opposed vertices. Fitzpatrick showed that since maximally outerplanar graph are zombie-win since they do not contain any cycles of length greater than 3. In Chapter~\ref{chapter q_m_n}, we show that two zombies win on a cycle with a single chord

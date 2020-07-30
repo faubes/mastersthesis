@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  9 JUL 2020 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  9 JUL 2020 10:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1985,7 +1985,13 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 1: section
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 181.
-[1
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 212.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 212.
+ [1
 
 
 
@@ -1996,7 +2002,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
  Abstract
 --------------------
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 253.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 256.
 1: section
 [3] [4
 
@@ -2009,7 +2015,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 274.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 277.
  (/home/joel/masters/main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -2060,10 +2066,6 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 47.
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 52.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
-File: omsppl.fd 
-)
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
 <img/intro/cube.png, id=303, 428.60126pt x 403.5075pt>
@@ -2075,25 +2077,25 @@ Package pdftex.def Info: img/intro/cube.png  used on input line 78.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 115.
  [4] [5] [6] [7] [8]
-<img/copwin_tree/copwin_but_notzombie_win.png, id=390, 502.87875pt x 528.97626pt>
+<img/copwin_tree/copwin_but_notzombie_win.png, id=391, 502.87875pt x 528.97626pt>
 File: img/copwin_tree/copwin_but_notzombie_win.png Graphic file (type png)
 <use img/copwin_tree/copwin_but_notzombie_win.png>
-Package pdftex.def Info: img/copwin_tree/copwin_but_notzombie_win.png  used on input line 300.
+Package pdftex.def Info: img/copwin_tree/copwin_but_notzombie_win.png  used on input line 302.
 (pdftex.def)             Requested size: 251.43875pt x 264.48747pt.
  [9 </home/joel/masters/img/copwin_tree/copwin_but_notzombie_win.png>]
-<img/copwin_tree/two_dismantlings.pdf, id=401, 469.25313pt x 152.53085pt>
+<img/copwin_tree/two_dismantlings.pdf, id=403, 469.25313pt x 152.53085pt>
 File: img/copwin_tree/two_dismantlings.pdf Graphic file (type pdf)
 <use img/copwin_tree/two_dismantlings.pdf>
-Package pdftex.def Info: img/copwin_tree/two_dismantlings.pdf  used on input line 335.
+Package pdftex.def Info: img/copwin_tree/two_dismantlings.pdf  used on input line 337.
 (pdftex.def)             Requested size: 328.47495pt x 106.77084pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 336.
+(Font)              scaled to size 10.42007pt on input line 338.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 336.
+(Font)              scaled to size 7.91925pt on input line 338.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 336.
+(Font)              scaled to size 10.42007pt on input line 338.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 336.
+(Font)              scaled to size 7.91925pt on input line 338.
  [10 </home/joel/masters/img/copwin_tree/two_dismantlings.pdf>]) [11]
 \openout2 = `sections/planar.aux'.
 
@@ -2103,35 +2105,35 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 ]
 Chapter 2.
-<img/planar/planar.pdf, id=464, 317.71297pt x 280.80608pt>
+<img/planar/planar.pdf, id=469, 317.71297pt x 280.80608pt>
 File: img/planar/planar.pdf Graphic file (type pdf)
 <use img/planar/planar.pdf>
 Package pdftex.def Info: img/planar/planar.pdf  used on input line 48.
 (pdftex.def)             Requested size: 317.71219pt x 280.80537pt.
 1: section
 [13] [14 </home/joel/masters/img/planar/planar.pdf>]
-<img/planar/Graph2Case1Round0.png, id=517, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round0.png, id=522, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round0.png Graphic file (type png)
 <use img/planar/Graph2Case1Round0.png>
 Package pdftex.def Info: img/planar/Graph2Case1Round0.png  used on input line 85.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
-<img/planar/Graph2Case1Round1.png, id=519, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round1.png, id=524, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round1.png Graphic file (type png)
 <use img/planar/Graph2Case1Round1.png>
 Package pdftex.def Info: img/planar/Graph2Case1Round1.png  used on input line 100.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
-<img/planar/Graph2Case1Round2.png, id=521, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round2.png, id=526, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round2.png Graphic file (type png)
 <use img/planar/Graph2Case1Round2.png>
 Package pdftex.def Info: img/planar/Graph2Case1Round2.png  used on input line 114.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
-<img/planar/Graph2Case1Round3.png, id=523, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case1Round3.png, id=528, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case1Round3.png Graphic file (type png)
 <use img/planar/Graph2Case1Round3.png>
 Package pdftex.def Info: img/planar/Graph2Case1Round3.png  used on input line 122.
 (pdftex.def)             Requested size: 253.44626pt x 240.39754pt.
  [15] [16 </home/joel/masters/img/planar/Graph2Case1Round0.png> </home/joel/masters/img/planar/Graph2Case1Round1.png>] [17 </home/joel/masters/img/planar/Graph2Case1Round2.png> </home/joel/masters/img/planar/Graph2Case1Round3.png>]
-<img/planar/Graph2Case2Round0.png, id=543, 1013.7875pt x 961.5925pt>
+<img/planar/Graph2Case2Round0.png, id=548, 1013.7875pt x 961.5925pt>
 File: img/planar/Graph2Case2Round0.png Graphic file (type png)
 <use img/planar/Graph2Case2Round0.png>
 Package pdftex.def Info: img/planar/Graph2Case2Round0.png  used on input line 141.
@@ -2149,7 +2151,7 @@ LaTeX Font Info:    Try loading font information for U+fplmbb on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<img/q_m_n/Q_7_8.pdf, id=588, 133.36424pt x 107.74051pt>
+<img/q_m_n/Q_7_8.pdf, id=593, 133.36424pt x 107.74051pt>
 File: img/q_m_n/Q_7_8.pdf Graphic file (type pdf)
 <use img/q_m_n/Q_7_8.pdf>
 Package pdftex.def Info: img/q_m_n/Q_7_8.pdf  used on input line 13.
@@ -2174,75 +2176,75 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 73.
 
-<img/q_m_n/diagram1.pdf, id=620, 233.1139pt x 112.38689pt>
+<img/q_m_n/diagram1.pdf, id=625, 233.1139pt x 112.38689pt>
 File: img/q_m_n/diagram1.pdf Graphic file (type pdf)
 <use img/q_m_n/diagram1.pdf>
 Package pdftex.def Info: img/q_m_n/diagram1.pdf  used on input line 91.
 (pdftex.def)             Requested size: 233.11333pt x 112.3866pt.
 [26]
-<img/q_m_n/z2_path_Pa.pdf, id=631, 232.14328pt x 85.54962pt>
+<img/q_m_n/z2_path_Pa.pdf, id=636, 232.14328pt x 85.54962pt>
 File: img/q_m_n/z2_path_Pa.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pa.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pa.pdf  used on input line 137.
 (pdftex.def)             Requested size: 232.1427pt x 85.54941pt.
-<img/q_m_n/z2_path_Pb.pdf, id=632, 232.14328pt x 85.54962pt>
+<img/q_m_n/z2_path_Pb.pdf, id=637, 232.14328pt x 85.54962pt>
 File: img/q_m_n/z2_path_Pb.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pb.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pb.pdf  used on input line 139.
 (pdftex.def)             Requested size: 232.1427pt x 85.54941pt.
-<img/q_m_n/z2_path_Pc.pdf, id=633, 232.14328pt x 85.54962pt>
+<img/q_m_n/z2_path_Pc.pdf, id=638, 232.14328pt x 85.54962pt>
 File: img/q_m_n/z2_path_Pc.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pc.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pc.pdf  used on input line 141.
 (pdftex.def)             Requested size: 232.1427pt x 85.54941pt.
-<img/q_m_n/z2_path_Pd.pdf, id=634, 232.39522pt x 85.54962pt>
+<img/q_m_n/z2_path_Pd.pdf, id=639, 232.39522pt x 85.54962pt>
 File: img/q_m_n/z2_path_Pd.pdf Graphic file (type pdf)
 <use img/q_m_n/z2_path_Pd.pdf>
 Package pdftex.def Info: img/q_m_n/z2_path_Pd.pdf  used on input line 143.
 (pdftex.def)             Requested size: 232.39464pt x 85.54941pt.
  [27 </home/joel/masters/img/q_m_n/diagram1.pdf>] [28 </home/joel/masters/img/q_m_n/z2_path_Pa.pdf> </home/joel/masters/img/q_m_n/z2_path_Pb.pdf> </home/joel/masters/img/q_m_n/z2_path_Pc.pdf> </home/joel/masters/img/q_m_n/z2_path_Pd.pdf>]
-<img/q_m_n/case_1_a_1.pdf, id=815, 242.54614pt x 94.45087pt>
+<img/q_m_n/case_1_a_1.pdf, id=820, 242.54614pt x 94.45087pt>
 File: img/q_m_n/case_1_a_1.pdf Graphic file (type pdf)
 <use img/q_m_n/case_1_a_1.pdf>
 Package pdftex.def Info: img/q_m_n/case_1_a_1.pdf  used on input line 171.
 (pdftex.def)             Requested size: 242.54555pt x 94.45062pt.
-<img/q_m_n/case_1_a_2.pdf, id=820, 252.53546pt x 89.98117pt>
+<img/q_m_n/case_1_a_2.pdf, id=825, 252.53546pt x 89.98117pt>
 File: img/q_m_n/case_1_a_2.pdf Graphic file (type pdf)
 <use img/q_m_n/case_1_a_2.pdf>
 Package pdftex.def Info: img/q_m_n/case_1_a_2.pdf  used on input line 207.
 (pdftex.def)             Requested size: 252.53484pt x 89.98094pt.
  [29 </home/joel/masters/img/q_m_n/case_1_a_1.pdf>]
-<img/q_m_n/case_1_b_1.pdf, id=853, 226.32054pt x 87.0452pt>
+<img/q_m_n/case_1_b_1.pdf, id=858, 226.32054pt x 87.0452pt>
 File: img/q_m_n/case_1_b_1.pdf Graphic file (type pdf)
 <use img/q_m_n/case_1_b_1.pdf>
 Package pdftex.def Info: img/q_m_n/case_1_b_1.pdf  used on input line 243.
 (pdftex.def)             Requested size: 226.31998pt x 87.04497pt.
  [30 </home/joel/masters/img/q_m_n/case_1_a_2.pdf>]
-<img/q_m_n/case_1_b_2.pdf, id=889, 231.20377pt x 86.1067pt>
+<img/q_m_n/case_1_b_2.pdf, id=894, 231.20377pt x 86.1067pt>
 File: img/q_m_n/case_1_b_2.pdf Graphic file (type pdf)
 <use img/q_m_n/case_1_b_2.pdf>
 Package pdftex.def Info: img/q_m_n/case_1_b_2.pdf  used on input line 281.
 (pdftex.def)             Requested size: 231.2032pt x 86.10648pt.
  [31 </home/joel/masters/img/q_m_n/case_1_b_1.pdf>]
-<img/q_m_n/case_2_a_1.pdf, id=922, 234.35054pt x 87.39351pt>
+<img/q_m_n/case_2_a_1.pdf, id=927, 234.35054pt x 87.39351pt>
 File: img/q_m_n/case_2_a_1.pdf Graphic file (type pdf)
 <use img/q_m_n/case_2_a_1.pdf>
 Package pdftex.def Info: img/q_m_n/case_2_a_1.pdf  used on input line 310.
 (pdftex.def)             Requested size: 234.34996pt x 87.39328pt.
  [32 </home/joel/masters/img/q_m_n/case_1_b_2.pdf> </home/joel/masters/img/q_m_n/case_2_a_1.pdf>]
-<img/q_m_n/case_2_a_2.pdf, id=987, 236.78764pt x 87.56314pt>
+<img/q_m_n/case_2_a_2.pdf, id=992, 236.78764pt x 87.56314pt>
 File: img/q_m_n/case_2_a_2.pdf Graphic file (type pdf)
 <use img/q_m_n/case_2_a_2.pdf>
 Package pdftex.def Info: img/q_m_n/case_2_a_2.pdf  used on input line 375.
 (pdftex.def)             Requested size: 236.78706pt x 87.56293pt.
  [33]
-<img/q_m_n/case_2_b_1.pdf, id=994, 226.24524pt x 85.50244pt>
+<img/q_m_n/case_2_b_1.pdf, id=999, 226.24524pt x 85.50244pt>
 File: img/q_m_n/case_2_b_1.pdf Graphic file (type pdf)
 <use img/q_m_n/case_2_b_1.pdf>
 Package pdftex.def Info: img/q_m_n/case_2_b_1.pdf  used on input line 410.
 (pdftex.def)             Requested size: 226.24467pt x 85.50221pt.
  [34 </home/joel/masters/img/q_m_n/case_2_a_2.pdf> </home/joel/masters/img/q_m_n/case_2_b_1.pdf>]
-<img/q_m_n/case_2_b_2.pdf, id=1056, 228.34108pt x 85.10295pt>
+<img/q_m_n/case_2_b_2.pdf, id=1061, 228.34108pt x 85.10295pt>
 File: img/q_m_n/case_2_b_2.pdf Graphic file (type pdf)
 <use img/q_m_n/case_2_b_2.pdf>
 Package pdftex.def Info: img/q_m_n/case_2_b_2.pdf  used on input line 460.
@@ -2260,12 +2262,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 496.
 
-<img/q_m_n/guarding1.pdf, id=1089, 299.88235pt x 86.73303pt>
+<img/q_m_n/guarding1.pdf, id=1094, 299.88235pt x 86.73303pt>
 File: img/q_m_n/guarding1.pdf Graphic file (type pdf)
 <use img/q_m_n/guarding1.pdf>
 Package pdftex.def Info: img/q_m_n/guarding1.pdf  used on input line 518.
 (pdftex.def)             Requested size: 299.8816pt x 86.7328pt.
-<img/q_m_n/guarding2.pdf, id=1090, 286.67603pt x 86.73303pt>
+<img/q_m_n/guarding2.pdf, id=1095, 286.67603pt x 86.73303pt>
 File: img/q_m_n/guarding2.pdf Graphic file (type pdf)
 <use img/q_m_n/guarding2.pdf>
 Package pdftex.def Info: img/q_m_n/guarding2.pdf  used on input line 519.
@@ -2310,11 +2312,11 @@ Chapter 4.
 
 
 ]
-<img/polygon/polygon_with_bfs_dismantling.pdf, id=1199, 143.8213pt x 104.81157pt>
+<img/polygon/polygon_with_bfs_dismantling.pdf, id=1204, 210.75037pt x 164.03282pt>
 File: img/polygon/polygon_with_bfs_dismantling.pdf Graphic file (type pdf)
 <use img/polygon/polygon_with_bfs_dismantling.pdf>
 Package pdftex.def Info: img/polygon/polygon_with_bfs_dismantling.pdf  used on input line 42.
-(pdftex.def)             Requested size: 107.86569pt x 78.60847pt.
+(pdftex.def)             Requested size: 210.74985pt x 164.0324pt.
 ) [42 </home/joel/masters/img/polygon/polygon_with_bfs_dismantling.pdf>]
 \openout2 = `appendices/appendix_planar_case4.aux'.
 
@@ -2326,12 +2328,12 @@ Appendix A.
 
 
 ] [44] [45] [46] [47] [48] [49]) [50]
-Overfull \hbox (0.66452pt too wide) in paragraph at lines 382--382
+Overfull \hbox (0.66452pt too wide) in paragraph at lines 385--385
 []\T1/ppl/m/n/10.95 A. Bon-ato and R. Nowa-kowski, \T1/ppl/m/it/10.95 The Game of Cops and Rob-bers on Graphs\T1/ppl/m/n/10.95 , ser. Stu-
  []
 
 
-Overfull \hbox (37.54472pt too wide) in paragraph at lines 382--382
+Overfull \hbox (37.54472pt too wide) in paragraph at lines 385--385
 \T1/ppl/m/n/10.95 dent math-e-mat-i-cal li-brary. Amer-i-can Math-e-mat-i-cal So-ci-ety, 2011, \T1/ppl/m/sc/10.95 isbn\T1/ppl/m/n/10.95 : 9780821853474. 
  []
 
@@ -2340,12 +2342,12 @@ Overfull \hbox (37.54472pt too wide) in paragraph at lines 382--382
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
  [52]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
  (/home/joel/masters/main.aux (/home/joel/masters/sections/introduction.aux) (/home/joel/masters/sections/planar.aux) (/home/joel/masters/sections/Q_m_n.aux) (/home/joel/masters/sections/conclusion.aux) (/home/joel/masters/appendices/appendix_planar_case4.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6F411E37DCCDCAD326B101084E72F2CB;4167.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -2353,18 +2355,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35940 strings out of 492982
- 720098 string characters out of 6134895
- 975879 words of memory out of 5000000
- 38824 multiletter control sequences out of 15000+600000
- 604588 words of font info for 178 fonts, out of 8000000 for 9000
+ 35945 strings out of 492982
+ 720177 string characters out of 6134895
+ 976533 words of memory out of 5000000
+ 38829 multiletter control sequences out of 15000+600000
+ 604845 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,22n,82p,10377b,2219s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/joel/masters/main.pdf (68 pages, 1322000 bytes).
+Output written on /home/joel/masters/main.pdf (68 pages, 1322906 bytes).
 PDF statistics:
- 1362 PDF objects out of 1440 (max. 8388607)
- 922 compressed objects within 10 object streams
+ 1367 PDF objects out of 1440 (max. 8388607)
+ 927 compressed objects within 10 object streams
  204 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
