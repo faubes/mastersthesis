@@ -1,0 +1,94 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BMPGP16}
+
+\bibitem[AAD{\etalchar{+}}11]{aichholzer2011convexifying}
+Oswin Aichholzer, Greg Aloupis, Erik~D Demaine, Martin~L Demaine, Vida
+  Dujmovic, Ferran Hurtado, Anna Lubiw, G{\"u}nter Rote, Andr{\'e} Schulz,
+  Diane~L Souvaine, et~al., \emph{Convexifying polygons without losing
+  visibilities.}, CCCG, 2011.
+
+\bibitem[AF84]{aigner1984game}
+Martin Aigner and Michael Fromme, \emph{A game of cops and robbers}, Discrete
+  Applied Math\-ematics \textbf{8} (1984), no.~1, 1--12.
+
+\bibitem[BDFM11]{beveridge2011cops}
+Andrew Beveridge, Andrzej Dudek, Alan Frieze, and Tobias M{\"u}ller, \emph{Cops
+  and robbers on geometric graphs}, arXiv preprint arXiv:1108.2549 (2011).
+
+\bibitem[BI93]{berarducci1993cop}
+Alessandro Berarducci and Benedetto Intrigila, \emph{On the cop number of a
+  graph}, Advances in Applied Mathematics \textbf{14} (1993), no.~4, 389--403.
+
+\bibitem[BMPGP16]{bonato2016probabilistic}
+Anthony Bonato, Dieter Mitsche, Xavier P{\'e}rez-Gim{\'e}nez, and Pawe{\l}
+  Pra{\l}at, \emph{A probabilistic version of the game of zombies and survivors
+  on graphs}, Theoretical Computer Science \textbf{655} (2016), 2--14.
+
+\bibitem[BNk11]{bonato2011game}
+A.~Bonato and R.J. Nowa\-kowski, \emph{The game of cops and robbers on graphs},
+  Student mathematical library, American Mathematical Society, 2011.
+
+\bibitem[Cla02]{clarke2002constrained}
+Nancy Elaine~Blanche Clarke, \emph{Constrained cops and robber.}
+
+\bibitem[ES20]{erlebach2020game}
+Thomas Erlebach and Jakob~T Spooner, \emph{A game of cops and robbers on graphs
+  with periodic edge-connectivity}, International Conference on Current Trends
+  in Theory and Practice of Informatics, Springer, 2020, pp.~64--75.
+
+\bibitem[FHMP16]{fitzpatrick2016deterministic}
+SL~Fitzpatrick, J~Howell, ME~Messinger, and DA~Pike, \emph{A deterministic
+  version of the game of zombies and survivors on graphs}, Discrete Applied
+  Mathematics \textbf{213} (2016), 1--12.
+
+\bibitem[Fit18]{fitzpatrick2018game}
+Shannon~L Fitzpatrick, \emph{The game of zombies and survivors on the cartesian
+  products of trees}, arXiv preprint arXiv:1806.04628 (2018).
+
+\bibitem[Fra87]{frankl1987cops}
+Peter Frankl, \emph{Cops and robbers in graphs with large girth and cayley
+  graphs}, Discrete Applied Mathematics \textbf{17} (1987), no.~3, 301--305.
+
+\bibitem[GGJ{\etalchar{+}}18]{gavenvciak2018cops}
+Tom{\'a}{\v{s}} Gaven{\v{c}}iak, Przemys{\l}aw Gordinowicz, V{\'\i}t
+  Jel{\'\i}nek, Pavel Klav{\'\i}k, and Jan Kratochv{\'\i}l, \emph{Cops and
+  robbers on intersection graphs}, European Journal of Combinatorics
+  \textbf{72} (2018), 45--69.
+
+\bibitem[GKS18]{gromovikov2018fully}
+Ilya Gromovikov, William~B Kinnersley, and Ben Seamone, \emph{Fully active cops
+  and robbers}, arXiv preprint arXiv:1808.06734 (2018).
+
+\bibitem[HM03]{hahn2003characterisation}
+Gena Hahn and Gary MacGillivray, \emph{A characterisation of k-cop-win graphs
+  and digraphs}.
+
+\bibitem[LSV17]{lubiw2017visibility}
+Anna Lubiw, Jack Snoeyink, and Hamideh Vosoughpour, \emph{Visibility graphs,
+  dismantlability, and the cops and robbers game}, Computational Geometry
+  \textbf{66} (2017), 14--27.
+
+\bibitem[NW83]{nowakowski1983vertex}
+Richard Nowakowski and Peter Winkler, \emph{Vertex-to-vertex pursuit in a
+  graph}, Discrete Mathematics \textbf{43} (1983), no.~2-3, 235--239.
+
+\bibitem[Pra19]{pralat2019many}
+Pawe{\l} Pra{\l}at, \emph{How many zombies are needed to catch the survivor on
+  toroidal grids?}, Theoretical Computer Science \textbf{794} (2019), 3--11.
+
+\bibitem[Qui78]{quilliot1978jeux}
+Alain Quilliot, \emph{Jeux et pointes fixes sur les graphes}, Ph.D. thesis, Ph.
+  D. Dissertation, Universit{\'e} de Paris VI, 1978.
+
+\bibitem[Sch01]{schroder2001copnumber}
+Bernd~SW Schr{\"o}der, \emph{The copnumber of a graph is bounded by [3/2 genus
+  (g)]+ 3}, Categorical perspectives, Springer, 2001, pp.~243--263.
+
+\end{thebibliography}

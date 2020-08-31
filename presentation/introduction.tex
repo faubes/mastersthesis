@@ -1,0 +1,47 @@
+\begin{frame}{Games on Graphs}
+  \centering
+    \includegraphics<1>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_1}
+    \note<1>[item]{Graphs model networks, maps, relationships}
+    \includegraphics<2>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_2}
+    \note<2>[item]{Vertex-pursuit games are perfect information adversarial games played on graphs.}
+    \note<2>[item]{Set of nodes connected by edges or arcs}
+    \note<2>[item]{Model movement, strategy, coordination of agents}
+    \note<2>[item]{Variety of games: catching agents, containing fires/infection, intercepting messages, graph exploration}
+    \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_3}
+    \note<3>[item]{Focus here is on Zombies and Survivors, a variety of Cops and Robbers.}
+    \note<3>[item]{One team pursues the other team, who seek to evade.}
+    \note<3>[item]{Perfect information}
+    \includegraphics<4>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_4}
+    \note<4>[item]{Connected, finited and reflexive graphs.}
+    \note<4>[item]{Reflexive: every vertex has a loop; players may pass/stay in place. }
+    \includegraphics<5>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_5}
+    \note<5>[item]{Rules: Two players: one plays as cop(s), the other as robber(s).}
+    \note<5>[item]{Cops pick starting vertices, followed by robbers.}
+    \note<5>[item]{Players take turns; moving player tokens from vertex to neighbour.}
+    \includegraphics<6>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_6}
+    \includegraphics<7>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_7}
+    \includegraphics<8>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_8}
+    \includegraphics<9>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_9}
+    \includegraphics<10>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_10}
+    \note[item]<10>{Cops win if robber(s) are captured.}
+    \note[item]<10>{Robber(s) win if can evade indefinitely.}
+    \note[item]<10>{Cops and Robbers was first introduced by Quilliot in late 70's.}
+\end{frame}
+
+\begin{frame}{Zombies and Survivors}
+  \includegraphics<1>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_1}
+  \note[item]<1>{Twist on Cops and Robbers invented by Fitzpatrick in 2016.}
+  \note[item]<1>{Same game, with zombies replacing cops. Only difference: zombies \textit{must} move closer to the survivor.}
+  \includegraphics<2>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_2}
+  \note[item]<2>{On their turn, zombies compute shortest path (geodesic) to survivor.}
+  \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_3}
+  \note[item]<3>{May be multiple such paths. Interested in worst-case scenarios.}
+\end{frame}
+
+\begin{frame}{Cop-Number and Zombie-Number}
+\begin{itemize}
+  \item<1-> Cop-Number $c(G)$ number of cops needed to guarantee a win on $G$.
+  \item<2-> Zombie-Number $z(G)$ number of zombies needed to guarantee a win on $G$.
+  \note[item]<2>{Under optimal play assumption. If winning sequence of moves (a winning zombie- or cop-play) exists.}
+\end{itemize}
+\end{frame}

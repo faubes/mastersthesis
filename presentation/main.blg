@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: amsalpha.bst
+Database file #1: presentation_references.bib.bib
+Warning--missing pages in beveridge2011cops
+Warning--missing journal name in clarke2002constrained
+Warning--missing journal, volume, and year in clarke2002constrained
+Warning--missing pages in clarke2002constrained
+Warning--missing pages in fitzpatrick2018game
+Warning--missing pages in gromovikov2018fully
+Warning--missing journal name in hahn2003characterisation
+Warning--missing journal, volume, and year in hahn2003characterisation
+Warning--missing pages in hahn2003characterisation
+You've used 19 entries,
+            2624 wiz_defined-function locations,
+            668 strings with 7375 characters,
+and the built_in function-call counts, 7549 in all, are:
+= -- 686
+> -- 405
+< -- 6
++ -- 148
+- -- 140
+* -- 650
+:= -- 1255
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 127
+chr.to.int$ -- 19
+cite$ -- 28
+duplicate$ -- 298
+empty$ -- 538
+format.name$ -- 163
+if$ -- 1481
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 38
+newline$ -- 68
+num.names$ -- 57
+pop$ -- 146
+preamble$ -- 1
+purify$ -- 146
+quote$ -- 0
+skip$ -- 220
+stack$ -- 0
+substring$ -- 374
+swap$ -- 42
+text.length$ -- 6
+text.prefix$ -- 6
+top$ -- 0
+type$ -- 148
+warning$ -- 9
+while$ -- 75
+width$ -- 27
+write$ -- 203
+(There were 9 warnings)

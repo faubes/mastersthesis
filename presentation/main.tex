@@ -1,8 +1,8 @@
 \documentclass{beamer} %
 \usepackage{pgfpages}
-%\setbeameroption{hide notes} % Only slides
+\setbeameroption{hide notes} % Only slides
 %\setbeameroption{show only notes} % Only notes
-\setbeameroption{show notes on second screen=bottom} % Both
+%\setbeameroption{show notes on second screen=bottom} % Both
 \usetheme{CambridgeUS}
 \usepackage[latin1]{inputenc}
 \usefonttheme{professionalfonts}
@@ -12,6 +12,9 @@
 \usepackage{amssymb}
 \usepackage{verbatim}
 \usepackage{graphicx}
+
+\graphicspath{ {img/} }
+
 \usepackage{csquotes}
 % \usetikzlibrary{arrows,shapes}
 %\usepackage{media9} % for animation
@@ -21,18 +24,36 @@
 
 \DeclareMathOperator{\EX}{\mathbb{E}}
 
-
 \author{Jo\"el Faubert}
 \title{Zombies and Survivors on Graphs}
+\institute{University of Ottawa}
+\date{\today}
+
 
 \begin{document}
 
+\nocite{*}
+%\everymath{\displaystyle}
+
 \begin{comment}
 :Title: Thesis defense: Zombies and Survivors on Graphs
-:Tags: Thesis; vertex pursuit games;
+:Tags: Thesis; vertex-pursuit games; graphs
 \end{comment}
 
-\everymath{\displaystyle}
+\begin{frame}
+ \titlepage
+ %\note[item]{Two new results concerning the Game of Zombies and Survivors, a variant of the classic Cops and Robbers game, first introduced and studied by Quilliot and Nowakowski in the late 70s}
+ %\note[item]{This is a joint work between myself and my supervisor, Professor De Carufel}
+\end{frame}
+
+\begin{frame}{Outline}
+ \tableofcontents
+ \note[item]{Plan:}
+ \note[item]{Intro (3-4 mins): Graphs, Pursuit Games, What is Known}
+ \note[item]{Planar zombies? (3-4 mins)}
+ \note[item]{Cycle with one chord (10 mins)}
+ \note[item]{Conclusion (3-4 mins): Open questions, generalizations, research directions}
+\end{frame}
 
 \section{Intro}
 \input{introduction.tex}
@@ -46,7 +67,7 @@
 \section{Conclusion}
 \input{conclusion.tex}
 
-\section{References}
-\input{references.tex}
+%\section{References}
+%\input{references.tex}
 
 \end{document}
