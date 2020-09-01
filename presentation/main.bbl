@@ -26,6 +26,10 @@ Andrew Beveridge, Andrzej Dudek, Alan Frieze, and Tobias M{\"u}ller, \emph{Cops
 Alessandro Berarducci and Benedetto Intrigila, \emph{On the cop number of a
   graph}, Advances in Applied Mathematics \textbf{14} (1993), no.~4, 389--403.
 
+\bibitem[BM17]{bonato2017topological}
+Anthony Bonato and Bojan Mohar, \emph{Topological directions in cops and
+  robbers}, arXiv preprint arXiv:1709.09050 (2017).
+
 \bibitem[BMPGP16]{bonato2016probabilistic}
 Anthony Bonato, Dieter Mitsche, Xavier P{\'e}rez-Gim{\'e}nez, and Pawe{\l}
   Pra{\l}at, \emph{A probabilistic version of the game of zombies and survivors
@@ -61,6 +65,10 @@ Tom{\'a}{\v{s}} Gaven{\v{c}}iak, Przemys{\l}aw Gordinowicz, V{\'\i}t
   Jel{\'\i}nek, Pavel Klav{\'\i}k, and Jan Kratochv{\'\i}l, \emph{Cops and
   robbers on intersection graphs}, European Journal of Combinatorics
   \textbf{72} (2018), 45--69.
+
+\bibitem[GHL16]{gera2016graph}
+Ralucca Gera, Stephen Hedetniemi, and Craig Larson, \emph{Graph theory:
+  Favorite conjectures and open problems-1}, Springer, 2016.
 
 \bibitem[GKS18]{gromovikov2018fully}
 Ilya Gromovikov, William~B Kinnersley, and Ben Seamone, \emph{Fully active cops

@@ -1,3 +1,6 @@
 \beamer@sectionintoc {1}{Intro}{3}{0}{1}
-\beamer@sectionintoc {2}{Planar Zombies}{18}{0}{2}
-\beamer@sectionintoc {3}{Cycle With One Chord}{18}{0}{3}
+\beamer@sectionintoc {2}{Planar Zombies}{24}{0}{2}
+\beamer@sectionintoc {3}{Cycle With One Chord}{29}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{50}{0}{4}
+\beamer@sectionintoc {5}{Other Results}{54}{0}{5}
+\beamer@sectionintoc {6}{References}{61}{0}{6}

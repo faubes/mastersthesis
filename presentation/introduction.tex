@@ -1,27 +1,36 @@
 \begin{frame}{Games on Graphs}
   \centering
-    \includegraphics<1>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_1}
+    \includegraphics<1>[width=0.95\textwidth, height=0.95\textheight, keepaspectratio]{intro/cops_and_robbers_1}
     \note<1>[item]{Graphs model networks, maps, relationships}
-    \includegraphics<2>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_2}
+
+    \includegraphics<2>[width=0.95\textwidth, height=0.95\textheight, keepaspectratio]{intro/cops_and_robbers_2}
     \note<2>[item]{Vertex-pursuit games are perfect information adversarial games played on graphs.}
     \note<2>[item]{Set of nodes connected by edges or arcs}
     \note<2>[item]{Model movement, strategy, coordination of agents}
     \note<2>[item]{Variety of games: catching agents, containing fires/infection, intercepting messages, graph exploration}
+
     \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_3}
     \note<3>[item]{Focus here is on Zombies and Survivors, a variety of Cops and Robbers.}
     \note<3>[item]{One team pursues the other team, who seek to evade.}
     \note<3>[item]{Perfect information}
+
     \includegraphics<4>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_4}
     \note<4>[item]{Connected, finited and reflexive graphs.}
     \note<4>[item]{Reflexive: every vertex has a loop; players may pass/stay in place. }
+
     \includegraphics<5>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_5}
     \note<5>[item]{Rules: Two players: one plays as cop(s), the other as robber(s).}
     \note<5>[item]{Cops pick starting vertices, followed by robbers.}
     \note<5>[item]{Players take turns; moving player tokens from vertex to neighbour.}
+
     \includegraphics<6>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_6}
+
     \includegraphics<7>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_7}
+
     \includegraphics<8>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_8}
+
     \includegraphics<9>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_9}
+
     \includegraphics<10>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_10}
     \note[item]<10>{Cops win if robber(s) are captured.}
     \note[item]<10>{Robber(s) win if can evade indefinitely.}
@@ -29,19 +38,99 @@
 \end{frame}
 
 \begin{frame}{Zombies and Survivors}
+  \centering
   \includegraphics<1>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_1}
-  \note[item]<1>{Twist on Cops and Robbers invented by Fitzpatrick in 2016.}
+  \note[item]<1>{Twist on Cops and Robbers invented by \cite{fitzpatrick2016deterministic}.}
   \note[item]<1>{Same game, with zombies replacing cops. Only difference: zombies \textit{must} move closer to the survivor.}
   \includegraphics<2>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_2}
   \note[item]<2>{On their turn, zombies compute shortest path (geodesic) to survivor.}
   \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_3}
-  \note[item]<3>{May be multiple such paths. Interested in worst-case scenarios.}
+  \note[item]<3>{May be multiple such paths. Could be resolved by coin flip (probabilistic).}
+  \note[item]<3>{Assume Zombies play optimally, as though they were coordinated and saw the future.}
+  \note[item]<3>{Consider worst-case scenarios: if choice offered, and one of the possible outcomes leads to survivor capture, then that is considered a zombie win.}
+
 \end{frame}
 
 \begin{frame}{Cop-Number and Zombie-Number}
+\begin{columns}
+  \column{0.48\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.45\textwidth, keepaspectratio]{copwin_tree/copwin_but_notzombie_win}
+      \caption{Cop-win but not zombie-win \cite{fitzpatrick2016deterministic})\label{copwin_but_not_zombiewin}}
+  \end{figure}
+  \column{0.48\textwidth}
 \begin{itemize}
   \item<1-> Cop-Number $c(G)$ number of cops needed to guarantee a win on $G$.
   \item<2-> Zombie-Number $z(G)$ number of zombies needed to guarantee a win on $G$.
   \note[item]<2>{Under optimal play assumption. If winning sequence of moves (a winning zombie- or cop-play) exists.}
 \end{itemize}
+\begin{lemma}<3->
+For any graph $G$, $c(G) \leq z(G)$.
+\end{lemma}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cop-Number and Zombie-Number}
+  \centering
+  \begin{table}
+\begin{tabular}{c | c | c}
+  $G$ & $c(G)$ & $z(G)$ \\
+  \hline
+  $T$ tree (acyclic) & 1 & 1 \\
+  $C_3$ & 1 & 1 \\
+  $C_n$ ($n \geq 4$) & 2 & 2 \\
+  $K_n$ ($n \geq 1$) & 1 & 1 \\
+  $K_{n,m}$ ($n,m \geq 2$) & 2 & 2 \\
+  $G$ planar & 3 & \only<1>{?} \only<2>{at least 4} \\
+  $G$ outerplanar & 2 & \only<1>{?} \only<2>{at least 3}
+\end{tabular}
+\caption{Cop and zombie number of a few graph families}
+\end{table}
+\end{frame}
+
+\begin{frame}{Zombies vs. Cops on Planar Graphs}
+A graph is planar if it can be \textit{embedded in the plane}.
+
+\vspace{1cm}
+
+Aigner and Fromme \cite{aigner1984game} described a winning 3 cop strategy: enclose the robber into a shrinking \textit{territory} using \textit{isometric paths}.
+
+\vspace{1cm}
+
+In next section, present a planar graph where 3 zombies lose.
+
+\note[item]{Planar: Drawn on the plane such that edge crossings occur only at endpoints (vertices).}
+\note[item]{For planar graphs, geodesics are isometric; allows guarding}
+\note[item]{Constricting isometric paths strategy}
+\note[item]{2 cops guard 2 isometric paths with same endpoints, forming cycle enclosing robber territory}
+\note[item]{Third cop moves to guard a new path in the robber territory, halving it}
+\note[item]{Not surprising zombies not as effective; cannot implement strategies.}
+\end{frame}
+
+\begin{frame}{On Outerplanar Graphs}
+  \begin{columns}[onlytextwidth,T]
+    \column{0.48\textwidth}
+  A graph is \textit{outerplanar} if it can be \textit{embedded in a cycle on the plane} such that
+  its vertices are all adjacent to the \textit{outer face}.
+
+  \vspace{0.5cm}
+
+  In \cite{clarke2002constrained}, Clarke showed that 2 cops suffice to win on outerplanar graphs.
+  \column{0.48\textwidth}
+  \begin{figure}
+    \includegraphics[width=0.8\textwidth]{intro/outer_planar_1}
+    \caption{An outerplanar graph}
+  \end{figure}
+  \end{columns}
+  \note[item]{Clarke's proof considers two cases: blocks with and without cut vertices}
+\end{frame}
+
+\begin{frame}{Zombies vs Cops on Outerplanar Graphs}
+  But 2 zombies lose on this outer-planar graph \ref{zombie_number_differ}.
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth, keepaspectratio]{intro/cop_and_zombie_number_fitzpatrick_fig_2}
+    \caption{Two cops win but two zombies lose (Fig 2 of \cite{fitzpatrick2016deterministic})\label{zombie_number_differ}}
+\end{figure}
 \end{frame}

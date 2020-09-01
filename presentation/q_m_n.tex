@@ -1,38 +1,285 @@
 \begin{frame}{On a cycle with one chord}
-  \begin{columns}[onlytextwidth,T]
-  \column{\dimexpr\linewidth/2-2.5mm}
-  \begin{figure}
-  \includegraphics[width=0.8\textwidth]{q_m_n/Q_7_8.pdf}
-  \caption{$Q_{7,8}$}
-  \end{figure}
-  \column{\dimexpr\linewidth/2-2.5mm}
-  \begin{figure}
-  \includegraphics[width=0.8\textwidth]{q_m_n/Q_m_n_basic.png}
-  \caption{$Q_{m,n}$}
-  \end{figure}
-  \end{columns}
-
-\end{frame}
-
-\begin{frame}{Possible $z_2s$-paths}
 \begin{columns}[onlytextwidth,T]
 \column{\dimexpr\linewidth/2-2.5mm}
 \begin{figure}
-\includegraphics[width=0.8\textwidth]{q_m_n/z2_path_Pa.pdf}
-\caption{Path A}
-\end{figure}
-\begin{figure}
-\includegraphics[width=0.8\textwidth]{q_m_n/z2_path_Pc.pdf}
-\caption{Path C}
+\includegraphics[width=0.8\textwidth]{q_m_n/Q_7_8.pdf}
+\caption{$Q_{7,8}$}
 \end{figure}
 \column{\dimexpr\linewidth/2-2.5mm}
 \begin{figure}
-\includegraphics[width=0.8\textwidth]{q_m_n/z2_path_Pb.pdf}
-\caption{Path B}
-\end{figure}
-\begin{figure}
-\includegraphics[width=0.8\textwidth]{q_m_n/z2_path_Pd.pdf}
-\caption{Path D}
+\includegraphics[width=0.8\textwidth]{q_m_n/Q_m_n_basic.png}
+\caption{$Q_{m,n}$}
 \end{figure}
 \end{columns}
+\end{frame}
+
+\begin{frame}{2-zombie-win strategy}
+\begin{figure}
+\includegraphics[height=0.38\textheight, keepaspectratio]{q_m_n/Q_m_n_strategy.pdf}
+\caption{A winning 2-zombie start for a cycle with one chord.}
+\end{figure}
+where
+\[ k = \left\lfloor \frac{n - 2 \left\lfloor\frac{m}{2}\right\rfloor +3}{4} \right\rfloor. \]
+\end{frame}
+
+\begin{frame}{Proof: Cornering the survivor on $C_{m+1}$}
+\begin{figure}
+\centering
+\includegraphics{q_m_n/diagram1}
+\caption{$z_1$ on $v$, $z_2$ is $\Delta$ away from $u$, and $s$ on $P_m$ \label{fig:onthechord}}
+\end{figure}
+\note[item]{Assuming this scenario, what values of $\Delta$ ensure $s$ is captured.}
+\note[item]{Choice of $\ell$ and $\Delta$ determine length of shortest paths for zombies.}
+\end{frame}
+
+\begin{frame}{Which way do the Zombies turn?}
+Depends on value of $2 \leq \ell \leq m-1$.
+\begin{figure}
+\centering
+\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/z1_path_Pa}
+\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/z1_path_Pb}
+\caption{Clockwise or Counter-clockwise}
+\end{figure}
+\note[item]{Take the chord go counter-clockwise}
+\note[item]{or step onto $P_m$ clockwise}
+\end{frame}
+
+\begin{frame}{Possible $z_2s$-paths}
+
+Depends on value of $\ell$ and $\Delta$.
+\begin{columns}[onlytextwidth, T]
+\column{0.48\textwidth}
+\begin{figure}
+\includegraphics[width=0.95\textwidth, keepaspectratio]{q_m_n/z2_path_Pa}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.95\textwidth, keepaspectratio]{q_m_n/z2_path_Pb}
+\end{figure}
+
+\column{0.48\textwidth}
+\begin{figure}
+\includegraphics[width=0.95\textwidth, keepaspectratio]{q_m_n/z2_path_Pc}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.95\textwidth, keepaspectratio]{q_m_n/z2_path_Pd}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Path lengths}
+Four possible paths for $z_2$:
+\vspace{1cm}
+\begin{itemize}
+\item $|P_a| = \Delta + (m - \ell)$,
+\item $|P_b| = \Delta + 1 + \ell$,
+\item $|P_c| = (n-\Delta) + 1 + (m-\ell)$,
+\item $|P_d| = (n-\Delta) + \ell$,
+\end{itemize}
+
+\vspace{1cm}
+but only two possible choices: CW or CCW.
+
+\end{frame}
+
+\begin{frame}{Gives four possible cases}
+\begin{columns}[onlytextwidth, T]
+\column{0.48\textwidth}
+\begin{figure}
+  \includegraphics[width=0.9\textwidth, keepaspectratio]{q_m_n/case_1_a_1}
+  \caption{Case I.A.}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=0.9\textwidth, keepaspectratio]{q_m_n/case_1_b_1}
+  \caption{Case I.B.}
+\end{figure}
+\column{0.48\textwidth}
+\begin{figure}
+  \includegraphics[width=0.9\textwidth, keepaspectratio]{q_m_n/case_2_a_1}
+  \caption{Case II.A.}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=0.9\textwidth, keepaspectratio]{q_m_n/case_2_b_1}
+  \caption{Case II.B.}
+\end{figure}
+\end{columns}
+\note[item]{Paths which can be compared using inequalities.}
+\end{frame}
+
+
+\begin{frame}{Assumptions I or II, A or B}
+
+\[ 2 \leq \ell \leq m-1 \tag{1} \label{bounds on ell} \]
+
+$z_1$ goes clockwise if $\ell \leq 1 + m - \ell$. Combined with \ref{bounds on ell}, we have
+\[ 4 \leq 2 \ell \leq m + 1 \tag{A} \label{assumption a} . \]
+
+$z_1$ goes counter-clockwise if $1 + m - \ell \leq \ell$. Combined \ref{bounds on ell}, we obtain
+\[ m + 1 \leq 2 \ell \leq 2m - 2 \tag{B} \label{assumption b} . \]
+
+$z_2$ moves counter-clockwise if either
+\[ |P_a| \leq \min \{ |P_c|, |P_d| \}\qquad \text{or} \qquad |P_b| \leq \min \{ |P_c|, |P_d| \} \tag{I} \label{assumption i} . \]
+
+$z_2$ goes clockwise if either
+\[ |P_c| \leq \min \{ |P_a|, |P_b| \}\qquad \text{or} \qquad |P_d| \leq \min \{ |P_a|, |P_b| \} \tag{II} \label{assumption ii}. \]
+\end{frame}
+
+\begin{frame}{Case I.A.}
+\begin{figure}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{q_m_n/case_1_a_1}
+\caption{Case I.A.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case I.A. Inequalities}
+Constraints on $\ell$ from \ref{assumption a}
+\[ 4 \leq 2 \ell \leq m + 1 \]
+Constraints on $\Delta$ from \ref{assumption i}
+\begin{align*}
+ \Delta + (m - \ell) &\leq n - \Delta + 1 + m - \ell && \text{and} \\
+ \Delta + (m - \ell) &\leq n - \Delta + \ell
+\end{align*}
+\begin{center}or\end{center}
+\begin{align*}
+ \Delta + 1 + \ell &\leq n - \Delta + 1 + m - \ell && \text{and} \\
+ \Delta + 1 + \ell &\leq n - \Delta + \ell .
+\end{align*}
+\end{frame}
+
+\begin{frame}{Combined and simplified}
+For $z_2$ to go counter-clockwise (following either $P_a$ or $P_b$) we must have
+\centering
+\[ 2 \Delta \leq n - m + 2\ell \]
+or
+\[ 2 \Delta \leq n - 1 .\]
+\end{frame}
+
+\begin{frame}{Outcome}
+What happens $\Delta$ turns later?
+\begin{figure}
+\includegraphics[height=0.3\textheight, keepaspectratio]{q_m_n/case_1_a_1}
+\includegraphics[height=0.3\textheight, keepaspectratio]{q_m_n/case_1_a_2}
+\caption{Case I.A. before/after $\Delta$ rounds}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Winning Condition}
+\begin{columns}
+\column{0.48\textwidth}
+If $\Delta = m - \ell$ both $z_2$ and $s$ reach $u$ on the same round,
+with the survivor moving onto the zombie-occupied vertex (and losing).
+
+If we have $\Delta = m - \ell + 1$, then $s$ reaches $u$ first
+but is caught by $z_2$ on the following round.
+
+So, to guarantee the survivor has not escaped $P_m$ we need
+
+\[ \Delta \leq m- \ell + 1 .\]
+
+\column{0.48\textwidth}
+\begin{figure}
+\includegraphics[height=0.3\textheight, width=0.8\textwidth, keepaspectratio]{q_m_n/case_1_a_2}
+\caption{Case I.A. after $\Delta$ rounds}
+\end{figure}
+\end{columns}
+\note[item]{otherwise the survivor can reach the chord at least two rounds
+before $z_2$ can move to block.}
+\end{frame}
+
+\begin{frame}{Win Condition II}
+\begin{columns}
+\column{0.48\textwidth}
+Must also ensure that $z_2$ moves counter-clockwise (opposite to $z_1$) once it reaches $u$ in order to trap the survivor. So we also need
+\[ m - \ell - \Delta \leq 1 + \Delta + \ell \]
+Or, in terms of $\Delta$,
+\[ 2 \Delta \geq m - 2\ell  -1 . \]
+\column{0.48\textwidth}
+
+\begin{figure}
+\includegraphics[height=0.3\textheight, width=0.8\textwidth, keepaspectratio]{q_m_n/case_1_a_2}
+\caption{Case I.A. after $\Delta$ rounds}
+\end{figure}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\begin{columns}[T]
+\column{0.49\textwidth}
+\begin{block}{Case I.A.}
+$z_1$ clockwise: $4 \leq 2 \ell \leq m + 1$ \\
+$z_2$ counter-clockwise: \\
+$2 \Delta \leq n - m + 2\ell$ or $2 \Delta \leq n - 1$ \\
+zombies win: \\
+$2 \Delta \leq 2 m- 2 \ell + 2$ and \\
+$m - 2\ell  -1 \leq 2 \Delta$ \\
+\end{block}
+\vfill
+\begin{block}{Case I.B.}
+$z_1$ counter-clockwise: $ m + 1 \leq 2 \ell \leq 2m - 2 $ \\
+$z_2$ counter-clockwise: \\
+$ 2 \Delta \leq n + 1$ or $2 \Delta \leq n + m - 2\ell$ \\
+zombies win: \\
+$ \Delta \leq 2 \ell$ and \\
+$2\ell - m + 1 \leq 2 \Delta$ \\
+\end{block}
+\column{0.49\textwidth}
+\begin{block}{Case II.A.}
+$z_1$ clockwise: $ 4 \leq 2 \ell \leq m + 1$ \\
+$z_2$ clockwise: \\
+$ n -m + 2\ell \leq 2 \Delta$ and $n-1 \leq 2 \Delta$ \\
+zombies win: \\
+$2 \Delta \geq 2n - 2m + 2\ell$ and \\
+$2 \Delta \leq 2n + 2\ell - m - 1$ \\
+\end{block}
+\vfill
+\begin{block}{Case II.B.}
+$z_1$ counter-clockwise: $ m + 1 \leq 2 \ell \leq 2m - 2$ \\
+$z_2$ clockwise: \\
+$ n+1 \leq 2 \Delta $ \\
+zombies win: \\
+$ n - \Delta \leq \ell + 1$ and $2 \Delta \leq 2n + m - 2\ell + 1$ \\
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Guarding $C_{n+1}$}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.75]{q_m_n/guarding1}
+
+    \vspace{1cm}
+
+    \includegraphics[scale=0.75]{q_m_n/guarding2}
+    \caption{Preventing the zombies from turning in same direction on $C_{m+1}$\label{fig:guarding}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Guarding $C_{n+1}$ II}
+To ensure zombies turn in opposite directions, we need:
+  \begin{align*}
+   n - \Delta - 2k - 2 &\leq \Delta + k +1 + k +2 && \text{and} \\
+   \Delta + 2k -1 &\leq n - \Delta -2k +2 .
+  \end{align*}
+  Solving for $k$ gives
+  \[ n - 2\Delta -5 \leq 4k \leq n - 2\Delta +3 \]
+\end{frame}
+
+\begin{frame}{How the strategy works}
+  \begin{columns}
+    \column{0.48\textwidth}
+    \begin{figure}
+    \includegraphics[width=0.8\textwidth]{q_m_n/Q_m_n_strategy.pdf}
+    \caption{A winning 2-zombie start for a cycle with one chord.}
+    \end{figure}
+    where
+    \[ k = \left\lfloor \frac{n - 2 \left\lfloor\frac{m}{2}\right\rfloor +3}{4} \right\rfloor. \]
+
+    \column{0.48\textwidth}
+    \begin{itemize}
+      \item<1-> If $s$ starts between the two zombies on $C_{n+1}$ -- on subpath that does not include the chord -- then survivor loses.
+      \item<2-> Otherwise, $s$ must be on other half of $C_{n+1}$ or on $C_{m+1}$.
+      \item<3-> Pushed by zombies onto $P_m$.
+      \item<4-> Falls into $\Delta$ trap after $k$ turns.
+    \end{itemize}
+  \end{columns}
 \end{frame}
