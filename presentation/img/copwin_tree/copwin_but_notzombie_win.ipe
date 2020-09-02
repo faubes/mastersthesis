@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20200524162736" modified="D:20200524163131"/>
+<info created="D:20200524162736" modified="D:20200902141613"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -253,8 +253,9 @@ h
 </ipestyle>
 <page>
 <layer name="alpha"/>
-<view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="black">
+<layer name="beta"/>
+<view layers="alpha beta" active="beta"/>
+<path layer="alpha" matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 320 448 m
 275.777 508.868 l
 204.223 485.618 l
@@ -262,7 +263,7 @@ h
 275.777 387.132 l
 h
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 306.596 448 m
 271.635 496.12 l
 215.067 477.74 l
@@ -270,7 +271,7 @@ h
 271.635 399.88 l
 h
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 288 448 m
 265.889 478.434 l
 230.111 466.809 l
@@ -278,130 +279,145 @@ h
 265.889 417.566 l
 h
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 485.618 m
 230.111 466.809 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 508.868 m
 265.889 478.434 l
 265.889 478.434 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 320 448 m
 288 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 387.132 m
 265.889 417.566 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 410.382 m
 230.111 429.191 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 410.382 m
 215.067 477.74 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 485.618 m
 271.635 496.12 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 508.868 m
 306.596 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 320 448 m
 271.635 399.88 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 387.132 m
 215.067 418.26 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 215.067 418.26 m
 230.111 466.809 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 215.067 477.74 m
 265.889 478.434 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 271.635 496.12 m
 288 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 306.596 448 m
 265.889 417.566 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 271.635 399.88 m
 230.111 429.191 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 230.111 466.809 m
 271.635 496.12 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 265.889 478.434 m
 306.596 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 288 448 m
 271.635 399.88 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 265.889 417.566 m
 215.067 418.26 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 230.111 429.191 m
 215.067 477.74 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 485.618 m
 215.067 418.26 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 508.868 m
 215.067 477.74 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 320 448 m
 272 496 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 275.777 387.132 m
 306.596 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 410.382 m
 271.635 399.88 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 204.223 410.382 m
 271.635 399.88 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 230.111 466.809 m
 288 448 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 230.111 466.809 m
 265.889 417.566 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 265.889 478.434 m
 230.111 429.191 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 265.889 478.434 m
 265.889 417.566 l
 </path>
-<path stroke="black">
+<path matrix="0.75 0 0 0.75 65.5279 112" stroke="black">
 288 448 m
 230.111 429.191 l
 </path>
+<use layer="beta" matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="204.223 485.618" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="215.067 477.74" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="230.111 466.809" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="275.777 508.868" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="271.635 496.12" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="265.889 478.434" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="288 448" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="306.596 448" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="320 448" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="275.777 387.132" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="271.635 399.88" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="265.889 417.566" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="230.111 429.191" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="215.067 418.26" size="normal" stroke="black"/>
+<use matrix="0.75 0 0 0.75 65.5279 112" name="mark/square(sx)" pos="204.223 410.382" size="normal" stroke="black"/>
 </page>
 </ipe>

@@ -1,10 +1,9 @@
-\beamer@slide {copwin_but_not_zombiewin}{16}
-\beamer@slide {zombie_number_differ}{23}
-\beamer@slide {fig:onthechord}{31}
-\beamer@slide {bounds on ell}{36}
-\beamer@slide {assumption a}{36}
-\beamer@slide {assumption b}{36}
-\beamer@slide {assumption i}{36}
-\beamer@slide {assumption ii}{36}
-\beamer@slide {fig:guarding}{44}
-\beamer@slide {fig:polygon_with_bfs_dismantling}{53}
+\beamer@slide {copwin_but_not_zombiewin}{25}
+\beamer@slide {zombie_number_differ}{32}
+\beamer@slide {fig:onthechord}{55}
+\beamer@slide {bounds on ell}{60}
+\beamer@slide {assumption a}{60}
+\beamer@slide {assumption b}{60}
+\beamer@slide {assumption i}{60}
+\beamer@slide {assumption ii}{60}
+\beamer@slide {fig:guarding}{68}

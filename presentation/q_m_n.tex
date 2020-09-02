@@ -1,4 +1,4 @@
-\begin{frame}{On a cycle with one chord}
+\begin{frame}{Second Result}
 \begin{columns}[onlytextwidth,T]
 \column{\dimexpr\linewidth/2-2.5mm}
 \begin{figure}
@@ -11,9 +11,12 @@
 \caption{$Q_{m,n}$}
 \end{figure}
 \end{columns}
+\begin{theorem}
+ Let $m, n \in Z$ with $3 \leq m \leq n$. The zombie number of $Q_{m,n}$ is 2.
+\end{theorem}
 \end{frame}
 
-\begin{frame}{2-zombie-win strategy}
+\begin{frame}{Two Zombie Strategy}
 \begin{figure}
 \includegraphics[height=0.38\textheight, keepaspectratio]{q_m_n/Q_m_n_strategy.pdf}
 \caption{A winning 2-zombie start for a cycle with one chord.}
@@ -22,7 +25,7 @@ where
 \[ k = \left\lfloor \frac{n - 2 \left\lfloor\frac{m}{2}\right\rfloor +3}{4} \right\rfloor. \]
 \end{frame}
 
-\begin{frame}{Proof: Cornering the survivor on $C_{m+1}$}
+\begin{frame}{Proof: Cornering the Survivor on $C_{m+1}$}
 \begin{figure}
 \centering
 \includegraphics{q_m_n/diagram1}
@@ -32,13 +35,13 @@ where
 \note[item]{Choice of $\ell$ and $\Delta$ determine length of shortest paths for zombies.}
 \end{frame}
 
-\begin{frame}{Which way do the Zombies turn?}
+\begin{frame}{Which Way Do the Zombies Turn?}
 Depends on value of $2 \leq \ell \leq m-1$.
 \begin{figure}
 \centering
-\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/z1_path_Pa}
+\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/z1_path_Pa} \\
 \includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/z1_path_Pb}
-\caption{Clockwise or Counter-clockwise}
+\caption{$z_1$ Goes Clockwise or Counter-clockwise}
 \end{figure}
 \note[item]{Take the chord go counter-clockwise}
 \note[item]{or step onto $P_m$ clockwise}
@@ -66,7 +69,7 @@ Depends on value of $\ell$ and $\Delta$.
 \end{columns}
 \end{frame}
 
-\begin{frame}{Path lengths}
+\begin{frame}{Path Lengths}
 Four possible paths for $z_2$:
 \vspace{1cm}
 \begin{itemize}
@@ -81,7 +84,7 @@ but only two possible choices: CW or CCW.
 
 \end{frame}
 
-\begin{frame}{Gives four possible cases}
+\begin{frame}{Four Possible Cases}
 \begin{columns}[onlytextwidth, T]
 \column{0.48\textwidth}
 \begin{figure}
@@ -108,7 +111,7 @@ but only two possible choices: CW or CCW.
 
 \begin{frame}{Assumptions I or II, A or B}
 
-\[ 2 \leq \ell \leq m-1 \tag{1} \label{bounds on ell} \]
+\[ 2 \leq \ell \leq m-1 \tag{*} \label{bounds on ell} \]
 
 $z_1$ goes clockwise if $\ell \leq 1 + m - \ell$. Combined with \ref{bounds on ell}, we have
 \[ 4 \leq 2 \ell \leq m + 1 \tag{A} \label{assumption a} . \]
@@ -145,7 +148,7 @@ Constraints on $\Delta$ from \ref{assumption i}
 \end{align*}
 \end{frame}
 
-\begin{frame}{Combined and simplified}
+\begin{frame}{After Algebraic Simplification}
 For $z_2$ to go counter-clockwise (following either $P_a$ or $P_b$) we must have
 \centering
 \[ 2 \Delta \leq n - m + 2\ell \]
@@ -153,34 +156,27 @@ or
 \[ 2 \Delta \leq n - 1 .\]
 \end{frame}
 
-\begin{frame}{Outcome}
+\begin{frame}{Scenario Outcome}
 What happens $\Delta$ turns later?
 \begin{figure}
-\includegraphics[height=0.3\textheight, keepaspectratio]{q_m_n/case_1_a_1}
-\includegraphics[height=0.3\textheight, keepaspectratio]{q_m_n/case_1_a_2}
+\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/case_1_a_1} \\
+\includegraphics[width=0.55\textwidth, keepaspectratio]{q_m_n/case_1_a_2}
 \caption{Case I.A. before/after $\Delta$ rounds}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Winning Condition}
-\begin{columns}
-\column{0.48\textwidth}
+\[ \Delta \leq m- \ell + 1 .\]
 If $\Delta = m - \ell$ both $z_2$ and $s$ reach $u$ on the same round,
 with the survivor moving onto the zombie-occupied vertex (and losing).
 
 If we have $\Delta = m - \ell + 1$, then $s$ reaches $u$ first
 but is caught by $z_2$ on the following round.
 
-So, to guarantee the survivor has not escaped $P_m$ we need
-
-\[ \Delta \leq m- \ell + 1 .\]
-
-\column{0.48\textwidth}
 \begin{figure}
-\includegraphics[height=0.3\textheight, width=0.8\textwidth, keepaspectratio]{q_m_n/case_1_a_2}
+\includegraphics{q_m_n/case_1_a_2}
 \caption{Case I.A. after $\Delta$ rounds}
 \end{figure}
-\end{columns}
 \note[item]{otherwise the survivor can reach the chord at least two rounds
 before $z_2$ can move to block.}
 \end{frame}
@@ -264,7 +260,7 @@ To ensure zombies turn in opposite directions, we need:
   \[ n - 2\Delta -5 \leq 4k \leq n - 2\Delta +3 \]
 \end{frame}
 
-\begin{frame}{How the strategy works}
+\begin{frame}{How the Strategy Works}
   \begin{columns}
     \column{0.48\textwidth}
     \begin{figure}

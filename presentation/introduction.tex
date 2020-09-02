@@ -1,54 +1,66 @@
 \begin{frame}{Games on Graphs}
-  \centering
-    \includegraphics<1>[width=0.95\textwidth, height=0.95\textheight, keepaspectratio]{intro/cops_and_robbers_1}
+  %\centering
+  \begin{overlayarea}{\textwidth}{\textheight}
+    \includegraphics<1>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_1}
     \note<1>[item]{Graphs model networks, maps, relationships}
 
-    \includegraphics<2>[width=0.95\textwidth, height=0.95\textheight, keepaspectratio]{intro/cops_and_robbers_2}
+    \includegraphics<2>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_2}
     \note<2>[item]{Vertex-pursuit games are perfect information adversarial games played on graphs.}
     \note<2>[item]{Set of nodes connected by edges or arcs}
     \note<2>[item]{Model movement, strategy, coordination of agents}
     \note<2>[item]{Variety of games: catching agents, containing fires/infection, intercepting messages, graph exploration}
 
-    \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_3}
+    \includegraphics<3>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_3}
     \note<3>[item]{Focus here is on Zombies and Survivors, a variety of Cops and Robbers.}
     \note<3>[item]{One team pursues the other team, who seek to evade.}
     \note<3>[item]{Perfect information}
 
-    \includegraphics<4>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_4}
+    \includegraphics<4>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_4}
     \note<4>[item]{Connected, finited and reflexive graphs.}
     \note<4>[item]{Reflexive: every vertex has a loop; players may pass/stay in place. }
 
-    \includegraphics<5>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_5}
+    \includegraphics<5>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_5}
     \note<5>[item]{Rules: Two players: one plays as cop(s), the other as robber(s).}
     \note<5>[item]{Cops pick starting vertices, followed by robbers.}
     \note<5>[item]{Players take turns; moving player tokens from vertex to neighbour.}
 
-    \includegraphics<6>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_6}
+    \includegraphics<6>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_6}
 
-    \includegraphics<7>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_7}
+    \includegraphics<7>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_7}
 
-    \includegraphics<8>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_8}
+    \includegraphics<8>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_8}
 
-    \includegraphics<9>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_9}
+    \includegraphics<9>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_9}
 
-    \includegraphics<10>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/cops_and_robbers_10}
+    \includegraphics<10>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_10}
     \note[item]<10>{Cops win if robber(s) are captured.}
     \note[item]<10>{Robber(s) win if can evade indefinitely.}
     \note[item]<10>{Cops and Robbers was first introduced by Quilliot in late 70's.}
+    \includegraphics<11>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/cops_and_robbers_11}
+  \end{overlayarea}
 \end{frame}
 
 \begin{frame}{Zombies and Survivors}
-  \centering
-  \includegraphics<1>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_1}
+  %\centering
+  \begin{overlayarea}{\textwidth}{\textheight}
+  \includegraphics<1>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_1}
   \note[item]<1>{Twist on Cops and Robbers invented by \cite{fitzpatrick2016deterministic}.}
   \note[item]<1>{Same game, with zombies replacing cops. Only difference: zombies \textit{must} move closer to the survivor.}
-  \includegraphics<2>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_2}
+  \includegraphics<2>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_2}
   \note[item]<2>{On their turn, zombies compute shortest path (geodesic) to survivor.}
-  \includegraphics<3>[width=0.8\textwidth, height=0.8\textheight, keepaspectratio]{intro/zombies_and_survivors_3}
+  \includegraphics<3>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_3}
   \note[item]<3>{May be multiple such paths. Could be resolved by coin flip (probabilistic).}
   \note[item]<3>{Assume Zombies play optimally, as though they were coordinated and saw the future.}
   \note[item]<3>{Consider worst-case scenarios: if choice offered, and one of the possible outcomes leads to survivor capture, then that is considered a zombie win.}
-
+  \includegraphics<4>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_4}
+  \includegraphics<5>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_5}
+  \includegraphics<6>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_6}
+  \includegraphics<7>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_7}
+  \includegraphics<8>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_8}
+  \includegraphics<9>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_9}
+  \includegraphics<10>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_10}
+  \includegraphics<11>[width=0.9\textwidth, height=0.9\textheight, keepaspectratio]{intro/zombies_and_survivors_11}
+\end{overlayarea}
 \end{frame}
 
 \begin{frame}{Cop-Number and Zombie-Number}
@@ -56,7 +68,7 @@
   \column{0.48\textwidth}
     \begin{figure}
       \centering
-      \includegraphics[width=0.45\textwidth, keepaspectratio]{copwin_tree/copwin_but_notzombie_win}
+      \includegraphics[width=0.8\textwidth, keepaspectratio]{copwin_tree/copwin_but_notzombie_win.pdf}
       \caption{Cop-win but not zombie-win \cite{fitzpatrick2016deterministic})\label{copwin_but_not_zombiewin}}
   \end{figure}
   \column{0.48\textwidth}
@@ -72,12 +84,15 @@ For any graph $G$, $c(G) \leq z(G)$.
 \end{frame}
 
 \begin{frame}{Cop-Number and Zombie-Number}
-  \centering
+    \begin{figure}
+      \includegraphics{intro/simple_graphs}
+    \end{figure}
+
   \begin{table}
 \begin{tabular}{c | c | c}
   $G$ & $c(G)$ & $z(G)$ \\
   \hline
-  $T$ tree (acyclic) & 1 & 1 \\
+  Tree (acyclic) & 1 & 1 \\
   $C_3$ & 1 & 1 \\
   $C_n$ ($n \geq 4$) & 2 & 2 \\
   $K_n$ ($n \geq 1$) & 1 & 1 \\
@@ -90,15 +105,10 @@ For any graph $G$, $c(G) \leq z(G)$.
 \end{frame}
 
 \begin{frame}{Zombies vs. Cops on Planar Graphs}
-A graph is planar if it can be \textit{embedded in the plane}.
-
-\vspace{1cm}
 
 Aigner and Fromme \cite{aigner1984game} described a winning 3 cop strategy: enclose the robber into a shrinking \textit{territory} using \textit{isometric paths}.
 
 \vspace{1cm}
-
-In next section, present a planar graph where 3 zombies lose.
 
 \note[item]{Planar: Drawn on the plane such that edge crossings occur only at endpoints (vertices).}
 \note[item]{For planar graphs, geodesics are isometric; allows guarding}
@@ -111,8 +121,7 @@ In next section, present a planar graph where 3 zombies lose.
 \begin{frame}{On Outerplanar Graphs}
   \begin{columns}[onlytextwidth,T]
     \column{0.48\textwidth}
-  A graph is \textit{outerplanar} if it can be \textit{embedded in a cycle on the plane} such that
-  its vertices are all adjacent to the \textit{outer face}.
+  A graph is \textit{outerplanar} if it has a planar drawing where all vertices are on the \textit{outer face}.
 
   \vspace{0.5cm}
 
@@ -127,7 +136,7 @@ In next section, present a planar graph where 3 zombies lose.
 \end{frame}
 
 \begin{frame}{Zombies vs Cops on Outerplanar Graphs}
-  But 2 zombies lose on this outer-planar graph \ref{zombie_number_differ}.
+  But 2 zombies lose on this outer-planar graph.
   \begin{figure}
     \centering
     \includegraphics[width=0.35\textwidth, keepaspectratio]{intro/cop_and_zombie_number_fitzpatrick_fig_2}

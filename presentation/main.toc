@@ -1,6 +1,5 @@
-\beamer@sectionintoc {1}{Intro}{3}{0}{1}
-\beamer@sectionintoc {2}{Planar Zombies}{24}{0}{2}
-\beamer@sectionintoc {3}{Cycle With One Chord}{29}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{50}{0}{4}
-\beamer@sectionintoc {5}{Other Results}{54}{0}{5}
-\beamer@sectionintoc {6}{References}{61}{0}{6}
+\beamer@sectionintoc {1}{Introduction to Pursuit Games}{3}{0}{1}
+\beamer@sectionintoc {2}{A Planar Graph Where 3 Zombies Lose}{33}{0}{2}
+\beamer@sectionintoc {3}{Two Zombies Win on Cycle With One Chord}{53}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{74}{0}{4}
+\beamer@sectionintoc {5}{References}{78}{0}{5}

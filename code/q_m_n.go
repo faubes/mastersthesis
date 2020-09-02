@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import ( 
+"fmt"
+"os"
+"strconv"
+)
 
 func case_1_A(m, n, l, Delta int) bool {
 	return 4 <= 2*l &&
@@ -91,14 +95,25 @@ func find_offset(m, n int, possible_deltas []int) (possible_offsets []int) {
 }
 
 func main() {
-	max_n, max_m := 12, 12
-	for i := 4; i < max_m; i++ {
-		for j := i; j < max_n; j++ {
-			possible_deltas := find_delta(i, j)
-      possible_offsets := find_offset(i, j, possible_deltas)
-      fmt.Printf("%d, %d: ", i, j)
-			fmt.Printf(" %v ", possible_deltas)
-      fmt.Printf(" %v\n", possible_offsets)
+//	max_n, max_m := 12, 12
+//	for i := 4; i < max_m; i++ {
+//		for j := i; j < max_n; j++ {
+//			possible_deltas := find_delta(i, j)
+	if len(os.Args) < 2 {
+		fmt.Println("Need two arguments, for m and n")
+		return
+	}
+	m, _ := strconv.Atoi(os.Args[1])
+	n, _ := strconv.Atoi(os.Args[2])
+	possible_deltas := find_delta(m, n)
+	for _, delta := range possible_deltas {
+		fmt.Printf("With Delta: %v ", delta)
+		possible_offsets := make([]int, 0)
+		for offset := (n - 2*delta - 5)/4; offset <= (n - 2*delta)/4; offset++ {
+			if offset > 0 {		
+				possible_offsets = append(possible_offsets, offset)
+			}
 		}
+	      fmt.Printf("Possible offset: %v\n", possible_offsets)
 	}
 }
