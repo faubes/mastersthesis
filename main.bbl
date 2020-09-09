@@ -17,6 +17,57 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{quilliot1978jeux}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=QA}{%
+         family={Quilliot},
+         familyi={Q\bibinitperiod},
+         given={Alain},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QA1}
+    \strng{fullhash}{QA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Jeux et pointes fixes sur les graphes}
+    \list{institution}{1}{%
+      {Ph. D. Dissertation, Universit{\'e} de Paris VI}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{1978}
+  \endentry
+
+  \entry{nowakowski1983vertex}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NR}{%
+         family={Nowakowski},
+         familyi={N\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Winkler},
+         familyi={W\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{NRWP1}
+    \strng{fullhash}{NRWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2-3}
+    \field{pages}{235\bibrangedash 239}
+    \field{title}{Vertex-to-Vertex Pursuit in a Graph}
+    \field{volume}{43}
+    \field{journaltitle}{Discrete Mathematics}
+    \field{year}{1983}
+  \endentry
+
   \entry{fitzpatrick2016deterministic}{article}{}
     \name{author}{4}{}{%
       {{hash=FS}{%
@@ -237,27 +288,6 @@
     \field{year}{2006}
   \endentry
 
-  \entry{quilliot1978jeux}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=QA}{%
-         family={Quilliot},
-         familyi={Q\bibinitperiod},
-         given={Alain},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{QA1}
-    \strng{fullhash}{QA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Jeux et pointes fixes sur les graphes}
-    \list{institution}{1}{%
-      {Ph. D. Dissertation, Universit{\'e} de Paris VI}%
-    }
-    \field{type}{phdthesis}
-    \field{year}{1978}
-  \endentry
-
   \entry{quilliot1983problemes}{article}{}
     \name{author}{1}{}{%
       {{hash=QA}{%
@@ -276,36 +306,6 @@
   de repr{\'e}sentation sur des graphes, des ensembles ordonn{\'e}s et des
   hypergraphes}
     \field{journaltitle}{These d’Etat, Universit{\'e} de Paris VI}
-    \field{year}{1983}
-  \endentry
-
-  \entry{nowakowski1983vertex}{article}{}
-    \name{author}{2}{}{%
-      {{hash=NR}{%
-         family={Nowakowski},
-         familyi={N\bibinitperiod},
-         given={Richard},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=WP}{%
-         family={Winkler},
-         familyi={W\bibinitperiod},
-         given={Peter},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{NRWP1}
-    \strng{fullhash}{NRWP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{number}{2-3}
-    \field{pages}{235\bibrangedash 239}
-    \field{title}{Vertex-to-Vertex Pursuit in a Graph}
-    \field{volume}{43}
-    \field{journaltitle}{Discrete Mathematics}
     \field{year}{1983}
   \endentry
 

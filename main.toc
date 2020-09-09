@@ -3,15 +3,15 @@
 \contentsline {chapter}{Abstract}{iii}{section*.1}
 \contentsline {chapter}{Acknowledgements}{v}{section*.2}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
-\contentsline {section}{\numberline {1.1}Notation}{2}{section.16}
-\contentsline {section}{\numberline {1.2}Classical Cops and Robbers}{4}{section.18}
-\contentsline {subsection}{\numberline {1.2.1}How to Play Cops and Robbers}{4}{subsection.19}
-\contentsline {subsection}{\numberline {1.2.2}Dismantlings, Cop-win Trees }{5}{subsection.20}
+\contentsline {section}{\numberline {1.1}Notation}{1}{section.16}
+\contentsline {section}{\numberline {1.2}Classical Cops and Robbers}{3}{section.18}
+\contentsline {subsection}{\numberline {1.2.1}How to Play Cops and Robbers}{3}{subsection.19}
+\contentsline {subsection}{\numberline {1.2.2}Dismantlings, Cop-win Trees }{4}{subsection.20}
 \contentsline {subsection}{\numberline {1.2.3}The Cop-Number and the Genus of the Graph}{6}{subsection.21}
-\contentsline {subsection}{\numberline {1.2.4}Relation to the Girth and Minimum Degree of a Graph}{7}{subsection.22}
-\contentsline {subsection}{\numberline {1.2.5}Cops and Computational Geometry}{7}{subsection.23}
+\contentsline {subsection}{\numberline {1.2.4}Relation to the Girth and Minimum Degree of a Graph}{6}{subsection.22}
+\contentsline {subsection}{\numberline {1.2.5}Cops and Computational Geometry}{6}{subsection.23}
 \contentsline {section}{\numberline {1.3}Cops Turn Into Zombies}{7}{section.24}
-\contentsline {subsection}{\numberline {1.3.1}Deterministic Zombies}{8}{subsection.25}
+\contentsline {subsection}{\numberline {1.3.1}Deterministic Zombies}{7}{subsection.25}
 \contentsline {subsection}{\numberline {1.3.2}Probabilistic Zombies}{10}{subsection.39}
 \contentsline {section}{\numberline {1.4}Our Contributions}{11}{section.44}
 \contentsline {chapter}{\numberline {2}Planar Zombies}{13}{chapter.45}
