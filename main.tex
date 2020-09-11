@@ -255,9 +255,11 @@ in partial Fulfillment of the requirements for the \\
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-Cops and Robbers on Graphs (C \& R) is a vertex-to-vertex pursuit game played on graphs first introduced by Quilliot and Nowakowski \cite{quilliot1978jeux, nowakowski1983vertex}. The cop player starts the game by choosing a set of vertices which will be the cops' starting positions. The robber player responds by choosing its own start vertex. On each player's turn, the player may move one of its tokens from to an adjacent vertex. The cops win if the robber is captured (they occupy the same vertex). The robber wins if the robber can avoid capture indefinitely.
-A variation of C \& R  called Zombies and Survivors (Z \& S) was recently proposed and studied \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
-Z \& S is the same as C \& R with the added twist that the zombies are required to move closer to the survivor. In the deterministic version of Z \& S, the zombies are assumed to apply an optimal strategy (that is, they choose a winning start position and, whenever two shortest paths exist, make a winning move if such exists). Chapter~\ref{chapter intro} summarizes important results in vertex-pursuit games. In Chapter~\ref{chapter planar zombies} we give an example of a planar graph where 3 zombies always lose, whereas Aigner and Fromme \cite{aigner1984game} showed that three robbers have a winning strategy on planar graphs.
+Cops and Robbers on Graphs (C \& R) is a vertex-to-vertex pursuit game played on graphs first introduced by Quilliot (in 1978) and Nowakowski (in 1983). The cop player starts the game by choosing a set of vertices which will be the cops' starting positions. The robber player responds by choosing its own start vertex. On each player's turn, the player may move its tokens to adjacent vertices. The cops win if the robber is captured (they occupy the same vertex). The robber wins if it can avoid capture indefinitely. The question, then, is to determine the smallest number of cops required to guarantee the robber will be captured.
+A variation of C \& R  called Zombies and Survivors (Z \& S) was recently proposed and studied by Fitzpatrick. \linebreak
+Z \& S is the same as C \& R with the added twist that the zombies are required to move closer to the survivor (by following a shortest path from the zombie to the survivor).
+Whenever multiple shortest paths exist, the zombies are free to choose which one to follow. As in C \& R, we are interested in the minimum number of zombies required to guarantee the survivor will be caught.
+Chapter~\ref{chapter intro} summarizes important results in vertex-pursuit games. In Chapter~\ref{chapter planar zombies} we give an example of a planar graph where 3 zombies always lose, whereas Aigner and Fromme showed in 1984 that three cops have a winning strategy on planar graphs.
 In Chapter~\ref{chapter q_m_n} we show how two zombies can win on a cycle with one chord.
 \end{abstract}
 
@@ -265,11 +267,10 @@ In Chapter~\ref{chapter q_m_n} we show how two zombies can win on a cycle with o
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\begin{acknowledgements}
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-[Todo: uncomment ackno]
-%This work is possible thanks to funding from NSERC and the University of Ottawa. I offer my thanks to my fellow Canadians for the first and to my alma matter for the second. Thanks also to the welcoming members of the Computational Geometry lab over at Carleton University and also to the profs and graduates in the Ottawa-Carleton Institute of Computer Science. Finally, I am deeply grateful to my supervisor for these last few years of drawing graphs and working on problems -- often with coffee.
-\end{acknowledgements}
+%\begin{acknowledgements}
+%\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+%This work is possible thanks to funding from NSERC, OGS and the University of Ottawa.
+%\end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -325,7 +326,7 @@ In Chapter~\ref{chapter q_m_n} we show how two zombies can win on a cycle with o
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
-\dedicatory{For/Dedicated to/To my\ldots}
+%\dedicatory{For/Dedicated to/To my\ldots}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS

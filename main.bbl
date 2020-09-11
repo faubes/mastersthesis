@@ -17,148 +17,6 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
-  \entry{quilliot1978jeux}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=QA}{%
-         family={Quilliot},
-         familyi={Q\bibinitperiod},
-         given={Alain},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{QA1}
-    \strng{fullhash}{QA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Jeux et pointes fixes sur les graphes}
-    \list{institution}{1}{%
-      {Ph. D. Dissertation, Universit{\'e} de Paris VI}%
-    }
-    \field{type}{phdthesis}
-    \field{year}{1978}
-  \endentry
-
-  \entry{nowakowski1983vertex}{article}{}
-    \name{author}{2}{}{%
-      {{hash=NR}{%
-         family={Nowakowski},
-         familyi={N\bibinitperiod},
-         given={Richard},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=WP}{%
-         family={Winkler},
-         familyi={W\bibinitperiod},
-         given={Peter},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{NRWP1}
-    \strng{fullhash}{NRWP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{number}{2-3}
-    \field{pages}{235\bibrangedash 239}
-    \field{title}{Vertex-to-Vertex Pursuit in a Graph}
-    \field{volume}{43}
-    \field{journaltitle}{Discrete Mathematics}
-    \field{year}{1983}
-  \endentry
-
-  \entry{fitzpatrick2016deterministic}{article}{}
-    \name{author}{4}{}{%
-      {{hash=FS}{%
-         family={Fitzpatrick},
-         familyi={F\bibinitperiod},
-         given={SL},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=HJ}{%
-         family={Howell},
-         familyi={H\bibinitperiod},
-         given={J},
-         giveni={J},
-      }}%
-      {{hash=MM}{%
-         family={Messinger},
-         familyi={M\bibinitperiod},
-         given={ME},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=PD}{%
-         family={Pike},
-         familyi={P\bibinitperiod},
-         given={DA},
-         giveni={D\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{FSHJMM+1}
-    \strng{fullhash}{FSHJMMPD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{pages}{1\bibrangedash 12}
-    \field{title}{A Deterministic Version of the Game of Zombies and Survivors
-  on Graphs}
-    \field{volume}{213}
-    \field{journaltitle}{Discrete Applied Mathematics}
-    \field{year}{2016}
-  \endentry
-
-  \entry{fitzpatrick2018game}{article}{}
-    \name{author}{1}{}{%
-      {{hash=FSL}{%
-         family={Fitzpatrick},
-         familyi={F\bibinitperiod},
-         given={Shannon\bibnamedelima L},
-         giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{FSL1}
-    \strng{fullhash}{FSL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{The Game of Zombies and Survivors on the Cartesian Products
-  of Trees}
-    \field{journaltitle}{arXiv preprint arXiv:1806.04628}
-    \field{year}{2018}
-  \endentry
-
-  \entry{aigner1984game}{article}{}
-    \name{author}{2}{}{%
-      {{hash=AM}{%
-         family={Aigner},
-         familyi={A\bibinitperiod},
-         given={Martin},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=FM}{%
-         family={Fromme},
-         familyi={F\bibinitperiod},
-         given={Michael},
-         giveni={M\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{AMFM1}
-    \strng{fullhash}{AMFM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{number}{1}
-    \field{pages}{1\bibrangedash 12}
-    \field{title}{A Game of Cops and Robbers}
-    \field{volume}{8}
-    \field{journaltitle}{Discrete Applied Math\-ematics}
-    \field{year}{1984}
-  \endentry
-
   \entry{bonato2017graph}{book}{}
     \name{author}{2}{}{%
       {{hash=BA}{%
@@ -258,6 +116,88 @@
     \field{year}{1978}
   \endentry
 
+  \entry{fitzpatrick2016deterministic}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FS}{%
+         family={Fitzpatrick},
+         familyi={F\bibinitperiod},
+         given={SL},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Howell},
+         familyi={H\bibinitperiod},
+         given={J},
+         giveni={J},
+      }}%
+      {{hash=MM}{%
+         family={Messinger},
+         familyi={M\bibinitperiod},
+         given={ME},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Pike},
+         familyi={P\bibinitperiod},
+         given={DA},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{FSHJMM+1}
+    \strng{fullhash}{FSHJMMPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1\bibrangedash 12}
+    \field{title}{A Deterministic Version of the Game of Zombies and Survivors
+  on Graphs}
+    \field{volume}{213}
+    \field{journaltitle}{Discrete Applied Mathematics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{fitzpatrick2018game}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FSL}{%
+         family={Fitzpatrick},
+         familyi={F\bibinitperiod},
+         given={Shannon\bibnamedelima L},
+         giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FSL1}
+    \strng{fullhash}{FSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Game of Zombies and Survivors on the Cartesian Products
+  of Trees}
+    \field{journaltitle}{arXiv preprint arXiv:1806.04628}
+    \field{year}{2018}
+  \endentry
+
+  \entry{bollobas2013modern}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Bollob{\'a}s},
+         familyi={B\bibinitperiod},
+         given={B{\'e}la},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Science \& Business Media}%
+    }
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Modern graph theory}
+    \field{volume}{184}
+    \field{year}{2013}
+  \endentry
+
   \entry{pan2006isometric}{article}{}
     \name{author}{2}{}{%
       {{hash=PJJ}{%
@@ -288,6 +228,27 @@
     \field{year}{2006}
   \endentry
 
+  \entry{quilliot1978jeux}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=QA}{%
+         family={Quilliot},
+         familyi={Q\bibinitperiod},
+         given={Alain},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QA1}
+    \strng{fullhash}{QA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Jeux et pointes fixes sur les graphes}
+    \list{institution}{1}{%
+      {Ph. D. Dissertation, Universit{\'e} de Paris VI}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{1978}
+  \endentry
+
   \entry{quilliot1983problemes}{article}{}
     \name{author}{1}{}{%
       {{hash=QA}{%
@@ -307,6 +268,66 @@
   hypergraphes}
     \field{journaltitle}{These d’Etat, Universit{\'e} de Paris VI}
     \field{year}{1983}
+  \endentry
+
+  \entry{nowakowski1983vertex}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NR}{%
+         family={Nowakowski},
+         familyi={N\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Winkler},
+         familyi={W\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{NRWP1}
+    \strng{fullhash}{NRWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{2-3}
+    \field{pages}{235\bibrangedash 239}
+    \field{title}{Vertex-to-Vertex Pursuit in a Graph}
+    \field{volume}{43}
+    \field{journaltitle}{Discrete Mathematics}
+    \field{year}{1983}
+  \endentry
+
+  \entry{aigner1984game}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AM}{%
+         family={Aigner},
+         familyi={A\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fromme},
+         familyi={F\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{AMFM1}
+    \strng{fullhash}{AMFM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 12}
+    \field{title}{A Game of Cops and Robbers}
+    \field{volume}{8}
+    \field{journaltitle}{Discrete Applied Math\-ematics}
+    \field{year}{1984}
   \endentry
 
   \entry{berarducci1993cop}{article}{}

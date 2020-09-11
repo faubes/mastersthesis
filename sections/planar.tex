@@ -12,20 +12,20 @@ connect adjacent vertices of the cycle. We then connect each 5-path to neighbour
 
 We will call vertices
 \begin{align*}
-C &= \{ 1, \dots, 5 \} \\
+C &= \{ 1, \dots, 5 \} && \text{the \textit{interior cycle}} \\
 X &= V(G) \setminus C \\
-Y &= \{7, 9, 12, 14, 17, 19, 22, 24, 27, 29\} && \text{the vertices of degree 3.} \\
-S &= \{ 7,8,9,12,13,14,17,18,19, 22,23,24,27,28,29 \} && \text{the outermost 15-cycle}
+Y &= \{7, 9, 12, 14, 17, 19, 22, 24, 27, 29\} && \text{the \textit{vertices of degree 3}} \\
+S &= \{ 7,8,9,12,13,14,17,18,19, 22,23,24,27,28,29 \} && \text{the \textit{outermost 15-cycle}}
 \end{align*}
 
-Our proof relies on a strategy available to the survivor on this graph which we call \textit{Running Around the Outside}. Observe that if the three zombies and survivor are on $G[S]$ on an induced sub-path of length at most 6, then the survivor wins by fleeing away from the zombies around the outermost 15-cycle.
+Our proof relies on a strategy available to the survivor on this graph which we call \textit{Running Around the Outside}. Observe that if the three zombies and survivor are on $G[S]$ on an induced sub-path of length at most 5 (with an empty vertex between the survivor and the lead zombie), then the survivor wins by fleeing away from the zombies around the outermost 15-cycle.
 
 To see this, let $E' = \{xy \in E(G) : x, y \in Y\}$ be the set of edges which connect the vertices of $Y$ and let $G' = G - E'$ be the subgraph obtained by removing these edges. These edges are highlighted in red in Figure~\ref{fig:planar}.
 The table below \ref{table outermost cycle} compares the length of possible zombie-survivor paths of
 lengths at most 5 in $G$ and $G'$.
 
 This table shows that when the zombie and the survivor are both in $S$ and within a distance of 4 or 5, then the shortest path from the zombie to the survivor is contained entirely in $S$ and thus zombies never have the opportunity to leave the outermost 15-cycle.
-When the survivor and zombie are both on the outermost cycle at distances 2 or 3, then the zombies must stay on $S$ since it requires at least 2 moves to exit $S$ (so the shortest path must be the one contained in $S$). We conclude that the survivor has won if all players are on an induced sub-path of $G[S]$ of length at most 6 (and at least 3 since there needs to be an empty vertex between the leading zombie and survivor).
+When the survivor and zombie are both on the outermost cycle at distances 2 or 3, then the zombies must stay on $S$ since it requires at least 2 moves to exit $S$ (so the shortest path must be the one contained in $S$). This shows that the survivor has won if the survivor and the zombies are all on an induced sub-path of $G[S]$ of length at most 5 (and at least 3 since there needs to be an empty vertex between the leading zombie and survivor).
 
 \begin{table}
 \centering
@@ -58,8 +58,8 @@ z & s & shortest path in $G$ & $d_{G}(z,s)$ & shortest path in $G'$ & $d_{G'}(z,
   We must provide a winning survivor strategy (a safe starting vertex, and the opening for a winning sequence of survivor moves) for every possible 3 zombie start configuration on $G$. We divide all possible zombie-starts by the number of zombies which start on $C$.
 
   \begin{itemize}
-  \item All the zombies start of $C$. That is, $z_i \in C$ for $1 \leq i \leq 3$ (refer to Case~\ref{planar case 1}).
-  \item Two of the zombies are of $C$ but one is not so $z_1, z_2 \in C$ and $z_3 \in X = V(G) \setminus C$ (refer to Case~\ref{planar case 2}).
+  \item All the zombies start on $C$. That is, $z_i \in C$ for $1 \leq i \leq 3$ (refer to Case~\ref{planar case 1}).
+  \item Two of the zombies are on $C$ but one is not so $z_1, z_2 \in C$ and $z_3 \in X = V(G) \setminus C$ (refer to Case~\ref{planar case 2}).
   \item All three zombies start on vertices of $X$ (refer to Case~\ref{planar case 3}).
   \item One zombie chooses a vertex of $C$, two others start on vertices of $X$, i.e. $z_1, z_2 \in X$ and $z_3 \in C$ (refer to Case~\ref{planar case 4}).
   \end{itemize}
@@ -191,7 +191,7 @@ which are not on $C$. Now, either:
 
 \begin{enumerate}
 \item Both $q_0$ and $q_1$ are occupied by zombies. In this case, there is some $c \in N(s_0) \cap C$ which is not threatened by a zombie (since two of them are adjacent
-to $s$). Therefore the survivor can safely move onto another vertex on $C$ and, on the following round, move to an occupied vertex in $Q$. After
+to $s$). Therefore the survivor can safely move onto another vertex of $C$ and, on the following round, move to an occupied vertex in $Q$. After
 another round the survivor moves to a vertex in $Y$ and we again have reached a situation as in Case I.
 
 \item At least one of $q_0$ and $q_1$ is not occupied by zombies. In this case, the survivor can exit $C$ immediately by moving to a vertex in $Q$. After
@@ -208,7 +208,7 @@ Now we must deal with the cases where the zombies are at different distances fro
 Suppose that two of the zombies have chosen vertices in $Q$ and the other has chosen a vertex in $Y$. That is, two zombies are adjacent to $C$
 while the third requires two rounds to reach $C$.
 
-There are now at least three unthreatened vertices on $C$ for the survivor to choose. The survivor can choose any unthreatened vertex on
+There are now at least three unthreatened vertices of $C$ for the survivor to choose. The survivor can choose any unthreatened vertex on
 $C$.
 
 In round 1, two zombies enter $C$ and the third moves to a vertex $q \in Q$ adjacent to $C$.
@@ -219,7 +219,7 @@ After the next turn, all three zombies are on $C$: two are already on $C$; the o
 
 \item[Case III(c)]: Two zombies start at a distance of 2 from $C$ and the third is at a distance of 3.
 
-The survivor may start on any of the vertices on $C$ since none are threatened by a zombie.
+The survivor may start on any of the vertices of $C$ since none are threatened by a zombie.
 
 In round 1, two zombies move to vertices in $Q$ and the third moves to a vertex in $Y$. If the survivor is unthreatened after the first round, it can simply pass.
 If the survivor is threatened by a zombies adjacent to $C$, then at least one of the survivor's neighbours on $C$ is unthreatened since there are two zombies on $Q$.
@@ -269,23 +269,23 @@ In either case, the survivor has a simple winning strategy.
 
 \item[Case III(f)]: One zombie starts at a distance of 2 from $C$, and the other two are at a distance of 3.
 
-The survivor starts in $C$. None of the vertices on $C$ are threatened by the zombies, since they are at a distance at least 2.
+The survivor starts in $C$. None of the vertices of $C$ are threatened by the zombies, since they are at a distance at least 2.
 
 In round 1, the zombies approach $C$. The zombie that started at distance 2 from $C$ is now on a vertex in $Q$ and the other two
 zombies are on vertices in $Y$. If unthreatened, the survivor simply passes.
-If the survivor is threatened by the zombie that is adjacent to $C$, then she moves to another vertex on $C$. The other two zombies
+If the survivor is threatened by the zombie that is adjacent to $C$, then she moves to another vertex of $C$. The other two zombies
 pose no threat in this round.
 
 There is now one zombie at distance of 1 from $C$ and two zombies at a distance of 2, and so we have returned to the situation describe in Case III(e).
 
 \item[Case III(g)]: One zombie starts at a distance of 1 from $C$, and the other two are at a distance of 3.
 
-The survivor starts on one of the four safe vertices on $C$.
+The survivor starts on one of the four safe vertices of $C$.
 
 In round 1, one zombie steps onto $C$ while the other two zombies move to vertices at distance 2 from $C$.
 Only the zombie on $C$ can threaten the survivor at this point. If the survivor is safe, then she may pass. Otherwise, since there is
 only a single zombie on $C$, at most one of the survivor's neighbours on $C$ is threatened.
-So the survivor has a safe move to a vertex on $C$.
+So the survivor has a safe move to a vertex of $C$.
 
 In round 2, the zombie on $C$ pursues the survivor ineffectually while the other two zombies move to vertices $q_0, q_1 \in Q$ which are
 adjacent to $C$. Now, as in Case III(e), either
@@ -301,20 +301,20 @@ round, all three zombies are on $C$ and we are in a situation like Case I.
 
 \item[Case III(h)]: The three zombies are at different distances from $C$.
 
-In particular, this means that the zombies are at distances 1, 2 and 3 from $C$.
+In particular, this means that the zombies are at distances 1, 2 and 3 from $C$. Let the zombies be numbered in the same order, so that $z_1$ is closest, $z_2$ second closest and $z_3$ the furthest.
 
 Observe that there is always a vertex in $C$ that is at distance at least 3 from all zombies. This is a start position for the survivor which
-will allow her to survive unthreatened for at least two rounds.
+will allow it to survive unthreatened for at least two rounds.
 
-In round 1, the closest zombie (more precision here - give label) moves onto $C$, the second closest moves to a vertex adjacent to $C$ and the third
+In round 1, $z_1$, the closest zombie, moves onto $C$, the second closest moves to a vertex adjacent to $C$ and the third
 moves to a vertex at a distance of 2 from $C$. The survivor remains in place.
 
-In round 2, the closest zombie threatens the survivor, the second closest zombie moves onto $C$, and the last one moves onto a vertex adjacent to a vertex in $C$. Now, at least one of the survivor's neighbours is an unoccupied vertex in $Q$, which she can take to escape $C$.
+In round 2, $z_1$ threatens the survivor, $z_2$ moves onto $C$, and $z_3$ moves onto a vertex adjacent to a vertex in $C$. Now, at least one of the survivor's neighbours is an unoccupied vertex in $Q$, which she can take to escape $C$.
 
 After the next round, all three zombies are on $C$ or one step behind the survivor and the survivor has won the game by moving to a vertex in $Y$
 as in Case I.
 
-\item One zombie chooses a vertex on $C$, the two others choose vertices of $X$.\label{planar case 4}
+\item One zombie chooses a vertex of $C$, the two others choose vertices of $X$.\label{planar case 4}
 
 We were unable to develop an argument to show why the survivor wins in this case.
 Instead, Appendix~\ref{appendix:planarZombies} provides tables showing the first few moves of a winning survivor strategy

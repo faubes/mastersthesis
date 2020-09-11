@@ -71,12 +71,14 @@ along a cycle with respect to the given direction on this embedding.
   for any $m \geq 3$, $n \geq 6$. Finally in Part~\ref{thm q_m_n 4} we use these results to give winning $\Delta$ and $k$ for any fixed $m,n$ values.
 
   \section{Cornering the Survivor on $C_{m+1}$\label{thm q_m_n 1}}
+
+As mentioned, let $u$ and $v$ denote the endpoints of the chord. Let $z_1, z_2$ and $s$ denote the positions of the zombies and the survivor, respectively.
 \begin{proofpart}
    Suppose that the game has reached the following state:
 
   \begin{itemize}
-   \item the first zombie is on an endpoint of the chord, say $v$
-   \item there are $\Delta$ vertices counting clockwise from $u$ to $z_2$.
+   \item the first zombie $z_1$ is occupying $v$, one endpoint of the chord.
+   \item there are $\Delta$ vertices counting clockwise from $z_2$ to $u$ (the other endpoint of the chord).
    \item the survivor is on $P_m$ at a distance of $\ell$ vertices counting
    clockwise from $v$.
   \end{itemize}
@@ -652,7 +654,7 @@ From the proof we obtain the following strategy:
 \begin{proof}
   Place the zombies as described.
   If the survivor starts on $P_n$ between the two zombies, then it loses because the large cycle is guarded as per Section~\ref{thm q_m_n 2}.
-  Otherwise, the zombies will push the survivor towards $P_m$.
-  If, after $k$ rounds, the survivor is still on $P_m$, then it is on a path of length at most $\Delta = \lfloor \frac{m}{2} \rfloor - 2$ (it cannot be adjacent to either $z_1$ or $z_2$). The two zombies and the survivor are on an induced subpath smaller than half the cycle $C_{n+1}$ and so the survivor has lost.
+  Otherwise, for first $k$ rounds the zombies move in opposite directions with $z_1$ reaching the chord after $k$ rounds.
+  If, after $k$ rounds, the survivor is still on $P_n$, then it must be on a subpath of length at least 2 and at most $\Delta = \lfloor \frac{m}{2} \rfloor - 2$ (it cannot be adjacent to either $z_1$ or $z_2$). On the next turn, $z_1$ will take the chord, trapping the survivor on an induced $z_1z_2$-subpath smaller than half the diameter of $C_{n+1}$.
   The only remaining possibility is that the survivor is somewhere on $P_m$, with $z_1$ on $v$ and $z_2$ at a distance $\Delta$ from $u$, so the survivor loses by Section~\ref{thm q_m_n 1}.
 \end{proof}

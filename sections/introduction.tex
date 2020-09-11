@@ -1,9 +1,16 @@
 \chapter{Introduction}\label{chapter intro}
+There has been a robbery downtown and the robbers are escaping by car. Officers already on the streets are notified only minutes later. The robbers seem to be getting away – putting some distance between themselves and the chasing sirens. The
+driver slams on the breaks, too slow to react to the strip of tire spikes thrown by an
+ambushing officer! Two tires are shredded and the driver loses control. The robbers
+are quickly surrounded and apprehended. The media arrives; the crash is captured by a hovering helicopter.
+
+Was there ever any hope of escape? Perhaps the robbers took the wrong route. They should have planned a vehicle swap. Or used a tunnel. Could it be that there were so many police officers that all routes were covered? That capture was in-
+evitable? Perhaps the advantages of communication and central coordination allow the police to cut off likely escape routes, so that the probability of escape is low. A (somewhat dispassionate) mind might watch these salacious stories on the
+news and wonder how to apply math to these types of questions.
 
 Vertex pursuit games are adversarial games played on graphs.
 Players take turns moving tokens on a graph (the game board) with
 the objective to capture (or evade) the other player, thereby simulating a chase or pursuit.
-
 Many variations of these graph pursuit games have been proposed \cite{bonato2017graph, bellman1967graphs}. There are many rules and parameters to tweak to produce different games:
 
 \begin{enumerate}
@@ -16,13 +23,15 @@ Many variations of these graph pursuit games have been proposed \cite{bonato2017
 \end{enumerate}
 
 The Game of Cops and Robbers on Graphs (C \& R) \cite{bonato2011game} is perhaps the most
-well-known vertex pursuit game. It is a perfect information game with Cops trying
-to catch the Robber. In a perfect information game, all players know everything about the game.
+well-known vertex pursuit game. It is a perfect information game with cops trying
+to catch the robber. In a perfect information game, all players know everything about the game.
 In this context, the players know each other's positions (they see each other) and they
 know the landscape (graph) around them \cite{schaefer1978complexity}.
+The cop player starts the game by choosing a set of vertices which will be the cops' starting positions. The robber player responds by choosing its own start vertex. On each player's turn, the player may move its tokens to adjacent vertices. The cops win if the robber is captured (they occupy the same vertex). The robber wins if it can avoid capture indefinitely. The question, then, is to determine the smallest number of cops required to guarantee the robber will be captured.
 
-A variation called Zombies and Survivors (Z \& S) was recently proposed and studied  \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
-Z \& S is the same as C \& R with the added twist that the zombies are required to move directly towards the survivor. On their turn, the zombies move closer to the survivor using a shortest path connecting the two.
+A variation of C \& R  called Zombies and Survivors (Z \& S) was recently proposed and studied \cite{fitzpatrick2016deterministic, fitzpatrick2018game}.
+Z \& S is the same as C \& R with the added twist that the zombies are required to move closer to the survivor (by following a shortest path from the zombie to the survivor).
+Whenever multiple shortest paths exist, the zombies are free to choose which one to follow. As in C \& R, we are interested in the minimum number of zombies required to guarantee the survivor will be caught.
 
 This thesis has been an attempt to better understand this variant and
 to see if the results obtained for C \& R still hold when the cops
@@ -41,20 +50,15 @@ The following sections will use definitions from graph theory (and vertex-pursui
 \end{itemize}
 
 We also write $V(G)$ for the set of vertices of $G$ and $E(G)$ for the set of edges of $G$.
-Let $G = (V,E)$ be a graph with vertices $x,y \in V$.
+ Two different vertices $x, y \in V(G)$ are \textit{neighbours} (also \textit{adjacent}) if $xy = e \in E$. Vertices $x$ and $y$ are said to be \textit{incident} to edge $e$.
 The graphs studied herein are \textit{finite}, \textit{connected}, \textit{undirected} and \textit{reflexive}.
-There is a \textit{finite} number of vertices. A graph is \textit{connected} if, for any two vertices, there exists a sequence of adjacent vertices linking the two.
-We limit ourselves to connected graphs because playing on graphs with multiple connected components can be reduced to playing multiple games in parallel: the players are restricted to their starting connected component. By undirected, we mean that an edge from $x$ to $y$ implies an edge from $y$ to $x$ so we treat the two directions as a single edge and write $\{x,y\}$ or simply $xy = yx \in E$. We do not allow parallel edges since they are redundant in modeling pursuit games.
-Lastly, in order to model a player's choice to pass on a turn, we suppose each vertex also has a loop (an edge $\{x,x\}$ to itself), making the graph \textit{reflexive}. This way, players still choose an edge even though they do not move to a different vertex.  These structures are also are more precisely known as \textit{pseudographs} (graphs with loops), or as \textit{multigraphs} (graphs which allow loops and multiple edges between two nodes).
+There is a \textit{finite} number of vertices. A graph is \textit{connected} if, for any two vertices $x$ and $y$, there exists a sequence of consecutively adjacent vertices starting with $x$ and ending with $y$.
+We limit ourselves to connected graphs because playing on graphs with multiple connected components can be reduced to playing multiple games in parallel: the players are restricted to their starting connected component. By undirected, we mean that an edge from $x$ to $y$ implies an edge from $y$ to $x$ so we treat the two directions as a single edge and write $\{x,y\}$ or simply $xy = yx \in E$. We do not allow parallel edges since they are redundant in modeling vertex-pursuit games.
+Lastly, in order to model a player's choice to pass on a turn, we suppose each vertex also has a loop (an edge $\{x,x\}$ to itself), making the graph \textit{reflexive}. This way, players still choose an edge even though they do not move to a different vertex.  These structures are also are more precisely known as \textit{pseudographs} (graphs with loops), or as \textit{multigraphs} (graphs which allow loops and multiple edges between two nodes)  \cite{bollobas2013modern}.
 
-We will have occasion to use a few more concepts of graph theory. We say that vertices $x$ and $y$ are \textit{neighbours} (also \textit{adjacent}) if $xy = e \in E$; that is, if there is an edge joining $x$ to $y$ and $x \neq y$. Vertice $x$ and $y$ are said to be \textit{incident} to edge $e$.
-The set $N(x) = \{ y \in V | xy \in E \land x \neq y\} \subseteq V$ is the \textit{neighbourhood} of $x$.
-The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\} \subseteq V$. A set $S \subseteq V(G)$ is said to be \textit{dominating} if $\cup_{x\in S} N(x) \supseteq V(G)$.
-
-% TODO: Move me to definition of cop/zombie-number
-%In the context of these games, a dominating set guarantees a win for the pursuers, since all possible start vertices are covered (and the evader loses in round 1).
-
-The \textit{degree} of a vertex is the cardinality of its neighbourhood $\lvert N(x) \rvert$. The \textit{minimum} and \textit{maximum degrees} of a graph are $\min\{ \lvert N(x)\rvert : x \in V\}$ and $\max \{ \lvert N(x)\rvert : x \in V\}$ and are denoted as $\delta(G)$ and $\Delta(G)$, respectively.
+We will have occasion to use a few more concepts of graph theory.
+The set $N(x) = \{ y \in V | xy \in E \land x \neq y\}$ is the \textit{neighbourhood} of vertex $x$.
+The \textit{closed neighborhood} of vertex $x$ is the the neighborhood of $x$ along with $x$ itself and is denoted $N[x] = N(x) \cup \{x\}$. A set $S \subseteq V(G)$ is said to be \textit{dominating} if $\cup_{x\in S} N(x) \supseteq V(G)$. The order of a minimum dominating set is often denoted $\gamma(G)$. The \textit{degree} of a vertex is the cardinality of its neighbourhood $\lvert N(x) \rvert$. The \textit{minimum} and \textit{maximum degrees} of a graph are $\min\{ \lvert N(x)\rvert : x \in V\}$ and $\max \{ \lvert N(x)\rvert : x \in V\}$ and are denoted as $\delta(G)$ and $\Delta(G)$, respectively.
 
 For example, in Figure~\ref{fig:hyper-cube} we have vertices $V = \{ a, b, c, d, e, f, g, h \}$.
 Since $a$ and $b$ are connected by an edge, we have $ab \in E$.
@@ -74,10 +78,6 @@ We say that a graph contains a path $P$ if $P$ is a \textit{subgraph} of $G$, so
 
 Paths allow us to define a distance between vertices $d_G(x,y)$ as the length of the shortest path connecting $x$ to $y$ (or infinity if such a path does not exist which is never the case in our games). Computing such paths, also known as \textit{geodesics}, is a classic problem in computer science.
 A geodesic has the additional property of being \textit{isometric} \cite{pan2006isometric}, meaning that the distance between vertices of an isometric path is preserved in the subgraph induced by the path.
-
-% TODO: move to after games defined?
-%This property allows cops to patrol isometric paths \cite{aigner1984game} -- preventing the robber from entering (and thus crossing) the path without being captured-- by ``shadowing the robber's projection on the path.'' More precisely, a cop can move onto a vertex of the path such that its distance to any other vertex of the path is the same as the robber's distance to that vertex. Or, more simply perhaps, both players reach any vertex of the path at the same time (with the cop capturing the robber on the path vertex on its turn). Consequently, the robber can never move onto or through the path.
-
 The \textit{diameter} $\diam(G)$ is the length of a longest possible shortest path in $G$. The \textit{girth} of a graph is the length of the shortest cycle contained the graph.
 
 Graphs can be combined in various ways to create new graphs.
@@ -128,7 +128,8 @@ and can be recognized by the existence of an ordering of the vertices called a \
 so-called because it is the successive deletion of \textit{corners} resulting in a single vertex (see Subsection~\ref{intro dismantlings}).
 
 The \textit{cop-number} of a graph, denoted $c(G)$, was introduced by Aigner and Fromme  \cite{aigner1984game} and defined as the minimum number of cops required
-to guarantee cops win on graph $G$. In the example of the hypercube of dimension 3 (see Figure~\ref{fig:hyper-cube}), a single cop loses but two cops always suffice, and so the cop-number of this graph is 2.
+to guarantee cops win on graph $G$. In the example of the hypercube of dimension 3 (see Figure~\ref{fig:hyper-cube}), a single cop loses but two cops always suffice, and so the cop-number of this graph is 2. The cop-number is well defined since a dominating set guarantees a win for the pursuers, so $c(g) \leq \gamma(G)$.
+
 
 Later, Berarducci et al. and Hahn et al. generalized the characterization of cop-win graphs
 into \textit{$k$-cop win} graphs \cite{berarducci1993cop, hahn2003characterisation}. A graph is $k$-cop win if and only if there exists a function (defined on the strong product of the graph taken with itself $k$ times, to represent the position of the cops) which satisfies certain properties; essentially it is a function which takes as input a position $C$ of cops and returns the next position for the cops that guarantees a win (see \cite{bonato2011game}[p. 119]).
@@ -164,24 +165,24 @@ x & \text{otherwise}
 \end{cases} \]
 is edge-preserving since $f(x)f(u) = xv$ and $xv \in E(G)$, so $xv \in E(H) = E(G - u)$.
 For other vertices $x,y \not\in \{u,v\}$, $f(x)f(y) = xy \in E(G)$ so $f(x)f(y) \in E(G- u)$ also.
-This shows that $f$ is a homomorphism and hence a retraction. Since the graphs studied herein are reflexive, a one-point retraction can be seen as the absorption of one vertex by another; the edge between the corner and its dominating vertex becomes another loop (which we discard since we do not need parallel edges).
+This shows that $f$ is a homomorphism and hence a retraction.
 
 For a graph $G$ with retract $H$, it can be shown \cite{berarducci1993cop} that
 \[ c(H) \leq c(G) \]
 by using a \textit{shadow strategy} argument, that is by playing parallel games on $G$ and $H$: the winning cop strategy on $G$ implies a winning cop strategy on $H$. Quilliot and Nowakowski both indepedently characterized cop-win graphs by combining these observations about corners and retractions into what is called a \textit{dismantling}. Informally, a dismantling is the successive folding of a corner onto its dominating vertex until we are left with a single vertex.
 
 Formally, a \textit{dismantling} is a sequence of retracts $f_1, f_2, \dots, f_{n-1}$ such that the
-composition $F_{n-1} = f_{n-1} \circ f_{n-2} \circ \cdots f_2 \circ f_1$ gives a
-function for which $F_{n-1} (G) = K_1$: a sequence of retracts
+composition $F_{n} = f_{n-1} \circ f_{n-2} \circ \cdots f_2 \circ f_1$ gives a
+function for which $F_{n} (G) = K_1$: a sequence of retracts
 which maps the graph to a single vertex.
 
 Not all vertices of a graph need to be corners in order for there
 to exist a dismantling: it suffices to have an ordering where each $v_i$ is a corner in
 $G[\{v_i, v_{i+1}, \dots, v_n\}]$. Such a sequence of $f_i$'s defines a \textit{cop-win ordering}
 \[ \mathcal{O} = ( v_1, v_2, \dots, v_n ) \]
-where $v_1$ is a corner in $G_1 = G$, $v_2$ is a corner in $G - v_1$, and so on. A fundamental result in C \& R is that cop-win graphs -- graphs for which a single
+where $v_1$ is a corner in $G_1 = G$, $v_2$ is a corner in $G_2 = G - v_1$, and so on. A fundamental result in C \& R is that cop-win graphs -- graphs for which a single
 cop is guaranteed to win --  are characterized by the existence of such dismantlings.
-A graph is copwin if and only if it is dismantlable; the dismantling provides a winning cop strategy as follows. Start the cop on $v_n$, the last vertex of the dismantling. On round $i$ with robber on $u$, move the cop onto vertex $F_{n-i}(u)$. That is to say, the cop captures the ``shadow'' of the robber at every turn.
+A graph is copwin if and only if it is dismantlable. A dismantling provides a winning cop strategy as follows. Start the cop on $v_n$, the last vertex of the dismantling. Here we have $F_n(R) = v_n$, so that the cop has captured the image of the robber under $F_n$ (which reduces the graph to a single vertex). With the the robber on $u$ and the cop guarding its ``shadow'' (or image) in $G_i$ under $F_i(u)$, on its turn the cop moves to vertex $F_{i-1}(u)$. That is to say, the cop re-captures the shadow of the robber in the larger graph at every turn.
 
 A cop-win spanning tree combines the idea of a dismantling with a spanning tree
 and was first proposed in \cite{clarke2002constrained}. A cop-win spanning tree $S$ is defined as a tree where $x,y\in V(G)$ and $xy \in E(S)$ if there exists a retract $f_j$ in the dismantling
@@ -195,6 +196,10 @@ robber is eventually stuck in a leaf and caught.
 
 One of the most surprising results about the C \& R is owed to Aigner and Fromme \cite{aigner1984game}, who showed that the cop number of a planar graph is at most 3.
 Basically, a graph is planar if it can be drawn in the plane (say, on a piece of paper) without crossing any edges. Aigner and Fromme describe a 3-cop strategy which uses isometric paths of the graph to encircle and entrap the robber.
+
+Since geodesics are isometric paths, the cops can patrol (or guard) the path -- preventing the robber from entering (and thus crossing) the path without being captured. The cops can ``shadow the robber's projection on the path.'' More precisely, after a finite number of rounds, a cop can move onto a vertex of the path such that its distance to any other vertex of the path is the same as the robber's distance to that vertex. Or, more simply perhaps, both players reach any vertex of the path at the same time (with the cop moving into position before the robber can arrive). Consequently, the robber can never move onto or through the path.
+
+Aigner and Fromme use three guards to enact an encircling strategy: two guards patrol two isometric paths with the same endpoint, thereby creating a boundary within which the robber cannot escape. The third cop moves into the robber's territory and guards another shortest path, thereby constricting its territory. Eventually, the robber's territory is empty and therefore must be caught.
 
 Outerplanar graphs are planar graphs which can be drawn such that all vertices belong to a common face
 (called the \textit{outerface}). Clarke \cite{clarke2002constrained} showed that the cop number of outerplanar graphs is 2 by considering
@@ -220,6 +225,7 @@ Intersection graphs are constructed by equating sets with vertices and adding an
 
 Gaven{\v{c}}iak et al. \cite{gavenvciak2018cops} also examined the game of C \& R on similar constructions. First, the authors show that several classes of intersection graphs have unbounded cop-number. Second, they find that the cop-number of intersection graphs of arc-connected subsets is at most $10g+5$ for an orientable surface of genus $g$.
 
+The \textit{visibility graph} of a simple polygon $P$ (a polgyon without holes or crossing edges) is a graph with the points of the polygon as vertices with edges connecting these vertices whenever two vertices ``see'' each other in $P$. That is, in a visibility graph, $x ~ y$ whenever the segment $xy$ is contained within $P$.
 Lubiw et al. \cite{lubiw2017visibility} showed that the vertex-visibility graph of any simple polygon is dismantlable and hence cop-win.
 
 \section{Cops Turn Into Zombies}
@@ -227,7 +233,7 @@ Lubiw et al. \cite{lubiw2017visibility} showed that the vertex-visibility graph 
 Zombies and Survivors (Z \& S) is a variation of Cops and Robbers first proposed by Fitzpatrick \cite{fitzpatrick2016deterministic} and is the game studied herein. In Z \& S games, the
 cops are replaced by zombies which always move closer to the robber (who is now a survivor). The sophistication of the zombies' strategy gives them their name:  arms outstretched, the zombies amble directly towards the survivor. However, there is some ambiguity without further precision: how exactly do the zombies move closer to the survivor? What if there are multiple options?
 
-In the version first proposed by Fitzpatrick, the zombies choose their start positions. On their turn, they select a shortest path toward the survivor (a \textit{geodesic}) and moves along the edge to the next vertex of the path. If there are multiple such paths, we assume that a zombie makes an optimal choice (optimal meaning the zombies make winning moves, if they exist -- these are deterministic zombies; see~\ref{subsection intro deterministic}) or we choose randomly (so called probabilistic zombies; see~\ref{subsection intro probabilistic}). In this thesis, we study the deterministic version of the game which is concerned with the worst-case outcomes for the survivor.
+In the version first proposed by Fitzpatrick, the zombies choose their start positions. On their turn, the zombies each select a shortest path toward the survivor (a \textit{geodesic}) and move along the edge to the next vertex of the path. If there are multiple such paths, the zombies are free to choose. These types of zombies are known as deterministic zombies (see~\ref{subsection intro deterministic}). Alternately, the zombies could break ties randomly (which leads to a different game with so called probabilistic zombies; see~\ref{subsection intro probabilistic}). In this thesis, we study the deterministic version of the game which is concerned with the worst-case outcomes for the survivor.
 
 The players have complete information of the graph and the positions of the players. Indeed, the zombies need both to enact their strategy. If uncaught, the survivor may move to one of its neighbouring vertices or stay in place.
 
@@ -349,7 +355,7 @@ the uninfected. It is only at this point that the zombies will charge.
 Such behavior likely inspired another type of pursuit game \cite{bonato2016probabilistic} in which the zombies start randomly on the graph. Once the survivor chooses a start vertex, the zombies ``notice'' the survivor and start moving directly towards it (again by following a shortest path).
 
 Without knowing where the zombies start, however, it is impossible to know the outcome with certainty.
-The \textit{probabilistic zombie-number} of a graph is the minimum number of these random zombies required to give the zombies a 50\% chance of winning. We omit the term probabilistic for the remainder of this section. Accepting some uncertainty in the outcomes of games simplifies the problem of the zombie choice: if there is more than one possible zombie move then choose one randomly.
+The \textit{probabilistic zombie-number} of a graph is the minimum number of these random zombies required to give the zombies a 50\% chance of winning. Accepting some uncertainty in the outcomes of games simplifies the problem of the zombie choice: if there is more than one possible zombie move then choose one randomly.
 
 Firstly, the zombie-number is unbounded. A graph which requires arbitrarily many zombies can be constructed by taking a cycle of length at least $5$ and attaching additional vertices to one of the vertices of the cycle. In this way, we can make the odds that the zombies start on vertices which ``guard'' the cycle arbitrarily small. Indeed, we have the following property \cite{bonato2016probabilistic}:
 \begin{lemma}
@@ -359,6 +365,7 @@ The survivor wins on $C_n$ against $k \geq 2$ zombies if and only if all zombies
 The zombie-number of cycles, projective planes, hyper cubes, grids and toroidal grids has also been considered. Bonato et al. proved the following theorem \cite{bonato2016probabilistic} which gives the zombie-number of cycles.
 
 \begin{theorem}
+  Let $n\in \Z$ with $n\geq 3$. The probabilistic zombie-number of cycle $C_n$ is
   \[z(C_n) =
   \begin{cases}
     4 & \text{if} \; n \geq 27 \; \text{or} \; n=23,25, \\
@@ -370,13 +377,12 @@ The zombie-number of cycles, projective planes, hyper cubes, grids and toroidal 
 
 On the grid, two zombies are enough to get even odds \cite{bonato2016probabilistic} of capturing the survivor:
 \begin{theorem}
-  Let $G_n$ be the grid graph isomorphic to $P_n \square P_n$. The zombie-number of $G_n$ is 2.
+  Let $G_n$ be the grid graph isomorphic to $P_n \square P_n$. The probabilistic zombie-number of $G_n$ is 2.
 \end{theorem}
 We note that the proof strategy of this theorem in \cite{bonato2016probabilistic} also works for deterministic zombies. Two deterministic zombies thus are guaranteed to win by effecting a coordinate-shadowing strategy on the grid.
 
-The zombie-number of a hyper cube $Q_n$ of dimension $n$ is:
 \begin{theorem}
-$z(Q_n) = \frac{2n}{3} + \Theta(\sqrt{n})$, as $n \rightarrow \infty$.
+  The probabilistic zombie-number of a hyper cube $Q_n$ of dimension $n$ is $z(Q_n) = \frac{2n}{3} + \Theta(\sqrt{n})$, as $n \rightarrow \infty$.
 \end{theorem}
 
 \section{Our Contributions}
